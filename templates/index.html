@@ -87,6 +87,7 @@
   .month-title em{
     font-style:normal; font-size:12px; font-weight:500; color:var(--red); letter-spacing:1px;
   }
+  .month-title em.filtered{ color:var(--ink); font-weight:700; }
   .issue{
     display:flex; align-items:center; gap:16px;
     border-top:1px solid var(--paper-rule); padding:13px 2px;
@@ -121,12 +122,95 @@
   }
   .older svg{ flex:0 0 auto; }
 
-  /* ===== 侧栏 ===== */
-  .search{
-    display:flex; align-items:center; gap:9px;
+  /* ===== 检索工具区 ===== */
+  .toolbar{
+    margin-top:22px; padding:16px 18px;
     background:var(--paper-soft); border:1px solid var(--paper-line);
-    padding:11px 13px; color:#8a7b63; font-size:12.5px;
   }
+  .searchbar{
+    display:flex; align-items:center; gap:12px;
+    background:#fff; border:1px solid var(--ink); padding:12px 15px;
+  }
+  .searchbar input{
+    flex:1 1 auto; min-width:0; border:0; outline:0; background:transparent;
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+    font-size:15px; color:var(--ink); padding:0;
+  }
+  .searchbar input::placeholder{ color:#a89a80; }
+  .search-count{
+    flex:0 0 auto; font-size:12px; color:var(--red); font-weight:700; letter-spacing:1px;
+    font-family:Inter,"Helvetica Neue",Arial,sans-serif; white-space:nowrap;
+  }
+  .search-clear{
+    flex:0 0 auto; cursor:pointer; border:1px solid var(--paper-line);
+    background:var(--paper-soft); padding:5px 11px; font-size:11.5px; color:#6b5d48;
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+    letter-spacing:1px; user-select:none;
+  }
+  .search-clear:hover{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .search-clear[hidden]{ display:none; }
+  .filterline{
+    display:flex; align-items:center; gap:9px; flex-wrap:wrap; margin-top:14px;
+  }
+  .filterline .flabel{
+    font-size:12.5px; font-weight:800; color:var(--ink); letter-spacing:1px; margin-right:2px;
+  }
+  .fchip{
+    cursor:pointer; padding:7px 14px; font-size:12.5px;
+    border:1px solid var(--paper-line); background:#fff; color:#4a3f30;
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+    transition:background .15s,color .15s,border-color .15s;
+  }
+  .fchip:hover{ border-color:var(--red); color:var(--red); }
+  .fchip.on{ background:var(--ink); border-color:var(--ink); color:var(--paper); font-weight:700; }
+  .fchip.on:hover{ background:var(--red); border-color:var(--red); color:var(--paper); }
+
+  /* ===== 结果状态 ===== */
+  .result-bar{
+    display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+    margin:20px 0 4px; padding-bottom:9px; border-bottom:1px solid var(--ink);
+  }
+  .result-bar .rlabel{
+    font-size:12.5px; color:var(--ink-soft); letter-spacing:1px;
+  }
+  .result-bar .rnum{
+    font-size:13px; color:var(--red); font-weight:700; letter-spacing:1px;
+  }
+  .result-bar .rhint{
+    font-size:11.5px; color:var(--ink-mute); margin-left:auto;
+  }
+
+  /* ===== 命中标记 ===== */
+  mark{
+    background:rgba(124,31,31,.13); color:var(--red); padding:0 2px;
+    font-weight:700;
+  }
+  .issue-hit{
+    margin:5px 0 0; font-size:11px; color:var(--red);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+  }
+  .issue-hit b{ font-weight:700; }
+
+  /* ===== 空状态 ===== */
+  .empty-state{
+    display:none; text-align:center; padding:46px 26px; margin-top:22px;
+    background:var(--paper-soft); border:1px solid var(--paper-line);
+  }
+  .empty-state.show{ display:block; }
+  .empty-state h3{
+    margin:14px 0 0; font-size:17px; font-weight:800; letter-spacing:2px; color:var(--ink);
+  }
+  .empty-state p{
+    margin:10px 0 0; font-size:13px; line-height:22px; color:var(--ink-soft);
+  }
+  .empty-state button{
+    margin-top:16px; cursor:pointer; border:0; background:var(--ink); color:var(--paper);
+    padding:11px 22px; font-size:12.5px; font-weight:700; letter-spacing:2px;
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+  }
+  .empty-state button:hover{ background:var(--red); }
+
+  /* ===== 侧栏 ===== */
   .stats{ display:flex; gap:1px; background:var(--paper-line); margin-top:18px; }
   .stat{
     flex:1 1 0; background:var(--paper-soft); text-align:center; padding:13px 8px;
@@ -141,11 +225,12 @@
     border-top:1px solid var(--paper-rule);
   }
   .cat-row{
-    display:flex; justify-content:space-between; align-items:center;
+    display:flex; justify-content:space-between; align-items:center; gap:8px;
     padding:8px 0; border-bottom:1px solid var(--paper-rule);
-    color:#4a3f30; text-decoration:none; font-size:12.5px;
+    color:#4a3f30; font-size:12.5px; cursor:pointer; user-select:none;
   }
   .cat-row:hover{ color:var(--red); }
+  .cat-row.on{ color:var(--red); font-weight:700; }
   .cat-row em{
     font-style:normal; color:var(--red); font-weight:700;
     font-family:Inter,"Helvetica Neue",Arial,sans-serif; font-size:12px;
@@ -153,7 +238,7 @@
   .tags{ display:flex; flex-wrap:wrap; gap:7px; }
   .tags a{
     padding:5px 11px; border:1px solid var(--paper-line); background:var(--paper-soft);
-    color:#4a3f30; text-decoration:none; font-size:11.5px;
+    color:#4a3f30; text-decoration:none; font-size:11.5px; cursor:pointer;
   }
   .tags a:hover{ background:var(--ink); color:var(--paper); }
   .subscribe{
@@ -168,7 +253,8 @@
     background:var(--red); color:var(--paper); text-decoration:none;
     font-size:12.5px; font-weight:700; letter-spacing:2px;
   }
-  .subscribe a:hover{ background:#96301f; }  .about{
+  .subscribe a:hover{ background:#96301f; }
+  .about{
     margin-top:18px; padding:15px 16px;
     background:var(--paper-soft); border:1px solid var(--paper-line);
   }
@@ -216,9 +302,38 @@
     <p>在线仅保留最近 {{RETENTION}} 期。期满后正文自动下架，原链接保留为「已归档」提示页；完整历史版本留在本地存档中。</p>
   </section>
 
+  <div class="toolbar">
+    <div class="searchbar">
+      <svg viewBox="0 0 15 15" width="17" height="17" aria-hidden="true"><circle cx="6.4" cy="6.4" r="4.6" stroke="#6B5D48" stroke-width="1.4"/><path d="M9.9 9.9L13 13" stroke="#6B5D48" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <input id="q" type="search" autocomplete="off" placeholder="按日期、标题或关键词检索往期速报" aria-label="检索往期速报">
+      <span class="search-count" id="q-count"></span>
+      <button class="search-clear" id="q-clear" type="button" hidden>清除</button>
+    </div>
+    <div class="filterline" id="filters">
+      <span class="flabel">按分类</span>
+      <button class="fchip on" type="button" data-cat="">全部</button>
+      <button class="fchip" type="button" data-cat="算力硬件">算力硬件</button>
+      <button class="fchip" type="button" data-cat="技术进展">技术进展</button>
+      <button class="fchip" type="button" data-cat="商业动态">商业动态</button>
+      <button class="fchip" type="button" data-cat="政策风向">政策风向</button>
+      <button class="fchip" type="button" data-cat="国防应用">国防应用</button>
+    </div>
+  </div>
+
   <div class="content">
     <main class="list">
+      <div class="result-bar">
+        <span class="rlabel">在线期次</span>
+        <span class="rnum" id="r-num">{{TOTAL_ONLINE}} 期</span>
+        <span class="rhint" id="r-hint">输入关键词或点选分类即可筛选</span>
+      </div>
 {{MONTH_GROUPS}}
+      <div class="empty-state" id="empty">
+        <svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><circle cx="15" cy="15" r="9.5" stroke="#8A7B63" stroke-width="1.6"/><path d="M21.8 21.8L29 29" stroke="#8A7B63" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h3>没有匹配的期次</h3>
+        <p>换一个关键词，或清除分类筛选条件后再试。<br>更早的内容已下架归档，如需查阅可向作者索取。</p>
+        <button type="button" id="reset">重置全部筛选</button>
+      </div>
       <div class="older">
         <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><rect x="2" y="3.2" width="11" height="9" rx="1" stroke="#6B5D48" stroke-width="1.3"/><path d="M2 6h11M5.4 1.5v2.6M9.6 1.5v2.6" stroke="#6B5D48" stroke-width="1.3" stroke-linecap="round"/></svg>
         <span>{{OLDER_NOTICE}}</span>
@@ -226,11 +341,6 @@
     </main>
 
     <aside class="aside">
-      <div class="search">
-        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><circle cx="6.4" cy="6.4" r="4.6" stroke="#6B5D48" stroke-width="1.4"/><path d="M9.9 9.9L13 13" stroke="#6B5D48" stroke-width="1.4" stroke-linecap="round"/></svg>
-        <span>按日期、标题或分类检索往期速报</span>
-      </div>
-
       <div class="stats">
         {{STATS}}
       </div>
@@ -238,16 +348,10 @@
       <h3>按分类浏览</h3>
 {{CATEGORY_ROWS}}
 
-      <h3>本期关键词</h3>
+      <h3>订阅</h3>
       <div class="tags">
-        <a href="index.html#出口管制">出口管制</a>
-        <a href="index.html#算力自主">算力自主</a>
-        <a href="index.html#AI兵装">AI兵装</a>
-        <a href="index.html#开源模型">开源模型</a>
-        <a href="index.html#资本开支">资本开支</a>
-        <a href="index.html#AI立法">AI立法</a>
-        <a href="index.html#具身智能">具身智能</a>
-        <a href="index.html#供应链">供应链</a>
+        <a href="feed.xml">RSS 订阅源</a>
+        <a href="https://sakirubyishere.github.io/">白兔梦境电台</a>
       </div>
 
       <div class="subscribe">
@@ -271,5 +375,201 @@
   </footer>
 
 </div>
+
+<script>
+(function () {
+  "use strict";
+
+  var q        = document.getElementById("q");
+  var qCount   = document.getElementById("q-count");
+  var qClear   = document.getElementById("q-clear");
+  var rNum     = document.getElementById("r-num");
+  var rHint    = document.getElementById("r-hint");
+  var empty    = document.getElementById("empty");
+  var resetBtn = document.getElementById("reset");
+  var chips    = Array.prototype.slice.call(document.querySelectorAll(".fchip"));
+  var catRows  = Array.prototype.slice.call(document.querySelectorAll(".cat-row"));
+
+  if (!q || !document.querySelector(".issue")) { return; }
+
+  // 收集期次条目
+  var items = Array.prototype.slice.call(document.querySelectorAll(".issue")).map(function (el) {
+    return {
+      el: el,
+      // 可检索文本：日期 + 标题 + 分类计数行 + 分类名
+      text: (el.getAttribute("data-search") || el.textContent || "").toLowerCase(),
+      // 分类条数，形如 {"算力硬件":3,...}
+      counts: (function () {
+        var m = {};
+        var raw = el.getAttribute("data-counts") || "";
+        raw.split(",").forEach(function (kv) {
+          var p = kv.split(":");
+          if (p.length === 2) { m[p[0]] = parseInt(p[1], 10) || 0; }
+        });
+        return m;
+      })()
+    };
+  });
+
+  var months = Array.prototype.slice.call(document.querySelectorAll(".month"));
+  var older  = document.querySelector(".older");
+  var activeCat = "";
+
+  function markHit(node, keyword) {
+    // 清除旧的 mark
+    var marks = node.querySelectorAll("mark");
+    Array.prototype.slice.call(marks).forEach(function (m) {
+      var parent = m.parentNode;
+      parent.replaceChild(document.createTextNode(m.textContent), m);
+      parent.normalize();
+    });
+    if (!keyword) { return []; }
+    var hits = [];
+    var kw = keyword.toLowerCase();
+    var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null);
+    var textNodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (n.nodeValue.toLowerCase().indexOf(kw) !== -1 && n.parentNode.nodeName !== "MARK") {
+        textNodes.push(n);
+      }
+    }
+    textNodes.forEach(function (tn) {
+      var text = tn.nodeValue;
+      var lower = text.toLowerCase();
+      var frag = document.createDocumentFragment();
+      var pos = 0, idx;
+      while ((idx = lower.indexOf(kw, pos)) !== -1) {
+        if (idx > pos) { frag.appendChild(document.createTextNode(text.slice(pos, idx))); }
+        var mk = document.createElement("mark");
+        mk.textContent = text.substr(idx, kw.length);
+        frag.appendChild(mk);
+        hits.push(text.substr(idx, kw.length));
+        pos = idx + kw.length;
+      }
+      if (pos < text.length) { frag.appendChild(document.createTextNode(text.slice(pos))); }
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    return hits;
+  }
+
+  function apply() {
+    var kw = (q.value || "").trim();
+    // 多关键词以空格分隔，采用 AND 匹配（每个词都要命中）
+    var words = kw ? kw.split(/\s+/).filter(function (w) { return w.length > 0; }) : [];
+    var total = 0;
+
+    items.forEach(function (it) {
+      var okText = words.length === 0 ||
+        words.every(function (w) { return it.text.indexOf(w.toLowerCase()) !== -1; });
+      var okCat = !activeCat || (it.counts[activeCat] || 0) > 0;
+      var show = okText && okCat;
+      it.el.style.display = show ? "" : "none";
+      if (show) {
+        total++;
+        words.forEach(function (w) { markHit(it.el, w); });
+        // 命中关键词提示（用 textContent 拼接，避免任何 HTML 注入）
+        var hitLine = it.el.querySelector(".issue-hit");
+        if (hitLine) {
+          if (words.length) {
+            hitLine.textContent = "";
+            hitLine.appendChild(document.createTextNode("命中关键词："));
+            words.forEach(function (w, i) {
+              if (i > 0) { hitLine.appendChild(document.createTextNode("、")); }
+              var b = document.createElement("b");
+              b.textContent = w;
+              hitLine.appendChild(b);
+            });
+            hitLine.style.display = "";
+          } else {
+            hitLine.style.display = "none";
+          }
+        }
+      }
+    });
+
+    // 隐藏空的月份分组，并更新月份计数
+    months.forEach(function (mo) {
+      var visible = Array.prototype.slice.call(mo.querySelectorAll(".issue"))
+        .filter(function (el) { return el.style.display !== "none"; });
+      mo.style.display = visible.length ? "" : "none";
+      var cnt = mo.querySelector(".month-count");
+      if (cnt) {
+        var total = Number(cnt.getAttribute("data-total"));
+        if (visible.length === total) {
+          cnt.textContent = total + " 期";
+          cnt.classList.remove("filtered");
+        } else {
+          cnt.textContent = visible.length + " / " + total + " 期";
+          cnt.classList.add("filtered");
+        }
+      }
+    });
+
+    // 统计与提示
+    rNum.textContent = total + " 期";
+    if (kw && activeCat) {
+      rHint.textContent = "关键词「" + kw + "」 + 分类「" + activeCat + "」";
+    } else if (kw) {
+      rHint.textContent = "关键词「" + kw + "」";
+    } else if (activeCat) {
+      rHint.textContent = "分类「" + activeCat + "」";
+    } else {
+      rHint.textContent = "输入关键词或点选分类即可筛选";
+    }
+    qCount.textContent = (kw || activeCat) ? "匹配 " + total + " 期" : "";
+    qClear.hidden = !kw;
+
+    // 空状态
+    var showEmpty = total === 0;
+    empty.classList.toggle("show", showEmpty);
+    if (older) { older.style.display = showEmpty ? "none" : ""; }
+  }
+
+  function setCat(cat) {
+    activeCat = cat;
+    chips.forEach(function (c) {
+      c.classList.toggle("on", (c.getAttribute("data-cat") || "") === cat);
+    });
+    catRows.forEach(function (r) {
+      r.classList.toggle("on", (r.getAttribute("data-cat") || "") === cat);
+    });
+    apply();
+  }
+
+  q.addEventListener("input", apply);
+  q.addEventListener("search", apply);
+  qClear.addEventListener("click", function () {
+    q.value = "";
+    q.focus();
+    apply();
+  });
+  chips.forEach(function (c) {
+    c.addEventListener("click", function () {
+      var cat = c.getAttribute("data-cat") || "";
+      setCat(activeCat === cat ? "" : cat);
+    });
+  });
+  catRows.forEach(function (r) {
+    r.addEventListener("click", function () {
+      var cat = r.getAttribute("data-cat") || "";
+      setCat(activeCat === cat ? "" : cat);
+    });
+  });
+  resetBtn.addEventListener("click", function () {
+    q.value = "";
+    setCat("");
+    q.focus();
+  });
+
+  // 支持从别处跳转过来时带关键词（如 ?q=芯片）
+  var m = location.search.match(/[?&]q=([^&]*)/);
+  if (m) {
+    try { q.value = decodeURIComponent(m[1]); } catch (e) { q.value = m[1]; }
+  }
+
+  apply();
+})();
+</script>
 </body>
 </html>
