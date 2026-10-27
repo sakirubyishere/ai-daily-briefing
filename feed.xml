@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>智武防务人工智能每日速报</title>
+    <link>https://sakirubyishere.github.io/ai-daily-briefing/</link>
+    <description>全球人工智能每日动态综述，五大分类，聚焦中国视角</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 27 Oct 2026 04:49:19 +0000</lastBuildDate>
+    <atom:link href="https://sakirubyishere.github.io/ai-daily-briefing/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>科大讯飞发布星火 X2.6 等成果：国产大模型用上「全国产算力」训练</title>
+      <link>https://sakirubyishere.github.io/ai-daily-briefing/issues/2026-10-26.html</link>
+      <guid isPermaLink="true">https://sakirubyishere.github.io/ai-daily-briefing/issues/2026-10-26.html</guid>
+      <pubDate>Mon, 26 Oct 2026 08:00:00 +0800</pubDate>
+      <description>本期共 12 条。算力硬件 1；技术进展 3；商业动态 3；政策风向 2；国防应用 3</description>
+      <category>2026年10月26日</category>
+    </item>
+  </channel>
+</rss>
