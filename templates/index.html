@@ -492,22 +492,33 @@
     return BODY[it.date] || null;
   }
 
-  function bodyCorpus(rec) {
+  // 指定分类时，正文条目按分类收敛（未选分类则取全部）
+  function bodyEntries(rec, cat) {
+    if (!rec) { return []; }
+    var items = rec.items || [];
+    if (!cat) { return items; }
+    return items.filter(function (it) { return it.c === cat; });
+  }
+
+  function bodyCorpus(rec, cat) {
     if (!rec) { return ""; }
-    if (rec.__corpus !== undefined) { return rec.__corpus; }
-    var parts = [rec.dt || "", rec.o || ""];
-    (rec.items || []).forEach(function (it) {
+    var key = "__corpus_" + (cat || "all");
+    if (rec[key] !== undefined) { return rec[key]; }
+    // 「今日速览」属整期内容，选了分类时不纳入语料，避免跨分类命中
+    var parts = [rec.dt || ""];
+    if (!cat) { parts.push(rec.o || ""); }
+    bodyEntries(rec, cat).forEach(function (it) {
       parts.push(it.t || "");
       parts.push(it.b || "");
       parts.push(it.v || "");
     });
-    rec.__corpus = parts.join(" ").toLowerCase();
-    return rec.__corpus;
+    rec[key] = parts.join(" ").toLowerCase();
+    return rec[key];
   }
 
-  function bodyHitEntries(rec, words) {
+  function bodyHitEntries(rec, words, cat) {
     var out = [];
-    (rec.items || []).forEach(function (entry) {
+    bodyEntries(rec, cat).forEach(function (entry) {
       var text = ((entry.t || "") + " " + (entry.b || "") + " " + (entry.v || "")).toLowerCase();
       var hitWords = [];
       words.forEach(function (w) {
@@ -515,12 +526,30 @@
       });
       if (hitWords.length) { out.push({ entry: entry, words: hitWords }); }
     });
+
+    // 「今日新闻速览」整段命中时，单列一条，便于看清命中位置
+    if (!cat && rec.o) {
+      var lower = rec.o.toLowerCase();
+      var hitWords = [];
+      words.forEach(function (w) {
+        if (lower.indexOf(w.toLowerCase()) !== -1) { hitWords.push(w); }
+      });
+      if (hitWords.length) {
+        out.push({
+          entry: { c: "速览", t: "今日新闻速览", o: rec.o, i: "" },
+          words: hitWords,
+          overview: true
+        });
+      }
+    }
+
     out.sort(function (a, b) { return b.words.length - a.words.length; });
     return out;
   }
 
   function pickSnippet(entry, words) {
     var fields = [["t", entry.t], ["b", entry.b], ["v", entry.v]];
+    if (entry.o) { fields = [["o", entry.o]]; }
     var best = null;
     fields.forEach(function (f) {
       var text = f[1] || "";
@@ -573,12 +602,12 @@
   }
 
   /* ---------- 正文命中渲染 ---------- */
-  function renderBodyHits(it, rec, words) {
+  function renderBodyHits(it, rec, words, cat) {
     var box = it.el.querySelector(".issue-body");
     if (!box) { return 0; }
     box.textContent = "";
 
-    var hits = bodyHitEntries(rec, words);
+    var hits = bodyHitEntries(rec, words, cat);
     if (!hits.length) { return 0; }
 
     var head = document.createElement("div");
@@ -595,9 +624,11 @@
       cat.textContent = h.entry.c || "";
       row.appendChild(cat);
 
-      var title = document.createElement("a");
+      var title = document.createElement(h.overview ? "span" : "a");
       title.className = "ib-title";
-      title.href = "issues/" + it.date + ".html" + (h.entry.i ? "#" + h.entry.i : "");
+      if (!h.overview) {
+        title.href = "issues/" + it.date + ".html" + (h.entry.i ? "#" + h.entry.i : "");
+      }
       title.textContent = h.entry.t || "";
       row.appendChild(title);
 
@@ -712,7 +743,8 @@
       var okCat = !activeCat || (it.counts[activeCat] || 0) > 0;
 
       var rec = words.length ? bodyOf(it) : null;
-      var corpus = rec ? bodyCorpus(rec) : "";
+      // 选了分类时，正文语料按该分类收敛，避免跨分类误命中
+      var corpus = rec ? bodyCorpus(rec, activeCat) : "";
 
       // 命中判定：关键词出现在标题/日期，或出现在正文全文
       var okText = words.length === 0 || words.every(function (w) {
@@ -727,7 +759,7 @@
         total++;
         markHit(it.el.querySelector(".issue-main") || it.el, words);
 
-        var bodyHits = rec ? renderBodyHits(it, rec, words) : 0;
+        var bodyHits = rec ? renderBodyHits(it, rec, words, activeCat) : 0;
         bodyTotal += bodyHits;
         if (!bodyHits) { clearBodyHits(it); }
 
