@@ -89,7 +89,7 @@
   }
   .month-title em.filtered{ color:var(--ink); font-weight:700; }
   .issue{
-    display:flex; align-items:center; gap:16px;
+    display:flex; align-items:flex-start; gap:16px;
     border-top:1px solid var(--paper-rule); padding:13px 2px;
   }
   .issue:last-child{ border-bottom:1px solid var(--paper-rule); }
@@ -164,6 +164,19 @@
   .fchip:hover{ border-color:var(--red); color:var(--red); }
   .fchip.on{ background:var(--ink); border-color:var(--ink); color:var(--paper); font-weight:700; }
   .fchip.on:hover{ background:var(--red); border-color:var(--red); color:var(--paper); }
+  .idx-stat{
+    margin-top:11px; font-size:11.5px; letter-spacing:.5px; color:var(--ink-mute);
+    display:flex; align-items:center; gap:7px;
+  }
+  .idx-stat::before{
+    content:""; width:5px; height:5px; border-radius:50%;
+    background:var(--paper-line); flex:0 0 auto;
+  }
+  .idx-stat.loading::before{ background:var(--red); }
+  .idx-stat.ready{ color:#4a3f30; }
+  .idx-stat.ready::before{ background:#4a7c3f; }
+  .idx-stat.warn{ color:var(--red); }
+  .idx-stat.warn::before{ background:var(--red); }
 
   /* ===== 结果状态 ===== */
   .result-bar{
@@ -190,6 +203,34 @@
     font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
   }
   .issue-hit b{ font-weight:700; }
+
+  /* ===== 正文命中明细 ===== */
+  .issue-body{ margin:9px 0 0; display:none; }
+  .issue-body.show{ display:block; }
+  .ib-head{
+    font-size:11px; letter-spacing:1px; color:var(--ink-mute);
+    padding-bottom:5px; margin-bottom:6px; border-bottom:1px dashed var(--paper-rule);
+  }
+  .ib-item{
+    border-left:3px solid var(--red); background:rgba(124,31,31,.045);
+    padding:8px 0 8px 11px; margin-bottom:7px;
+  }
+  .ib-item:last-of-type{ margin-bottom:0; }
+  .ib-cat{
+    display:inline-block; font-size:10px; font-weight:700; letter-spacing:1px;
+    color:var(--paper); background:var(--red); padding:2px 7px; margin-bottom:5px;
+  }
+  .ib-title{
+    display:block; font-size:13px; font-weight:700; line-height:1.5; color:var(--ink);
+    text-decoration:none;
+  }
+  .ib-title:hover{ color:var(--red); }
+  .ib-snip{
+    margin:4px 0 0; font-size:12px; line-height:1.85; color:#5a4f3e;
+  }
+  .ib-more{
+    margin-top:6px; font-size:11px; color:var(--ink-mute); letter-spacing:.5px;
+  }
 
   /* ===== 空状态 ===== */
   .empty-state{
@@ -235,23 +276,14 @@
     font-style:normal; color:var(--red); font-weight:700;
     font-family:Inter,"Helvetica Neue",Arial,sans-serif; font-size:12px;
   }
-  .tags{ display:flex; flex-wrap:wrap; gap:7px; }
-  .tags a{
-    padding:5px 11px; border:1px solid var(--paper-line); background:var(--paper-soft);
-    color:#4a3f30; text-decoration:none; font-size:11.5px; cursor:pointer;
-  }
-  .tags a:hover{ background:var(--ink); color:var(--paper); }
   .subscribe{
     background:var(--ink); padding:16px; margin-top:18px;
   }
-  .subscribe h4{
-    margin:0 0 8px; font-size:14px; font-weight:800; letter-spacing:2px; color:var(--paper);
-  }
-  .subscribe p{ margin:0; font-size:12px; line-height:20px; color:#c9bca9; }
   .subscribe a{
-    display:block; margin-top:12px; padding:9px 0; text-align:center;
+    display:block; padding:10px 0; text-align:center;
     background:var(--red); color:var(--paper); text-decoration:none;
     font-size:12.5px; font-weight:700; letter-spacing:2px;
+    transition:background .15s;
   }
   .subscribe a:hover{ background:#96301f; }
   .about{
@@ -290,10 +322,10 @@
   <header class="masthead">
     <div class="kicker">Global AI Daily · Archive Index</div>
     <h1 class="title">智武防务人工智能每日速报 · 往期索引</h1>
-    <div class="sub">近三十期速报存档 · 分类检索 · 每日更新</div>
+    <div class="sub">近三十期速报存档 · 全文检索 · 每日更新</div>
   </header>
   <div class="dateline">
-    <span>在线 1 期 · 最近更新 2026年10月26日 星期一</span>
+    <span>在线 2 期 · 最近更新 2026年10月28日 星期三</span>
     <span class="edition">ROLLING 30-DAY ARCHIVE</span>
   </div>
 
@@ -305,7 +337,7 @@
   <div class="toolbar">
     <div class="searchbar">
       <svg viewBox="0 0 15 15" width="17" height="17" aria-hidden="true"><circle cx="6.4" cy="6.4" r="4.6" stroke="#6B5D48" stroke-width="1.4"/><path d="M9.9 9.9L13 13" stroke="#6B5D48" stroke-width="1.4" stroke-linecap="round"/></svg>
-      <input id="q" type="search" autocomplete="off" placeholder="按日期、标题或关键词检索往期速报" aria-label="检索往期速报">
+      <input id="q" type="search" autocomplete="off" placeholder="检索日期、标题或正文内容（标题 · 简讯 · 价值点）" aria-label="检索往期速报">
       <span class="search-count" id="q-count"></span>
       <button class="search-clear" id="q-clear" type="button" hidden>清除</button>
     </div>
@@ -318,23 +350,37 @@
       <button class="fchip" type="button" data-cat="政策风向">政策风向</button>
       <button class="fchip" type="button" data-cat="国防应用">国防应用</button>
     </div>
+    <div class="idx-stat" id="idx-stat">正文索引待载入</div>
   </div>
 
   <div class="content">
     <main class="list">
       <div class="result-bar">
         <span class="rlabel">在线期次</span>
-        <span class="rnum" id="r-num">1 期</span>
+        <span class="rnum" id="r-num">2 期</span>
         <span class="rhint" id="r-hint">输入关键词或点选分类即可筛选</span>
       </div>
     <section class="month">
-      <h2 class="month-title"><span>2026 10 月</span><em class="month-count" data-total="1">1 期</em></h2>
-      <article class="issue" data-search="2026-10-26 10-26 10.26 10月26日 10月26日 2026/10/26 2026.10.26 星期一 科大讯飞发布星火 x2.6 等成果：国产大模型用上「全国产算力」训练 12 条 · 算力硬件 1 / 技术进展 3 / 商业动态 3 / 政策风向 2 / 国防应用 3" data-counts="算力硬件:1,技术进展:3,商业动态:3,政策风向:2,国防应用:3">
+      <h2 class="month-title"><span>2026 10 月</span><em class="month-count" data-total="2">2 期</em></h2>
+      <article class="issue" data-search="2026-10-28 10-28 10.28 10月28日 10月28日 2026/10/28 2026.10.28 星期三 美军新建四星自主作战司令部，申请540亿美元 17 条 · 算力硬件 4 / 技术进展 3 / 商业动态 3 / 政策风向 3 / 国防应用 4" data-counts="算力硬件:4,技术进展:3,商业动态:3,政策风向:3,国防应用:4" data-date="2026-10-28">
+        <div class="issue-date"><b>28</b><span>10月28日 · 星期三</span></div>
+        <div class="issue-main">
+          <h3 class="issue-title">美军新建四星自主作战司令部，申请540亿美元</h3>
+          <p class="issue-meta">17 条 · 算力硬件 4 / 技术进展 3 / 商业动态 3 / 政策风向 3 / 国防应用 4</p>
+          <p class="issue-hit" style="display:none"></p>
+          <div class="issue-body"></div>
+        </div>
+        <a class="issue-link" href="issues/2026-10-28.html">阅读本期
+          <svg viewBox="0 0 13 13" width="13" height="13" aria-hidden="true"><path d="M3 10L10 3M10 3H4.5M10 3V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+      <article class="issue" data-search="2026-10-26 10-26 10.26 10月26日 10月26日 2026/10/26 2026.10.26 星期一 科大讯飞发布星火 x2.6 等成果：国产大模型用上「全国产算力」训练 12 条 · 算力硬件 1 / 技术进展 3 / 商业动态 3 / 政策风向 2 / 国防应用 3" data-counts="算力硬件:1,技术进展:3,商业动态:3,政策风向:2,国防应用:3" data-date="2026-10-26">
         <div class="issue-date"><b>26</b><span>10月26日 · 星期一</span></div>
         <div class="issue-main">
           <h3 class="issue-title">科大讯飞发布星火 X2.6 等成果：国产大模型用上「全国产算力」训练</h3>
           <p class="issue-meta">12 条 · 算力硬件 1 / 技术进展 3 / 商业动态 3 / 政策风向 2 / 国防应用 3</p>
           <p class="issue-hit" style="display:none"></p>
+          <div class="issue-body"></div>
         </div>
         <a class="issue-link" href="issues/2026-10-26.html">阅读本期
           <svg viewBox="0 0 13 13" width="13" height="13" aria-hidden="true"><path d="M3 10L10 3M10 3H4.5M10 3V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -344,7 +390,7 @@
       <div class="empty-state" id="empty">
         <svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><circle cx="15" cy="15" r="9.5" stroke="#8A7B63" stroke-width="1.6"/><path d="M21.8 21.8L29 29" stroke="#8A7B63" stroke-width="1.8" stroke-linecap="round"/></svg>
         <h3>没有匹配的期次</h3>
-        <p>换一个关键词，或清除分类筛选条件后再试。<br>更早的内容已下架归档，如需查阅可向作者索取。</p>
+        <p>换一个关键词，或清除分类筛选条件后再试。<br>检索范围涵盖每期速报的标题、简讯与价值点分析全文。</p>
         <button type="button" id="reset">重置全部筛选</button>
       </div>
       <div class="older">
@@ -355,33 +401,25 @@
 
     <aside class="aside">
       <div class="stats">
-        <div class="stat"><b>1</b><span>累计期数</span></div>
-        <div class="stat"><b>1</b><span>在线期数</span></div>
+        <div class="stat"><b>2</b><span>累计期数</span></div>
+        <div class="stat"><b>2</b><span>在线期数</span></div>
         <div class="stat"><b>5</b><span>分类栏目</span></div>
       </div>
 
       <h3>按分类浏览</h3>
-        <div class="cat-row" data-cat="算力硬件" role="button" tabindex="0"><span>算力硬件</span><em>1</em></div>
-        <div class="cat-row" data-cat="技术进展" role="button" tabindex="0"><span>技术进展</span><em>3</em></div>
-        <div class="cat-row" data-cat="商业动态" role="button" tabindex="0"><span>商业动态</span><em>3</em></div>
-        <div class="cat-row" data-cat="政策风向" role="button" tabindex="0"><span>政策风向</span><em>2</em></div>
-        <div class="cat-row" data-cat="国防应用" role="button" tabindex="0"><span>国防应用</span><em>3</em></div>
-
-      <h3>订阅</h3>
-      <div class="tags">
-        <a href="feed.xml">RSS 订阅源</a>
-        <a href="https://sakirubyishere.github.io/">白兔梦境电台</a>
-      </div>
+        <div class="cat-row" data-cat="算力硬件" role="button" tabindex="0"><span>算力硬件</span><em>5</em></div>
+        <div class="cat-row" data-cat="技术进展" role="button" tabindex="0"><span>技术进展</span><em>6</em></div>
+        <div class="cat-row" data-cat="商业动态" role="button" tabindex="0"><span>商业动态</span><em>6</em></div>
+        <div class="cat-row" data-cat="政策风向" role="button" tabindex="0"><span>政策风向</span><em>5</em></div>
+        <div class="cat-row" data-cat="国防应用" role="button" tabindex="0"><span>国防应用</span><em>7</em></div>
 
       <div class="subscribe">
-        <h4>订阅每日速报</h4>
-        <p>每日早间推送至微信与邮箱，重大节点额外加急。也可直接订阅 RSS。</p>
         <a href="feed.xml">订阅 RSS 订阅源</a>
       </div>
 
       <div class="about">
         <h4>关于本站</h4>
-        <p>每日 08:00 前发布前一日全球人工智能动态，分为算力硬件、技术进展、商业动态、政策风向、国防应用五类，每条附聚焦中国的价值点分析。</p>
+        <p>每日 10:00 前发布前一日全球人工智能动态，分为算力硬件、技术进展、商业动态、政策风向、国防应用五类，每条附聚焦中国的价值点分析。</p>
         <p>在线保留最近 30 期，更早内容已下架归档，仅保留本地存档。</p>
       </div>
     </aside>
@@ -390,7 +428,6 @@
   <footer class="footer">
     <a href="https://sakirubyishere.github.io/">返回白兔梦境电台</a>
     <span class="copy">本速报由 AI 自动检索公开信源并生成，仅供研究参考。原始新闻版权归原媒体所有。</span>
-    <a href="feed.xml">RSS 订阅</a>
   </footer>
 
 </div>
@@ -406,15 +443,62 @@
   var rHint    = document.getElementById("r-hint");
   var empty    = document.getElementById("empty");
   var resetBtn = document.getElementById("reset");
+  var idxStat  = document.getElementById("idx-stat");
   var chips    = Array.prototype.slice.call(document.querySelectorAll(".fchip"));
   var catRows  = Array.prototype.slice.call(document.querySelectorAll(".cat-row"));
 
   if (!q || !document.querySelector(".issue")) { return; }
 
-  // 收集期次条目
+  /* ---------- 正文索引：首次检索时按需加载 ---------- */
+  var BODY = null;
+  var bodyState = "idle";   // idle | loading | ready | failed
+
+  function loadBodyIndex() {
+    if (bodyState !== "idle") { return; }
+    bodyState = "loading";
+    renderIdxStat();
+    var s = document.createElement("script");
+    s.src = "search-data.js";
+    s.async = true;
+    s.onload = function () {
+      BODY = window.__BRIEFING_SEARCH__ || {};
+      bodyState = "ready";
+      renderIdxStat();
+      apply();
+    };
+    s.onerror = function () {
+      bodyState = "failed";
+      renderIdxStat();
+    };
+    document.head.appendChild(s);
+  }
+
+  function renderIdxStat() {
+    if (!idxStat) { return; }
+    if (bodyState === "idle") {
+      idxStat.textContent = "正文检索已就绪待命：输入关键词即自动载入各期标题、简讯与价值点全文";
+      idxStat.className = "idx-stat";
+    } else if (bodyState === "loading") {
+      idxStat.textContent = "正文索引载入中……";
+      idxStat.className = "idx-stat loading";
+    } else if (bodyState === "ready") {
+      var n = 0;
+      for (var k in BODY) {
+        if (Object.prototype.hasOwnProperty.call(BODY, k)) { n++; }
+      }
+      idxStat.textContent = "正文索引已载入：" + n + " 期速报全文可检索（标题 · 简讯 · 价值点分析）";
+      idxStat.className = "idx-stat ready";
+    } else {
+      idxStat.textContent = "正文索引载入失败，当前仅可按日期与标题检索";
+      idxStat.className = "idx-stat warn";
+    }
+  }
+
+  /* ---------- 期次条目 ---------- */
   var items = Array.prototype.slice.call(document.querySelectorAll(".issue")).map(function (el) {
     return {
       el: el,
+      date: el.getAttribute("data-date") || "",
       // 可检索文本：日期 + 标题 + 分类计数行 + 分类名
       text: (el.getAttribute("data-search") || el.textContent || "").toLowerCase(),
       // 分类条数，形如 {"算力硬件":3,...}
@@ -434,65 +518,257 @@
   var older  = document.querySelector(".older");
   var activeCat = "";
 
-  function markHit(node, keyword) {
-    // 清除旧的 mark
+  /* ---------- 正文索引访问 ---------- */
+  function bodyOf(it) {
+    if (!BODY || !it.date) { return null; }
+    return BODY[it.date] || null;
+  }
+
+  function bodyCorpus(rec) {
+    if (!rec) { return ""; }
+    if (rec.__corpus !== undefined) { return rec.__corpus; }
+    var parts = [rec.dt || "", rec.o || ""];
+    (rec.items || []).forEach(function (it) {
+      parts.push(it.t || "");
+      parts.push(it.b || "");
+      parts.push(it.v || "");
+    });
+    rec.__corpus = parts.join(" ").toLowerCase();
+    return rec.__corpus;
+  }
+
+  function bodyHitEntries(rec, words) {
+    var out = [];
+    (rec.items || []).forEach(function (entry) {
+      var text = ((entry.t || "") + " " + (entry.b || "") + " " + (entry.v || "")).toLowerCase();
+      var hitWords = [];
+      words.forEach(function (w) {
+        if (text.indexOf(w.toLowerCase()) !== -1) { hitWords.push(w); }
+      });
+      if (hitWords.length) { out.push({ entry: entry, words: hitWords }); }
+    });
+    out.sort(function (a, b) { return b.words.length - a.words.length; });
+    return out;
+  }
+
+  function pickSnippet(entry, words) {
+    var fields = [["t", entry.t], ["b", entry.b], ["v", entry.v]];
+    var best = null;
+    fields.forEach(function (f) {
+      var text = f[1] || "";
+      if (!text) { return; }
+      var lower = text.toLowerCase();
+      words.forEach(function (w) {
+        var p = lower.indexOf(w.toLowerCase());
+        if (p !== -1 && (!best || p < best.pos)) {
+          best = { pos: p, len: w.length, text: text };
+        }
+      });
+    });
+    if (!best) { return null; }
+    var start = Math.max(0, best.pos - 34);
+    var end = Math.min(best.text.length, best.pos + best.len + 78);
+    return { text: best.text.slice(start, end), pre: start > 0, post: end < best.text.length };
+  }
+
+  function appendHighlighted(parent, text, words) {
+    var lower = text.toLowerCase();
+    var spans = [];
+    words.forEach(function (w) {
+      var lw = w.toLowerCase();
+      var from = 0, p;
+      while ((p = lower.indexOf(lw, from)) !== -1) {
+        spans.push([p, p + lw.length]);
+        from = p + lw.length;
+        if (spans.length > 80) { break; }
+      }
+    });
+    spans.sort(function (a, b) { return a[0] - b[0]; });
+    var merged = [], last = null;
+    spans.forEach(function (s) {
+      if (last && s[0] <= last[1]) {
+        last[1] = Math.max(last[1], s[1]);
+      } else {
+        last = [s[0], s[1]];
+        merged.push(last);
+      }
+    });
+    var pos = 0;
+    merged.forEach(function (s) {
+      if (s[0] > pos) { parent.appendChild(document.createTextNode(text.slice(pos, s[0]))); }
+      var mk = document.createElement("mark");
+      mk.textContent = text.slice(s[0], s[1]);
+      parent.appendChild(mk);
+      pos = s[1];
+    });
+    if (pos < text.length) { parent.appendChild(document.createTextNode(text.slice(pos))); }
+  }
+
+  /* ---------- 正文命中渲染 ---------- */
+  function renderBodyHits(it, rec, words) {
+    var box = it.el.querySelector(".issue-body");
+    if (!box) { return 0; }
+    box.textContent = "";
+
+    var hits = bodyHitEntries(rec, words);
+    if (!hits.length) { return 0; }
+
+    var head = document.createElement("div");
+    head.className = "ib-head";
+    head.textContent = "正文命中 " + hits.length + " 条";
+    box.appendChild(head);
+
+    hits.slice(0, 4).forEach(function (h) {
+      var row = document.createElement("div");
+      row.className = "ib-item";
+
+      var cat = document.createElement("span");
+      cat.className = "ib-cat";
+      cat.textContent = h.entry.c || "";
+      row.appendChild(cat);
+
+      var title = document.createElement("a");
+      title.className = "ib-title";
+      title.href = "issues/" + it.date + ".html" + (h.entry.i ? "#" + h.entry.i : "");
+      title.textContent = h.entry.t || "";
+      row.appendChild(title);
+
+      var sn = pickSnippet(h.entry, h.words);
+      if (sn) {
+        var p = document.createElement("p");
+        p.className = "ib-snip";
+        if (sn.pre) { p.appendChild(document.createTextNode("…")); }
+        appendHighlighted(p, sn.text, h.words);
+        if (sn.post) { p.appendChild(document.createTextNode("…")); }
+        row.appendChild(p);
+      }
+
+      box.appendChild(row);
+    });
+
+    if (hits.length > 4) {
+      var more = document.createElement("div");
+      more.className = "ib-more";
+      more.textContent = "另有 " + (hits.length - 4) + " 条正文命中，展开本期查看全部";
+      box.appendChild(more);
+    }
+
+    box.classList.add("show");
+    return hits.length;
+  }
+
+  function clearBodyHits(it) {
+    var box = it.el.querySelector(".issue-body");
+    if (!box) { return; }
+    box.textContent = "";
+    box.classList.remove("show");
+  }
+
+  /* ---------- 命中高亮（标题与元信息） ---------- */
+  function markHit(node, words) {
+    // 清除旧的 mark（还原为纯文本）
     var marks = node.querySelectorAll("mark");
     Array.prototype.slice.call(marks).forEach(function (m) {
       var parent = m.parentNode;
       parent.replaceChild(document.createTextNode(m.textContent), m);
       parent.normalize();
     });
-    if (!keyword) { return []; }
-    var hits = [];
-    var kw = keyword.toLowerCase();
-    var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null);
+    if (!words || !words.length) { return; }
+
+    var lowers = words.map(function (w) { return w.toLowerCase(); });
+
+    // 遍历文本节点，收集命中区间（排除正文命中区，那里由 appendHighlighted 负责）
+    var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (n.parentNode && n.parentNode.closest && n.parentNode.closest(".issue-body")) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
     var textNodes = [];
     var n;
-    while ((n = walker.nextNode())) {
-      if (n.nodeValue.toLowerCase().indexOf(kw) !== -1 && n.parentNode.nodeName !== "MARK") {
-        textNodes.push(n);
-      }
-    }
+    while ((n = walker.nextNode())) { textNodes.push(n); }
+
     textNodes.forEach(function (tn) {
       var text = tn.nodeValue;
       var lower = text.toLowerCase();
+      var spans = [];
+      lowers.forEach(function (lw) {
+        if (!lw) { return; }
+        var from = 0, p;
+        while ((p = lower.indexOf(lw, from)) !== -1) {
+          spans.push([p, p + lw.length]);
+          from = p + lw.length;
+          if (spans.length > 80) { break; }
+        }
+      });
+      if (!spans.length) { return; }
+
+      spans.sort(function (a, b) { return a[0] - b[0]; });
+      var merged = [], last = null;
+      spans.forEach(function (s) {
+        if (last && s[0] <= last[1]) {
+          last[1] = Math.max(last[1], s[1]);
+        } else {
+          last = [s[0], s[1]];
+          merged.push(last);
+        }
+      });
+
       var frag = document.createDocumentFragment();
-      var pos = 0, idx;
-      while ((idx = lower.indexOf(kw, pos)) !== -1) {
-        if (idx > pos) { frag.appendChild(document.createTextNode(text.slice(pos, idx))); }
+      var pos = 0;
+      merged.forEach(function (s) {
+        if (s[0] > pos) { frag.appendChild(document.createTextNode(text.slice(pos, s[0]))); }
         var mk = document.createElement("mark");
-        mk.textContent = text.substr(idx, kw.length);
+        mk.textContent = text.slice(s[0], s[1]);
         frag.appendChild(mk);
-        hits.push(text.substr(idx, kw.length));
-        pos = idx + kw.length;
-      }
+        pos = s[1];
+      });
       if (pos < text.length) { frag.appendChild(document.createTextNode(text.slice(pos))); }
       tn.parentNode.replaceChild(frag, tn);
     });
-    return hits;
   }
 
+  /* ---------- 主筛选 ---------- */
   function apply() {
     var kw = (q.value || "").trim();
     // 多关键词以空格分隔，采用 AND 匹配（每个词都要命中）
     var words = kw ? kw.split(/\s+/).filter(function (w) { return w.length > 0; }) : [];
     var total = 0;
+    var bodyTotal = 0;
 
     items.forEach(function (it) {
-      var okText = words.length === 0 ||
+      var metaOk = words.length === 0 ||
         words.every(function (w) { return it.text.indexOf(w.toLowerCase()) !== -1; });
       var okCat = !activeCat || (it.counts[activeCat] || 0) > 0;
+
+      var rec = words.length ? bodyOf(it) : null;
+      var corpus = rec ? bodyCorpus(rec) : "";
+
+      // 命中判定：关键词出现在标题/日期，或出现在正文全文
+      var okText = words.length === 0 || words.every(function (w) {
+        var lw = w.toLowerCase();
+        return it.text.indexOf(lw) !== -1 || (corpus && corpus.indexOf(lw) !== -1);
+      });
+
       var show = okText && okCat;
       it.el.style.display = show ? "" : "none";
+
       if (show) {
         total++;
-        words.forEach(function (w) { markHit(it.el, w); });
+        markHit(it.el.querySelector(".issue-main") || it.el, words);
+
+        var bodyHits = rec ? renderBodyHits(it, rec, words) : 0;
+        bodyTotal += bodyHits;
+        if (!bodyHits) { clearBodyHits(it); }
+
         // 命中关键词提示（用 textContent 拼接，避免任何 HTML 注入）
         var hitLine = it.el.querySelector(".issue-hit");
         if (hitLine) {
           if (words.length) {
             hitLine.textContent = "";
-            hitLine.appendChild(document.createTextNode("命中关键词："));
+            hitLine.appendChild(document.createTextNode(metaOk ? "标题命中：" : "正文命中："));
             words.forEach(function (w, i) {
               if (i > 0) { hitLine.appendChild(document.createTextNode("、")); }
               var b = document.createElement("b");
@@ -504,6 +780,10 @@
             hitLine.style.display = "none";
           }
         }
+      } else {
+        clearBodyHits(it);
+        var hitLine2 = it.el.querySelector(".issue-hit");
+        if (hitLine2) { hitLine2.style.display = "none"; }
       }
     });
 
@@ -536,7 +816,9 @@
     } else {
       rHint.textContent = "输入关键词或点选分类即可筛选";
     }
-    qCount.textContent = (kw || activeCat) ? "匹配 " + total + " 期" : "";
+    qCount.textContent = (kw || activeCat)
+      ? ("匹配 " + total + " 期" + (bodyTotal ? " · 正文 " + bodyTotal + " 条" : ""))
+      : "";
     qClear.hidden = !kw;
 
     // 空状态
@@ -556,8 +838,14 @@
     apply();
   }
 
-  q.addEventListener("input", apply);
-  q.addEventListener("search", apply);
+  function onQueryChange() {
+    var kw = (q.value || "").trim();
+    if (kw) { loadBodyIndex(); }
+    apply();
+  }
+
+  q.addEventListener("input", onQueryChange);
+  q.addEventListener("search", onQueryChange);
   qClear.addEventListener("click", function () {
     q.value = "";
     q.focus();
@@ -587,7 +875,9 @@
     try { q.value = decodeURIComponent(m[1]); } catch (e) { q.value = m[1]; }
   }
 
+  renderIdxStat();
   apply();
+  if ((q.value || "").trim()) { loadBodyIndex(); }
 })();
 </script>
 </body>

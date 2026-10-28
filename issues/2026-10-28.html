@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智武防务人工智能每日速报 — 2026年10月28日</title>
+<style>
+  :root{
+    --paper:#f3ead3;
+    --paper-edge:#e2d4b0;
+    --ink:#262019;
+    --ink-soft:#564b3c;
+    --red:#7c1f1f;
+    --rule:#262019;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:#cdbf9e;
+    background-image:radial-gradient(circle at 50% 0%, #d8caa6 0%, #c2b389 100%);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,"Times New Roman",serif;
+    color:var(--ink);
+    padding:40px 14px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .paper{
+    max-width:860px; margin:0 auto;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(120,90,40,.018) 0 2px, transparent 2px 4px);
+    padding:50px 54px 60px;
+    box-shadow:0 14px 48px rgba(40,25,10,.45);
+    border:1px solid var(--paper-edge);
+    position:relative;
+  }
+  .paper::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 60px rgba(90,60,20,.18);
+  }
+
+  /* ===== 板头 ===== */
+  .masthead{ text-align:center; border-bottom:3px double var(--rule); padding-bottom:14px; }
+  .masthead .kicker{
+    font-size:12px; letter-spacing:8px; color:var(--ink-soft);
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .masthead .title{
+    font-size:44px; font-weight:900; letter-spacing:7px; margin:0;
+    line-height:1.12; color:var(--ink);
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
+  }
+  .masthead .sub{
+    font-size:13px; letter-spacing:5px; color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; letter-spacing:2px; color:var(--ink-soft);
+    border-bottom:1px solid var(--rule); padding:7px 2px; margin-top:10px;
+  }
+  .dateline .edition{ color:var(--red); font-weight:700; letter-spacing:3px; }
+
+  /* ===== 今日新闻速览 ===== */
+  .overview{
+    border:1.5px solid var(--rule); padding:16px 20px; margin:22px 0 8px;
+    background:rgba(124,31,31,.045);
+  }
+  .overview h3{
+    margin:0 0 10px; font-size:16px; letter-spacing:6px; text-align:center;
+    color:var(--red);
+  }
+  .overview p{ margin:0; font-size:14.5px; line-height:1.95; text-align:justify; }
+
+  /* ===== 类别分栏 ===== */
+  .cat-section{ margin-top:6px; }
+  .cat-head{
+    text-align:center; margin:30px 0 6px; font-size:18px; font-weight:800;
+    letter-spacing:6px; color:var(--ink);
+  }
+  .cat-head::before, .cat-head::after{
+    content:"◆"; color:var(--red); font-size:11px; margin:0 12px; vertical-align:middle;
+  }
+
+  /* ===== 新闻模块 ===== */
+  .news-item{ border-top:1px solid var(--rule); padding:16px 0 18px; }
+  .news-item:first-of-type{ border-top:none; }
+  .news-title{ font-size:21px; font-weight:800; margin:2px 0 7px; line-height:1.38; }
+  .news-meta{
+    font-size:12px; color:var(--ink-soft); font-style:italic;
+    margin-bottom:11px; letter-spacing:.4px;
+  }
+  .news-meta a{ color:var(--red); text-decoration:underline; }
+  .news-brief{ font-size:14.5px; line-height:1.98; text-align:justify; margin:0 0 13px; }
+  .news-value{
+    border-left:3px solid var(--red); padding:7px 0 7px 15px;
+    background:rgba(124,31,31,.05);
+  }
+  .news-value .vlabel{
+    font-weight:800; color:var(--red); font-size:14px; letter-spacing:1px;
+  }
+  .news-value p{ margin:7px 0 0; font-size:13.5px; line-height:1.95; text-align:justify; }
+
+  .empty{ font-size:13.5px; color:var(--ink-soft); font-style:italic; text-align:center; padding:14px 0; }
+
+  /* ===== 页脚 ===== */
+  .footer{
+    border-top:3px double var(--rule); margin-top:34px; padding-top:12px;
+    text-align:center; font-size:11px; color:var(--ink-soft); letter-spacing:1px; line-height:1.8;
+  }
+  @media (max-width:600px){
+    .paper{ padding:32px 22px 40px; }
+    .masthead .title{ font-size:32px; letter-spacing:3px; }
+  }
+</style>
+
+<style id="issue-nav-style">
+.issue-nav{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin:34px 0 4px;padding:20px 0;border-top:1px solid #262019;border-bottom:1px solid #262019;
+  font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+}
+.issue-nav .nav-item{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 18px;border:1px solid #C9B78E;background:#EDE2C6;
+  color:#7C1F1F;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:1px;
+  white-space:nowrap;transition:background .15s,color .15s;
+}
+.issue-nav .nav-item:hover{background:#262019;color:#F3EAD3;}
+.issue-nav .nav-index{background:#262019;border-color:#262019;color:#F3EAD3;letter-spacing:2px;}
+.issue-nav .nav-index:hover{background:#7C1F1F;border-color:#7C1F1F;color:#F3EAD3;}
+.issue-nav .nav-rss{background:transparent;border-color:#D8CBAA;color:#8A7B63;letter-spacing:1px;}
+.issue-nav .nav-rss:hover{background:#EDE2C6;border-color:#C9B78E;color:#7C1F1F;}
+.issue-nav .nav-disabled{color:#8A7B63;background:transparent;border-color:#D8CBAA;cursor:default;}
+.issue-nav .nav-disabled:hover{background:transparent;color:#8A7B63;}
+@media (max-width:600px){
+  .issue-nav{flex-wrap:wrap;gap:10px;}
+  .issue-nav .nav-item{font-size:12px;padding:10px 14px;}
+}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <!-- ============ 板头 ============ -->
+  <header class="masthead">
+    <div class="kicker">Global Artificial Intelligence Daily</div>
+    <h1 class="title">智武防务人工智能每日速报</h1>
+    <div class="sub">全 球 人 工 智 能 动 态 综 述</div>
+  </header>
+  <div class="dateline">
+    <span>2026年10月28日　星期三</span>
+    <span class="edition">每 日 一 刊 · 手 动 生 成</span>
+  </div>
+
+  <!-- ============ 今日新闻速览 ============ -->
+  <section class="overview">
+    <h3>今 日 新 闻 速 览</h3>
+    <p>今日全球AI主线是"算力—资本—战略"三线并进。商业侧，Anthropic于10月26日向SEC递交S-1招股书，拟成史上最大IPO；Meta启动约950亿美元融资，英伟达、AMD以入股绑定算力合作。硬件侧，台积电被曝拟将CoWoS先进封装报价上调10%~20%，AI芯片供应链成本压力凸显。国防侧，美国推进新建四星"自主作战司令部"，北约多国加速"以无人机反无人机"硬杀伤部署。政策侧，我国"十五五"规划建议明确全面实施"人工智能+"行动。整体呈现AI竞争加速向资本、算力与国家治理深度绑定的态势。</p>
+  </section>
+
+  <!-- ============ 算力硬件 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">算 力 硬 件</div>
+
+    <article class="news-item" id="news-1">
+      <h2 class="news-title">台积电拟上调CoWoS封装报价10%~20%，AI芯片成本承压</h2>
+      <div class="news-meta">发布时间：2026-10-27（北京时间）　|　来源：中国台湾《工商时报》/同花顺　|　<a href="https://stock.10jqka.com.cn/usstock/20261028/c681161507.shtml" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据中国台湾《工商时报》援引供应链消息，台积电正考虑将其CoWoS（Chip on Wafer on Substrate，基板晶圆级封装）先进封装报价上调10%至20%。该技术将逻辑芯片与高带宽内存（HBM）整合于单一封装，是高端AI加速芯片不可或缺的关键工艺。当前CoWoS月产能预计2026年底突破13万片、2027年达20万片，但需求增速更快，测试周期拉长、设备交期由3~6个月延至6~8个月。英伟达Blackwell、Rubin及AMD、博通等高端产品高度依赖该工艺，封装成本上行将直接压缩其毛利或转嫁下游。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>对我国而言，CoWoS涨价与产能吃紧再次凸显先进封装是AI算力的"卡脖子"环节之一。华为昇腾等国产AI芯片同样依赖先进封装能力，台积电产能倾斜与涨价将推高全球AI硬件成本，倒逼我国加速本土先进封装（如CoWoS类、Chiplet）与HBM产业链自主化，降低对单一海外代工节点的依赖。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-2">
+      <h2 class="news-title">微软Maia 300 AI加速器亮相OCP 2026，直指英伟达机架级系统</h2>
+      <div class="news-meta">发布时间：2026-10-27（北京时间）　|　来源：LavX News　|　<a href="https://news.lavx.hu/article/microsoft-shows-maia-300-ai-accelerator-and-a-full-four-accelerator-node-at-ocp-2026" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">微软在OCP Summit 2026上展示新一代自研AI加速器Maia 300及完整四加速器节点。Maia 300采用8颗HBM4（高带宽内存第四代）堆叠，提供288GB显存、18TB/s带宽、3.2TB/s扩展带宽，单封装功耗950W并采用液冷，目标每机架部署96颗、扩展域约1.2万颗加速器，直指NVIDIA Vera Rubin机架级系统。微软自Hot Chips展示Maia 200仅数周便推进至下一代，意在降低对外部商用加速器的依赖，并采用线缆化扩展链路以优化自家数据中心的维护与路由。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>巨头自研ASIC（Maia 300、Google TPU、Amazon Trainium）持续挤压英伟达通用GPU份额，也提示我国AI算力"去英伟达化"的可行路径。国内华为昇腾、寒武纪等可借鉴"芯片+系统+散热+互联"一体化自研思路，但关键仍在本土HBM与先进封装供给，需同步补齐材料与设备短板。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-3">
+      <h2 class="news-title">苹果发布M6芯片，iMac与MacBook Pro搭载并强化端侧AI</h2>
+      <div class="news-meta">发布时间：2026-10-27（北京时间）　|　来源：Apple / The Verge　|　<a href="https://ainewsfeed.tech/articles/apple-adds-m6-chip-to-imac-and-14-inch-macbook-pro-sets-oct-28-preorders-37498-en-us-v1" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">苹果10月27日发布搭载M6芯片的新款24英寸iMac与14英寸MacBook Pro，10月28日开启预售、11月6日发售。M6为苹果首款2nm工艺SoC，12核CPU、12核GPU（每核内置神经加速器）与双16核神经网络引擎，本地AI算力较M5提升约1.9倍，支持设备端大模型运行，统一内存带宽达170GB/s、续航最长24小时。两款机型起售价分别为1499与1999美元，强化端侧AI（on-device AI）定位。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>苹果以端侧AI为核心卖点，反映大模型推理向终端设备下沉的全球趋势。这对我国手机、PC与AIoT厂商是明确信号：端侧算力（NPU/神经引擎）、低功耗推理与本地隐私将成为消费AI竞争焦点，利好寒武纪、海光及终端SoC厂商，但2nm工艺与生态壁垒仍是我国短期难以逾越的差距。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-4">
+      <h2 class="news-title">SK海力士Q3业绩超预期，称HBM供应短缺将持续至2030年</h2>
+      <div class="news-meta">发布时间：2026-10-28（北京时间）　|　来源：网易/路透　|　<a href="https://dy.163.com/article/LAAIK3CO05198ETO.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">SK海力士公布2026年第三季度财报，销售额104.62万亿韩元超预期，并预计内存供应短缺将持续至2030年，已与14家主要客户签署长期供货合同。另据透露，三星电子与SK海力士正准备于2027年二季度向英伟达Rubin Ultra供应8层HBM4，带宽门槛下调使更多HBM4产品有望通过英伟达认证。HBM已成为AI算力扩张的核心瓶颈与定价权支点。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>HBM（高带宽内存）是AI芯片性能与产能的命脉，其供给高度集中于SK海力士、三星与美光。我国长鑫存储等厂商在HBM领域仍处追赶阶段，长期短缺与绑定供应将加剧国产AI芯片的"无米之炊"风险，亟需加速自主HBM研发与量产，并将内存自主列为AI安全战略的优先事项。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 技术进展 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">技 术 进 展</div>
+
+    <article class="news-item" id="news-5">
+      <h2 class="news-title">国产开源OXR 1.3B文档解析模型登顶三项世界级榜单</h2>
+      <div class="news-meta">发布时间：2026-10-28（北京时间）　|　来源：量子位/新浪财经　|　<a href="https://www.toutiao.com/article/7701379022999110172/" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">一个参数量仅1.3B的国产开源文档解析模型OXR（Optical "Everything" Recognition）在OmniDocBench、olmOCR-Bench与DocParsingBench三项世界级榜单同时登顶，可解析表格、公式、代码块、化学结构式、印章等13类文档元素并输出结构化Markdown或LaTeX。单张RTX PRO 6000完成100页端到端文档解析仅耗时101秒，已在GitHub获逾1.1K Star。其核心在于RSI（自进化）范式，整套评测代码全量开源可复现。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>OXR以极小参数实现文档解析"三榜第一"且全开源，直接补齐RAG（检索增强生成）的高质量上下文获取短板，利好国内知识库、政务文档与科研情报自动化。开源策略有助于我国构建自主可控的文档智能生态，降低对海外闭源OCR/解析服务的依赖。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-6">
+      <h2 class="news-title">Visual Harness框架揭示：扩参≠扩能，工具增强提升多模态泛化</h2>
+      <div class="news-meta">发布时间：2026-10-28（北京时间）　|　来源：DoNews / Prime Intellect　|　<a href="https://www.163.com/dy/article/LAAGP18H0511D2LM.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">Prime Intellect RL Residency发布《Visual Harnesses Are Compositional Generalizers》，重新审视视觉语言模型（VLM）的扩容范式。研究发现，单纯增大参数量主要提升答案可靠性（Pass@1），却难以扩展模型可解问题的范围；而Visual Harness通过图像裁剪、缩放、像素测量等工具，将复杂视觉问题拆解为局部子任务，显著提升代表问题覆盖能力的Pass@8。实验基于WorldBench（2000道视觉问答）覆盖Qwen-3.5/3.6、GPT-6 Luna等模型。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>该研究揭示"扩参≠扩能力"的边界，为我国多模态大模型研发提供方法论启示：与其盲目堆参数，不如发展工具增强（tool-augmented）的视觉推理框架，以更低算力成本拓展模型能力边界。对国产VLM（如Qwen-VL、InternVL）的工程路线有直接借鉴价值。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-7">
+      <h2 class="news-title">DeepSafe-SciHazard基准评测31个前沿大模型，直指科学安全风险</h2>
+      <div class="news-meta">发布时间：2026-10-26（北京时间）　|　来源：arXiv / 上海人工智能实验室　|　<a href="https://www.alphaxiv.org/zh/pdf/2607.18665" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">上海人工智能实验室与复旦大学联合提出SciHazard——一个面向真实世界危险场景的科学安全基准，覆盖12个学科的2400道危险问题与600道过度拒答问题，并提出DeHarm-Score分解式危害评分（结合查询危险度、拒答行为与响应级风险）。经专家验证，该评分与专家标注一致度较最强基线提升90.17%。研究对31个前沿LLM与深度研究智能体（deep research agent）评测，发现后者平均DeHarm-Score高出32.3%，暴露自主智能体是当前安全防御的关键盲区。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>该基准由我国科研机构主导，直指"自主科研智能体"滥用高危科学知识的安全隐患，与我国"发展与安全并重"的AI治理理念高度契合。它为我国参与全球AI安全评测标准制定提供了话语权抓手，也提示需尽早建立面向自主智能体的安全评估与管控体系。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 商业动态 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">商 业 动 态</div>
+
+    <article class="news-item" id="news-8">
+      <h2 class="news-title">Anthropic公开递交S-1，拟成史上最大IPO</h2>
+      <div class="news-meta">发布时间：2026-10-26（北京时间）　|　来源：中国经济网 / 钛媒体　|　<a href="http://intl.ce.cn/sjjj/qy/202610/t20261028_3273829.shtml" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">10月26日，AI公司Anthropic向美国SEC公开提交S-1招股书，按市场预期约1000亿美元融资规模计算，若上市成功将成为人类史上最大IPO。公司2026年上半年收入162.9亿美元（同比增长约13倍），Q3收入已达168亿美元；上一轮私募投后估值9650亿美元，IPO估值或超2万亿美元。其算力与基础设施承诺约5180亿美元，约80%为不可取消的"照付不议"合同。此次募资被广泛解读为AI资本开支进一步扩张"筹措弹药"。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>Anthropic IPO是全球AI商业化的标志性事件，但其背后是数千亿美元级别的算力军备竞赛，且高度绑定英伟达、谷歌、亚马逊等巨头。对我国而言，这既印证大模型商业闭环的可行性，也凸显资本与算力被少数西方巨头锁定的格局，提醒我国在培育本土AI领军企业的同时，须防范算力与资本的"赢家通吃"风险。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-9">
+      <h2 class="news-title">Meta启动约950亿美元融资，英伟达30亿、AMD 10亿美元入股</h2>
+      <div class="news-meta">发布时间：2026-10-27（北京时间）　|　来源：36氪 / 智东西　|　<a href="https://www.36kr.com/p/4044084558959489" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">Meta于10月26日宣布启动约950亿美元募资计划（350亿公开发行+600亿市价增发），用于AI资本开支；英伟达拟投资30亿美元认购其新股，AMD亦有意向投资10亿美元，以股权绑定深化算力合作。双方将扩大在个人智能体Muse及Muse系列模型上的协作，优化推理与训练性能，Meta亦计划部署英伟达Vera Rubin平台与Vera CPU。Muse上线10天即登顶美国App Store免费榜，个人智能体成新战场。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"以股权换算力"成为巨头绑定供应链的新范式，英伟达通过入股下游锁定需求与生态话语权。我国AI企业难以复制此种资本—算力闭环，应警惕被排除在以英伟达为核心的全球AI同盟之外，同时借助国产芯片与开源生态构建自主可控的智能体产业路径。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-10">
+      <h2 class="news-title">OpenAI发布GPT-6.1 Terra，事实错误率大降、API降价50%</h2>
+      <div class="news-meta">发布时间：2026-10-28（北京时间）　|　来源：钛媒体 / Edge AI Daily　|　<a href="https://www.tmtpost.com/8184055.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">OpenAI发布GPT-6.1 Terra版本，据披露其事实错误率由53.6%降至16.7%，API价格下调约50%。同期谷歌推出Genie 4世界模型，模拟时长翻倍至2分钟并首次实现音视频同步生成，所有内容带SynthID水印，以研究预览形式向部分测试者开放。两款重磅更新分别代表基础模型可靠性提升与生成式世界模型的新前沿，AI竞争重心正由"能力上限"转向"可信与可用"。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>GPT-6.1的事实错误率大幅下降意味大模型正逼近可信生产级应用门槛，API降价将加速AI在我国的行业渗透，但核心模型仍依赖海外。我国需在降低推理成本、提升中文事实可靠性的同时，加快自主大模型迭代，避免关键场景被单一海外模型供应商"卡脖子"。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 政策风向 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">政 策 风 向</div>
+
+    <article class="news-item" id="news-11">
+      <h2 class="news-title">美国推动AI改名"超级智能"，政治整合科技巨头</h2>
+      <div class="news-meta">发布时间：2026-10-28（北京时间）　|　来源：环球时报 / 环球网　|　<a href="https://www.toutiao.com/article/7701481542316589622/" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">9月底，美国总统特朗普签署行政命令，要求联邦部门以"超级智能（Superintelligence，SI）"替代"人工智能（AI）"表述，白宫并与多家科技企业达成"自愿性安全协议"。英伟达、马斯克旗下企业等迅速跟进改名。分析指出，此举旨在将技术描绘为决定国家位次的战略高地，对内整合科技巨头、以监管宽容换取战略配合，对外则推动17国签署《科学黄金时代的京都愿景》，扩大美国主导的技术标准体系。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>美国以"改名"推进AI叙事与标准主导权，本质是将技术竞争政治化、阵营化。我国在"十五五"规划中全面实施"人工智能+"行动，更需警惕西方借标准、出口管制与"小院高墙"构筑排他性技术同盟，坚持开源开放与南南合作，巩固自主发展AI的底层能力与国际话语权。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-12">
+      <h2 class="news-title">"十五五"规划建议：全面实施"人工智能+"行动</h2>
+      <div class="news-meta">发布时间：2026-10-28（北京时间）　|　来源：新华社 / 民丰县政府网　|　<a href="https://www.mfx.gov.cn/zhengwugongkai/show.php?itemid=3015" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">《中共中央关于制定国民经济和社会发展第十五个五年规划的建议》发布，明确"全面实施'人工智能+'行动，以人工智能引领科研范式变革，加强人工智能同产业发展、文化建设、民生保障、社会治理相结合，抢占人工智能产业应用制高点"。文件同时强调"加快人工智能等数智技术创新，突破基础理论和核心技术，强化算力、算法、数据等高效供给"，并"加强人工智能治理，完善相关法律法规、政策制度、应用规范、伦理准则"。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"十五五"将AI上升为国家战略支柱，从技术突破、产业赋能到治理闭环一体部署，为国内AI全产业链（芯片、算法、数据、行业应用）提供确定性政策红利。对产业界是重大利好，也意味着自主可控、安全可靠将成为政策考核的核心硬约束。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-13">
+      <h2 class="news-title">外交部：欢迎更多国家探讨AI能力建设合作路径</h2>
+      <div class="news-meta">发布时间：2026-10-26（北京时间）　|　来源：新华社 / 腾讯　|　<a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_7286ae0d74f90952" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">10月26日外交部发言人郭嘉昆表示，作为负责任大国，中国在AI领域始终致力于做国际公共产品的提供者，欢迎更多国家加入世界人工智能合作组织，探讨AI能力建设国际合作路径。中方提及2026全球治理论坛（雄安）发布的《〈人工智能能力建设普惠计划〉进展报告》，强调尊重各国数字主权、坚持需求牵引与开源开放，协同推进模型、数据、人才等要素供给，促进全球AI向善普惠发展。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>我国以"能力建设普惠"对冲西方技术封锁，通过开源开放与南南合作争取全球南方支持，是构建多极AI治理秩序的关键外交抓手。对国内AI企业而言，意味着"走出去"可借力国家层面的国际合作框架，在发展中国家市场培育生态、输出标准。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 国防应用 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">国 防 应 用</div>
+
+    <article class="news-item" id="news-14">
+      <h2 class="news-title">美军新建四星自主作战司令部，申请540亿美元</h2>
+      <div class="news-meta">发布时间：2026-10-27（北京时间）　|　来源：The Center Square / Yahoo　|　<a href="https://www.yahoo.com/news/politics/articles/four-star-drone-command-deadline-220100733.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">美国"战争部"部长赫格塞思9月30日签署备忘录，下令在2027年10月1日前组建新的四星"自主作战司令部"（Autonomous Warfare Command），作为统一作战司令部统筹无人与自主战争，拥有独立人事、预算与采购权。该部寻求通过预算协调程序获得540亿美元强制性支出用于自主与机器人系统。参议院2027财年国防授权法案已写入透明度要求，将其列为可选建制。这标志着美军将AI与无人作战从分散项目提升为顶层联合指挥架构。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>美军将自主作战上升为四星司令部，意味着AI无人系统的实战化、规模化部署进入制度化快车道，对我国周边安全构成长期压力。我国须加快"机器人与自主系统"顶层指挥与采办体系改革，并同步推进AI军事应用的伦理与军控研究，避免在智能化战争竞赛中被动。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-15">
+      <h2 class="news-title">美英澳AUKUS联合测试Corsair无人艇，曾实战打击伊朗</h2>
+      <div class="news-meta">发布时间：2026-10-27（北京时间）　|　来源：腾讯 / Defence Blog　|　<a href="https://news.qq.com/rain/a/20261028A02THT00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">美英澳三国近期在加州圣迭戈"太平洋海上大演练"中联合操作三艘Saronic公司Corsair自主水面艇，是AUKUS伙伴国规模最大的无人与自主技术演示。Corsair长7.3米、载荷453公斤、航程约1852公里、航速超35节，美海军已于2025年12月授予3.92亿美元生产合同，并曾在2026年7月对伊朗阿巴斯港海军基地实施打击（美军首次在作战中使用海上无人艇）。本次演练重点测试其在通信拒止环境下的自主补给与跨国互操作指挥。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>AUKUS将已实战验证的无人艇纳入三国联合互操作框架，表明无人作战装备正从"单点试用"走向"联盟体系化"。我国周边海域面临无人化侦察与打击能力扩散风险，须加速海上无人系统自主研发与反无人体系建设，并关注AUKUS第二支柱技术标准对我国装备出口与合作的潜在围堵。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-16">
+      <h2 class="news-title">西班牙装甲车发射BANDIT-X，北约认证反无人机已到手</h2>
+      <div class="news-meta">发布时间：2026-10-27（北京时间）　|　来源：腾讯 / Defence Blog　|　<a href="https://news.qq.com/rain/a/20261028A02QX400" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">西班牙ARMMO与美国通用动力欧洲陆地系统（GDELS）在ATLAS 26反无人机演习中公开展示：ASCOD重型装甲车成功发射并飞行ARMMO研制的BANDIT-X高速自主拦截无人机。BANDIT-X时速超360公里、作战半径40~50公里，在卫星导航受扰或电子干扰下仍可自主导航与末段制导，2026年已在北约斯洛伐克实验活动中验证并获北约库存编号（NSN），可通过北约后勤目录直接采购。单车最多携带20枚拦截器，构成移动"无人机弹药库+发射架"。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>北约国家加速"以无人机反无人机""装甲车当母舰"的低成本硬杀伤路径，反映反无人作战正从地面枪炮向空中平台扩散。我国同样面临无人机蜂群威胁，应重视发展机动伴随式反无人系统与自主拦截弹药，同时关注相关技术经北约体系向外溢出的安全影响。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-17">
+      <h2 class="news-title">美军Cerberus MI霰弹枪无人机获Blue UAS采购资格</h2>
+      <div class="news-meta">发布时间：2026-10-26（北京时间）　|　来源：腾讯 / Defence Blog　|　<a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_7046ae1381f94252" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">澳大利亚Skyborne Technologies的Cerberus MI武装无人机被正式列入美国国防部Blue UAS Cleared List，意味着通过网络安全、供应链与外国所有权审查后，美军各单位可直接采购。该机搭载可互换的12号霰弹枪与40毫米榴弹发射器，发射后可飞回操作员处重新装弹再次出动，单次交战成本仅"数百美元"量级，运行EXITUS AI瞄准软件，交战距离超300米，整机重约18公斤、单兵可携。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>可重复使用、低成本的"空中射手"进入美军正规采购目录，体现反无人手段向"无人机自身武器挂架"迁移的趋势，将拉低硬杀伤门槛、加剧战场无人机攻防循环。我国应关注此类可消耗/可回收无人打击平台的技术路线，并警惕低成本自主武器扩散对地区安全与军控带来的新挑战。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <nav class="issue-nav">
+      <a class="nav-item nav-prev" href="2026-10-26.html"><svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M9.5 3L4.5 7.5L9.5 12M4.8 7.5H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>上一期 · 10月26日</span></a>
+      <a class="nav-item nav-index" href="../index.html">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M2.5 3.5h10M2.5 7.5h10M2.5 11.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>往期索引</span>
+      </a>
+      <span class="nav-item nav-disabled">下一期 · 尚未发布</span>
+      <a class="nav-item nav-rss" href="../feed.xml">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><circle cx="3.2" cy="11.8" r="1.4" fill="currentColor"/><path d="M2.4 7.6a5 5 0 015 5M2.4 4a8.6 8.6 0 018.6 8.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+        <span>RSS</span>
+      </a>
+    </nav>
+
+  <footer class="footer">
+    本速报由 AI 自动检索公开信源并生成，仅供研究参考。原始新闻版权归原媒体所有，点击标题下方链接可阅读原文。<br>
+    智武防务人工智能每日速报 · GLOBAL AI DAILY · 聚焦中国视角
+  </footer>
+
+</div>
+</body>
+</html>
