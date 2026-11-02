@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智武防务人工智能每日速报 — 2026年11月2日</title>
+<meta name="idx-title" content="DeepSeek完成1055亿元新融资，估值居国产之最">
+<style>
+  :root{
+    --paper:#f3ead3;
+    --paper-edge:#e2d4b0;
+    --ink:#262019;
+    --ink-soft:#564b3c;
+    --red:#7c1f1f;
+    --rule:#262019;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:#cdbf9e;
+    background-image:radial-gradient(circle at 50% 0%, #d8caa6 0%, #c2b389 100%);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,"Times New Roman",serif;
+    color:var(--ink);
+    padding:40px 14px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .paper{
+    max-width:860px; margin:0 auto;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(120,90,40,.018) 0 2px, transparent 2px 4px);
+    padding:50px 54px 60px;
+    box-shadow:0 14px 48px rgba(40,25,10,.45);
+    border:1px solid var(--paper-edge);
+    position:relative;
+  }
+  .paper::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 60px rgba(90,60,20,.18);
+  }
+
+  /* ===== 板头 ===== */
+  .masthead{ text-align:center; border-bottom:3px double var(--rule); padding-bottom:14px; }
+  .masthead .kicker{
+    font-size:12px; letter-spacing:8px; color:var(--ink-soft);
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .masthead .title{
+    font-size:44px; font-weight:900; letter-spacing:7px; margin:0;
+    line-height:1.12; color:var(--ink);
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
+  }
+  .masthead .sub{
+    font-size:13px; letter-spacing:5px; color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; letter-spacing:2px; color:var(--ink-soft);
+    border-bottom:1px solid var(--rule); padding:7px 2px; margin-top:10px;
+  }
+  .dateline .edition{ color:var(--red); font-weight:700; letter-spacing:3px; }
+
+  /* ===== 今日新闻速览 ===== */
+  .overview{
+    border:1.5px solid var(--rule); padding:16px 20px; margin:22px 0 8px;
+    background:rgba(124,31,31,.045);
+  }
+  .overview h3{
+    margin:0 0 10px; font-size:16px; letter-spacing:6px; text-align:center;
+    color:var(--red);
+  }
+  .overview p{ margin:0; font-size:14.5px; line-height:1.95; text-align:justify; }
+
+  /* ===== 类别分栏 ===== */
+  .cat-section{ margin-top:6px; }
+  .cat-head{
+    text-align:center; margin:30px 0 6px; font-size:18px; font-weight:800;
+    letter-spacing:6px; color:var(--ink);
+  }
+  .cat-head::before, .cat-head::after{
+    content:"◆"; color:var(--red); font-size:11px; margin:0 12px; vertical-align:middle;
+  }
+
+  /* ===== 新闻模块 ===== */
+  .news-item{ border-top:1px solid var(--rule); padding:16px 0 18px; }
+  .news-item:first-of-type{ border-top:none; }
+  .news-title{ font-size:21px; font-weight:800; margin:2px 0 7px; line-height:1.38; }
+  .news-meta{
+    font-size:12px; color:var(--ink-soft); font-style:italic;
+    margin-bottom:11px; letter-spacing:.4px;
+  }
+  .news-meta a{ color:var(--red); text-decoration:underline; }
+  .news-brief{ font-size:14.5px; line-height:1.98; text-align:justify; margin:0 0 13px; }
+  .news-value{
+    border-left:3px solid var(--red); padding:7px 0 7px 15px;
+    background:rgba(124,31,31,.05);
+  }
+  .news-value .vlabel{
+    font-weight:800; color:var(--red); font-size:14px; letter-spacing:1px;
+  }
+  .news-value p{ margin:7px 0 0; font-size:13.5px; line-height:1.95; text-align:justify; }
+
+  .empty{ font-size:13.5px; color:var(--ink-soft); font-style:italic; text-align:center; padding:14px 0; }
+
+  /* ===== 页脚 ===== */
+  .footer{
+    border-top:3px double var(--rule); margin-top:34px; padding-top:12px;
+    text-align:center; font-size:11px; color:var(--ink-soft); letter-spacing:1px; line-height:1.8;
+  }
+  @media (max-width:600px){
+    .paper{ padding:32px 22px 40px; }
+    .masthead .title{ font-size:32px; letter-spacing:3px; }
+  }
+</style>
+
+<style id="issue-nav-style">
+.issue-nav{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin:34px 0 4px;padding:20px 0;border-top:1px solid #262019;border-bottom:1px solid #262019;
+  font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+}
+.issue-nav .nav-item{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 18px;border:1px solid #C9B78E;background:#EDE2C6;
+  color:#7C1F1F;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:1px;
+  white-space:nowrap;transition:background .15s,color .15s;
+}
+.issue-nav .nav-item:hover{background:#262019;color:#F3EAD3;}
+.issue-nav .nav-index{background:#262019;border-color:#262019;color:#F3EAD3;letter-spacing:2px;}
+.issue-nav .nav-index:hover{background:#7C1F1F;border-color:#7C1F1F;color:#F3EAD3;}
+.issue-nav .nav-rss{background:transparent;border-color:#D8CBAA;color:#8A7B63;letter-spacing:1px;}
+.issue-nav .nav-rss:hover{background:#EDE2C6;border-color:#C9B78E;color:#7C1F1F;}
+.issue-nav .nav-disabled{color:#8A7B63;background:transparent;border-color:#D8CBAA;cursor:default;}
+.issue-nav .nav-disabled:hover{background:transparent;color:#8A7B63;}
+@media (max-width:600px){
+  .issue-nav{flex-wrap:wrap;gap:10px;}
+  .issue-nav .nav-item{font-size:12px;padding:10px 14px;}
+}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <!-- ============ 板头 ============ -->
+  <header class="masthead">
+    <div class="kicker">Global Artificial Intelligence Daily</div>
+    <h1 class="title">智武防务人工智能每日速报</h1>
+    <div class="sub">全 球 人 工 智 能 动 态 综 述</div>
+  </header>
+  <div class="dateline">
+    <span>2026年11月2日　星期一</span>
+    <span class="edition">每 日 一 刊 · 周 末 汇 编 版</span>
+  </div>
+
+  <!-- ============ 今日新闻速览 ============ -->
+  <section class="overview">
+    <h3>今 日 新 闻 速 览</h3>
+    <p>本期周末汇编覆盖 10月30日（周五）至11月2日（周一）全球AI动态，呈现"技术狂奔、资本审慎、治理跟进、军事加速"的四重变奏。算力格局生变：联发科携160亿美元目标杀入AI ASIC，英伟达以OOI共封装光学与Rubin规格调整重塑互连与交付预期。模型从"答题"迈向"常驻系统"：DeepSeek、清华、微软、Mistral接连开源实用智能体与世界模型。资本与监管同步转向：OpenAI融资目标削减三成释放降温信号，加州与纽约州分别从雇佣与未成年人保护立规。国防AI实战化提速：乌克兰、韩国、朝鲜的动作显示无人智能装备正重塑战场规则。</p>
+  </section>
+
+  <!-- ============ 算力硬件 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">算 力 硬 件</div>
+
+    <article class="news-item" id="news-1">
+      <h2 class="news-title">联发科首款AI加速器量产出货，剑指2027年160亿美元、全球20% ASIC份额</h2>
+      <div class="news-meta">发布时间：2026-10-31 23:19（北京时间）　|　来源：网易/芯榜　|　<a href="https://www.163.com/dy/article/LAJT3IS60552IBJ1.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">10月30日，联发科（MediaTek）在2026年第三季度业绩说明会上披露，首款数据中心AI加速器已于9月量产出货，第四季度收入目标25亿美元，2027年目标飙升至160亿美元，瞄准全球AI加速器ASIC市场约20%份额。英伟达与Alphabet参与认购其39亿美元可转换公司债；第二代AI ASIC计划2028年一季度量产，每瓦性能预计数倍提升。公司同步推进448G SerDes、3.5D先进封装与CPO光电共封装，台积电与美国IDM封装供应链双线并进。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>对我国而言，联发科高调入场意味着全球定制芯片格局正由"英伟达独大"向"多供应商"演变，有利于分散我国算力供应链的单一依赖风险。但需警惕：其第二家客户明确"非中国"，且先进封装与CoWoS产能仍高度受制于台积电体系，我国在大型芯粒、3.5D封装与SerDes IP上的自主可控仍是短板，应加速本土供应链建设以避免新一轮"被卡脖子"。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-2">
+      <h2 class="news-title">英伟达展示下一代CPO方案OOI，光引擎直封硅中介层</h2>
+      <div class="news-meta">发布时间：2026-11-01 08:16（北京时间）　|　来源：网易/新浪财经　|　<a href="https://dy.163.com/article/LAKRR10N05568W0A.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">在SEMICON West 2026上，英伟达展示下一代共封装光学（CPO）原型OOI（Optics-on-Interposer，中介层上集成光学），取消光引擎独立的有机基板，将其与计算芯片共用硅中介层，缩短电通道、提升带宽密度并降低功耗，直指AI芯片对外传输瓶颈。Rubin平台自2026下半年导入第一代CPO，2027年规模放量。英伟达称已拿到原型样品，但未公布商业化时间表，封装工艺与散热仍是量产最大难题，中短期不冲击国内产业。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>OOI标志先进封装从"基板互连"进一步迈向"硅中介层共封"，封装价值量持续向先进封装厂集中，对我国光通信与先进封装产业既是技术跟随的压力、也是参与下一代互连标准定义的机遇。但中短期内海外CPO生态自成体系，我国应优先夯实光引擎、硅光与2.5D/3D封装的自主能力，避免在Rubin代际的互连带宽上再次落后。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-3">
+      <h2 class="news-title">英伟达Rubin GPU量产规格收紧，HBM4带宽与NVLink双双下调</h2>
+      <div class="news-meta">发布时间：2026-11-01（北京时间）　|　来源：V Server / The Index Today　|　<a href="https://vserver.co.il/2026/11/01/rubin-gpu-specs" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">随着Vera Rubin进入量产爬坡，英伟达更新并锁定出货规格：单颗Rubin GPU的HBM4内存带宽由22TB/s降至19.2TB/s（约-11%），NVLink纵向扩展带宽由3.6TB/s降至3.0TB/s（约-17%），横向扩展网络带宽则由0.4TB/s微升至0.45TB/s；算力与显存容量不变。NVL72整机柜聚合显存带宽相应由1580TB/s降至1400TB/s。纸面目标与量产参数出现差距，提示行业算力瓶颈正从"有没有卡"转向"能不能稳定交付"。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>Rubin量产规格的"缩水"揭示了一个现实：先进制程与HBM4供给仍制约旗舰算力兑现，即便英伟达亦难以全速兑现路线图。对我国而言，这既是国产GPU"以实用性能对标"的窗口，也警示我们在HBM、先进封装与互连上的短板会直接传导为整机性能落差，自主可控的存储与封装供应链比单纯追高算力数字更为关键。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 技术进展 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">技 术 进 展</div>
+
+    <article class="news-item" id="news-4">
+      <h2 class="news-title">微软开源4B电脑操作智能体Mage-VL-Cowork，OSWorld-Verified达66%</h2>
+      <div class="news-meta">发布时间：2026-10-30（北京时间）　|　来源：AGI Pulse / Microsoft　|　<a href="https://agipulse.org/e/1071?lang=zh" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">微软Mage团队于10月30日以Apache-2.0许可开源Mage-VL-Cowork：仅4B参数的"混合式"电脑操作智能体（CUA），同时以截图驱动的GUI操作与持久化终端/代码执行完成任务，无需外部多智能体编排器。官方称其OSWorld-Verified达66.0%（4B级最佳），操作系统类87.5%、多应用工作流62.7%，人类基线72.4%。训练采用五阶段课程，名义算力约7.79 ZFLOPs，在线RL较混合SFT再提升10.16个百分点并减少25.4%输出token。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>4B小参数即实现可媲美大模型的操作智能体，提示我国AI研发不必盲目追逐参数规模，"架构设计+高质量合成数据+RL课程"的路线同样能产出实用Agent。Mage-CUA-Forge将每题合成成本从0.906美元压至0.158美元的经验，对降低我国智能体训练数据成本具直接借鉴意义，应重视自动化任务合成流水线的自主建设。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-5">
+      <h2 class="news-title">DeepSeek开源Super-agent底座，Agent从"一次问答"走向"常驻系统"</h2>
+      <div class="news-meta">发布时间：2026-11-01（北京时间）　|　来源：陆家嘴财经早餐/今日头条AI日报　|　<a href="https://news.qq.com/rain/a/20261101A02YR500" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">DeepSeek Harness团队在官方公众号发表《Super-agent设计探索：迈向更自主的Agent系统》，并开源底层架构。文章指出主流Agent在多任务与团队协作规模上受制于人的注意力上限，遂以双层架构、事件驱动、异步多信道交互、存算分离与外部Watchdog等设计突破限制：上层Router接管会话管理与上下文同步，下层Worker并行执行；"订阅与直通"机制让Worker可直连后续PR评论，取消直通后Router决策次数增约30%、缓存Token增约37%，证明架构直接决定成本结构。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>DeepSeek将Agent从"被动应答"升级为"常驻、可协作的系统"，其开源底座为我国构建自主可控的智能体基础设施提供了高价值参考。双层解耦与事件驱动思路特别契合国内"行业Agent+私有数据"场景，有助于把智能体落地从堆人力的演示推向可核算成本的生产系统，但需警惕对底层大模型能力的隐性依赖。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-6">
+      <h2 class="news-title">Mistral开源Timestral时间序列基础模型，四档参数量全开放权重</h2>
+      <div class="news-meta">发布时间：2026-10-29（北京时间）　|　来源：Mistral AI / Hugging Face　|　<a href="https://aideepthink.cn/news/202610-mistral-timestral-time-series-foundation-models" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">法国Mistral发布Timestral，四个面向概率预测的时间序列基础模型，参数量5M、28M、123M与209M，权重发布于Hugging Face、推理代码于GitHub。官方称209M与123M在GIFT-Eval、TIME与fev-bench全部报告指标上占据前两名。核心设计包括解耦视界预测（DHF）、原生支持已知未来协变量的协变量框架，以及"合成语料预训练+真实混合后训练"两阶段流程，输出分布而非点估计。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>Timestral将基础模型范式拓展至时间序列概率预测，对物流、能源、库存规划等我国实体经济场景价值显著。其开放权重且参数量轻量，便于本地化部署、数据不出域，契合国内企业对数据安全与可控性的要求。建议我国工业与能源领域加快引入并微调此类模型，同时警惕在关键基础设施预测上对外国开源权重的隐性依赖，应同步培育本土时间序列基础模型能力。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-7">
+      <h2 class="news-title">清华姚期智团队提出代数世界模型，让AI"像牛顿一样思考"</h2>
+      <div class="news-meta">发布时间：2026-11-01 16:07（北京时间）　|　来源：量子位/网易　|　<a href="https://www.163.com/dy/article/LALMH7J50511DSSR.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">清华大学姚期智、袁洋团队提出"代数世界模型"（Algebraic World Model, AWM），用代数结构而非统计拟合来建模物理世界的因果规律。团队以ARC-AGI-3无规则游戏测试发现，GPT-6 Astra、Claude Opus 5.5等顶尖模型仅像"第谷"般记录现象（在12次不可能通关测试中仅5次判断出不可能），而AWM试图从观测与实验中推导本质定律，使AI具备可推导的因果推理能力，有望从"看现象"迈向"建定律"。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>AWM把世界模型从"生成似真画面"推进到"可推导的因果规律"，对我国在具身智能、科学发现与自动驾驶仿真等依赖世界模型的领域具引领意义。其"从0观察归纳定律"的范式可与我国丰富的产业与科学数据结合，建议支持此类基础研究方向，避免在"可解释、可推导AI"这一更高维度上被海外私有大模型拉开身位。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 商业动态 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">商 业 动 态</div>
+
+    <article class="news-item" id="news-8">
+      <h2 class="news-title">OpenAI融资目标砍掉逾三成、估值降至1.25万亿美元，AI资本现降温信号</h2>
+      <div class="news-meta">发布时间：2026-10-31 15:10（北京时间）　|　来源：金融时报/网易　|　<a href="https://www.163.com/dy/article/LAJ1480O0519QIKK.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据《金融时报》10月31日报道，ChatGPT开发商OpenAI已将最新一轮融资目标从300亿美元下调约100亿美元至200亿美元，估值由1.4万亿美元降至1.25万亿美元。部分投资者下调认购额度，首轮交割或低于200亿美元。阿联酋MGX牵头的财团预计为最大出资方；OpenAI需在竞争对手Anthropic预计11月IPO前锁定资金。公司预计2026–2030年累计自由现金流缺口约2780亿美元，要到2030年前后才转正。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>OpenAI融资收缩叠加纳斯达克100本周五下跌3.5%，是AI资本从"无脑涌入"转向"审视回报周期"的重要信号。对我国而言，一方面应警惕全球AI估值回调对国内融资环境的情绪传导，避免泡沫化追高；另一方面，国际巨头资本开支与现金流压力加大，恰是我国以"应用落地+实体产业结合"务实路线弯道超车的窗口，应引导资本更多投向可量化交付的真实场景。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-9">
+      <h2 class="news-title">苹果AI入华牵手阿里千问，国行Apple Intelligence将于12月上线</h2>
+      <div class="news-meta">发布时间：2026-10-31（北京时间）　|　来源：IT之家/MBA智库　|　<a href="https://news.mbalib.com/story/258976" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">苹果10月31日公告，面向中国iPhone 18 Pro等机型用户，于11月4日开放测试，并在12月推出的iOS 27.3更新中于国内上线首批Apple Intelligence核心功能。苹果明确在Siri、写作工具及视觉智能三类体验中使用阿里巴巴千问：Siri处理特定请求时调用千问知识，写作工具可由千问原创创作，视觉智能用于文本与图像理解。用户登录千问账户或通过Apple登录即可访问。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>苹果将国行AI能力的"灵魂"交给阿里千问，是我国大模型能力获得全球顶级硬件生态认可的标志性事件，对千问乃至国产大模型出海具有强背书效应。对国内用户而言，意味着端侧AI体验与本土大模型知识深度绑定。但需关注数据跨境与隐私合规边界——苹果明确用户需登录千问账户，相关数据处理与主权归属应纳入监管视野，确保关键AI能力不被境外完全掌控。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-10">
+      <h2 class="news-title">可灵AI完成198亿元增资交割，快手仍控股、战略股东加码</h2>
+      <div class="news-meta">发布时间：2026-10-31（北京时间）　|　来源：快手公告/每日经济新闻　|　<a href="https://news.qq.com/rain/a/20261101A0ALP100" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">快手公告，旗下可灵AI完成增资交割，实际到账约198.02亿元（约29.05亿美元）。差额来自中东资方BlueFive旗下主体放弃部分认购，转出份额由金蝶软件（3亿元）、温州睿达（2.1亿元）、沐曦数智（5500万元）等承接，金蝶与沐曦均为首度入股。交割后快手仍持股66.68%、表决权52.45%。与此同时，可灵AI关联公司近期新增腾讯、阿里云、百度及国家人工智能产业投资基金为股东，注册资本增至约8744.7万元。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>近200亿元增资对应"已能开票的视频生成能力"，反映资本市场正从"为参数买单"转向"为可计量交付付费"。腾讯、阿里、百度与国家级产业基金集体入局，既是对可灵商业化能力的认可，也意味着视频生成赛道正加速形成"国家队+大厂"协同格局。对我国AIGC产业是强信心信号，但需关注赛道同质化与算力成本高企下的盈利可持续性。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-11">
+      <h2 class="news-title">DeepSeek完成约1055亿元新融资，估值达6155亿元居国产之最</h2>
+      <div class="news-meta">发布时间：2026-10-30（北京时间）　|　来源：钛媒体/MBA智库　|　<a href="https://news.mbalib.com/story/258976" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">10月30日，外媒援引消息人士称，DeepSeek第二轮融资拿到约1055亿元（约158亿美元），近30家投资者共同出资，国有资本占比27%、风投26.5%、科技公司41.9%，公司估值随之达6155亿元，被称为迄今中国AI公司规模最大的风险投资。产业投资方覆盖存储与晶圆制造、整车与家电、消费电子、动力电池及互联网平台。报道称其前七个月营收约4.75亿元、毛利率44.6%，但净亏损仍超7亿元。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>DeepSeek以国产大模型身份拿下中国AI史上最大单笔融资，且产业资本深度绑定，标志着我国AI投资逻辑从"押注模型"转向"押注产业协同生态"。国有资本与产业链龙头共同入场，有利于在大模型基础设施上形成合力。但前七个月仍净亏超7亿元、基础设施支出达110亿元，提示我国大模型商业化变现仍是核心挑战，需警惕估值与营收错配。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 政策风向 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">政 策 风 向</div>
+
+    <article class="news-item" id="news-12">
+      <h2 class="news-title">加州通过"无机器人老板"等系列AI法案，2027年起密集生效</h2>
+      <div class="news-meta">发布时间：2026-11-01（综合报道）　|　来源：OriginBrief AI监管月报　|　<a href="https://www.originbrief.app/en/reports/ai-regulation-policy/2026-11-01/monthly" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">在联邦层面监管缺位的背景下，加州于10月立法潮中通过一系列AI法案，多数2027年1月1日生效，成为美国最全面州级AI监管者：SB 947"无机器人老板法"规制AI在雇佣决策中的使用；SB 1119（Adam's Law）要求AI伴侣对未成年人安全并防范自伤；AB 1883保护雇员神经数据；SB 951要求披露技术性岗位替代。与此相对，欧盟AI法案已激活对OpenAI、Anthropic、Meta的执法问询，全球治理从"部署端"转向"研发端"。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>加州以州级立法填补联邦真空，标志AI监管重心从"内容合规"转向"雇佣、儿童、数据权属与研发过程"等更深层社会关系，对我国具参照价值。随着我国AI深入就业与公共服务，建议借鉴其"分场景、分主体"的精细立法思路，在鼓励创新的同时，对雇佣歧视、未成年人保护与神经数据等高风险环节划出清晰红线。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-13">
+      <h2 class="news-title">纽约州签署儿童AI伴侣法，单次违规最高罚2.5万美元</h2>
+      <div class="news-meta">发布时间：2026-10-31（北京时间）　|　来源：AI热点资讯/微信公众号　|　<a href="http://mp.weixin.qq.com/s?__biz=MzY4MjI3MDQ0Nw==&mid=2247496961&idx=1&sn=aca12cb44a61ebf86e81dd76aec5509d&chksm=f216181fb4374aa5806ab14701b55fa23672e28a82bc9f1909813c96e6cf2565374dfcded8d4#rd" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">纽约州州长霍楚尔签署法案，禁止AI伴侣对18岁以下用户提供"假装是人类、建立情感依赖、鼓励自残、进行色情对话"等功能，单项违规民事罚款最高2.5万美元；法案要求年龄验证至少提供一种不依赖政府证件的选项，违规企业可能被要求删除非法收集的数据及基于该数据训练的模型，六个月后生效。监管对象从"内容"移向"关系与行为"，标志AI治理进入新阶段。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>纽约州将AI治理从"内容合规"推进到"关系与行为合规"，对我国未成年人AI保护立法具前瞻参考价值。随着AI陪伴类产品在国内普及，如何界定"情感依赖""拟人化诱导"的边界，应尽早纳入监管视野。建议我国参考其"年龄验证+数据删除+模型纠偏"组合拳，在鼓励AI教育、陪伴应用创新的同时，守住未成年人心理健康与数据主权底线。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 国防应用 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">国 防 应 用</div>
+
+    <article class="news-item" id="news-14">
+      <h2 class="news-title">韩国完成FA-50与AAP无人机首次有人-无人编队试飞</h2>
+      <div class="news-meta">发布时间：2026-10-31（北京时间）　|　来源：兵器知识/今日头条　|　<a href="https://www.toutiao.com/article/7702338830925398566" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">韩国航空航天工业公司（KAI）通报，10月8日在全罗南道海域完成FA-50轻型战斗机与AAP喷气式无人机的编队飞行试验，持续20分钟、高度约2100米、速度360km/h，两机间距稳定保持9–30米。AAP重约150千克、最大速度790km/h，搭载KAILOT AI飞控，可承担侦察、电子干扰、诱饵与打击任务。KAI规划三阶段：2025–2028年验证单架FA-50指挥最多4架无人机，2037年前移植至KF-21双座型。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>韩国将AI飞控无人平台与现役战斗机编组，是"忠诚僚机"模式从概念走向实战验证的又一例证，对我国歼击机体系有人-无人协同具参照价值。其以现役平台低成本改造、分阶段迭代的路线，提示我方不必等待全新型号，可立足现有战机快速验证协同战法。同时应关注其AI飞控（KAILOT）的自主等级与抗干扰能力，作为我国无人协同系统研发的对标对象。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-15">
+      <h2 class="news-title">乌克兰上架SHOT-L1反辐射无人机，AI自主追踪俄军电子战系统</h2>
+      <div class="news-meta">发布时间：2026-11-02（北京时间）　|　来源：今日头条/乌克兰防务媒体　|　<a href="https://www.toutiao.com/article/7702350697303491099" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">乌克兰政府防务采购平台"Brave1 Market"近期上架SHOT-L1固定翼反辐射无人机，可自主追踪俄军电子战系统的无线电信号。该机最大射程80千米、速度100千米/小时、续航60分钟、战斗部4千克、单机约9300美元，配备热像仪、视频数据链与末段制导；先飞向目标区域，机载设备自动扫描辐射源、测算方位并自主引导攻击，优先打击信号最强目标，失锁则转打预装订的固定目标，典型对象为Pole-21、Zhitel、Mgla等俄军电子战系统。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>SHOT-L1以"低成本AI反辐射无人机"专攻高价电子战平台，是用AI与成本优势猎杀高价值节点的又一实战化范例，对我国电子战与反辐射装备发展具直接启示。其"自主探测—决策—攻击"闭环提示：未来战场不仅比拼干扰与反干扰，更比拼"以廉价智能平台消耗敌方高价值传感器"的非对称体系，我军应重视反辐射无人化与电子战装备的生存性设计。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-16">
+      <h2 class="news-title">金正恩呼吁加速发展人工智能无人武器装备，谋求无人机"绝对优势"</h2>
+      <div class="news-meta">发布时间：2026-10-30（北京时间）　|　来源：朝中社/俄罗斯卫星通讯社　|　<a href="https://sputniknews.cn/20261030/1073870189.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据朝中社报道，朝鲜领导人金正恩在10月29日开幕的"无人航空技术发展——2026"展览会上呼吁，大幅加快无人武器装备关键技术研发，将人工智能融入此类系统并提升作战能力，确立无人机领域"绝对优势"。朝方展示了大型飞翼隐形无人机、FPV攻击四旋翼、滞空弹药、战术巡航导弹等装备并举行火力展示。金正恩称只有实力才能保障和平，敦促科技界在无人航空与国防AI上取得重大成果。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>朝鲜将AI与无人系统列为国防优先方向并公开新型装备，意味着周边低烈度无人机威胁与AI赋能的非对称作战能力正在快速积累，对我国东北边境方向的安全环境构成新的变量。建议我军持续加强无人智能装备的体系化对抗能力建设，特别是反无人机、电子对抗与低成本拦截手段，同时密切关注朝方AI飞控与蜂群技术的实际成熟度，避免低估其非对称威慑效能。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <nav class="issue-nav">
+      <a class="nav-item nav-prev" href="2026-10-30.html"><svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M9.5 3L4.5 7.5L9.5 12M4.8 7.5H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>上一期 · 10月30日</span></a>
+      <a class="nav-item nav-index" href="../index.html">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M2.5 3.5h10M2.5 7.5h10M2.5 11.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>往期索引</span>
+      </a>
+      <span class="nav-item nav-disabled">下一期 · 尚未发布</span>
+      <a class="nav-item nav-rss" href="../feed.xml">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><circle cx="3.2" cy="11.8" r="1.4" fill="currentColor"/><path d="M2.4 7.6a5 5 0 015 5M2.4 4a8.6 8.6 0 018.6 8.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+        <span>RSS</span>
+      </a>
+    </nav>
+
+  <footer class="footer">
+    本速报由 AI 自动检索公开信源并生成，仅供研究参考。原始新闻版权归原媒体所有，点击标题下方链接可阅读原文。<br>
+    智武防务人工智能每日速报 · GLOBAL AI DAILY · 聚焦中国视角
+  </footer>
+
+</div>
+</body>
+</html>
