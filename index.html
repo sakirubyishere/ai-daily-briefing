@@ -178,6 +178,36 @@
   .idx-stat.warn{ color:var(--red); }
   .idx-stat.warn::before{ background:var(--red); }
 
+  /* ===== 年份导航 ===== */
+  .ynav{
+    display:flex; align-items:center; flex-wrap:wrap; gap:7px;
+    margin:16px 0 2px; padding:11px 0 0;
+  }
+  .ynav-label{
+    font-size:11.5px; color:var(--ink-mute); letter-spacing:1.5px; margin-right:3px;
+  }
+  .ynav-item{
+    padding:5px 12px; border:1px solid var(--paper-line); background:var(--paper-soft);
+    color:var(--ink-soft); text-decoration:none; font-size:12px; letter-spacing:1px;
+    transition:background .15s,color .15s,border-color .15s;
+  }
+  .ynav-item:hover{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
+  .ynav-item.on{ background:var(--red); border-color:var(--red); color:var(--paper); font-weight:700; }
+
+  /* ===== 分片载入条 ===== */
+  .shardbar{
+    display:flex; align-items:center; flex-wrap:wrap; gap:8px;
+    margin-top:10px; font-size:11.5px; color:var(--ink-mute);
+  }
+  .shardbar .sb-note{ letter-spacing:.5px; }
+  .shardbar button{
+    font:inherit; font-size:11.5px; padding:4px 11px; cursor:pointer;
+    border:1px solid var(--paper-line); background:var(--paper-soft); color:var(--red);
+    letter-spacing:.5px; transition:background .15s,color .15s;
+  }
+  .shardbar button:hover{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
+  .shardbar button[disabled]{ opacity:.5; cursor:default; }
+
   /* ===== 结果状态 ===== */
   .result-bar{
     display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
@@ -322,16 +352,16 @@
   <header class="masthead">
     <div class="kicker">Global AI Daily · Archive Index</div>
     <h1 class="title">智武防务人工智能每日速报 · 往期索引</h1>
-    <div class="sub">近三十期速报存档 · 全文检索 · 每日更新</div>
+    <div class="sub">全部期次永久存档 · 全文检索 · 每日更新</div>
   </header>
   <div class="dateline">
-    <span>在线 8 期 · 最近更新 2026年11月4日 星期三</span>
-    <span class="edition">ROLLING 30-DAY ARCHIVE</span>
+    <span>累计 8 期 · 本页 8 期（10月26日 — 11月4日）· 最近更新 2026年11月4日 星期三</span>
+    <span class="edition">PERMANENT ARCHIVE</span>
   </div>
 
   <section class="notice">
     <svg viewBox="0 0 18 18" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="8" stroke="#7C1F1F" stroke-width="1.4"/><path d="M9 8v5" stroke="#7C1F1F" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.2" r="0.9" fill="#7C1F1F"/></svg>
-    <p>在线仅保留最近 30 期。期满后正文自动下架，原链接保留为「已归档」提示页；完整历史版本留在本地存档中。</p>
+    <p>全部 8 期正文长期在线，不再按时间下架；首页只列出最近 2 个月，更早期次请用上方年份导航查阅。</p>
   </section>
 
   <div class="toolbar">
@@ -353,10 +383,16 @@
     <div class="idx-stat" id="idx-stat">正文索引待载入</div>
   </div>
 
+<div class="ynav">
+  <span class="ynav-label">按年份</span>
+  <a class="ynav-item on" href="index.html">最近</a>
+  <a class="ynav-item" href="archive/2026.html">2026</a>
+</div>
+
   <div class="content">
     <main class="list">
       <div class="result-bar">
-        <span class="rlabel">在线期次</span>
+        <span class="rlabel">本页期次</span>
         <span class="rnum" id="r-num">8 期</span>
         <span class="rhint" id="r-hint">输入关键词或点选分类即可筛选</span>
       </div>
@@ -465,12 +501,12 @@
       <div class="empty-state" id="empty">
         <svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><circle cx="15" cy="15" r="9.5" stroke="#8A7B63" stroke-width="1.6"/><path d="M21.8 21.8L29 29" stroke="#8A7B63" stroke-width="1.8" stroke-linecap="round"/></svg>
         <h3>没有匹配的期次</h3>
-        <p>换一个关键词，或清除分类筛选条件后再试。<br>检索范围涵盖每期速报的标题、简讯与价值点分析全文。</p>
+        <p>换一个关键词，或清除分类筛选条件后再试。<br>检索范围涵盖每期速报的标题、简讯与价值点分析全文。<br>本页只列最近期次，更早的请用上方年份导航进入对应年份再检索。</p>
         <button type="button" id="reset">重置全部筛选</button>
       </div>
       <div class="older">
         <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><rect x="2" y="3.2" width="11" height="9" rx="1" stroke="#6B5D48" stroke-width="1.3"/><path d="M2 6h11M5.4 1.5v2.6M9.6 1.5v2.6" stroke="#6B5D48" stroke-width="1.3" stroke-linecap="round"/></svg>
-        <span>全部期次均在线保存。</span>
+        <span>全部 8 期均在线可读，站点已开启永久存档。</span>
       </div>
     </main>
 
@@ -494,8 +530,8 @@
 
       <div class="about">
         <h4>关于本站</h4>
-        <p>每日 10:00 前发布前一日全球人工智能动态，分为算力硬件、技术进展、商业动态、政策风向、国防应用五类，每条附聚焦中国的价值点分析。</p>
-        <p>在线保留最近 30 期，更早内容已下架归档，仅保留本地存档。</p>
+        <p>每日 10:00 前发布前一日全球人工智能动态，全部期次永久在线存档。</p>
+        <p>分为算力硬件、技术进展、商业动态、政策风向、国防应用五类，每条附聚焦中国的价值点分析。</p>
       </div>
     </aside>
   </div>
@@ -507,6 +543,7 @@
 
 </div>
 
+<script>window.__SITE_PREFIX__ = "";</script>
 <script>
 (function () {
   "use strict";
@@ -524,49 +561,187 @@
 
   if (!q || !document.querySelector(".issue")) { return; }
 
-  /* ---------- 正文索引：首次检索时按需加载 ---------- */
-  var BODY = null;
-  var bodyState = "idle";   // idle | loading | ready | failed
+  /* ---------- 正文索引：按月分片，按需载入 ----------
+     永久存档模式下在线期次会一直累积，单体索引文件会膨胀到几十 MB。
+     这里改成：只载入「本页列出的期次」所在月份的分片；最近若干个月先自动载入，
+     更早的月份等用户点「载入更早」再拉 —— 每次检索的首包体积可控。 */
+  var PFX = window.__SITE_PREFIX__ || "";
+  var AUTO_MONTHS = 2;        // 自动载入最近几个月
 
-  function loadBodyIndex() {
-    if (bodyState !== "idle") { return; }
-    bodyState = "loading";
-    renderIdxStat();
+  var BODY = null;
+  var bodyState = "idle";     // idle | loading | ready | failed
+  var SHARDS = null;          // 分片清单（search/index.js）
+  var pageMks = null;         // 本页涉及月份，倒序
+  var pendMks = [];           // 尚未载入的月份
+  var restPending = [];       // 需用户点击才载入的更早月份
+  var loadedMks = {};         // 已载入的月份
+  var totalLoaded = 0;        // 已载入期数
+
+  function loadScript(url, cb) {
     var s = document.createElement("script");
-    s.src = "search-data.js";
+    s.src = url;
     s.async = true;
-    s.onload = function () {
-      BODY = window.__BRIEFING_SEARCH__ || {};
+    var done = false;
+    s.onload = function () { if (!done) { done = true; cb(true); } };
+    s.onerror = function () { if (!done) { done = true; cb(false); } };
+    document.head.appendChild(s);
+  }
+
+  function collectPageMonths() {
+    if (pageMks) { return pageMks; }
+    var seen = {};
+    var list = [];
+    Array.prototype.slice.call(document.querySelectorAll(".issue")).forEach(function (el) {
+      var d = el.getAttribute("data-date") || "";
+      var mk = d.slice(0, 7);
+      if (mk && !seen[mk]) { seen[mk] = 1; list.push(mk); }
+    });
+    list.sort();
+    list.reverse();
+    pageMks = list;
+    return pageMks;
+  }
+
+  function shardOf(mk) {
+    if (!SHARDS) { return null; }
+    for (var i = 0; i < SHARDS.length; i++) {
+      if (SHARDS[i].k === mk) { return SHARDS[i]; }
+    }
+    return null;
+  }
+
+  function pendingBytes() {
+    var sum = 0;
+    pendMks.forEach(function (mk) {
+      var sh = shardOf(mk);
+      if (sh && sh.b) { sum += sh.b; }
+    });
+    return sum;
+  }
+
+  function fmtMB(bytes) {
+    if (bytes >= 1048576) { return (bytes / 1048576).toFixed(1) + " MB"; }
+    return Math.max(1, Math.round(bytes / 1024)) + " KB";
+  }
+
+  function loadNextShard() {
+    if (!pendMks.length) {
       bodyState = "ready";
       renderIdxStat();
+      renderShardBar();
       apply();
-    };
-    s.onerror = function () {
-      bodyState = "failed";
-      renderIdxStat();
-    };
-    document.head.appendChild(s);
+      return;
+    }
+    var mk = pendMks.shift();
+    var sh = shardOf(mk);
+    if (!sh) { loadNextShard(); return; }
+    loadScript(PFX + sh.f, function (ok) {
+      if (ok) {
+        BODY = window.__BRIEFING_SEARCH__ || {};
+        loadedMks[mk] = 1;
+        totalLoaded += (sh.n || 0);
+      }
+      loadNextShard();
+    });
+  }
+
+  function loadBodyIndex() {
+    if (bodyState === "loading" || bodyState === "ready") { return; }
+    bodyState = "loading";
+    renderIdxStat();
+
+    if (SHARDS) { startAutoLoad(); return; }
+
+    loadScript(PFX + "search/index.js", function (ok) {
+      SHARDS = ok ? (window.__BRIEFING_SHARDS__ || []) : [];
+      if (!SHARDS.length) {
+        bodyState = "failed";
+        renderIdxStat();
+        return;
+      }
+      startAutoLoad();
+    });
+  }
+
+  function startAutoLoad() {
+    var mks = collectPageMonths();
+    var auto = mks.slice(0, AUTO_MONTHS);
+    pendMks = auto.slice();
+    var rest = mks.slice(AUTO_MONTHS);
+    // 其余月份先排队，等用户点按钮再载入
+    restPending = rest.slice();
+    BODY = window.__BRIEFING_SEARCH__ || {};
+    loadNextShard();
+  }
+
+  function loadRest() {
+    if (!restPending.length) { return; }
+    var add = restPending.slice();
+    restPending = [];
+    bodyState = "loading";
+    renderIdxStat();
+    renderShardBar();
+    pendMks = pendMks.concat(add);
+    loadNextShard();
   }
 
   function renderIdxStat() {
     if (!idxStat) { return; }
     if (bodyState === "idle") {
-      idxStat.textContent = "正文检索已就绪待命：输入关键词即自动载入各期标题、简讯与价值点全文";
+      idxStat.textContent = "正文检索已就绪待命：输入关键词即自动载入本页各期的标题、简讯与价值点全文";
       idxStat.className = "idx-stat";
     } else if (bodyState === "loading") {
-      idxStat.textContent = "正文索引载入中……";
+      idxStat.textContent = "正文索引载入中…… 已完成 " + totalLoaded + " 期";
       idxStat.className = "idx-stat loading";
     } else if (bodyState === "ready") {
-      var n = 0;
-      for (var k in BODY) {
-        if (Object.prototype.hasOwnProperty.call(BODY, k)) { n++; }
-      }
-      idxStat.textContent = "正文索引已载入：" + n + " 期速报全文可检索（标题 · 简讯 · 价值点分析）";
+      var tip = restPending.length
+        ? "；更早 " + restPending.length + " 个月待载入"
+        : "（本页全部期次）";
+      idxStat.textContent = "正文索引已载入 " + totalLoaded + " 期速报全文可检索" +
+        "（标题 · 简讯 · 价值点）" + tip;
       idxStat.className = "idx-stat ready";
     } else {
       idxStat.textContent = "正文索引载入失败，当前仅可按日期与标题检索";
       idxStat.className = "idx-stat warn";
     }
+    renderShardBar();
+  }
+
+  function renderShardBar() {
+    if (!idxStat || !idxStat.parentNode) { return; }
+    var bar = document.getElementById("shardbar");
+    if (!restPending.length) {
+      if (bar) { bar.parentNode.removeChild(bar); }
+      return;
+    }
+    if (!bar) {
+      bar = document.createElement("div");
+      bar.className = "shardbar";
+      bar.id = "shardbar";
+      idxStat.parentNode.insertBefore(bar, idxStat.nextSibling);
+    }
+    bar.textContent = "";
+    var note = document.createElement("span");
+    note.className = "sb-note";
+    note.textContent = "本页还有 " + restPending.length + " 个月的历史正文未载入（约 " +
+      fmtMB(pendingBytes() + restBytes()) + "）";
+    bar.appendChild(note);
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = bodyState === "loading" ? "载入中……" : "载入更早期次";
+    btn.disabled = bodyState === "loading";
+    btn.addEventListener("click", loadRest);
+    bar.appendChild(btn);
+  }
+
+  function restBytes() {
+    var sum = 0;
+    restPending.forEach(function (mk) {
+      var sh = shardOf(mk);
+      if (sh && sh.b) { sum += sh.b; }
+    });
+    return sum;
   }
 
   /* ---------- 期次条目 ---------- */
@@ -734,7 +909,7 @@
       var title = document.createElement(h.overview ? "span" : "a");
       title.className = "ib-title";
       if (!h.overview) {
-        title.href = "issues/" + it.date + ".html" + (h.entry.i ? "#" + h.entry.i : "");
+        title.href = PFX + "issues/" + it.date + ".html" + (h.entry.i ? "#" + h.entry.i : "");
       }
       title.textContent = h.entry.t || "";
       row.appendChild(title);

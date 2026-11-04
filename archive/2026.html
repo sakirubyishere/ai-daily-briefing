@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智武防务人工智能每日速报 · 2026 年归档</title>
+<meta name="description" content="智武防务人工智能每日速报往期索引，收录全球 AI 动态与聚焦中国的价值点分析。">
+<style>
+  :root{
+    --paper:#f3ead3;
+    --paper-edge:#e2d4b0;
+    --paper-soft:#ede2c6;
+    --paper-line:#c9b78e;
+    --paper-rule:#d8cbaa;
+    --desk:#c8b99a;
+    --ink:#262019;
+    --ink-soft:#564b3c;
+    --ink-mute:#8a7b63;
+    --red:#7c1f1f;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--desk);
+    background-image:radial-gradient(circle at 50% 0%, #d8caa6 0%, #c2b389 100%);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,"Times New Roman",serif;
+    color:var(--ink);
+    padding:40px 14px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .paper{
+    max-width:1080px; margin:0 auto;
+    background:var(--paper);
+    background-image:repeating-linear-gradient(0deg, rgba(120,90,40,.018) 0 2px, transparent 2px 4px);
+    padding:46px 54px 44px;
+    box-shadow:0 14px 48px rgba(40,25,10,.45);
+    border:1px solid var(--paper-edge);
+    position:relative;
+  }
+  .paper::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 60px rgba(90,60,20,.18);
+  }
+
+  /* ===== 刊头 ===== */
+  .masthead{ text-align:center; border-bottom:3px double var(--ink); padding-bottom:14px; }
+  .masthead .kicker{
+    font-size:11px; letter-spacing:4px; color:var(--ink-soft);
+    font-family:Inter,"Helvetica Neue",Arial,sans-serif;
+    font-weight:500; text-transform:uppercase; margin-bottom:10px;
+  }
+  .masthead .title{
+    font-size:34px; font-weight:900; letter-spacing:3px; margin:0; line-height:1.15;
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
+  }
+  .masthead .sub{ font-size:13px; letter-spacing:3px; color:var(--ink-soft); margin-top:8px; }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; letter-spacing:1px; color:var(--ink-soft);
+    border-bottom:1px solid var(--ink); padding:9px 2px;
+  }
+  .dateline .edition{
+    color:var(--red); font-weight:700; letter-spacing:2px;
+    font-family:Inter,"Helvetica Neue",Arial,sans-serif; font-size:11px; font-weight:500;
+  }
+
+  /* ===== 策略提示 ===== */
+  .notice{
+    display:flex; align-items:flex-start; gap:11px;
+    border:1px solid var(--paper-line); background:var(--paper-soft);
+    padding:13px 15px; margin:22px 0 0;
+  }
+  .notice svg{ flex:0 0 auto; margin-top:2px; }
+  .notice p{ margin:0; font-size:13px; line-height:21px; color:#4a3f30; }
+
+  /* ===== 主体两栏 ===== */
+  .content{ display:flex; gap:28px; align-items:flex-start; padding-top:24px; }
+  .list{ flex:1 1 auto; min-width:0; }
+  .aside{ flex:0 0 270px; }
+
+  /* ===== 月份分组 ===== */
+  .month{ margin-bottom:6px; }
+  .month-title{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:19px; font-weight:800; letter-spacing:3px; margin:26px 0 11px;
+  }
+  .month-title em{
+    font-style:normal; font-size:12px; font-weight:500; color:var(--red); letter-spacing:1px;
+  }
+  .month-title em.filtered{ color:var(--ink); font-weight:700; }
+  .issue{
+    display:flex; align-items:flex-start; gap:16px;
+    border-top:1px solid var(--paper-rule); padding:13px 2px;
+  }
+  .issue:last-child{ border-bottom:1px solid var(--paper-rule); }
+  .issue-date{
+    flex:0 0 58px; text-align:center;
+    background:var(--paper-soft); border:1px solid var(--paper-line); padding:6px 0;
+  }
+  .issue-date b{ display:block; font-size:26px; font-weight:900; line-height:1.1; }
+  .issue-date span{ display:block; font-size:10.5px; color:#6b5d48; margin-top:1px; }
+  .issue-main{ flex:1 1 auto; min-width:0; }
+  .issue-title{
+    margin:0 0 5px; font-size:15.5px; font-weight:800; line-height:1.45; color:var(--ink);
+  }
+  .issue-meta{
+    margin:0; font-size:11.5px; color:#6b5d48;
+    font-family:Inter,"Helvetica Neue",Arial,sans-serif;
+  }
+  .issue-link{
+    flex:0 0 auto; display:inline-flex; align-items:center; gap:6px;
+    padding:7px 12px; background:var(--ink); color:var(--paper);
+    text-decoration:none; font-size:12px; font-weight:700; letter-spacing:1px;
+    transition:background .15s,color .15s;
+  }
+  .issue-link:hover{ background:var(--red); color:var(--paper); }
+
+  /* ===== 归档提示 ===== */
+  .older{
+    display:flex; align-items:center; gap:10px;
+    padding:14px 4px 0; color:#6b5d48; font-size:12px;
+  }
+  .older svg{ flex:0 0 auto; }
+
+  /* ===== 检索工具区 ===== */
+  .toolbar{
+    margin-top:22px; padding:16px 18px;
+    background:var(--paper-soft); border:1px solid var(--paper-line);
+  }
+  .searchbar{
+    display:flex; align-items:center; gap:12px;
+    background:#fff; border:1px solid var(--ink); padding:12px 15px;
+  }
+  .searchbar input{
+    flex:1 1 auto; min-width:0; border:0; outline:0; background:transparent;
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+    font-size:15px; color:var(--ink); padding:0;
+  }
+  .searchbar input::placeholder{ color:#a89a80; }
+  .search-count{
+    flex:0 0 auto; font-size:12px; color:var(--red); font-weight:700; letter-spacing:1px;
+    font-family:Inter,"Helvetica Neue",Arial,sans-serif; white-space:nowrap;
+  }
+  .search-clear{
+    flex:0 0 auto; cursor:pointer; border:1px solid var(--paper-line);
+    background:var(--paper-soft); padding:5px 11px; font-size:11.5px; color:#6b5d48;
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+    letter-spacing:1px; user-select:none;
+  }
+  .search-clear:hover{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .search-clear[hidden]{ display:none; }
+  .filterline{
+    display:flex; align-items:center; gap:9px; flex-wrap:wrap; margin-top:14px;
+  }
+  .filterline .flabel{
+    font-size:12.5px; font-weight:800; color:var(--ink); letter-spacing:1px; margin-right:2px;
+  }
+  .fchip{
+    cursor:pointer; padding:7px 14px; font-size:12.5px;
+    border:1px solid var(--paper-line); background:#fff; color:#4a3f30;
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+    transition:background .15s,color .15s,border-color .15s;
+  }
+  .fchip:hover{ border-color:var(--red); color:var(--red); }
+  .fchip.on{ background:var(--ink); border-color:var(--ink); color:var(--paper); font-weight:700; }
+  .fchip.on:hover{ background:var(--red); border-color:var(--red); color:var(--paper); }
+  .idx-stat{
+    margin-top:11px; font-size:11.5px; letter-spacing:.5px; color:var(--ink-mute);
+    display:flex; align-items:center; gap:7px;
+  }
+  .idx-stat::before{
+    content:""; width:5px; height:5px; border-radius:50%;
+    background:var(--paper-line); flex:0 0 auto;
+  }
+  .idx-stat.loading::before{ background:var(--red); }
+  .idx-stat.ready{ color:#4a3f30; }
+  .idx-stat.ready::before{ background:#4a7c3f; }
+  .idx-stat.warn{ color:var(--red); }
+  .idx-stat.warn::before{ background:var(--red); }
+
+  /* ===== 年份导航 ===== */
+  .ynav{
+    display:flex; align-items:center; flex-wrap:wrap; gap:7px;
+    margin:16px 0 2px; padding:11px 0 0;
+  }
+  .ynav-label{
+    font-size:11.5px; color:var(--ink-mute); letter-spacing:1.5px; margin-right:3px;
+  }
+  .ynav-item{
+    padding:5px 12px; border:1px solid var(--paper-line); background:var(--paper-soft);
+    color:var(--ink-soft); text-decoration:none; font-size:12px; letter-spacing:1px;
+    transition:background .15s,color .15s,border-color .15s;
+  }
+  .ynav-item:hover{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
+  .ynav-item.on{ background:var(--red); border-color:var(--red); color:var(--paper); font-weight:700; }
+
+  /* ===== 分片载入条 ===== */
+  .shardbar{
+    display:flex; align-items:center; flex-wrap:wrap; gap:8px;
+    margin-top:10px; font-size:11.5px; color:var(--ink-mute);
+  }
+  .shardbar .sb-note{ letter-spacing:.5px; }
+  .shardbar button{
+    font:inherit; font-size:11.5px; padding:4px 11px; cursor:pointer;
+    border:1px solid var(--paper-line); background:var(--paper-soft); color:var(--red);
+    letter-spacing:.5px; transition:background .15s,color .15s;
+  }
+  .shardbar button:hover{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
+  .shardbar button[disabled]{ opacity:.5; cursor:default; }
+
+  /* ===== 结果状态 ===== */
+  .result-bar{
+    display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+    margin:20px 0 4px; padding-bottom:9px; border-bottom:1px solid var(--ink);
+  }
+  .result-bar .rlabel{
+    font-size:12.5px; color:var(--ink-soft); letter-spacing:1px;
+  }
+  .result-bar .rnum{
+    font-size:13px; color:var(--red); font-weight:700; letter-spacing:1px;
+  }
+  .result-bar .rhint{
+    font-size:11.5px; color:var(--ink-mute); margin-left:auto;
+  }
+
+  /* ===== 命中标记 ===== */
+  mark{
+    background:rgba(124,31,31,.13); color:var(--red); padding:0 2px;
+    font-weight:700;
+  }
+  .issue-hit{
+    margin:5px 0 0; font-size:11px; color:var(--red);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+  }
+  .issue-hit b{ font-weight:700; }
+
+  /* ===== 正文命中明细 ===== */
+  .issue-body{ margin:9px 0 0; display:none; }
+  .issue-body.show{ display:block; }
+  .ib-head{
+    font-size:11px; letter-spacing:1px; color:var(--ink-mute);
+    padding-bottom:5px; margin-bottom:6px; border-bottom:1px dashed var(--paper-rule);
+  }
+  .ib-item{
+    border-left:3px solid var(--red); background:rgba(124,31,31,.045);
+    padding:8px 0 8px 11px; margin-bottom:7px;
+  }
+  .ib-item:last-of-type{ margin-bottom:0; }
+  .ib-cat{
+    display:inline-block; font-size:10px; font-weight:700; letter-spacing:1px;
+    color:var(--paper); background:var(--red); padding:2px 7px; margin-bottom:5px;
+  }
+  .ib-title{
+    display:block; font-size:13px; font-weight:700; line-height:1.5; color:var(--ink);
+    text-decoration:none;
+  }
+  .ib-title:hover{ color:var(--red); }
+  .ib-snip{
+    margin:4px 0 0; font-size:12px; line-height:1.85; color:#5a4f3e;
+  }
+  .ib-more{
+    margin-top:6px; font-size:11px; color:var(--ink-mute); letter-spacing:.5px;
+  }
+
+  /* ===== 空状态 ===== */
+  .empty-state{
+    display:none; text-align:center; padding:46px 26px; margin-top:22px;
+    background:var(--paper-soft); border:1px solid var(--paper-line);
+  }
+  .empty-state.show{ display:block; }
+  .empty-state h3{
+    margin:14px 0 0; font-size:17px; font-weight:800; letter-spacing:2px; color:var(--ink);
+  }
+  .empty-state p{
+    margin:10px 0 0; font-size:13px; line-height:22px; color:var(--ink-soft);
+  }
+  .empty-state button{
+    margin-top:16px; cursor:pointer; border:0; background:var(--ink); color:var(--paper);
+    padding:11px 22px; font-size:12.5px; font-weight:700; letter-spacing:2px;
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+  }
+  .empty-state button:hover{ background:var(--red); }
+
+  /* ===== 侧栏 ===== */
+  .stats{ display:flex; gap:1px; background:var(--paper-line); margin-top:18px; }
+  .stat{
+    flex:1 1 0; background:var(--paper-soft); text-align:center; padding:13px 8px;
+  }
+  .stat b{
+    display:block; font-size:21px; font-weight:900; line-height:1.1;
+  }
+  .stat:nth-child(2) b{ color:var(--red); }
+  .stat span{ display:block; font-size:10.5px; color:#6b5d48; margin-top:4px; }
+  .aside h3{
+    margin:20px 0 0; padding-top:10px; font-size:13px; font-weight:800; letter-spacing:2px;
+    border-top:1px solid var(--paper-rule);
+  }
+  .cat-row{
+    display:flex; justify-content:space-between; align-items:center; gap:8px;
+    padding:8px 0; border-bottom:1px solid var(--paper-rule);
+    color:#4a3f30; font-size:12.5px; cursor:pointer; user-select:none;
+  }
+  .cat-row:hover{ color:var(--red); }
+  .cat-row.on{ color:var(--red); font-weight:700; }
+  .cat-row em{
+    font-style:normal; color:var(--red); font-weight:700;
+    font-family:Inter,"Helvetica Neue",Arial,sans-serif; font-size:12px;
+  }
+  .subscribe{
+    background:var(--ink); padding:16px; margin-top:18px;
+  }
+  .subscribe a{
+    display:block; padding:10px 0; text-align:center;
+    background:var(--red); color:var(--paper); text-decoration:none;
+    font-size:12.5px; font-weight:700; letter-spacing:2px;
+    transition:background .15s;
+  }
+  .subscribe a:hover{ background:#96301f; }
+  .about{
+    margin-top:18px; padding:15px 16px;
+    background:var(--paper-soft); border:1px solid var(--paper-line);
+  }
+  .about h4{
+    margin:0 0 8px; font-size:13px; font-weight:800; letter-spacing:2px;
+  }
+  .about p{ margin:0 0 8px; font-size:12px; line-height:20px; color:#4a3f30; }
+  .about p:last-child{ margin-bottom:0; }
+
+  /* ===== 页脚 ===== */
+  .footer{
+    border-top:3px double var(--ink); margin-top:30px; padding-top:12px;
+    display:flex; justify-content:space-between; align-items:center; gap:14px;
+    font-size:12px; color:var(--ink-soft); letter-spacing:1px;
+  }
+  .footer a{ color:var(--red); text-decoration:none; font-weight:700; }
+  .footer a:hover{ text-decoration:underline; }
+  .footer .copy{ font-size:11px; color:var(--ink-mute); line-height:19px; }
+
+  @media (max-width:820px){
+    .paper{ padding:32px 22px 34px; }
+    .masthead .title{ font-size:26px; letter-spacing:2px; }
+    .content{ flex-direction:column; gap:26px; }
+    .aside{ flex:1 1 auto; width:100%; }
+    .issue{ flex-wrap:wrap; }
+    .issue-link{ margin-left:74px; }
+  }
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <header class="masthead">
+    <div class="kicker">Global AI Daily · 2026 Archive</div>
+    <h1 class="title">智武防务人工智能每日速报 · 2026 年归档</h1>
+    <div class="sub">2026 年全部 8 期 · 全文检索</div>
+  </header>
+  <div class="dateline">
+    <span>2026 年共 8 期 · 最近更新 2026年11月4日 星期三</span>
+    <span class="edition">2026 ARCHIVE</span>
+  </div>
+
+  <section class="notice">
+    <svg viewBox="0 0 18 18" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="8" stroke="#7C1F1F" stroke-width="1.4"/><path d="M9 8v5" stroke="#7C1F1F" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.2" r="0.9" fill="#7C1F1F"/></svg>
+    <p>本页收录 2026 年全部 8 期速报，正文长期在线。首页只列最近期次，可按上方年份导航切换。</p>
+  </section>
+
+  <div class="toolbar">
+    <div class="searchbar">
+      <svg viewBox="0 0 15 15" width="17" height="17" aria-hidden="true"><circle cx="6.4" cy="6.4" r="4.6" stroke="#6B5D48" stroke-width="1.4"/><path d="M9.9 9.9L13 13" stroke="#6B5D48" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <input id="q" type="search" autocomplete="off" placeholder="检索日期、标题或正文内容（标题 · 简讯 · 价值点）" aria-label="检索往期速报">
+      <span class="search-count" id="q-count"></span>
+      <button class="search-clear" id="q-clear" type="button" hidden>清除</button>
+    </div>
+    <div class="filterline" id="filters">
+      <span class="flabel">按分类</span>
+      <button class="fchip on" type="button" data-cat="">全部</button>
+      <button class="fchip" type="button" data-cat="算力硬件">算力硬件</button>
+      <button class="fchip" type="button" data-cat="技术进展">技术进展</button>
+      <button class="fchip" type="button" data-cat="商业动态">商业动态</button>
+      <button class="fchip" type="button" data-cat="政策风向">政策风向</button>
+      <button class="fchip" type="button" data-cat="国防应用">国防应用</button>
+    </div>
+    <div class="idx-stat" id="idx-stat">正文索引待载入</div>
+  </div>
+
+<div class="ynav">
+  <span class="ynav-label">按年份</span>
+  <a class="ynav-item" href="../index.html">最近</a>
+  <a class="ynav-item on" href="../archive/2026.html">2026</a>
+</div>
+
+  <div class="content">
+    <main class="list">
+      <div class="result-bar">
+        <span class="rlabel">2026 年期次</span>
+        <span class="rnum" id="r-num">8 期</span>
+        <span class="rhint" id="r-hint">输入关键词或点选分类即可筛选</span>
+      </div>
+    <section class="month">
+      <h2 class="month-title"><span>2026 11 月</span><em class="month-count" data-total="3">3 期</em></h2>
+      <article class="issue" data-search="2026-11-04 11-04 11.04 11月4日 11月4日 2026/11/04 2026.11.04 星期三 传deepseek v5将采用华为芯片训练，首试国芯训国模 传deepseek v5将采用华为芯片训练，首试国芯训国模 15 条 · 算力硬件 3 / 技术进展 4 / 商业动态 4 / 政策风向 2 / 国防应用 2" data-counts="算力硬件:3,技术进展:4,商业动态:4,政策风向:2,国防应用:2" data-date="2026-11-04">
+        <div class="issue-date"><b>4</b><span>11月4日 · 星期三</span></div>
+        <div class="issue-main">
+          <h3 class="issue-title">传DeepSeek V5将采用华为芯片训练，首试国芯训国模</h3>
+          <p class="issue-meta">15 条 · 算力硬件 3 / 技术进展 4 / 商业动态 4 / 政策风向 2 / 国防应用 2</p>
+          <p class="issue-hit" style="display:none"></p>
+          <div class="issue-body"></div>
+        </div>
+        <a class="issue-link" href="../issues/2026-11-04.html">阅读本期
+          <svg viewBox="0 0 13 13" width="13" height="13" aria-hidden="true"><path d="M3 10L10 3M10 3H4.5M10 3V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+      <article class="issue" data-search="2026-11-03 11-03 11.03 11月3日 11月3日 2026/11/03 2026.11.03 星期二 gpt-6.2 astra 灰度上线，claude mythos 5.5 同日曝光 gpt-6.2 astra 灰度上线，claude mythos 5.5 同日曝光 16 条 · 算力硬件 3 / 技术进展 4 / 商业动态 4 / 政策风向 3 / 国防应用 2" data-counts="算力硬件:3,技术进展:4,商业动态:4,政策风向:3,国防应用:2" data-date="2026-11-03">
+        <div class="issue-date"><b>3</b><span>11月3日 · 星期二</span></div>
+        <div class="issue-main">
+          <h3 class="issue-title">GPT-6.2 Astra 灰度上线，Claude Mythos 5.5 同日曝光</h3>
+          <p class="issue-meta">16 条 · 算力硬件 3 / 技术进展 4 / 商业动态 4 / 政策风向 3 / 国防应用 2</p>
+          <p class="issue-hit" style="display:none"></p>
+          <div class="issue-body"></div>
+        </div>
+        <a class="issue-link" href="../issues/2026-11-03.html">阅读本期
+          <svg viewBox="0 0 13 13" width="13" height="13" aria-hidden="true"><path d="M3 10L10 3M10 3H4.5M10 3V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+      <article class="issue" data-search="2026-11-02 11-02 11.02 11月2日 11月2日 2026/11/02 2026.11.02 星期一 deepseek完成1055亿元新融资，估值居国产之最 韩国完成fa-50与aap无人机首次有人-无人编队试飞 16 条 · 算力硬件 3 / 技术进展 4 / 商业动态 4 / 政策风向 2 / 国防应用 3" data-counts="算力硬件:3,技术进展:4,商业动态:4,政策风向:2,国防应用:3" data-date="2026-11-02">
+        <div class="issue-date"><b>2</b><span>11月2日 · 星期一</span></div>
+        <div class="issue-main">
+          <h3 class="issue-title">DeepSeek完成1055亿元新融资，估值居国产之最</h3>
+          <p class="issue-meta">16 条 · 算力硬件 3 / 技术进展 4 / 商业动态 4 / 政策风向 2 / 国防应用 3</p>
+          <p class="issue-hit" style="display:none"></p>
+          <div class="issue-body"></div>
+        </div>
+        <a class="issue-link" href="../issues/2026-11-02.html">阅读本期
+          <svg viewBox="0 0 13 13" width="13" height="13" aria-hidden="true"><path d="M3 10L10 3M10 3H4.5M10 3V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+    </section>
+    <section class="month">
+      <h2 class="month-title"><span>2026 10 月</span><em class="month-count" data-total="5">5 期</em></h2>
+      <article class="issue" data-search="2026-10-30 10-30 10.30 10月30日 10月30日 2026/10/30 2026.10.30 星期五 f-22首次座舱内指挥yfq-44a“狂怒”，cca试验关键一步 f-22首次在座舱内指挥yfq-44a“狂怒”：cca指挥控制试验迈出关键一步 16 条 · 算力硬件 2 / 技术进展 5 / 商业动态 2 / 政策风向 4 / 国防应用 3" data-counts="算力硬件:2,技术进展:5,商业动态:2,政策风向:4,国防应用:3" data-date="2026-10-30">
+        <div class="issue-date"><b>30</b><span>10月30日 · 星期五</span></div>
+        <div class="issue-main">
+          <h3 class="issue-title">F-22首次座舱内指挥YFQ-44A“狂怒”，CCA试验关键一步</h3>
+          <p class="issue-meta">16 条 · 算力硬件 2 / 技术进展 5 / 商业动态 2 / 政策风向 4 / 国防应用 3</p>
+          <p class="issue-hit" style="display:none"></p>
+          <div class="issue-body"></div>
+        </div>
+        <a class="issue-link" href="../issues/2026-10-30.html">阅读本期
+          <svg viewBox="0 0 13 13" width="13" height="13" aria-hidden="true"><path d="M3 10L10 3M10 3H4.5M10 3V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+      <article class="issue" data-search="2026-10-29 10-29 10.29 10月29日 10月29日 2026/10/29 2026.10.29 星期四  天垓300：国内首个实测性能达英伟达h200水平的通用gpu 16 条 · 算力硬件 3 / 技术进展 2 / 商业动态 4 / 政策风向 4 / 国防应用 3" data-counts="算力硬件:3,技术进展:2,商业动态:4,政策风向:4,国防应用:3" data-date="2026-10-29">
+        <div class="issue-date"><b>29</b><span>10月29日 · 星期四</span></div>
+        <div class="issue-main">
+          <h3 class="issue-title">天垓300：国内首个实测性能达英伟达H200水平的通用GPU</h3>
+          <p class="issue-meta">16 条 · 算力硬件 3 / 技术进展 2 / 商业动态 4 / 政策风向 4 / 国防应用 3</p>
+          <p class="issue-hit" style="display:none"></p>
+          <div class="issue-body"></div>
+        </div>
+        <a class="issue-link" href="../issues/2026-10-29.html">阅读本期
+          <svg viewBox="0 0 13 13" width="13" height="13" aria-hidden="true"><path d="M3 10L10 3M10 3H4.5M10 3V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+      <article class="issue" data-search="2026-10-28 10-28 10.28 10月28日 10月28日 2026/10/28 2026.10.28 星期三  台积电拟上调基板晶圆级封装报价，ai芯片成本承压 17 条 · 算力硬件 4 / 技术进展 3 / 商业动态 3 / 政策风向 3 / 国防应用 4" data-counts="算力硬件:4,技术进展:3,商业动态:3,政策风向:3,国防应用:4" data-date="2026-10-28">
+        <div class="issue-date"><b>28</b><span>10月28日 · 星期三</span></div>
+        <div class="issue-main">
+          <h3 class="issue-title">台积电拟上调基板晶圆级封装报价，AI芯片成本承压</h3>
+          <p class="issue-meta">17 条 · 算力硬件 4 / 技术进展 3 / 商业动态 3 / 政策风向 3 / 国防应用 4</p>
+          <p class="issue-hit" style="display:none"></p>
+          <div class="issue-body"></div>
+        </div>
+        <a class="issue-link" href="../issues/2026-10-28.html">阅读本期
+          <svg viewBox="0 0 13 13" width="13" height="13" aria-hidden="true"><path d="M3 10L10 3M10 3H4.5M10 3V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+      <article class="issue" data-search="2026-10-27 10-27 10.27 10月27日 10月27日 2026/10/27 2026.10.27 星期二  美国防部加速自主武器列装，拟投约500亿美元大举扩张 15 条 · 算力硬件 3 / 技术进展 3 / 商业动态 3 / 政策风向 3 / 国防应用 3" data-counts="算力硬件:3,技术进展:3,商业动态:3,政策风向:3,国防应用:3" data-date="2026-10-27">
+        <div class="issue-date"><b>27</b><span>10月27日 · 星期二</span></div>
+        <div class="issue-main">
+          <h3 class="issue-title">美国防部加速自主武器列装，拟投约500亿美元大举扩张</h3>
+          <p class="issue-meta">15 条 · 算力硬件 3 / 技术进展 3 / 商业动态 3 / 政策风向 3 / 国防应用 3</p>
+          <p class="issue-hit" style="display:none"></p>
+          <div class="issue-body"></div>
+        </div>
+        <a class="issue-link" href="../issues/2026-10-27.html">阅读本期
+          <svg viewBox="0 0 13 13" width="13" height="13" aria-hidden="true"><path d="M3 10L10 3M10 3H4.5M10 3V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+      <article class="issue" data-search="2026-10-26 10-26 10.26 10月26日 10月26日 2026/10/26 2026.10.26 星期一  科大讯飞发布星火 x2.6 等成果：国产大模型用上「全国产算力」训练 12 条 · 算力硬件 1 / 技术进展 3 / 商业动态 3 / 政策风向 2 / 国防应用 3" data-counts="算力硬件:1,技术进展:3,商业动态:3,政策风向:2,国防应用:3" data-date="2026-10-26">
+        <div class="issue-date"><b>26</b><span>10月26日 · 星期一</span></div>
+        <div class="issue-main">
+          <h3 class="issue-title">科大讯飞发布星火 X2.6 等成果：国产大模型用上「全国产算力」训练</h3>
+          <p class="issue-meta">12 条 · 算力硬件 1 / 技术进展 3 / 商业动态 3 / 政策风向 2 / 国防应用 3</p>
+          <p class="issue-hit" style="display:none"></p>
+          <div class="issue-body"></div>
+        </div>
+        <a class="issue-link" href="../issues/2026-10-26.html">阅读本期
+          <svg viewBox="0 0 13 13" width="13" height="13" aria-hidden="true"><path d="M3 10L10 3M10 3H4.5M10 3V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+    </section>
+      <div class="empty-state" id="empty">
+        <svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><circle cx="15" cy="15" r="9.5" stroke="#8A7B63" stroke-width="1.6"/><path d="M21.8 21.8L29 29" stroke="#8A7B63" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h3>没有匹配的期次</h3>
+        <p>换一个关键词，或清除分类筛选条件后再试。<br>检索范围涵盖每期速报的标题、简讯与价值点分析全文。<br>本页只列最近期次，更早的请用上方年份导航进入对应年份再检索。</p>
+        <button type="button" id="reset">重置全部筛选</button>
+      </div>
+      <div class="older">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><rect x="2" y="3.2" width="11" height="9" rx="1" stroke="#6B5D48" stroke-width="1.3"/><path d="M2 6h11M5.4 1.5v2.6M9.6 1.5v2.6" stroke="#6B5D48" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <span>全部期次均在本页收录，站点已开启永久存档。</span>
+      </div>
+    </main>
+
+    <aside class="aside">
+      <div class="stats">
+        <div class="stat"><b>8</b><span>累计期数</span></div>
+        <div class="stat"><b>8</b><span>在线期数</span></div>
+        <div class="stat"><b>5</b><span>分类栏目</span></div>
+      </div>
+
+      <h3>按分类浏览</h3>
+        <div class="cat-row" data-cat="算力硬件" role="button" tabindex="0"><span>算力硬件</span><em>22</em></div>
+        <div class="cat-row" data-cat="技术进展" role="button" tabindex="0"><span>技术进展</span><em>28</em></div>
+        <div class="cat-row" data-cat="商业动态" role="button" tabindex="0"><span>商业动态</span><em>27</em></div>
+        <div class="cat-row" data-cat="政策风向" role="button" tabindex="0"><span>政策风向</span><em>23</em></div>
+        <div class="cat-row" data-cat="国防应用" role="button" tabindex="0"><span>国防应用</span><em>23</em></div>
+
+      <div class="subscribe">
+        <a href="../feed.xml">订阅 RSS 订阅源</a>
+      </div>
+
+      <div class="about">
+        <h4>关于本站</h4>
+        <p>每日 10:00 前发布前一日全球人工智能动态，全部期次永久在线存档。</p>
+        <p>分为算力硬件、技术进展、商业动态、政策风向、国防应用五类，每条附聚焦中国的价值点分析。</p>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <a href="https://sakirubyishere.github.io/">返回白兔梦境电台</a>
+    <span class="copy">本速报由 AI 自动检索公开信源并生成，仅供研究参考。原始新闻版权归原媒体所有。</span>
+  </footer>
+
+</div>
+
+<script>window.__SITE_PREFIX__ = "../";</script>
+<script>
+(function () {
+  "use strict";
+
+  var q        = document.getElementById("q");
+  var qCount   = document.getElementById("q-count");
+  var qClear   = document.getElementById("q-clear");
+  var rNum     = document.getElementById("r-num");
+  var rHint    = document.getElementById("r-hint");
+  var empty    = document.getElementById("empty");
+  var resetBtn = document.getElementById("reset");
+  var idxStat  = document.getElementById("idx-stat");
+  var chips    = Array.prototype.slice.call(document.querySelectorAll(".fchip"));
+  var catRows  = Array.prototype.slice.call(document.querySelectorAll(".cat-row"));
+
+  if (!q || !document.querySelector(".issue")) { return; }
+
+  /* ---------- 正文索引：按月分片，按需载入 ----------
+     永久存档模式下在线期次会一直累积，单体索引文件会膨胀到几十 MB。
+     这里改成：只载入「本页列出的期次」所在月份的分片；最近若干个月先自动载入，
+     更早的月份等用户点「载入更早」再拉 —— 每次检索的首包体积可控。 */
+  var PFX = window.__SITE_PREFIX__ || "";
+  var AUTO_MONTHS = 2;        // 自动载入最近几个月
+
+  var BODY = null;
+  var bodyState = "idle";     // idle | loading | ready | failed
+  var SHARDS = null;          // 分片清单（search/index.js）
+  var pageMks = null;         // 本页涉及月份，倒序
+  var pendMks = [];           // 尚未载入的月份
+  var restPending = [];       // 需用户点击才载入的更早月份
+  var loadedMks = {};         // 已载入的月份
+  var totalLoaded = 0;        // 已载入期数
+
+  function loadScript(url, cb) {
+    var s = document.createElement("script");
+    s.src = url;
+    s.async = true;
+    var done = false;
+    s.onload = function () { if (!done) { done = true; cb(true); } };
+    s.onerror = function () { if (!done) { done = true; cb(false); } };
+    document.head.appendChild(s);
+  }
+
+  function collectPageMonths() {
+    if (pageMks) { return pageMks; }
+    var seen = {};
+    var list = [];
+    Array.prototype.slice.call(document.querySelectorAll(".issue")).forEach(function (el) {
+      var d = el.getAttribute("data-date") || "";
+      var mk = d.slice(0, 7);
+      if (mk && !seen[mk]) { seen[mk] = 1; list.push(mk); }
+    });
+    list.sort();
+    list.reverse();
+    pageMks = list;
+    return pageMks;
+  }
+
+  function shardOf(mk) {
+    if (!SHARDS) { return null; }
+    for (var i = 0; i < SHARDS.length; i++) {
+      if (SHARDS[i].k === mk) { return SHARDS[i]; }
+    }
+    return null;
+  }
+
+  function pendingBytes() {
+    var sum = 0;
+    pendMks.forEach(function (mk) {
+      var sh = shardOf(mk);
+      if (sh && sh.b) { sum += sh.b; }
+    });
+    return sum;
+  }
+
+  function fmtMB(bytes) {
+    if (bytes >= 1048576) { return (bytes / 1048576).toFixed(1) + " MB"; }
+    return Math.max(1, Math.round(bytes / 1024)) + " KB";
+  }
+
+  function loadNextShard() {
+    if (!pendMks.length) {
+      bodyState = "ready";
+      renderIdxStat();
+      renderShardBar();
+      apply();
+      return;
+    }
+    var mk = pendMks.shift();
+    var sh = shardOf(mk);
+    if (!sh) { loadNextShard(); return; }
+    loadScript(PFX + sh.f, function (ok) {
+      if (ok) {
+        BODY = window.__BRIEFING_SEARCH__ || {};
+        loadedMks[mk] = 1;
+        totalLoaded += (sh.n || 0);
+      }
+      loadNextShard();
+    });
+  }
+
+  function loadBodyIndex() {
+    if (bodyState === "loading" || bodyState === "ready") { return; }
+    bodyState = "loading";
+    renderIdxStat();
+
+    if (SHARDS) { startAutoLoad(); return; }
+
+    loadScript(PFX + "search/index.js", function (ok) {
+      SHARDS = ok ? (window.__BRIEFING_SHARDS__ || []) : [];
+      if (!SHARDS.length) {
+        bodyState = "failed";
+        renderIdxStat();
+        return;
+      }
+      startAutoLoad();
+    });
+  }
+
+  function startAutoLoad() {
+    var mks = collectPageMonths();
+    var auto = mks.slice(0, AUTO_MONTHS);
+    pendMks = auto.slice();
+    var rest = mks.slice(AUTO_MONTHS);
+    // 其余月份先排队，等用户点按钮再载入
+    restPending = rest.slice();
+    BODY = window.__BRIEFING_SEARCH__ || {};
+    loadNextShard();
+  }
+
+  function loadRest() {
+    if (!restPending.length) { return; }
+    var add = restPending.slice();
+    restPending = [];
+    bodyState = "loading";
+    renderIdxStat();
+    renderShardBar();
+    pendMks = pendMks.concat(add);
+    loadNextShard();
+  }
+
+  function renderIdxStat() {
+    if (!idxStat) { return; }
+    if (bodyState === "idle") {
+      idxStat.textContent = "正文检索已就绪待命：输入关键词即自动载入本页各期的标题、简讯与价值点全文";
+      idxStat.className = "idx-stat";
+    } else if (bodyState === "loading") {
+      idxStat.textContent = "正文索引载入中…… 已完成 " + totalLoaded + " 期";
+      idxStat.className = "idx-stat loading";
+    } else if (bodyState === "ready") {
+      var tip = restPending.length
+        ? "；更早 " + restPending.length + " 个月待载入"
+        : "（本页全部期次）";
+      idxStat.textContent = "正文索引已载入 " + totalLoaded + " 期速报全文可检索" +
+        "（标题 · 简讯 · 价值点）" + tip;
+      idxStat.className = "idx-stat ready";
+    } else {
+      idxStat.textContent = "正文索引载入失败，当前仅可按日期与标题检索";
+      idxStat.className = "idx-stat warn";
+    }
+    renderShardBar();
+  }
+
+  function renderShardBar() {
+    if (!idxStat || !idxStat.parentNode) { return; }
+    var bar = document.getElementById("shardbar");
+    if (!restPending.length) {
+      if (bar) { bar.parentNode.removeChild(bar); }
+      return;
+    }
+    if (!bar) {
+      bar = document.createElement("div");
+      bar.className = "shardbar";
+      bar.id = "shardbar";
+      idxStat.parentNode.insertBefore(bar, idxStat.nextSibling);
+    }
+    bar.textContent = "";
+    var note = document.createElement("span");
+    note.className = "sb-note";
+    note.textContent = "本页还有 " + restPending.length + " 个月的历史正文未载入（约 " +
+      fmtMB(pendingBytes() + restBytes()) + "）";
+    bar.appendChild(note);
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = bodyState === "loading" ? "载入中……" : "载入更早期次";
+    btn.disabled = bodyState === "loading";
+    btn.addEventListener("click", loadRest);
+    bar.appendChild(btn);
+  }
+
+  function restBytes() {
+    var sum = 0;
+    restPending.forEach(function (mk) {
+      var sh = shardOf(mk);
+      if (sh && sh.b) { sum += sh.b; }
+    });
+    return sum;
+  }
+
+  /* ---------- 期次条目 ---------- */
+  var items = Array.prototype.slice.call(document.querySelectorAll(".issue")).map(function (el) {
+    return {
+      el: el,
+      date: el.getAttribute("data-date") || "",
+      // 可检索文本：日期 + 标题 + 分类计数行 + 分类名
+      text: (el.getAttribute("data-search") || el.textContent || "").toLowerCase(),
+      // 分类条数，形如 {"算力硬件":3,...}
+      counts: (function () {
+        var m = {};
+        var raw = el.getAttribute("data-counts") || "";
+        raw.split(",").forEach(function (kv) {
+          var p = kv.split(":");
+          if (p.length === 2) { m[p[0]] = parseInt(p[1], 10) || 0; }
+        });
+        return m;
+      })()
+    };
+  });
+
+  var months = Array.prototype.slice.call(document.querySelectorAll(".month"));
+  var older  = document.querySelector(".older");
+  var activeCat = "";
+
+  /* ---------- 正文索引访问 ---------- */
+  function bodyOf(it) {
+    if (!BODY || !it.date) { return null; }
+    return BODY[it.date] || null;
+  }
+
+  // 指定分类时，正文条目按分类收敛（未选分类则取全部）
+  function bodyEntries(rec, cat) {
+    if (!rec) { return []; }
+    var items = rec.items || [];
+    if (!cat) { return items; }
+    return items.filter(function (it) { return it.c === cat; });
+  }
+
+  function bodyCorpus(rec, cat) {
+    if (!rec) { return ""; }
+    var key = "__corpus_" + (cat || "all");
+    if (rec[key] !== undefined) { return rec[key]; }
+    // 「今日速览」属整期内容，选了分类时不纳入语料，避免跨分类命中
+    var parts = [rec.dt || ""];
+    if (!cat) { parts.push(rec.o || ""); }
+    bodyEntries(rec, cat).forEach(function (it) {
+      parts.push(it.t || "");
+      parts.push(it.b || "");
+      parts.push(it.v || "");
+    });
+    rec[key] = parts.join(" ").toLowerCase();
+    return rec[key];
+  }
+
+  function bodyHitEntries(rec, words, cat) {
+    var out = [];
+    bodyEntries(rec, cat).forEach(function (entry) {
+      var text = ((entry.t || "") + " " + (entry.b || "") + " " + (entry.v || "")).toLowerCase();
+      var hitWords = [];
+      words.forEach(function (w) {
+        if (text.indexOf(w.toLowerCase()) !== -1) { hitWords.push(w); }
+      });
+      if (hitWords.length) { out.push({ entry: entry, words: hitWords }); }
+    });
+
+    // 「今日新闻速览」整段命中时，单列一条，便于看清命中位置
+    if (!cat && rec.o) {
+      var lower = rec.o.toLowerCase();
+      var hitWords = [];
+      words.forEach(function (w) {
+        if (lower.indexOf(w.toLowerCase()) !== -1) { hitWords.push(w); }
+      });
+      if (hitWords.length) {
+        out.push({
+          entry: { c: "速览", t: "今日新闻速览", o: rec.o, i: "" },
+          words: hitWords,
+          overview: true
+        });
+      }
+    }
+
+    out.sort(function (a, b) { return b.words.length - a.words.length; });
+    return out;
+  }
+
+  function pickSnippet(entry, words) {
+    var fields = [["t", entry.t], ["b", entry.b], ["v", entry.v]];
+    if (entry.o) { fields = [["o", entry.o]]; }
+    var best = null;
+    fields.forEach(function (f) {
+      var text = f[1] || "";
+      if (!text) { return; }
+      var lower = text.toLowerCase();
+      words.forEach(function (w) {
+        var p = lower.indexOf(w.toLowerCase());
+        if (p !== -1 && (!best || p < best.pos)) {
+          best = { pos: p, len: w.length, text: text };
+        }
+      });
+    });
+    if (!best) { return null; }
+    var start = Math.max(0, best.pos - 34);
+    var end = Math.min(best.text.length, best.pos + best.len + 78);
+    return { text: best.text.slice(start, end), pre: start > 0, post: end < best.text.length };
+  }
+
+  function appendHighlighted(parent, text, words) {
+    var lower = text.toLowerCase();
+    var spans = [];
+    words.forEach(function (w) {
+      var lw = w.toLowerCase();
+      var from = 0, p;
+      while ((p = lower.indexOf(lw, from)) !== -1) {
+        spans.push([p, p + lw.length]);
+        from = p + lw.length;
+        if (spans.length > 80) { break; }
+      }
+    });
+    spans.sort(function (a, b) { return a[0] - b[0]; });
+    var merged = [], last = null;
+    spans.forEach(function (s) {
+      if (last && s[0] <= last[1]) {
+        last[1] = Math.max(last[1], s[1]);
+      } else {
+        last = [s[0], s[1]];
+        merged.push(last);
+      }
+    });
+    var pos = 0;
+    merged.forEach(function (s) {
+      if (s[0] > pos) { parent.appendChild(document.createTextNode(text.slice(pos, s[0]))); }
+      var mk = document.createElement("mark");
+      mk.textContent = text.slice(s[0], s[1]);
+      parent.appendChild(mk);
+      pos = s[1];
+    });
+    if (pos < text.length) { parent.appendChild(document.createTextNode(text.slice(pos))); }
+  }
+
+  /* ---------- 正文命中渲染 ---------- */
+  function renderBodyHits(it, rec, words, cat) {
+    var box = it.el.querySelector(".issue-body");
+    if (!box) { return 0; }
+    box.textContent = "";
+
+    var hits = bodyHitEntries(rec, words, cat);
+    if (!hits.length) { return 0; }
+
+    var head = document.createElement("div");
+    head.className = "ib-head";
+    head.textContent = "正文命中 " + hits.length + " 条";
+    box.appendChild(head);
+
+    hits.slice(0, 4).forEach(function (h) {
+      var row = document.createElement("div");
+      row.className = "ib-item";
+
+      var cat = document.createElement("span");
+      cat.className = "ib-cat";
+      cat.textContent = h.entry.c || "";
+      row.appendChild(cat);
+
+      var title = document.createElement(h.overview ? "span" : "a");
+      title.className = "ib-title";
+      if (!h.overview) {
+        title.href = PFX + "issues/" + it.date + ".html" + (h.entry.i ? "#" + h.entry.i : "");
+      }
+      title.textContent = h.entry.t || "";
+      row.appendChild(title);
+
+      var sn = pickSnippet(h.entry, h.words);
+      if (sn) {
+        var p = document.createElement("p");
+        p.className = "ib-snip";
+        if (sn.pre) { p.appendChild(document.createTextNode("…")); }
+        appendHighlighted(p, sn.text, h.words);
+        if (sn.post) { p.appendChild(document.createTextNode("…")); }
+        row.appendChild(p);
+      }
+
+      box.appendChild(row);
+    });
+
+    if (hits.length > 4) {
+      var more = document.createElement("div");
+      more.className = "ib-more";
+      more.textContent = "另有 " + (hits.length - 4) + " 条正文命中，展开本期查看全部";
+      box.appendChild(more);
+    }
+
+    box.classList.add("show");
+    return hits.length;
+  }
+
+  function clearBodyHits(it) {
+    var box = it.el.querySelector(".issue-body");
+    if (!box) { return; }
+    box.textContent = "";
+    box.classList.remove("show");
+  }
+
+  /* ---------- 命中高亮（标题与元信息） ---------- */
+  function markHit(node, words) {
+    // 清除旧的 mark（还原为纯文本）
+    var marks = node.querySelectorAll("mark");
+    Array.prototype.slice.call(marks).forEach(function (m) {
+      var parent = m.parentNode;
+      parent.replaceChild(document.createTextNode(m.textContent), m);
+      parent.normalize();
+    });
+    if (!words || !words.length) { return; }
+
+    var lowers = words.map(function (w) { return w.toLowerCase(); });
+
+    // 遍历文本节点，收集命中区间（排除正文命中区，那里由 appendHighlighted 负责）
+    var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (n.parentNode && n.parentNode.closest && n.parentNode.closest(".issue-body")) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var textNodes = [];
+    var n;
+    while ((n = walker.nextNode())) { textNodes.push(n); }
+
+    textNodes.forEach(function (tn) {
+      var text = tn.nodeValue;
+      var lower = text.toLowerCase();
+      var spans = [];
+      lowers.forEach(function (lw) {
+        if (!lw) { return; }
+        var from = 0, p;
+        while ((p = lower.indexOf(lw, from)) !== -1) {
+          spans.push([p, p + lw.length]);
+          from = p + lw.length;
+          if (spans.length > 80) { break; }
+        }
+      });
+      if (!spans.length) { return; }
+
+      spans.sort(function (a, b) { return a[0] - b[0]; });
+      var merged = [], last = null;
+      spans.forEach(function (s) {
+        if (last && s[0] <= last[1]) {
+          last[1] = Math.max(last[1], s[1]);
+        } else {
+          last = [s[0], s[1]];
+          merged.push(last);
+        }
+      });
+
+      var frag = document.createDocumentFragment();
+      var pos = 0;
+      merged.forEach(function (s) {
+        if (s[0] > pos) { frag.appendChild(document.createTextNode(text.slice(pos, s[0]))); }
+        var mk = document.createElement("mark");
+        mk.textContent = text.slice(s[0], s[1]);
+        frag.appendChild(mk);
+        pos = s[1];
+      });
+      if (pos < text.length) { frag.appendChild(document.createTextNode(text.slice(pos))); }
+      tn.parentNode.replaceChild(frag, tn);
+    });
+  }
+
+  /* ---------- 主筛选 ---------- */
+  function apply() {
+    var kw = (q.value || "").trim();
+    // 多关键词以空格分隔，采用 AND 匹配（每个词都要命中）
+    var words = kw ? kw.split(/\s+/).filter(function (w) { return w.length > 0; }) : [];
+    var total = 0;
+    var bodyTotal = 0;
+
+    items.forEach(function (it) {
+      var metaOk = words.length === 0 ||
+        words.every(function (w) { return it.text.indexOf(w.toLowerCase()) !== -1; });
+      var okCat = !activeCat || (it.counts[activeCat] || 0) > 0;
+
+      var rec = words.length ? bodyOf(it) : null;
+      // 选了分类时，正文语料按该分类收敛，避免跨分类误命中
+      var corpus = rec ? bodyCorpus(rec, activeCat) : "";
+
+      // 命中判定：关键词出现在标题/日期，或出现在正文全文
+      var okText = words.length === 0 || words.every(function (w) {
+        var lw = w.toLowerCase();
+        return it.text.indexOf(lw) !== -1 || (corpus && corpus.indexOf(lw) !== -1);
+      });
+
+      var show = okText && okCat;
+      it.el.style.display = show ? "" : "none";
+
+      if (show) {
+        total++;
+        markHit(it.el.querySelector(".issue-main") || it.el, words);
+
+        var bodyHits = rec ? renderBodyHits(it, rec, words, activeCat) : 0;
+        bodyTotal += bodyHits;
+        if (!bodyHits) { clearBodyHits(it); }
+
+        // 命中关键词提示（用 textContent 拼接，避免任何 HTML 注入）
+        var hitLine = it.el.querySelector(".issue-hit");
+        if (hitLine) {
+          if (words.length) {
+            hitLine.textContent = "";
+            hitLine.appendChild(document.createTextNode(metaOk ? "标题命中：" : "正文命中："));
+            words.forEach(function (w, i) {
+              if (i > 0) { hitLine.appendChild(document.createTextNode("、")); }
+              var b = document.createElement("b");
+              b.textContent = w;
+              hitLine.appendChild(b);
+            });
+            hitLine.style.display = "";
+          } else {
+            hitLine.style.display = "none";
+          }
+        }
+      } else {
+        clearBodyHits(it);
+        var hitLine2 = it.el.querySelector(".issue-hit");
+        if (hitLine2) { hitLine2.style.display = "none"; }
+      }
+    });
+
+    // 隐藏空的月份分组，并更新月份计数
+    months.forEach(function (mo) {
+      var visible = Array.prototype.slice.call(mo.querySelectorAll(".issue"))
+        .filter(function (el) { return el.style.display !== "none"; });
+      mo.style.display = visible.length ? "" : "none";
+      var cnt = mo.querySelector(".month-count");
+      if (cnt) {
+        var total = Number(cnt.getAttribute("data-total"));
+        if (visible.length === total) {
+          cnt.textContent = total + " 期";
+          cnt.classList.remove("filtered");
+        } else {
+          cnt.textContent = visible.length + " / " + total + " 期";
+          cnt.classList.add("filtered");
+        }
+      }
+    });
+
+    // 统计与提示
+    rNum.textContent = total + " 期";
+    if (kw && activeCat) {
+      rHint.textContent = "关键词「" + kw + "」 + 分类「" + activeCat + "」";
+    } else if (kw) {
+      rHint.textContent = "关键词「" + kw + "」";
+    } else if (activeCat) {
+      rHint.textContent = "分类「" + activeCat + "」";
+    } else {
+      rHint.textContent = "输入关键词或点选分类即可筛选";
+    }
+    qCount.textContent = (kw || activeCat)
+      ? ("匹配 " + total + " 期" + (bodyTotal ? " · 正文 " + bodyTotal + " 条" : ""))
+      : "";
+    qClear.hidden = !kw;
+
+    // 空状态
+    var showEmpty = total === 0;
+    empty.classList.toggle("show", showEmpty);
+    if (older) { older.style.display = showEmpty ? "none" : ""; }
+  }
+
+  function setCat(cat) {
+    activeCat = cat;
+    chips.forEach(function (c) {
+      c.classList.toggle("on", (c.getAttribute("data-cat") || "") === cat);
+    });
+    catRows.forEach(function (r) {
+      r.classList.toggle("on", (r.getAttribute("data-cat") || "") === cat);
+    });
+    apply();
+  }
+
+  function onQueryChange() {
+    var kw = (q.value || "").trim();
+    if (kw) { loadBodyIndex(); }
+    apply();
+  }
+
+  q.addEventListener("input", onQueryChange);
+  q.addEventListener("search", onQueryChange);
+  qClear.addEventListener("click", function () {
+    q.value = "";
+    q.focus();
+    apply();
+  });
+  chips.forEach(function (c) {
+    c.addEventListener("click", function () {
+      var cat = c.getAttribute("data-cat") || "";
+      setCat(activeCat === cat ? "" : cat);
+    });
+  });
+  catRows.forEach(function (r) {
+    r.addEventListener("click", function () {
+      var cat = r.getAttribute("data-cat") || "";
+      setCat(activeCat === cat ? "" : cat);
+    });
+  });
+  resetBtn.addEventListener("click", function () {
+    q.value = "";
+    setCat("");
+    q.focus();
+  });
+
+  // 支持从别处跳转过来时带关键词（如 ?q=芯片）
+  var m = location.search.match(/[?&]q=([^&]*)/);
+  if (m) {
+    try { q.value = decodeURIComponent(m[1]); } catch (e) { q.value = m[1]; }
+  }
+
+  renderIdxStat();
+  apply();
+  if ((q.value || "").trim()) { loadBodyIndex(); }
+})();
+</script>
+</body>
+</html>
