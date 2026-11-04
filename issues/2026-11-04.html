@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智武防务人工智能每日速报 — 2026年11月4日</title>
+<meta name="idx-title" content="传DeepSeek V5将采用华为芯片训练，首试国芯训国模">
+<style>
+  :root{
+    --paper:#f3ead3;
+    --paper-edge:#e2d4b0;
+    --ink:#262019;
+    --ink-soft:#564b3c;
+    --red:#7c1f1f;
+    --rule:#262019;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:#cdbf9e;
+    background-image:radial-gradient(circle at 50% 0%, #d8caa6 0%, #c2b389 100%);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,"Times New Roman",serif;
+    color:var(--ink);
+    padding:40px 14px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .paper{
+    max-width:860px; margin:0 auto;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(120,90,40,.018) 0 2px, transparent 2px 4px);
+    padding:50px 54px 60px;
+    box-shadow:0 14px 48px rgba(40,25,10,.45);
+    border:1px solid var(--paper-edge);
+    position:relative;
+  }
+  .paper::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 60px rgba(90,60,20,.18);
+  }
+
+  /* ===== 板头 ===== */
+  .masthead{ text-align:center; border-bottom:3px double var(--rule); padding-bottom:14px; }
+  .masthead .kicker{
+    font-size:12px; letter-spacing:8px; color:var(--ink-soft);
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .masthead .title{
+    font-size:44px; font-weight:900; letter-spacing:7px; margin:0;
+    line-height:1.12; color:var(--ink);
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
+  }
+  .masthead .sub{
+    font-size:13px; letter-spacing:5px; color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; letter-spacing:2px; color:var(--ink-soft);
+    border-bottom:1px solid var(--rule); padding:7px 2px; margin-top:10px;
+  }
+  .dateline .edition{ color:var(--red); font-weight:700; letter-spacing:3px; }
+
+  /* ===== 今日新闻速览 ===== */
+  .overview{
+    border:1.5px solid var(--rule); padding:16px 20px; margin:22px 0 8px;
+    background:rgba(124,31,31,.045);
+  }
+  .overview h3{
+    margin:0 0 10px; font-size:16px; letter-spacing:6px; text-align:center;
+    color:var(--red);
+  }
+  .overview p{ margin:0; font-size:14.5px; line-height:1.95; text-align:justify; }
+
+  /* ===== 类别分栏 ===== */
+  .cat-section{ margin-top:6px; }
+  .cat-head{
+    text-align:center; margin:30px 0 6px; font-size:18px; font-weight:800;
+    letter-spacing:6px; color:var(--ink);
+  }
+  .cat-head::before, .cat-head::after{
+    content:"◆"; color:var(--red); font-size:11px; margin:0 12px; vertical-align:middle;
+  }
+
+  /* ===== 新闻模块 ===== */
+  .news-item{ border-top:1px solid var(--rule); padding:16px 0 18px; }
+  .news-item:first-of-type{ border-top:none; }
+  .news-title{ font-size:21px; font-weight:800; margin:2px 0 7px; line-height:1.38; }
+  .news-meta{
+    font-size:12px; color:var(--ink-soft); font-style:italic;
+    margin-bottom:11px; letter-spacing:.4px;
+  }
+  .news-meta a{ color:var(--red); text-decoration:underline; }
+  .news-brief{ font-size:14.5px; line-height:1.98; text-align:justify; margin:0 0 13px; }
+  .news-value{
+    border-left:3px solid var(--red); padding:7px 0 7px 15px;
+    background:rgba(124,31,31,.05);
+  }
+  .news-value .vlabel{
+    font-weight:800; color:var(--red); font-size:14px; letter-spacing:1px;
+  }
+  .news-value p{ margin:7px 0 0; font-size:13.5px; line-height:1.95; text-align:justify; }
+
+  .empty{ font-size:13.5px; color:var(--ink-soft); font-style:italic; text-align:center; padding:14px 0; }
+
+  /* ===== 页脚 ===== */
+  .footer{
+    border-top:3px double var(--rule); margin-top:34px; padding-top:12px;
+    text-align:center; font-size:11px; color:var(--ink-soft); letter-spacing:1px; line-height:1.8;
+  }
+  @media (max-width:600px){
+    .paper{ padding:32px 22px 40px; }
+    .masthead .title{ font-size:32px; letter-spacing:3px; }
+  }
+</style>
+
+<style id="issue-nav-style">
+.issue-nav{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin:34px 0 4px;padding:20px 0;border-top:1px solid #262019;border-bottom:1px solid #262019;
+  font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+}
+.issue-nav .nav-item{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 18px;border:1px solid #C9B78E;background:#EDE2C6;
+  color:#7C1F1F;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:1px;
+  white-space:nowrap;transition:background .15s,color .15s;
+}
+.issue-nav .nav-item:hover{background:#262019;color:#F3EAD3;}
+.issue-nav .nav-index{background:#262019;border-color:#262019;color:#F3EAD3;letter-spacing:2px;}
+.issue-nav .nav-index:hover{background:#7C1F1F;border-color:#7C1F1F;color:#F3EAD3;}
+.issue-nav .nav-rss{background:transparent;border-color:#D8CBAA;color:#8A7B63;letter-spacing:1px;}
+.issue-nav .nav-rss:hover{background:#EDE2C6;border-color:#C9B78E;color:#7C1F1F;}
+.issue-nav .nav-disabled{color:#8A7B63;background:transparent;border-color:#D8CBAA;cursor:default;}
+.issue-nav .nav-disabled:hover{background:transparent;color:#8A7B63;}
+@media (max-width:600px){
+  .issue-nav{flex-wrap:wrap;gap:10px;}
+  .issue-nav .nav-item{font-size:12px;padding:10px 14px;}
+}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <!-- ============ 板头 ============ -->
+  <header class="masthead">
+    <div class="kicker">Global Artificial Intelligence Daily</div>
+    <h1 class="title">智武防务人工智能每日速报</h1>
+    <div class="sub">全 球 人 工 智 能 动 态 综 述</div>
+  </header>
+  <div class="dateline">
+    <span>2026年11月4日　星期三</span>
+    <span class="edition">每 日 一 刊 · 手 动 生 成</span>
+  </div>
+
+  <!-- ============ 今日新闻速览 ============ -->
+  <section class="overview">
+    <h3>今 日 新 闻 速 览</h3>
+    <p>11月3日至4日的全球 AI 动态由两条主线交织。算力与资本仍在正反馈：AMD 交出史上最强季报，数据中心收入近乎翻倍并给出2027年营收增长超80%的指引；三星得州二厂将为英伟达、AMD 生产 HBM 基础裸片，存储仍是硬约束。开源一侧则是国产模型的密集冲刺——月之暗面于11月4日放出 Kimi K3.1 Pro 全部权重，DeepSeek 被曝下一代 V5 将以昇腾950为核心训练算力，首次尝试"国芯训国模"，腾讯混元 Hy4 preview 发布即开源。资本端，推理服务商 Fal 估值半年翻倍至160亿美元，Palantir 美国商业收入首超政府收入，AI 付费正从政府订单转向企业采购。政策上，英伟达被曝要求单一数据中心对华算力占比不超49%，管制正从"芯片跨境"延伸到"算力跨境"；发改委明确"十五五"推进 AI 基础性综合性立法。国防侧，五角大楼以4.5亿美元贷款扶持"去中国零件"的无人机零部件链，Alphabet 则洽谈加入"金色穹顶"。</p>
+  </section>
+
+  <!-- ============ 算力硬件 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">算 力 硬 件</div>
+
+    <article class="news-item" id="news-1">
+      <h2 class="news-title">AMD 交出史上最强季报：数据中心收入近乎翻倍，2027 年营收增速指引超 80%</h2>
+      <div class="news-meta">发布时间：2026-11-04 06:30（北京时间）　|　来源：财联社　|　<a href="https://www.cls.cn/detail/2524477" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">AMD 于美股11月3日盘后发布2026财年三季度财报并召开电话会。公司数据中心营收同比近乎翻倍，MI455X 与 Helios 机架本季度正式出货，Anthropic、Meta、微软、OpenAI、甲骨文等头部客户已上线部署；新一代 Venice EPYC 平台订单数量较上代 Turin 提升20%，并推出面向智能体负载的 Helion 交钥匙机架方案。公司同时把2027年营收增长目标上调至超过80%，是此前长期目标的两倍以上，并预计2027年末数据中心业务占总营收逾80%。苏姿丰称三季度只是"爬坡的最开始"。AMD 还宣布收购 Taalas 与 World Labs，补齐低延迟推理芯片与空间智能能力，李飞飞将出任首席科学家。风险方面，晶圆、基板、HBM 与先进封装产能构成增长上限。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这份财报最值得我国产业界注意的不是数字，而是"供应链锁定"能力。同在存储紧缺背景下，英特尔因拿不到原材料导致四季度指引暴跌近29%，AMD 却因提前锁定晶圆、基板、封装与内存而加速——说明 AI 时代的竞争已从单卡性能前移到"谁能把整条供应链签下来"。对我国而言，这意味着国产 GPU 若只解决芯片设计而无 HBM、先进封装、基板的稳定供给，产能天花板仍握在他人手里。AMD 收购低延迟推理芯片团队也提示：推理侧的单位 token 成本正在成为主战场，而这恰是国产算力最现实的突破口。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-2">
+      <h2 class="news-title">三星得州二厂将为英伟达与 AMD 生产 HBM 基础裸片，本月正式动工</h2>
+      <div class="news-meta">发布时间：2026-11-03 20:00（北京时间）　|　来源：同花顺财经　|　<a href="https://news.10jqka.com.cn/20261103/c681424944.shtml" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据同花顺财经11月3日报道，三星电子将利用其位于美国得克萨斯州的第二座晶圆代工厂，为英伟达与 AMD 生产高带宽内存（HBM）芯片的基础裸片（base die），该工厂预计本月正式动工。此举意味着 HBM 供应链正向"美国本土制造"进一步聚拢。同一交易日，苹果 CEO 特努斯在财报会上坦言内存价格上涨正拖累新一季毛利率，并预计未来内存成本更高。此外，马斯克在 Terafab 芯片工厂如何与台积电合作的问题上立场软化，双方正准备重新谈判，台积电或将承担晶圆厂建设与运营的主要责任；Anthropic 表示力争2026年底算力规模超过3.5吉瓦、明年翻倍。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>HBM 基础裸片是 HBM 堆栈中承担逻辑与控制功能的关键一层，此前主要由存储厂自有产线或台积电代工。三星把这道工序搬到得州，既是响应美国本土化要求，也是在为"AI 内存—算力"闭环争夺政策红利。对我国影响有两层：一是 HBM 供应进一步被地缘政治切割，国产算力卡的显存来源更依赖国产 HBM 的突破；二是基础裸片多采用先进逻辑工艺，若未来被纳入出口管制清单，将形成新的"卡点"。国内存储与代工的协同（如长鑫与中芯的工艺配合）需加快裸片层的自主方案，否则算力再强也会被显存带宽锁死。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-3">
+      <h2 class="news-title">沐曦股份获世界互联网大会"杰出贡献奖"，曦云 C600 依托全国产供应链量产</h2>
+      <div class="news-meta">发布时间：2026-11-03 15:00（北京时间）　|　来源：浙江省工商业联合会　|　<a href="http://www.wzs.org.cn/sjzs/news?id=26167" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月3日，2026年世界互联网大会乌镇峰会开幕。开幕式上，沐曦股份凭借在高性能通用 GPU 领域的自主创新、全栈产品布局及生态建设成果，获大会"杰出贡献奖"（成长潜力类）。大会期间，曦思 N300 与曦云 C600 两款 GPU 联袂展出。曦云 C600 基于全国产供应链打造，面向大模型训练与推理，已于上半年首批通过国家《安全可靠测评》并实现量产销售；7月 WAIC 发布的曦景 S 系列超节点具备高算力密度、高互连带宽特性，支持横向扩展至万卡集群。软件侧自研 MXMACA 栈已支持40余种 AI 框架、1000多款模型，完成超6000个热门开源项目运行测试。公司2026年前三季度营收28.24亿元，同比增长128.45%。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>沐曦的意义不在单卡跑分，而在"全国产供应链＋量产销售＋通过安全可靠测评"这条完整闭环被打通——这是国产 GPU 从样机走向可采购商品的必要条件。前三季度营收增长128%，说明政企与智算中心订单正在真实落地，而非停留在送样阶段。但要清醒：MXMACA 兼容 CUDA 生态带来迁移便利的同时，也意味着短期内仍难摆脱"跟随式兼容"的路径依赖。下一步的关键是从"能替代"转向"定义新负载"——尤其在 MoE 推理、超节点互联这些国产厂商已有工程经验的场景上建立标准话语权，否则永远只能做别人的影子。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 技术进展 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">技 术 进 展</div>
+
+    <article class="news-item" id="news-4">
+      <h2 class="news-title">Kimi K3.1 Pro 开放全部权重：2.8 万亿参数 MoE，AA 智能指数 55 分位列全球第四</h2>
+      <div class="news-meta">发布时间：2026-11-04 08:00（北京时间）　|　来源：月之暗面官方公告 / CSDN　|　<a href="https://devpress.csdn.net/aibjcy/6ae9790840858c2d88182b38.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月4日，月之暗面按计划开放 Kimi K3.1 Pro 的完整模型权重。该模型采用2.8万亿参数 MoE 架构，每 token 激活约1040亿参数，支持100万 token 上下文，主打编程、3D 创作与金融研究。独立评测机构 Artificial Analysis 给出的智能指数为55分，位列全球第四，仅次于 Claude Opus 5.5（58分）、Claude Sonnet 5.5 与 Muse Wonder Full（均56分）；开源阵营与闭源前沿的差距由12分缩至3分，成为该指数上排名最高的开放权重模型。Agent 能力提升更明显：Terminal-Bench 4.0 由13%跃升至67%，AutomationBench-AA 从58%升至73%。值得注意的是，月之暗面在中训与强化学习阶段主动移除了网络攻防数据，内部基准 exploit 通过率由90.5%降至81.0%。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>完整权重开放对国内金融、医疗等数据不能出域的行业是直接利好——可本地部署、审计、微调，这是 API 模式无法替代的价值。更值得关注的是"主动裁剪网安能力"这一动作：它把开源模型的安全治理从"事后过滤"前移到"训练阶段的能力抑制"，我国若要在开源生态上建立可信形象，这套做法提供了可复用的合规范式。同时也要清醒：2.8万亿参数意味着绝大多数中小开发者即使拿到权重也跑不动，最终仍会回到官方 API，生态红利未必人人均沾；真正的壁垒仍是算力与工具链，而不是权重本身。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-5">
+      <h2 class="news-title">DeepSeek V5 被曝将以昇腾 950 为核心训练算力，首次尝试"国芯训国模"</h2>
+      <div class="news-meta">发布时间：2026-11-03 18:00（北京时间）　|　来源：科创板日报 / 财闻　|　<a href="https://tech.ifeng.com/c/8xj7jf0n9fW" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月3日，多名产业链人士向《科创板日报》与财闻证实，DeepSeek 下一代大模型 DeepSeek V5 计划采用华为昇腾950芯片作为核心训练算力，节奏指向明年落地。此前昇腾在 DeepSeek 模型中仅承担推理任务，V5 将是其首款原生依托昇腾开展训练的大模型。双方核心研发对接团队常驻杭州，已在 V4 阶段完成大量底层算子适配与定制开发；原先基于英伟达 CUDA 的算子链路已迁移至开源 Python 算子生态，无需从零重写底层代码。算力集群方面，DeepSeek 规划在乌兰察布建设大型智算中心部署昇腾950，预计明年建成投运。产业链人士同时确认，华为并未参与 DeepSeek 股权投资，双方仅停留在产品、算力与技术适配层面的商业合作。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这条消息的分量全在"预训练"三个字。推理验证的是"模型能不能跑"，预训练检验的是"模型能不能造"，后者对卡间互联、节点通信、并行效率、故障容错与软件栈成熟度的要求高一个量级。若 V5 跑通，将是国产芯片首次支撑顶尖大模型的完整训练链路，直接削弱"高端算力管制＝锁死中国前沿模型"这一假设，也会把全球算力竞争从单卡性能比拼推向系统生态比拼。风险同样明确：单卡显存小、集群稳定性、生态迁移成本仍是变量，乌兰察布基地尚在初期建设，实际节奏取决于工程落地而非意愿。这是最值得跟踪的一条技术主线。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-6">
+      <h2 class="news-title">腾讯混元 Hy4 preview 发布即全面开源，主打长程任务"跑得稳也用得起"</h2>
+      <div class="news-meta">发布时间：2026-11-03 14:00（北京时间）　|　来源：中国经济网　|　<a href="https://www.ce.cn/cysc/newmain/yc/jsxw/202611/t20261104_3282387.shtml" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月3日开幕的2026年世界互联网大会"互联网之光"博览会上，腾讯展出了最新发布的混元 Hy4 preview 大模型。据现场介绍，该模型发布即全面开源，面向软件工程、科研攻关、智能办公等生产力场景，重点增强长程任务的理解、规划与验证能力，目标是让长程任务"跑得稳也用得起"。同场，蚂蚁灵波（LingBot）展示了智慧药房场景：机器人在80厘米宽的窄通道内可自主完成订单接收、智能分拣到商品交付的全流程；其具身原生跨本体基座模型开源9个月来下载量已突破220万次。本届峰会以"开源开放 共建共享——携手构建网络空间命运共同体"为主题，提升开源供给能力、繁荣开源生态成为主要议题。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>国内大厂的开源策略正从"补生态"转向"抢标准"。混元选择在长程任务——也就是 Agent 最核心的短板——上做开源，实质是想让开发者把复杂工作流跑在自家底座上，从而在智能体时代占据入口。对我国的正面意义是开源供给持续增强，中小企业不必重复造轮子；隐忧在于开源模型已高度同质化，真正稀缺的是配套的推理加速库、微调框架与长期维护能力。这恰是海外 Hugging Face 生态的强项，也是我国开源最需要补的课——权重开放只是入场券，生态留存才是护城河。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-7">
+      <h2 class="news-title">谷歌提出"睡眠框架"：让大模型边睡边学，对抗灾难性遗忘</h2>
+      <div class="news-meta">发布时间：2026-11-03 10:00（北京时间）　|　来源：前沿快讯（搜狐）　|　<a href="https://www.sohu.com/a/1096524741_122055437" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">谷歌研究团队发布"睡眠框架"（Sleep Framework），模拟人类睡眠的记忆巩固机制，为大模型引入"清醒—睡眠"周期性运行模式：清醒阶段接收信息并暂存为短期记忆，睡眠阶段暂停处理新输入，通过记忆巩固与"梦境"自改进两个阶段，将短期上下文信息转化为长期参数记忆，同时避免覆盖原有知识。测试显示，该框架可将连续学习后旧任务准确率降幅减少超过60%，且无需重训旧数据即可保持能力稳定。研究团队称，这为大模型的终身持续学习提供了一条全新解决路径，相关思路可延伸至端侧模型的长期在线适应。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>灾难性遗忘是大模型"持续进化"的根本障碍——每学新东西就可能丢掉旧能力，导致企业只能靠全量重训或外挂检索绕过去。若睡眠框架能工程化，意味着模型可以像人一样"边用边学"，而不必每次都重训，这对算力成本是数量级的节约。对我国而言，这条路线尤其值得跟进：在高端算力受限的条件下，"低成本持续学习"比"堆算力重训"更符合现实约束，也是国产模型实现弯道超车的少数可行技术方向之一。建议国内高校与头部实验室尽快复现，抢占这一方向的论文与标准先机。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 商业动态 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">商 业 动 态</div>
+
+    <article class="news-item" id="news-8">
+      <h2 class="news-title">AI 推理服务商 Fal 完成 13 亿美元融资，估值半年翻倍至 160 亿美元</h2>
+      <div class="news-meta">发布时间：2026-11-04 04:10（北京时间）　|　来源：彭博社（网易转载）　|　<a href="https://news.qq.com/rain/a/20261104A038MY00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据彭博社报道，总部位于旧金山的 AI 推理初创公司 Fal 完成13亿美元新一轮（F轮）融资，由 Bessemer Venture Partners 领投，英伟达、Sound Ventures、HOF Capital 与普信集团参投，估值由今年4月的80亿美元翻倍至160亿美元。加上此前由红杉资本领投的 E 轮，两轮合计融资16.5亿美元。Fal 主要为创作者与开发者托管并运行图像、视频、音频模型，客户大量依赖开源模型；其年化收入今年早些时候已突破8亿美元。提供同类服务的 Baseten、Fireworks AI 与 Modal 也在快速成长并以更高估值完成大额融资，但由于购买或租赁算力的成本高企，多家推理公司的毛利率仍明显偏薄。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>推理赛道估值半年翻倍，说明产业共识已从"训模型"转向"卖推理"。英伟达直接参投推理聚合平台，是在锁定下游出货与生态入口——谁的推理平台最省单位 token 成本，谁就掌握开发者。对我国而言，这一模式值得警惕也值得借鉴：一方面，海外平台正把中国的开源模型（DeepSeek、Qwen、Kimi 等）托管变现，我国模型厂商并未分享这部分增值收益，等于用自己的成果喂养对手的生态；另一方面，国内推理算力平台仍高度分散，缺少统一的按 token 计价的公共底座，这是可以补的产业空白，也是智算中心从"卖机柜"升级为"卖服务"的关键一步。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-9">
+      <h2 class="news-title">Palantir 三季度营收同比增 96%，美国商业收入首次超过政府收入</h2>
+      <div class="news-meta">发布时间：2026-11-03 13:00（北京时间）　|　来源：澎湃新闻　|　<a href="https://news.qq.com/rain/a/20261103A02N3M00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">当地时间11月2日，Palantir 公布2026财年三季度财报：营收23.13亿美元，同比大增96%，为公司季度营收首次突破20亿美元；净利润11.28亿美元，同比增超一倍；调整后每股收益0.44美元，均超市场预期。最受关注的是美国商业收入同比增长148%至9.84亿美元，首次超过美国政府业务的9.53亿美元（同比增96%），过去两年其美国商业收入已增长逾5倍。公司上调全年营收指引至85.3亿美元左右，四季度指引26.5亿美元高于预期，但环比增速较上季放缓。CEO 卡普在致股东信中把增长归因于"主权 AI 运动"，并再次支持开放权重模型、批评闭源实验室索取数据主权。财报后股价仍下跌约3%。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>Palantir 的商业化路径对我国 AI 厂商是最直接的参照：它的护城河不是模型，而是把 AI 嵌入政企的决策流程与数据底座，一旦进入就极难替换。美国商业收入反超政府收入，说明"AI＋行业流程"的付费意愿已真实形成，而非靠政策订单撑起来的虚假繁荣。对我国而言，国产大模型厂商普遍强于模型、弱于落地交付，缺少 Palantir 式的领域本体（Ontology）与工程化驻场团队。卡普"呼吁实验室国有化、支持开放权重"的表态虽是商业话术，却点出一个真问题：数据主权与模型控制权正在成为政企采购的核心条款。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-10">
+      <h2 class="news-title">OpenAI 在阿联酋落地能源、政务、投资多项合作，为 200 亿美元融资铺路</h2>
+      <div class="news-meta">发布时间：2026-11-03 11:00（北京时间）　|　来源：CNBC（赛迪网编译）　|　<a href="https://www.ccidnet.com/AIqqy/1131382.jhtml" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据 CNBC 报道，OpenAI 近期在阿联酋敲定多项战略合作，为其200亿美元融资计划铺路。协议覆盖三大板块：阿布扎比国家石油公司（ADNOC）联合 G42 落地 OpenAI 前沿 AI 技术，用于复杂能源业务；穆巴达拉投资公司与 Inception42 携手 OpenAI 探索 AI 在投资分析中的落地；阿布扎比政府则与 OpenAI 签订五年协议，推动 AI 在政务、企业服务与教育领域规模化落地，并把政策法规转化为机器可读格式。奥尔特曼称，阿联酋正通过政企协同推动建立全球 AI 统一标准。中东资本此前已参与 OpenAI 3月的1220亿美元融资与 Anthropic 2月的300亿美元融资。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这是"算力换市场、资本换标准"的典型操作：OpenAI 用技术换中东的能源、资金与政府场景，中东用主权基金换 AI 能力落地的确定性。更值得警惕的是"把政策法规转为机器可读格式"这一条——它意味着监管接口本身正在被产品化，谁定义了这套机器可读规则，谁就在事实上参与了别国的 AI 治理标准制定。对我国而言，出海方向上的"AI＋政务"项目将直面这套已成型的标准竞争，需要在接口规范、数据本地化与合规认证上尽早形成自己的方案，而不是在别人的规则框架里做集成商。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-11">
+      <h2 class="news-title">甲骨文启动 200 亿美元股债融资，Meta 同步安排美元与欧元债发行</h2>
+      <div class="news-meta">发布时间：2026-11-03 09:30（北京时间）　|　来源：每日经济新闻　|　<a href="https://www.nbd.com.cn/articles/2026-11-03/4635288.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据每日经济新闻11月3日汇总，甲骨文启动总规模200亿美元的股债融资交易，为 AI 与云基础设施扩张筹集款项；Meta 已委任花旗集团与摩根士丹利，安排发行五部分美元债券和六部分欧元债券，并于11月2日、3日举行投资者电话会议。此外，资管机构 PIMCO 提示人工智能融资规模可能走向"过度"；摩根士丹利 CEO 则称未来十年 AI 资本支出可能达10万亿至15万亿美元，目前已有2万亿至3万亿美元资金承诺或已经落地。同期，Salesforce 签约收购语音 AI 公司 Cresta，将复杂客服通话接入其智能体平台；CoreWeave 扩大与 CrowdStrike 合作，为 GPU 集群提供安全防护。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>头部厂商已从"用经营现金流投资"转向"大规模举债建算力"，这是 AI 资本周期进入加杠杆阶段的明确信号。债务融资意味着刚性偿付压力，一旦推理收入增速不及预期，将直接传导为财报波动与资本开支急刹车，进而冲击上游芯片、光模块与服务器的订单节奏。对我国产业链的现实提示是：当前 AI 硬件出口订单的"高景气"隐含着海外客户的杠杆脆弱性，需对客户集中度高、以债务驱动扩产的项目保持审慎，避免把产能押在单一买家的融资能力上。同时应加快推进国内智算中心的股权、REITs 等多元融资工具，降低对单一资金渠道的依赖。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 政策风向 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">政 策 风 向</div>
+
+    <article class="news-item" id="news-12">
+      <h2 class="news-title">英伟达被曝划定 49% 算力红线：单一数据中心对华客户算力占比不得超 49%</h2>
+      <div class="news-meta">发布时间：2026-11-03 16:00（北京时间）　|　来源：金融时报（腾讯新闻编译）　|　<a href="https://news.qq.com/rain/a/20261103A0BUS600" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">2026年11月3日，据金融时报旗下 FT Technology News 报道，英伟达已要求数据中心客户降低对中国市场的算力敞口，核心约束是：单一数据中心向中国客户出售的算力不得超过其总量的49%。同日，政策评论者 Chris McGuire 在社交平台 X 上批评这一安排，认为既然受出口管制的芯片不能直接卖给中国企业，那么通过海外数据中心远程租用算力也不应被允许，合理阈值应是零。报道指出，这一约束针对的不是芯片出口许可，而是数据中心客户的算力销售结构——受影响的不仅是 GPU 整机与板卡，还包括 GPU 云、智算中心与第三方算力租赁等"以服务形式交付算力"的环节。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>49% 这个数字的真正含义，是承认了高端算力可以绕过物理关境、以远程服务的形式跨境交付——管制边界因此从"芯片是否跨境"延伸到"算力服务是否跨境"。对我国 AI 企业，这意味着此前经第三国数据中心租卡训练的路径正在收窄，且合规审查会穿透到最终用户与实际用途，转售链条越长风险越不可控。应对上，短期需重新评估算力来源的合规风险与合同可执行性，避免训练任务中途被断供；中期则必须把训练负载迁移到国产算力，DeepSeek V5 选择昇腾950正是这一逻辑的直接注脚。这条线的后续演进，取决于美方是否把 49% 进一步压到零。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-13">
+      <h2 class="news-title">国家发改委：加快人工智能基础性综合性立法，建设分领域"监管沙盒"</h2>
+      <div class="news-meta">发布时间：2026-11-03 10:30（北京时间）　|　来源：中宏网　|　<a href="https://www.zhonghongwang.com/show-254-479316-1.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月3日，国家发展改革委举行奋进"十五五"系列新闻发布会。创新和高技术发展司副司长王若蒙表示，"十五五"时期将统筹发展与安全，把安全贯穿 AI 研发、应用、治理各环节，重点抓四方面：一是健全治理规则体系，加快推进人工智能基础性综合性立法，完善保障数据、算力、算法等共性要素以及规范重点应用场景的立法，建立覆盖全生命周期的安全标准与伦理准则，并对制度实施情况周期性评估、动态调整；二是优化监管环境，合理设置过渡期，支持建设面向不同领域的人工智能"监管沙盒"；三是明确多元主体协同治理责任，推动监管结果互认；四是积极应对就业影响，推动模型训练师、数据标注员等新职业纳入国家职业分类体系。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这份表述的分量在于"基础性综合性立法"首次被明确列为"十五五"任务，意味着我国 AI 治理将从部门规章、规范性文件上升到法律层级，企业面临的合规不确定性会先升后降。与欧盟风险分级的强监管、美国场景分散的碎片化相比，中国选择的是"立法定框架＋沙盒试错＋标准落地"的三段式，对产业相对友好，也为创新留出了容错空间。企业侧应当提前布局的是：算法备案、安全评估、数据分类分级这三条既有合规链与未来立法的衔接，其中模型训练数据来源的合法性证明最可能成为执法最先触达的环节。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 国防应用 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">国 防 应 用</div>
+
+    <article class="news-item" id="news-14">
+      <h2 class="news-title">Alphabet 洽谈加入"金色穹顶"导弹防御项目，硅谷与传统军工重分蛋糕</h2>
+      <div class="news-meta">发布时间：2026-11-03 12:00（北京时间）　|　来源：彭博社（腾讯新闻编译）　|　<a href="https://news.qq.com/rain/a/20261103A09ZBM00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据彭博社报道，Alphabet 正与五角大楼洽谈，拟加入美国军方"金色穹顶"（Golden Dome）导弹防御盾项目，双方均未立即置评。"金色穹顶"是美国总统特朗普提出的多层导弹防御计划，旨在防御弹道导弹、高超音速导弹与巡航导弹，同时应对敌方无人机蜂群，全面投入运行可能需多年时间、耗资数千亿美元。该项目将为洛克希德·马丁、诺斯罗普·格鲁曼、波音、L3Harris 等传统承包商带来大量导弹与电子业务，同时也为科技行业打开新空间——"金穹"及多数新型军事系统都依赖先进软件与人工智能。目前五角大楼已与 Alphabet、OpenAI、SpaceX 在云服务、信号处理与目标指示等领域合作；Anthropic 此前因对监控相关政策有异议而停止相关合作。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"金色穹顶"是观察美军 AI 采购逻辑变化的最佳样本：软件定义、AI 驱动、商业技术优先，传统主承包商提供硬件平台，科技公司提供大脑。这种"新主承包商"（neo-prime）分工对我国防科技工业的启示是双向的——一方面，美军正用商业迭代速度压缩装备研制周期，需警惕其在指挥控制与拦截决策链上形成的代差；另一方面，Alphabet 进场、Anthropic 因监控伦理退出的分歧说明，商业 AI 公司与军方之间的伦理裂缝依然存在，这为国际舆论与技术治理留下了空间。国内则需在"民企参军"与安全审查之间找到更清晰的制度接口。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-15">
+      <h2 class="news-title">五角大楼 4.5 亿美元贷款扶持 Neros，欲建"不含中国零件"的无人机零部件链</h2>
+      <div class="news-meta">发布时间：2026-11-03 08:30（北京时间）　|　来源：Defence Blog（腾讯新闻编译）　|　<a href="https://news.qq.com/rain/a/20261103A05XVR00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据 Defence Blog 11月2日报道，美国国防部战略资本办公室（OSC）向加州无人机制造商 Neros 提供最高4.5亿美元有条件贷款，Neros 另出1.65亿美元股权资金，项目总盘子推至6.15亿美元。资金用于扩建其加州托兰斯工厂，生产完整无人机、地面控制站，以及电机、飞行控制器、无线电、热传感器与电池等核心部件；这些零部件不仅供自用，还需出售给其他美国及盟国无人机制造商，并须符合美国国防采购法规（NDAA）要求。Neros 2023年由两名前无人机竞速选手创立，主打 FPV 攻击四旋翼 Archer，射程约20公里、载荷2公斤、不含战斗部单价约2000美元，已通过 Blue UAS 认证。此前 OSC 已于7月向另一家无人机部件公司提供最高8.2亿美元贷款。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这笔钱的落点不在整机，而在零部件供应节点——美国要拆解的是无人机产业对中国电机、电池、飞控与传感器的长期依赖。Neros 声称 Archer 不含中国零件，正说明"去中国化"已成为美国国防采购的硬门槛。对我国无人机产业链，这意味着民用出口订单将持续遭遇 Blue UAS、NDAA 等清单式排斥，海外市场准入成本上升。但短期替代并不容易：五角大楼自己承认低成本无人机量产落后于中俄，Skydio CEO 也坦言"完全摆脱中国供应链"的说法低估了多级间接依赖。真正的应对不是降价抢单，而是把电机、电池、飞控的国产化规模优势转化为标准与产能话语权。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <nav class="issue-nav">
+      <a class="nav-item nav-prev" href="2026-11-03.html"><svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M9.5 3L4.5 7.5L9.5 12M4.8 7.5H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>上一期 · 11月3日</span></a>
+      <a class="nav-item nav-index" href="../index.html">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M2.5 3.5h10M2.5 7.5h10M2.5 11.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>往期索引</span>
+      </a>
+      <span class="nav-item nav-disabled">下一期 · 尚未发布</span>
+      <a class="nav-item nav-rss" href="../feed.xml">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><circle cx="3.2" cy="11.8" r="1.4" fill="currentColor"/><path d="M2.4 7.6a5 5 0 015 5M2.4 4a8.6 8.6 0 018.6 8.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+        <span>RSS</span>
+      </a>
+    </nav>
+
+  <footer class="footer">
+    本速报由 AI 自动检索公开信源并生成，仅供研究参考。原始新闻版权归原媒体所有，点击标题下方链接可阅读原文。<br>
+    智武防务人工智能每日速报 · GLOBAL AI DAILY · 聚焦中国视角
+  </footer>
+
+</div>
+</body>
+</html>
