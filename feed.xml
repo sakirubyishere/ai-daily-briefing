@@ -5,8 +5,16 @@
     <link>https://sakirubyishere.github.io/ai-daily-briefing/</link>
     <description>全球人工智能每日动态综述，五大分类，聚焦中国视角</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 04 Nov 2026 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 08:00:00 +0800</lastBuildDate>
     <atom:link href="https://sakirubyishere.github.io/ai-daily-briefing/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Shield AI 公开 X-BAT 001 全尺寸原型机：尾坐式无人战机年底首飞</title>
+      <link>https://sakirubyishere.github.io/ai-daily-briefing/issues/2026-11-05.html</link>
+      <guid isPermaLink="true">https://sakirubyishere.github.io/ai-daily-briefing/issues/2026-11-05.html</guid>
+      <pubDate>Thu, 05 Nov 2026 08:00:00 +0800</pubDate>
+      <description>本期共 16 条。算力硬件 3；技术进展 3；商业动态 4；政策风向 3；国防应用 3</description>
+      <category>2026年11月5日</category>
+    </item>
     <item>
       <title>传DeepSeek V5将采用华为芯片训练，首试国芯训国模</title>
       <link>https://sakirubyishere.github.io/ai-daily-briefing/issues/2026-11-04.html</link>

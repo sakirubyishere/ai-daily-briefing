@@ -115,7 +115,22 @@
       },
       "total": 15,
       "url": "issues/2026-11-04.html"
+    },
+    "2026-11-05": {
+      "date": "2026-11-05",
+      "weekday": "星期四",
+      "headline": "Shield AI 公开 X-BAT 001 全尺寸原型机：尾坐式无人战机年底首飞",
+      "idx_title": "Anthropic 用 Claude 设计芯片，IPO 估值或达 1.5 万亿美元",
+      "counts": {
+        "算力硬件": 3,
+        "技术进展": 3,
+        "商业动态": 4,
+        "政策风向": 3,
+        "国防应用": 3
+      },
+      "total": 16,
+      "url": "issues/2026-11-05.html"
     }
   },
-  "updated": "2026-11-04"
+  "updated": "2026-11-05"
 }

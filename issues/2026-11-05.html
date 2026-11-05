@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智武防务人工智能每日速报 — 2026年11月5日</title>
+<meta name="idx-title" content="Anthropic 用 Claude 设计芯片，IPO 估值或达 1.5 万亿美元">
+<style>
+  :root{
+    --paper:#f3ead3;
+    --paper-edge:#e2d4b0;
+    --ink:#262019;
+    --ink-soft:#564b3c;
+    --red:#7c1f1f;
+    --rule:#262019;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:#cdbf9e;
+    background-image:radial-gradient(circle at 50% 0%, #d8caa6 0%, #c2b389 100%);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,"Times New Roman",serif;
+    color:var(--ink);
+    padding:40px 14px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .paper{
+    max-width:860px; margin:0 auto;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(120,90,40,.018) 0 2px, transparent 2px 4px);
+    padding:50px 54px 60px;
+    box-shadow:0 14px 48px rgba(40,25,10,.45);
+    border:1px solid var(--paper-edge);
+    position:relative;
+  }
+  .paper::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 60px rgba(90,60,20,.18);
+  }
+
+  /* ===== 板头 ===== */
+  .masthead{ text-align:center; border-bottom:3px double var(--rule); padding-bottom:14px; }
+  .masthead .kicker{
+    font-size:12px; letter-spacing:8px; color:var(--ink-soft);
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .masthead .title{
+    font-size:44px; font-weight:900; letter-spacing:7px; margin:0;
+    line-height:1.12; color:var(--ink);
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
+  }
+  .masthead .sub{
+    font-size:13px; letter-spacing:5px; color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; letter-spacing:2px; color:var(--ink-soft);
+    border-bottom:1px solid var(--rule); padding:7px 2px; margin-top:10px;
+  }
+  .dateline .edition{ color:var(--red); font-weight:700; letter-spacing:3px; }
+
+  /* ===== 今日新闻速览 ===== */
+  .overview{
+    border:1.5px solid var(--rule); padding:16px 20px; margin:22px 0 8px;
+    background:rgba(124,31,31,.045);
+  }
+  .overview h3{
+    margin:0 0 10px; font-size:16px; letter-spacing:6px; text-align:center;
+    color:var(--red);
+  }
+  .overview p{ margin:0; font-size:14.5px; line-height:1.95; text-align:justify; }
+
+  /* ===== 类别分栏 ===== */
+  .cat-section{ margin-top:6px; }
+  .cat-head{
+    text-align:center; margin:30px 0 6px; font-size:18px; font-weight:800;
+    letter-spacing:6px; color:var(--ink);
+  }
+  .cat-head::before, .cat-head::after{
+    content:"◆"; color:var(--red); font-size:11px; margin:0 12px; vertical-align:middle;
+  }
+
+  /* ===== 新闻模块 ===== */
+  .news-item{ border-top:1px solid var(--rule); padding:16px 0 18px; }
+  .news-item:first-of-type{ border-top:none; }
+  .news-title{ font-size:21px; font-weight:800; margin:2px 0 7px; line-height:1.38; }
+  .news-meta{
+    font-size:12px; color:var(--ink-soft); font-style:italic;
+    margin-bottom:11px; letter-spacing:.4px;
+  }
+  .news-meta a{ color:var(--red); text-decoration:underline; }
+  .news-brief{ font-size:14.5px; line-height:1.98; text-align:justify; margin:0 0 13px; }
+  .news-value{
+    border-left:3px solid var(--red); padding:7px 0 7px 15px;
+    background:rgba(124,31,31,.05);
+  }
+  .news-value .vlabel{
+    font-weight:800; color:var(--red); font-size:14px; letter-spacing:1px;
+  }
+  .news-value p{ margin:7px 0 0; font-size:13.5px; line-height:1.95; text-align:justify; }
+
+  .empty{ font-size:13.5px; color:var(--ink-soft); font-style:italic; text-align:center; padding:14px 0; }
+
+  /* ===== 页脚 ===== */
+  .footer{
+    border-top:3px double var(--rule); margin-top:34px; padding-top:12px;
+    text-align:center; font-size:11px; color:var(--ink-soft); letter-spacing:1px; line-height:1.8;
+  }
+  @media (max-width:600px){
+    .paper{ padding:32px 22px 40px; }
+    .masthead .title{ font-size:32px; letter-spacing:3px; }
+  }
+</style>
+
+<style id="issue-nav-style">
+.issue-nav{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin:34px 0 4px;padding:20px 0;border-top:1px solid #262019;border-bottom:1px solid #262019;
+  font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+}
+.issue-nav .nav-item{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 18px;border:1px solid #C9B78E;background:#EDE2C6;
+  color:#7C1F1F;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:1px;
+  white-space:nowrap;transition:background .15s,color .15s;
+}
+.issue-nav .nav-item:hover{background:#262019;color:#F3EAD3;}
+.issue-nav .nav-index{background:#262019;border-color:#262019;color:#F3EAD3;letter-spacing:2px;}
+.issue-nav .nav-index:hover{background:#7C1F1F;border-color:#7C1F1F;color:#F3EAD3;}
+.issue-nav .nav-rss{background:transparent;border-color:#D8CBAA;color:#8A7B63;letter-spacing:1px;}
+.issue-nav .nav-rss:hover{background:#EDE2C6;border-color:#C9B78E;color:#7C1F1F;}
+.issue-nav .nav-disabled{color:#8A7B63;background:transparent;border-color:#D8CBAA;cursor:default;}
+.issue-nav .nav-disabled:hover{background:transparent;color:#8A7B63;}
+@media (max-width:600px){
+  .issue-nav{flex-wrap:wrap;gap:10px;}
+  .issue-nav .nav-item{font-size:12px;padding:10px 14px;}
+}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <!-- ============ 板头 ============ -->
+  <header class="masthead">
+    <div class="kicker">Global Artificial Intelligence Daily</div>
+    <h1 class="title">智武防务人工智能每日速报</h1>
+    <div class="sub">全 球 人 工 智 能 动 态 综 述</div>
+  </header>
+  <div class="dateline">
+    <span>2026年11月5日　星期四</span>
+    <span class="edition">每 日 一 刊 · 手 动 生 成</span>
+  </div>
+
+  <!-- ============ 今日新闻速览 ============ -->
+  <section class="overview">
+    <h3>今 日 新 闻 速 览</h3>
+    <p>11月4日至5日，全球AI的张力集中在两句话上：算力能不能到手，模型能不能自己干活。算力侧，中国三大云厂商的600万张英伟达显卡订单四个月仅能拿到约1%，Anthropic则宣布用自家Claude设计自研芯片——一边是交付权的收紧，一边是设计权的内化。模型侧，微信开源统一视觉模型WeVisOne-VL、Anthropic开源零知识证明系统FlashProve，开源与可验证性成为新战场；SuperCLUE十一月榜单显示，国产开源第一梯队与闭源头部仍差约12分。产业侧，京东抛出五年300万台机器人的采购计划，后摩智能完成数十亿元B轮，具身智能与端侧算力同时提速。政策层面，美国新一财年国防授权法案拟纳入四项芯片管制立法，管制正从行政令走向成文法。国防应用上，Shield AI的X-BAT尾坐式无人战机原型机亮相、空客转向"渡鸦风暴"，无人空战装备进入工程化竞赛阶段。</p>
+  </section>
+
+  <!-- ============ 算力硬件 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">算 力 硬 件</div>
+
+    <article class="news-item" id="news-1">
+      <h2 class="news-title">芯原推出面向可穿戴设备的 GCNanoOptimaV 2.5D GPU IP</h2>
+      <div class="news-meta">发布时间：2026-11-05 09:00（北京时间）　|　来源：证券时报　|　<a href="https://www.stcn.com/article/detail/4323301.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月5日，芯原股份（688521.SH）发布新一代 GCNanoOptimaV 2.5D 图形处理（GPU）IP，面向可穿戴设备。该 IP 集成专用硬件描边引擎与椭圆渲染引擎，针对矢量图形渲染的性能瓶颈；创新的网格渲染架构可降低片上 SRAM 需求，使资源受限的 SoC 也能集成 GPU；同时集成 DECNano 3.0 压缩引擎，在保持 2:1 固定压缩比的同时提升画质。产品保持与 VGLite 图形 API 兼容，支持 LVGL 等主流框架及 SVG、PNG 格式，客户迁移改动较少。芯原称其在地图显示与导航等场景实现可量化性能提升并降低功耗，目前已获多家领先客户采用。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>可穿戴是AI硬件出货量最大的入口，GPU IP 自主化直接关系AI眼镜、手表、耳机等新形态的底层供给。芯原以 IP 授权模式切入，可与国产 SoC、国产代工形成"IP+制造+终端"闭环，降低对 Imagination、ARM Mali 的长期依赖。短板在生态：VGLite 相对小众，若主流引擎与框架不跟进，纸面性能难转化为订单。建议推动国产图形 API 与端侧AI框架在可穿戴侧的标准化，避免"有 IP 无生态"。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-2">
+      <h2 class="news-title">Anthropic 用自家 Claude 设计自研 AI 芯片，IPO 估值或达 1.5 万亿美元</h2>
+      <div class="news-meta">发布时间：2026-11-05 08:57（北京时间）　|　来源：The Information／香港经济日报　|　<a href="https://inews.hket.com/article/4220063/" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据 The Information 报道，Anthropic 正准备于本月晚些时候启动首次公开募股（IPO），估值可能达到 1.5 万亿美元。在近期与投资者举行的会议上，公司透露新组建的 15 人芯片设计团队已开始使用自家 Claude 模型开展定制芯片的工程与设计工作。工程师称，与英伟达、AMD 等大型芯片设计公司的传统工作流程相比，Claude 能显著缩短设计所需时间。此前 Claude 已用于发现严重网络安全漏洞与改写编程行业。公开资料显示，Anthropic 三季度收入增速放缓，已签算力承诺约 8954 亿美元。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>模型反哺芯片设计，意味着头部AI公司正把"算法—芯片"闭环内化，长期将削弱对通用 GPU 的依赖，也抬高后来者的门槛。对我国而言，"用AI设计AI芯片"是一条可复制路径：EDA 恰是国产链条最薄弱处，若能用大模型辅助设计与验证，或可部分绕开工具链封锁；前提是自有模型具备长程工程推理与形式化验证能力。建议在国产 EDA 与大模型结合上设专项，同时警惕顶尖设计人才与 IP 进一步向美国集中。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-3">
+      <h2 class="news-title">700 亿美元订单只到手 1%：中国三大云厂商 600 万张英伟达显卡交付告急</h2>
+      <div class="news-meta">发布时间：2026-11-05 08:55（北京时间）　|　来源：BlockBeats／腾讯新闻　|　<a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&amp;id=SN20261105085505a6ee143a" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月4日据外媒报道，阿里、腾讯、字节等中国科技巨头累计订购约 600 万张英伟达 RTX PRO 5500 显卡，总价值约 700 亿美元；但受产能限制，未来四个月预计只能拿到数万张，约占订单量的 1%。该批订单 10 月已曝光，当时英伟达预计只能满足 5%–10% 的需求，如今短期交付更趋严峻：2026 年底前可能仅数千张到货，明年 2 月再交付数万张。RTX PRO 5500 为 84GB 显存工作站卡，性能不及 H200、B300，但在美国出口管制下是中国企业可获得的现实选择。由于台积电产能优先留给利润更高的 Rubin，该卡明年全球产量或不足 300 万张；部分客户估计到 2027 年底累计约 70 万张，仅占订单的 12%。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"算力可获得性"已成为比单卡性能更硬的约束。管制并未切断供给，而是把中国AI产业推向"降级卡+自研替代"的双轨：短期中小企业算力成本上升、集群扩充节奏被打乱；中期为国产 GPU（昇腾、寒武纪、沐曦、天数）留出确定性窗口。但必须警惕"用降级卡锁死生态"的隐性代价——CUDA 黏性会延缓软件栈迁移。建议把国产卡在训练侧的规模化验证与迁移工具链建设提到更高优先级，而非满足于推理替代。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 技术进展 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">技 术 进 展</div>
+
+    <article class="news-item" id="news-4">
+      <h2 class="news-title">SuperCLUE 十一月榜：Gemini-4-Argon 总分居首，Kimi K3.1 Pro 拿下国内第一</h2>
+      <div class="news-meta">发布时间：2026-11-05 07:40（北京时间）　|　来源：快科技／新浪科技　|　<a href="https://tech.sina.cn/2026-11-05/detail-inixrqen6329065.d.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">SuperCLUE 发布 2026 年 11 月通用大模型测评榜单，共 19 个国内外模型参与，测评集覆盖智能体编程、数理推理、超长上下文、精确指令遵循、幻觉控制五大任务。Gemini-4-Argon 以 73.62 分居首，GPT-6.1-Sol 以 71.76 分紧随，两者均为闭源。开源阵营中，Kimi-K3.1-Pro 以 61.46 分排名最高并居国内第一，DeepSeek-V4.1-Flash-1017 以 58.95 分次之，智谱 GLM-5.3 得 50.66 分。分项看，Gemini-4-Argon 超长上下文 95.63 分、指令遵循 88.97 分，GPT-6.1-Sol 数理推理 76.32 分，Kimi 幻觉控制 67.78 分为国内最优。测评将相差 1 分以内者列为并列。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>国产开源第一与闭源头部相差约 12 分，且差距集中在超长上下文与复杂推理，而非中文理解——这说明"堆参数"的边际收益在下降，工程化能力（上下文管理、工具调用、幻觉抑制）才是关键。对我国产业，开源领先是可自托管、可控成本的优势；但若在智能体编程这类生产力场景持续落后，企业级付费意愿会被压缩。建议把评测重心从静态题库转向真实长周期任务，避免"跑分领先、落地落后"。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-5">
+      <h2 class="news-title">微信开源 WeVisOne-VL：用约 960 万参数小模块替代外接 SAM，学会"说没有"</h2>
+      <div class="news-meta">发布时间：2026-11-04 22:00（北京时间）　|　来源：腾讯研究院AI速递　|　<a href="https://www.sohu.com/a/1097287287_455313" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">微信视觉团队开源视觉模型 WeVisOne-VL，以统一输出格式完成目标定位、计数、读字、分割与抠图，用约 960 万参数的小模块替代外接 SAM（Segment Anything Model）。其显著特点是具备拒识能力：目标不在图中时直接返回 None，4B 版在 Ref-ZOM 基准上正确回答"没有"的比例达 86.0%，同类开源模型仅 0.3% 与 1.3%。团队称累计自动标注超 1 亿张图、约 36 亿个目标框，本次开源 2B、4B 权重及标注工具 Mask2Alpha，采用 Apache 2.0 许可，目前仅支持图片输入。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"知道什么不该答"是视觉模型进入工业质检、医疗影像、内容审核的前提，拒识能力对落地的影响往往大于精度。微信以社交场景沉淀的标注数据（36 亿框）形成数据壁垒，再以开源加速成为事实标准——这对我国构建自主视觉基础模型生态有利，也把"数据—模型—工具链"闭环留在国内。风险在于仅支持图片，视频与三维场景尚未覆盖，需警惕被原生多模态大模型整体替代。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-6">
+      <h2 class="news-title">Anthropic 开源 FlashProve：不公开权重也能证明"这句话出自哪个模型"</h2>
+      <div class="news-meta">发布时间：2026-11-04 21:30（北京时间）　|　来源：腾讯研究院AI速递　|　<a href="https://www.sohu.com/a/1097287287_455313" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">Anthropic 开源可证明推理系统 FlashProve，基于零知识证明，无需公开模型权重即可证明某段回答确由所承诺的模型生成。在 4000 亿参数 MoE 模型 Llama 4 Maverick 上，单张 H100 的证明吞吐约 110 Token/s，每份证明约 18.78MB，CPU 验证耗时约 17 秒。代价同样明确：证明消耗的 GPU 时间约为 vLLM 常规推理的 70 至 95 倍，当前仅支持 1024 Token 上下文、整数模型与贪婪解码，且只证明来源、不证明内容正确性。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>该技术把"模型来源可核验"变成工程可选项，对跨境AI服务、政府采购、金融合规有直接意义：模型在境外部署时权重不必出境，也能证明"用的是哪个模型、有没有被替换"——这恰好对应我国对"允许境外使用、管住技术转出"的管制诉求。70 至 95 倍开销意味着短期只能用于高价值审计场景。建议国内同步布局可验证推理，避免在AI信任基础设施这一层受制于人。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 商业动态 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">商 业 动 态</div>
+
+    <article class="news-item" id="news-7">
+      <h2 class="news-title">谷歌为 Anthropic 190 亿美元数据中心租约提供信用支持，违约可接手项目</h2>
+      <div class="news-meta">发布时间：2026-11-05 07:50（北京时间）　|　来源：香港经济日报　|　<a href="https://inews.hket.com/article/4220063/" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">美国数据中心运营商 TeraWulf 于 11 月 4 日宣布，与 Alphabet 达成信用支持协议，为 Anthropic 租用肯塔基州数据中心提供融资保障。Anthropic 此前签下 20 年租约，合约总值约 190 亿美元，园区规划 IT 运算容量约 401MW，首批设施预计 2027 年下半年投用、2028 年二季度完成交付。根据向 SEC 提交的文件，若 Anthropic 未能支付租金或进入破产程序，谷歌可选择接手租约，或按条款支付终止费并取得项目公司 Raylan Data 股权；若 Anthropic 或其担保关联方取得投资级评级并维持至少三个月，谷歌的保障责任可依约终止。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>巨头以"信用背书"替AI公司加杠杆，本质是把算力基建风险从资产负债表转移到担保结构，AI 资本支出的金融化程度进一步加深。这提示算力竞争已从"买卡"转向"融资能力+电力+园区"的综合比拼：我国在电力供给与建设速度上有优势，但在长期低成本资金与国际租约结构上经验不足。需警惕美方以融资担保绑定盟友算力，形成排他性供给圈，同时关注此类担保一旦违约对AI资产估值的连锁冲击。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-8">
+      <h2 class="news-title">普渡机器人发布"一脑多形"战略，六条产品线同台亮相</h2>
+      <div class="news-meta">发布时间：2026-11-04 22:00（北京时间）　|　来源：Interesting Engineering／网易　|　<a href="https://www.163.com/dy/article/LAUVBM6N05561FYI.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11 月 4 日，深圳普渡机器人在阿姆斯特丹欧洲合作伙伴峰会上首次同台展示全部六条机器人产品线，并发布"一脑多形"（One Brain, Multiple Embodiments）战略，让轮式、四足与半人形机器人共用同一套AI技术底座。旗舰 D7 为轮式半人形机器人，身高 1.65 米、重约 45 公斤、电池超 1 千瓦时，可连续工作 8 小时以上，30 个自由度（加装灵巧手可提升至 50 个），机械臂最多举升约 10 公斤，可在办公室、仓库、工厂搬运与分拣。四足机器人 D5/D5-W 搭载英伟达 Jetson Orin AGX 与 RK3588，算力 275 TOPS；猫脸服务机器人 BellaBot Pro 同步亮相。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"一脑多形"是降低具身智能边际成本的关键思路：同一模型跨形态迁移，可把研发投入摊薄到多条产品线。我国服务机器人已在清洁、配送形成规模优势，向半人形延伸是自然路径；但 D5 仍依赖英伟达 Jetson，端侧算力受制于人是最现实的短板。建议在服务机器人这一优势场景优先完成国产算力替代，形成"场景—数据—芯片"的正循环，避免把利润最薄的整机环节留在国内、把高毛利的算力环节让出去。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-9">
+      <h2 class="news-title">京东启动"物理 AI 加速计划"：五年采购 300 万台机器人、100 万台无人车、10 万架无人机</h2>
+      <div class="news-meta">发布时间：2026-11-04 20:00（北京时间）　|　来源：搜狐科技／巨丰财经　|　<a href="https://www.sohu.com/a/1097343657_122550976" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11 月 4 日，2026 年世界互联网大会乌镇峰会机器人与具身智能论坛上，京东集团技术委员会主席曹鹏宣布启动"京东物理 AI 加速计划"：未来五年采购 300 万台机器人、100 万台无人车与 10 万架无人机，形成一张供应链智能化网络。京东称将以真实产业场景推动具身智能规模化"上岗"。同场，宇树科技王兴兴表示顶尖具身模型已接近"在 80% 陌生场景中通过语音指令完成 80% 任务"，但拆机、装配等精细操作仍受物理对齐与触觉制约；银河通用高级副总裁曾辉强调，人形机器人的价值在于进入产线承担实际作业，而非表演炫技。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这是目前全球规模最大的具身智能采购承诺之一，意义不在数量而在"订单前置"——用确定性需求倒逼硬件降本与可靠性提升，绕过从实验室到产线的死亡谷。对我国而言，物流仓储是最可能率先跑通人形与轮式机器人的场景，京东、顺丰、美团构成需求侧壁垒。风险是 300 万台若集中在低价值搬运环节，可能固化"低端量产、高端缺芯"的结构。建议把该采购计划与国产谐波减速器、灵巧手、端侧算力配套绑定，把订单红利留在国内供应链。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-10">
+      <h2 class="news-title">后摩智能完成数十亿元 B 轮融资，存算一体押注端侧推理</h2>
+      <div class="news-meta">发布时间：2026-11-04 18:00（北京时间）　|　来源：搜狐科技　|　<a href="https://www.sohu.com/a/1097361017_128075" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11 月 4 日，存算一体 AI 芯片企业后摩智能宣布完成数十亿元人民币 B 轮融资，资金将用于扩大 M50 规模化交付、推进新一代 M6X 与下一代 3D CIM 产品研发。公司称 M50 量产不足一年已获得 150 余个产品定点、服务客户超过百家，自身定位为"端侧免费 Token 工厂"的算力底座。在半导体一级市场融资节奏趋于谨慎、AI 芯片估值回归产业逻辑的背景下，这笔大额 B 轮被视为资本对端侧推理与存算一体路线的集中表态：竞争焦点正从"参数与峰值算力"转向"能效、量产交付与软件生态"。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>资本从"峰值算力"转向"能效与交付"，说明端侧推理的商业模式正在被验证。存算一体在低功耗端侧具理论优势，若 M50 能兑现定点交付，将缓解我国在边缘AI芯片上对高通、英伟达 Jetson 的依赖。真正的风险在软件栈：存算一体架构的编译器与算子库生态几乎从零起步，客户迁移成本高。建议以行业标准与开源工具链降低适配门槛，同时防范"融资到位、交付掉队"的典型陷阱——融资是入场券，交付才是分水岭。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 政策风向 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">政 策 风 向</div>
+
+    <article class="news-item" id="news-11">
+      <h2 class="news-title">美国新财年国防授权法案拟纳入四项芯片管制立法，管制走向成文化</h2>
+      <div class="news-meta">发布时间：2026-11-05 08:10（北京时间）　|　来源：摩根士丹利研报／腾讯新闻　|　<a href="https://news.qq.com/rain/a/20261105A03SPW00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">摩根士丹利 11 月 5 日研报称，2027 财年《国防授权法案》（NDAA）基本情景是在年底前获得通过，其中值得关注的出口管制立法包括：协调盟友管制措施的《MATCH 法案》、将商务部芯片出口政策正式纳入法律的《AI OVERWATCH 法案》、涉及芯片位置验证的《芯片安全法案》，以及《远程访问安全法案》（RASA）。该行判断政策方向将是进一步加强限制，且推动这一趋势的力量越来越多地来自国会，而白宫优先考虑与中国保持关系稳定。白宫提出的国防预算要求约 1.5 万亿美元，被认为相当激进。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>管制手段正从"行政令+实体清单"转向"成文法+位置验证+远程访问管控"，可撤销性与谈判空间同时下降。芯片位置验证若落地，将直接打击转口贸易与云上远程租算力两条规避路径，我国企业通过第三地获取先进算力的通道会进一步收窄。应对上应加快国产替代的"可用性"验证（而非仅"可造"），并把合规风险前置到采购合同与云服务条款，避免被动断供。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-12">
+      <h2 class="news-title">中国信通院等 20 家单位联合发布《智能体发展自律公约》</h2>
+      <div class="news-meta">发布时间：2026-11-04 19:00（北京时间）　|　来源：搜狐科技　|　<a href="https://www.sohu.com/a/1097361017_128075" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11 月 4 日，中国信通院、华为、阿里等 20 家单位联合发布《智能体发展自律公约》，提出建设智能体互联基础设施，方向涉及智能体注册与解析、能力描述与发现、协议兼容与互认、资源调度与计量等。公约与同日端侧芯片融资形成呼应：智能体要跨平台调用，需要低成本的端侧算力支撑；端侧芯片要扩大出货，也需要开放互联的协议与生态来降低适配成本。报道同时指出，自律公约缺乏强制约束力，互联互通与生态壁垒之间的张力难以靠一纸公约化解，标准落地仍要看后续技术规范与监管配套。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这是我国在"智能体互联"标准上的一次抢位。若注册解析与计量体系成型，相当于掌握了智能体时代的"域名系统+结算层"，对争夺下一代互联网基础设施话语权意义重大——这也是国际标准竞争中尚未定局的一块。短板是软约束：互联互通与生态壁垒天然冲突，头部平台缺乏开放动力。建议尽快把公约升级为可测试的技术规范与互认清单，同步推进计量计费标准，避免沦为宣言式文件。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-13">
+      <h2 class="news-title">商务部：完善优化出口管制体系，"十五五"AI 赋能千行百业</h2>
+      <div class="news-meta">发布时间：2026-11-04 17:30（北京时间）　|　来源：财联社　|　<a href="https://www.cls.cn/detail/2525737" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11 月 4 日，第九届中国国际进口博览会开幕前夕，商务部副部长凌激在上海主持召开参展跨国企业圆桌会，鹏瑞利、欧姆龙、蔡司、赛诺菲、波音、博世、福特等 100 余家跨国企业及外国商协会负责人参会。凌激表示，"十五五"时期中国将全面推进产业智能化绿色化融合化发展，人工智能赋能千行百业将催生出巨大增量市场，为跨国企业在华创新创造提供广阔空间；中国将保障外资企业平等参与政府采购等合法权益，并不断完善优化出口管制体系，着力营造市场化、法治化、国际化一流营商环境。与会企业表示将坚定扩大在华投资。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"完善优化出口管制体系"与"保障外资平等参与政府采购"并列，是我方在管制对等与开放承诺之间的平衡表述。对产业的含义是双向的：一方面，关键矿产等反制工具箱将继续制度化；另一方面，外资在AI应用市场的准入确定性提升，有利于把跨国企业的模型与场景留在国内。需关注"优化"是否意味着许可流程透明化与时限明确——这直接影响外企在华部署AI的意愿，也影响我方管制工具的可信度。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 国防应用 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">国 防 应 用</div>
+
+    <article class="news-item" id="news-14">
+      <h2 class="news-title">Shield AI 公开 X-BAT 001 全尺寸原型机：尾坐式无人战机年底首飞</h2>
+      <div class="news-meta">发布时间：2026-11-05 03:00（北京时间）　|　来源：Army Recognition／Janes／腾讯新闻　|　<a href="https://news.qq.com/rain/a/20261105A03G0700" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11 月 3 日，Shield AI 首次公开 X-BAT 001 全尺寸原型机：无驾驶舱、无起落架，靠尾坐姿态垂直起降的自主战斗机，计划 2026 年底前在堪萨斯州首飞。001 号原型机头进气口重新设计为宽大、棱角分明的"嘴状"开口，与早期概念图明显不同；机身覆灰色数码迷彩，印有"Powered by Hivemind"（自主飞行软件）。尾部圆形喷管由多层金属片叠合，与 GE F110-GE-129E 配套的 AVEN 矢量喷管特征一致，用于偏转推力实现竖直悬停与降落。规划为 2026 年底首飞、2028 年完成测试、2029 年进入初期量产；公司今年已从美国海军获得约 2 亿美元资助，用于"跑道无关"的海上打击相关项目。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>尾坐式垂直起降加自主软件的组合，直指"无跑道、可分散部署"的印太作战构想——本质是用软件弥补基地脆弱性，降低对长跑道的依赖。对我防空体系而言，这类平台起飞点分散、雷达特征小，以机场为节点的传统打击逻辑失效，需强化广域低空探测与分布式拦截能力。同时应关注 Hivemind 这类"自主决策内核"的扩散性：软件比机体更容易被复制到其他平台，其成熟度才是真正的变量。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-15">
+      <h2 class="news-title">空客放弃 Wingman，转推 U760"渡鸦风暴"协同作战飞机</h2>
+      <div class="news-meta">发布时间：2026-11-05 02:30（北京时间）　|　来源：Breaking Defense／腾讯新闻　|　<a href="https://news.qq.com/rain/a/20261105A03AAM00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11 月 3 日，空客在慕尼黑国际战斗机会议上确认，放弃 2024 年柏林航展首展的 Wingman 无人僚机概念，转而全力推进 U760"渡鸦风暴"（Ravenstorm）协同作战飞机。直接原因不是技术失败，而是时间表对不上：Wingman 原计划配备罗尔斯·罗伊斯德国与西班牙 ITP Aero 联合研制的专用发动机，服役节点接近 2040 年，而德国空军要求大幅提前。Ravenstorm 改用商用客机／公务机级涡扇发动机，衍生自 2003 年"梭鱼"隐身无人机验证机。公开参数为机长 13 米、翼展 10 米、最大起飞重量约 6 吨、内部弹舱载荷 500 公斤、高亚音速巡航，任务覆盖空对地精确打击、空对空防御与电子战干扰，瞄准 2032 年服役；第一层是 2029 年满足德国空军的 U740"女武神"。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>欧洲协同作战飞机（CCA）路线开始"以成熟动力换时间"，暴露其在专用发动机与适航认证环节的结构性短板——这与中国、美国在动力上的自主程度形成鲜明对照。对我启示有二：其一，无人机竞赛的瓶颈正从气动与自主性转向动力与供应链；其二，"可负担性"已成欧洲装备采购的硬约束，中低端 CCA 市场存在出口空间。需警惕欧洲以低成本 CCA 快速形成规模，压缩我国无人机在国际市场的价格优势。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-16">
+      <h2 class="news-title">Anthropic 新版使用政策划红线：禁止开发武器制导软件与武装无人机</h2>
+      <div class="news-meta">发布时间：2026-11-04 23:00（北京时间）　|　来源：AI 日报　|　<a href="https://www.163264.com/16698" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">Anthropic 发布 2026 版使用政策（Usage Policy），将于 11 月 12 日生效。新版新增"禁止参与欺骗性活动或人为放大"章节，把选举、欺诈、隐私与虚假信息等旧条款合并，覆盖虚假账号网络、假新闻站点与舆论操纵工具及基础设施。武器禁令明显扩展：不仅针对武器本身，也包括让武器"能用"的软件与组件，明确禁止用 Claude 开发武器制导与控制软件、为武装无人机和其他自主载具加载武器。监控与刑事司法方面，禁止未经同意追踪他人，禁止用模型决定或建议谁该被调查、逮捕、起诉；高风险场景要求具备权限的"人在环"并告知受影响个人。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>头部模型公司把"武装无人机、武器制导"写进红线，实质是在AI军事化问题上划定企业级边界，这会反向影响国防承包商能否合规使用商用前沿模型——供应商政策而非技术能力，正在限定商用模型在军事场景的"可用性"。对我国防AI发展的参照是：民用大模型与军用系统之间需要清晰的隔离、审计与追责机制，否则一旦发生滥用事件，整个国产模型生态的国际信任成本会显著上升。</p>
+      </div>
+    </article>
+  </div>
+
+  <nav class="issue-nav">
+      <a class="nav-item nav-prev" href="2026-11-04.html"><svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M9.5 3L4.5 7.5L9.5 12M4.8 7.5H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>上一期 · 11月4日</span></a>
+      <a class="nav-item nav-index" href="../archive/2026.html">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M2.5 3.5h10M2.5 7.5h10M2.5 11.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>2026 年归档</span>
+      </a>
+      <span class="nav-item nav-disabled">下一期 · 尚未发布</span>
+      <a class="nav-item nav-rss" href="../feed.xml">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><circle cx="3.2" cy="11.8" r="1.4" fill="currentColor"/><path d="M2.4 7.6a5 5 0 015 5M2.4 4a8.6 8.6 0 018.6 8.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+        <span>RSS</span>
+      </a>
+    </nav>
+
+  <footer class="footer">
+    本速报由 AI 自动检索公开信源并生成，仅供研究参考。原始新闻版权归原媒体所有，点击标题下方链接可阅读原文。<br>
+    智武防务人工智能每日速报 · GLOBAL AI DAILY · 聚焦中国视角
+  </footer>
+
+</div>
+</body>
+</html>
