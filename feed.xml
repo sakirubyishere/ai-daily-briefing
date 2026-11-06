@@ -5,8 +5,16 @@
     <link>https://sakirubyishere.github.io/ai-daily-briefing/</link>
     <description>全球人工智能每日动态综述，五大分类，聚焦中国视角</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 05 Nov 2026 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 08:00:00 +0800</lastBuildDate>
     <atom:link href="https://sakirubyishere.github.io/ai-daily-briefing/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>甲骨文取消向腾讯出租至多 10 万张 AI 芯片的 70 亿美元合同</title>
+      <link>https://sakirubyishere.github.io/ai-daily-briefing/issues/2026-11-06.html</link>
+      <guid isPermaLink="true">https://sakirubyishere.github.io/ai-daily-briefing/issues/2026-11-06.html</guid>
+      <pubDate>Fri, 06 Nov 2026 08:00:00 +0800</pubDate>
+      <description>本期共 16 条。算力硬件 3；技术进展 3；商业动态 4；政策风向 3；国防应用 3</description>
+      <category>2026年11月6日</category>
+    </item>
     <item>
       <title>Anthropic 用自家 Claude 设计自研 AI 芯片，IPO 估值或达 1.5 万亿美元</title>
       <link>https://sakirubyishere.github.io/ai-daily-briefing/issues/2026-11-05.html</link>

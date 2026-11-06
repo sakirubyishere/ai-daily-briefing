@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智武防务人工智能每日速报 — 2026年11月6日</title>
+<meta name="headline" content="甲骨文取消向腾讯出租至多 10 万张 AI 芯片的 70 亿美元合同">
+<meta name="idx-title" content="甲骨文取消向腾讯出租 AI 芯片，算力筹措遇阻">
+<style>
+  :root{
+    --paper:#f3ead3;
+    --paper-edge:#e2d4b0;
+    --ink:#262019;
+    --ink-soft:#564b3c;
+    --red:#7c1f1f;
+    --rule:#262019;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:#cdbf9e;
+    background-image:radial-gradient(circle at 50% 0%, #d8caa6 0%, #c2b389 100%);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,"Times New Roman",serif;
+    color:var(--ink);
+    padding:40px 14px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .paper{
+    max-width:860px; margin:0 auto;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(120,90,40,.018) 0 2px, transparent 2px 4px);
+    padding:50px 54px 60px;
+    box-shadow:0 14px 48px rgba(40,25,10,.45);
+    border:1px solid var(--paper-edge);
+    position:relative;
+  }
+  .paper::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 60px rgba(90,60,20,.18);
+  }
+
+  /* ===== 板头 ===== */
+  .masthead{ text-align:center; border-bottom:3px double var(--rule); padding-bottom:14px; }
+  .masthead .kicker{
+    font-size:12px; letter-spacing:8px; color:var(--ink-soft);
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .masthead .title{
+    font-size:44px; font-weight:900; letter-spacing:7px; margin:0;
+    line-height:1.12; color:var(--ink);
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
+  }
+  .masthead .sub{
+    font-size:13px; letter-spacing:5px; color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; letter-spacing:2px; color:var(--ink-soft);
+    border-bottom:1px solid var(--rule); padding:7px 2px; margin-top:10px;
+  }
+  .dateline .edition{ color:var(--red); font-weight:700; letter-spacing:3px; }
+
+  /* ===== 今日新闻速览 ===== */
+  .overview{
+    border:1.5px solid var(--rule); padding:16px 20px; margin:22px 0 8px;
+    background:rgba(124,31,31,.045);
+  }
+  .overview h3{
+    margin:0 0 10px; font-size:16px; letter-spacing:6px; text-align:center;
+    color:var(--red);
+  }
+  .overview p{ margin:0; font-size:14.5px; line-height:1.95; text-align:justify; }
+
+  /* ===== 类别分栏 ===== */
+  .cat-section{ margin-top:6px; }
+  .cat-head{
+    text-align:center; margin:30px 0 6px; font-size:18px; font-weight:800;
+    letter-spacing:6px; color:var(--ink);
+  }
+  .cat-head::before, .cat-head::after{
+    content:"◆"; color:var(--red); font-size:11px; margin:0 12px; vertical-align:middle;
+  }
+
+  /* ===== 新闻模块 ===== */
+  .news-item{ border-top:1px solid var(--rule); padding:16px 0 18px; }
+  .news-item:first-of-type{ border-top:none; }
+  .news-title{ font-size:21px; font-weight:800; margin:2px 0 7px; line-height:1.38; }
+  .news-meta{
+    font-size:12px; color:var(--ink-soft); font-style:italic;
+    margin-bottom:11px; letter-spacing:.4px;
+  }
+  .news-meta a{ color:var(--red); text-decoration:underline; }
+  .news-brief{ font-size:14.5px; line-height:1.98; text-align:justify; margin:0 0 13px; }
+  .news-value{
+    border-left:3px solid var(--red); padding:7px 0 7px 15px;
+    background:rgba(124,31,31,.05);
+  }
+  .news-value .vlabel{
+    font-weight:800; color:var(--red); font-size:14px; letter-spacing:1px;
+  }
+  .news-value p{ margin:7px 0 0; font-size:13.5px; line-height:1.95; text-align:justify; }
+
+  .empty{ font-size:13.5px; color:var(--ink-soft); font-style:italic; text-align:center; padding:14px 0; }
+
+  /* ===== 页脚 ===== */
+  .footer{
+    border-top:3px double var(--rule); margin-top:34px; padding-top:12px;
+    text-align:center; font-size:11px; color:var(--ink-soft); letter-spacing:1px; line-height:1.8;
+  }
+  @media (max-width:600px){
+    .paper{ padding:32px 22px 40px; }
+    .masthead .title{ font-size:32px; letter-spacing:3px; }
+  }
+</style>
+
+<style id="issue-nav-style">
+.issue-nav{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin:34px 0 4px;padding:20px 0;border-top:1px solid #262019;border-bottom:1px solid #262019;
+  font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+}
+.issue-nav .nav-item{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 18px;border:1px solid #C9B78E;background:#EDE2C6;
+  color:#7C1F1F;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:1px;
+  white-space:nowrap;transition:background .15s,color .15s;
+}
+.issue-nav .nav-item:hover{background:#262019;color:#F3EAD3;}
+.issue-nav .nav-index{background:#262019;border-color:#262019;color:#F3EAD3;letter-spacing:2px;}
+.issue-nav .nav-index:hover{background:#7C1F1F;border-color:#7C1F1F;color:#F3EAD3;}
+.issue-nav .nav-rss{background:transparent;border-color:#D8CBAA;color:#8A7B63;letter-spacing:1px;}
+.issue-nav .nav-rss:hover{background:#EDE2C6;border-color:#C9B78E;color:#7C1F1F;}
+.issue-nav .nav-disabled{color:#8A7B63;background:transparent;border-color:#D8CBAA;cursor:default;}
+.issue-nav .nav-disabled:hover{background:transparent;color:#8A7B63;}
+@media (max-width:600px){
+  .issue-nav{flex-wrap:wrap;gap:10px;}
+  .issue-nav .nav-item{font-size:12px;padding:10px 14px;}
+}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <!-- ============ 板头 ============ -->
+  <header class="masthead">
+    <div class="kicker">Global Artificial Intelligence Daily</div>
+    <h1 class="title">智武防务人工智能每日速报</h1>
+    <div class="sub">全 球 人 工 智 能 动 态 综 述</div>
+  </header>
+  <div class="dateline">
+    <span>2026年11月6日　星期五</span>
+    <span class="edition">每 日 一 刊 · 手 动 生 成</span>
+  </div>
+
+  <!-- ============ 今日新闻速览 ============ -->
+  <section class="overview">
+    <h3>今 日 新 闻 速 览</h3>
+    <p>11月5日，全球 AI 的定价逻辑被政治与市场同时改写。美国中期选举后数据中心阻力预期发酵，美股 AI 交易集中撤退：纳指跌 5.52%，费城半导体指数重挫逾 12%，英伟达跌 9.26%，科技股单日蒸发约 2.5 万亿美元。同日英伟达发布 AI 内存全栈协同设计，称 HBM 容量仅增约 3%、每美元智能体吞吐最高提升 30 倍，以效率回应成本质疑。算力供应端，甲骨文取消向腾讯出租至多 10 万张 AI 芯片的 70 亿美元合同。模型侧，腾讯混元 Hy4 正式版加入视觉与电脑操作，人大 ToolSpace 从真实 MCP 轨迹自动生成训练环境，CloudOpsBench 则揭示最强模型仅完成六成真实云运维任务。乌镇峰会收官，"开源"首次升格为大会主题并发布全球开放 AI 行动倡议。国防端，五角大楼披露交付逾 2.5 万套无人系统，Shield AI 以 53 亿美元收购 Echodyne。全日基调：资本退潮、效率接棒、管制收紧、自主提速。</p>
+  </section>
+
+  <!-- ============ 算力硬件 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">算 力 硬 件</div>
+    <article class="news-item" id="news-1">
+      <h2 class="news-title">英伟达提出 AI 内存全栈协同设计：HBM 容量仅增约 3%，每美元智能体吞吐最高提升 30 倍</h2>
+      <div class="news-meta">发布时间：2026-11-06 07:42（北京时间）　|　来源：IT之家　|　<a href="https://www.163.com/dy/article/LB1LR1FS0511B8LM.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">英伟达 11 月 5 日发布技术博客，回应大模型参数、上下文长度与智能体（Agent）应用带来的显存压力。公司指出，HBM（高带宽内存）供应趋紧、价格上行，单纯扩大 GPU 显存已不可持续，需将 GPU、CPU、网络、存储与软件作为整体协同设计：用 NVFP4 低精度格式压缩模型权重与 KV Cache（键值缓存），把暂不活跃的上下文迁移至成本更低的存储层，在 NVL72 系统中把权重分散至最多 72 颗 GPU，由 Vera CPU 的大容量 LPDDR 内存提供就近缓冲，Dynamo 推理软件负责上下文换入换出，RAG（检索增强生成）索引则留在 CPU 与存储侧。援引 SemiAnalysis AgentX 基准，在每用户每秒 125 token 条件下，Vera Rubin NVL72 相较 GB300 NVL72 的每美元智能体吞吐最高提升 30 倍，而单 GPU 的 HBM 容量仅增加约 3%；GB300 NVL72 较 H200 平台在 100 token/秒条件下提升 10 倍。英伟达称部分 Agent 任务轨迹的上下文已达 300 万 token。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>算力竞赛的标尺正从"峰值算力、显存容量"转向"每瓦特、每字节的有效 token 产出"。在高端 HBM 与先进制程受出口管制约束的背景下，这为国产算力提供了一条绕开单点硬件差距的现实通道——通过量化压缩、KV Cache 分层调度、CPU/存储侧卸载与推理框架协同，用系统效率弥补单卡规格不足。国内云厂商与芯片企业若继续以"堆卡数、堆显存"为采购与宣传口径，容易在成本竞争中被动；应尽快建立以单位 token 成本为核心的自主评测基准。同时需警惕：此类全栈优化高度依赖 CUDA 生态与私有软件栈，国产平台要复现同等收益，必须自建配套软件生态，而非仅移植算法。</p>
+      </div>
+    </article>
+    <article class="news-item" id="news-2">
+      <h2 class="news-title">AMD 披露 29 亿美元收购模型专用芯片公司 Taalas，其中 14 亿美元设对赌条件</h2>
+      <div class="news-meta">发布时间：2026-11-05 23:00（北京时间，折算）　|　来源：The Globe and Mail　|　<a href="https://www.theglobeandmail.com/business/article-amd-to-pay-29-billion-for-ai-chip-firm-taalas/" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据周三提交的一份证券文件，AMD 为收购多伦多 AI 芯片初创公司 Taalas 支付的对价约为 29 亿美元现金加股票，其中 14 亿美元取决于若干未披露条件的达成。该交易最早于今年 8 月宣布，此次为首次公开价格，仍需监管批准。Taalas 成立于 2023 年，创始人为前 AMD 高管 Ljubisa Bajic、Lejla Bajic 与 Drago Ignjatovic，技术路线是绕过通用处理器，把特定 AI 模型的权重直接固化到芯片中，首个产品针对 Meta 的 Llama 系列模型设计，主打推理场景的极致能效与单位成本。公司此前累计融资超过 2.25 亿美元，包括今年 2 月的 1.69 亿美元轮次。AMD 表示将把该技术纳入未来推理芯片产品线。这一动向与本周高通披露数据中心业务目标、以及业界对推理算力占比将超七成的判断形成呼应，显示头部芯片厂商正把竞争重心从训练通用性转向推理经济性。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>模型专用芯片（model-specific ASIC）路线成熟，对我国是机会与压力并存。一方面，它降低了对最先进制程与 HBM 的依赖——把权重固化进芯片可用成熟工艺实现高能效推理，与我国在成熟制程产能、封测和成本上的优势契合，为端侧与行业推理提供了不依赖英伟达生态的替代路径。另一方面，AMD 把该能力纳入自有推理产品线，意味着海外巨头正补齐"训练通用 + 推理专用"版图，国产推理芯片若停留在低价替代，窗口期会迅速收窄。建议关注两点：模型固化后灵活性不足，需与国内快速迭代的开源模型生态建立协同更新机制；同时提前布局编译器与工具链，避免硬件可用但生态缺位。</p>
+      </div>
+    </article>
+    <article class="news-item" id="news-3">
+      <h2 class="news-title">甲骨文取消向腾讯出租至多 10 万张 AI 芯片的 70 亿美元合同</h2>
+      <div class="news-meta">发布时间：2026-11-05 22:00（北京时间，折算）　|　来源：Financial Times　|　<a href="https://www.investing.com/news/stock-market-news/oracle-cancels-7-bln-chip-leasing-deal-with-tencent-ft-reports-4997349" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据《金融时报》报道，甲骨文已取消今年早些时候与腾讯签署的一份为期约五年、总值约 70 亿美元的算力租赁合同。按原协议，腾讯可获得部署在东南亚数据中心的至多 10 万张先进 AI 芯片的使用权，以绕开芯片直接出口限制、通过云端调用方式获取境外算力。合同告吹发生在美国官员向甲骨文表达关切、美国政府施压之际；与此同时，中国监管部门也在审视该交易，并要求腾讯转向国产芯片。这一"两头受压"的结局，使海外云算力租赁这一过去两年被视为规避出口管制的灰色通道进一步收窄。此前已有报道称中国三大云厂商订购的大批英伟达显卡交付严重滞后，本次取消意味着境外算力供给的不确定性从"交付延迟"升级为"合同取消"，国内大模型训练与推理的算力筹措需重新评估。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这是本期对我国算力安全最直接的警示：通过第三国数据中心租用境外先进芯片的"算力借道"模式，已被证明在政治层面不可靠——美方可随时施压出租方毁约，我方也出于自主可控考虑不鼓励依赖。短期看，部分已排期的训练任务与推理扩容将面临重新调度，成本与交付周期上升；中长期则是国产算力替代的强催化。真正要补的不只是芯片本身，还包括万卡集群的互联、稳定性、编译栈与模型迁移工具链——否则"有卡用不好"仍会拖慢迭代。建议把算力合同的地缘风险纳入供应链评估，建立以国产芯片为主、多元供应为辅的双轨算力池，并对开源模型做多平台适配，避免在单一硬件生态上形成新的锁定。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 技术进展 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">技 术 进 展</div>
+    <article class="news-item" id="news-4">
+      <h2 class="news-title">中国人民大学提出 ToolSpace：从真实 MCP 调用轨迹构建 Agent 训练环境，GLM-5.2 提至 Claude Opus 5 水平</h2>
+      <div class="news-meta">发布时间：2026-11-05 20:00（北京时间，折算）　|　来源：arXiv　|　<a href="https://arxiv.org/abs/2611.05036" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">中国人民大学团队在 arXiv 发布 ToolSpace 方法，针对智能体（Agent）长程工具调用能力训练数据稀缺的问题，提出直接从真实 MCP（模型上下文协议）服务的执行轨迹中挖掘相邻调用之间的数据依赖、状态依赖与重试依赖，将其聚类为可复现的训练环境，并自动生成带断言校验的任务，要求能从初始状态成功回放。团队在 AutomationBench 与 tau3-Bench Banking 上构造出难度更高的 "Pro" 版本，七个前沿模型在这些版本上最高下降 38.2 分，显示现有模型对真实工具链状态的鲁棒性仍不足。用 ToolSpace 生成的数据训练后，Qwen3.6-35B-A3B 在七项长程工具使用基准上的平均分从 23.0 提升至 41.0（叠加强化学习为 43.2）；GLM-5.2 从 44.6 提升至 56.6，作者称已与 Claude Opus 5 相当。该方法不依赖人工标注任务，可随真实工具生态持续扩展。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这是我国团队在 Agent 训练方法论上的高价值突破，且路径务实：不靠更大参数量，而是从真实工具调用轨迹中自动造环境、造任务，把"数据稀缺"这一卡脖子环节转为可持续供给的工程问题。对国内产业有三重意义：国产模型在工具调用、长程任务上的短板可用低成本数据工程显著补齐，无需等待下一代算力；Qwen、GLM 等国产开源底座直接受益，有助于把开源生态优势从"模型权重"延伸到"Agent 能力"；该方法基于 MCP 开放协议，与国内正在推进的智能体标准可形成协同。需注意的是，结论来自作者自建基准，仍待第三方复现；同时应尽快把这类训练环境与国内真实政务、金融、制造工具链对接，形成难以复制的行业数据壁垒。</p>
+      </div>
+    </article>
+    <article class="news-item" id="news-5">
+      <h2 class="news-title">CloudOpsBench 开源基准：最强模型仅完成 60% 的真实 AWS 运维任务，八成失败源于误判范围</h2>
+      <div class="news-meta">发布时间：2026-11-05 18:00（北京时间，折算）　|　来源：The Decoder（密歇根大学）　|　<a href="https://the-decoder.com/new-open-source-benchmark-reveals-reasoning-as-the-biggest-bottleneck-for-ai-in-cloud-operations/" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">密歇根大学 Ang Chen 团队发布 Apache 2.0 许可的开源基准 CloudOpsBench，包含 45 项由资深工程师编写的真实 AWS DevOps 任务，涵盖修复服务故障、收紧访问权限、下线遗留项目等，可在真实 AWS 环境与模拟器中一致运行，便于对照。结果显示，表现最好的 Claude Fable 5.1 仅解决 60% 的任务，GPT-6 Astra 为 53%，没有任何模型完成全部任务。约 80% 的失败来自"判断失误"——误判任务边界、未检查全部相关服务、或过早停止；其余 20% 为错误动作，其中部分对基础设施造成不可逆影响。研究团队据此指出，推理能力与任务规划、尤其是"何时该继续核查"，才是当前 AI 落地云运维的最大瓶颈，而非单点代码生成能力。该基准把评测从刷题式问答推进到可产生真实后果的操作环境，为企业部署自主运维 Agent 提供了可量化的风险基线。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>对国内正在推进"AI+运维""智能体进生产"的行业是一记及时的冷水，也是可复用的工具。当前不少企业把 Agent 直接接入云控制台，而两成错误动作可能造成不可逆破坏，说明"人在回路"与权限最小化不能只停留在倡议层面。建议国内云厂商、信通院及开源社区基于此类基准建立本土化版本，覆盖阿里云、腾讯云、华为云及政务云的真实操作场景，把"可否自动执行"的判定标准量化；同时把国产模型纳入同一把尺子公开评测，避免在营销话术上比拼参数。更积极的一面是：既然瓶颈在任务规划与状态核查而非算力，国产模型完全有机会通过训练方法（如本期 ToolSpace 一类工作）在这一赛道反超，这比追逐通用榜单更具产业价值。</p>
+      </div>
+    </article>
+    <article class="news-item" id="news-6">
+      <h2 class="news-title">腾讯混元 Hy4 正式版发布：首增视觉理解与电脑操作，承诺数日内开源权重</h2>
+      <div class="news-meta">发布时间：2026-11-05 15:00（北京时间，折算）　|　来源：腾讯官方　|　<a href="https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">腾讯正式发布混元 Hy4，相较此前开放的 preview 版本扩大了预训练与后训练规模，并首次引入视觉理解以及命令行与图形界面结合的电脑操作能力，官方称模型权重与系统卡将在"未来数日"内公开。API 定价维持 preview 水平，约为每百万输入 token 0.90 美元、每百万输出 token 2.70 美元、每百万缓存输入 token 0.045 美元，已上线腾讯云 TokenHub 与 OpenRouter，年底前提供五折优惠。腾讯组织的盲测覆盖 213 名金融从业者、579 项任务，Hy4 得 3.04 分，高于 DeepSeek-V4.1-Flash-1017 的 2.97 分及 Kimi K3.1 Pro、GLM-5.3 的 2.68 分；官方称幻觉率由 preview 的 12.95% 降至 7.2%。国内测评口径亦显示其在 GameDev、GameLogic 等项目较 preview 有明显提升，被视为国产开源模型从"通用对话"向"可操作智能体"演进的代表性一步。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>Hy4 从 preview 到正式版只隔数日，且路线明确指向"视觉 + 电脑操作"，反映国产模型竞争已从跑分转向可执行的智能体能力，这对我国产业生态是实质性利好。其一，承诺开源权重意味着中小企业与政务、金融等敏感行业可在私有环境部署具备操作能力的模型，降低对闭源 API 的依赖与数据出境风险；其二，腾讯把金融场景盲测与幻觉率作为主打指标，说明国内厂商开始用可验证的行业可靠性而非参数规模说话，有助于形成更健康的评价导向。需关注的是，具备 GUI/命令行操作能力的模型一旦开源，权限控制、审计与沙箱隔离必须同步跟上——本期 CloudOpsBench 已显示自主操作的风险边界，建议监管与开源社区在权重发布同时配套安全基线与使用规范。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 商业动态 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">商 业 动 态</div>
+    <article class="news-item" id="news-7">
+      <h2 class="news-title">美股 AI 交易集中撤退：纳指重挫 5.52%，科技股单日蒸发约 2.5 万亿美元</h2>
+      <div class="news-meta">发布时间：2026-11-06 05:00（北京时间，美股收盘折算）　|　来源：每日经济新闻·财联社　|　<a href="https://news.qq.com/rain/a/20261106A03OQL00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">当地时间 11 月 5 日，美股遭遇全面抛售，AI 相关资产成为重灾区。道指跌 3.44%，标普 500 指数跌 4.35% 并创 2025 年 4 月以来最大单日跌幅，纳指跌 5.52%、纳斯达克 100 指数跌 6.36%，均创 2020 年 3 月以来最大跌幅；据估算科技股整体市值一日蒸发约 2.5 万亿美元，"科技七巨头"损失约 1 万亿美元。费城半导体指数收跌逾 12%，英伟达跌 9.26%、市值蒸发约 4466 亿美元，AMD 跌 17.3%、美光跌约 12%、高通跌 9.5%、闪迪跌 22%。多位科技富豪单日身价合计缩水约 1529 亿美元。市场普遍把触发因素指向美国中期选举结果：民主党夺回国会两院多数，得州候任州长主张立即暂停数据中心开发，投资者担忧政策与监管变化将压制芯片订单与 AI 基建增速。《华尔街日报》称纳指已进入技术性回调区间。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这次回调对我国是"风险提示"与"窗口机会"并存。风险面：全球 AI 资本开支预期一旦转向，将沿光模块、服务器、PCB、存储等链条传导至国内大量出口型制造企业，订单与估值承压，相关企业需警惕客户集中度与扩产节奏；海外大模型融资与算力采购放缓也会间接影响全球迭代速度。机会面：资本市场开始用"投资回报"而非"算力叙事"给 AI 定价，这恰与我国强调的算力利用效率、场景落地和自主可控路线同向——当海外被迫削减低效基建，国产高性价比模型与开源生态的相对吸引力上升。更值得关注的是美国地方政治对数据中心的直接否决权，说明 AI 基建已成社会议题，我国推进智算中心建设时也应提前做好能耗、水资源与社区沟通的制度安排。</p>
+      </div>
+    </article>
+    <article class="news-item" id="news-8">
+      <h2 class="news-title">OpenAI 总裁 Brockman：三季度营收拐点靠编程工具，企业收入首超消费者，2027 年或 IPO</h2>
+      <div class="news-meta">发布时间：2026-11-05 21:00（北京时间，折算）　|　来源：The Wall Street Journal / Mint　|　<a href="https://www.livemint.com/global/openai-had-rough-first-half-of-year-before-coding-takeoff-brockman-says-11793870261720.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">OpenAI 联合创始人兼总裁 Greg Brockman 在《华尔街日报》科技大会上表示，公司上半年"相当艰难"，一季度、二季度在编程领域几乎"不在讨论范围内"，Anthropic 一度在企业客户市场大幅领先；直到三季度推出前沿模型 GPT-5.6 Sol 与 ChatGPT Work 后，智能体编程工具打开局面，带来"令人难以置信的营收拐点"，企业业务首次超过消费者订阅成为最大收入来源。第三方数据显示，OpenRouter 9 月对约 12 万家同时使用两家公司工具的企业统计发现，OpenAI 与 Anthropic 的支出份额已大致持平，而年初 Anthropic 约占四分之三。Brockman 还透露已与摩根大通达成战略合作，为其 Daybreak 项目提供网络安全专用模型；并称 OpenAI 可能于 2027 年上市。公司最新一轮融资目标已从 300 亿美元下调至 200 亿美元，估值从 1.4 万亿美元降至 1.25 万亿美元，目前已募得不足原目标一半。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>两点值得我国产业界注意。其一，海外头部模型公司的收入结构正从 C 端订阅转向 B 端企业级交付，且胜负手是"编程智能体"这类能直接量化生产率的场景——大模型竞争已进入工程化与工作流嵌入阶段，国内厂商若仍以通用对话和榜单为主要卖点，会在商业变现上拉开差距。其二，Brockman 坦承上半年落后、融资目标下调三成、估值缩水，说明即便最头部的 AI 公司也面临资本耐心收窄，与本期美股抛售相互印证；这为我国争取了追赶窗口，也提示国内融资环境需避免估值泡沫。此外，OpenAI 与摩根大通在网络安全模型上的绑定，反映金融等关键行业正形成"模型厂商—大客户"的排他性生态，我国金融机构应加快国产模型的自有化部署与能力验证。</p>
+      </div>
+    </article>
+    <article class="news-item" id="news-9">
+      <h2 class="news-title">OpenAI 收购 Pierre 并挖角 Anthropic 产品负责人，加码 AI 编程与代码基础设施</h2>
+      <div class="news-meta">发布时间：2026-11-05 14:00（北京时间）　|　来源：第一财经　|　<a href="https://news.qq.com/rain/a/20261105A07JBN00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">当地时间 11 月 4 日，OpenAI 宣布收购开发者工具初创公司 Pierre Computer Company；同日，Anthropic 旗下编程智能体 Claude Code 与桌面通用工作智能体 Cowork 的产品负责人 Cat Wu 宣布离职加入 OpenAI，负责核心产品团队的产品管理，交易金额未披露。Pierre 成立于 2023 年，累计融资约 2400 万美元，主力产品 Code Storage 是面向 AI 智能体大规模工作负载的 Git 托管基础设施，其 Trees、Diffs 等工具已被整合进 OpenAI 的编程智能体 Codex，开源项目保持开放。业内认为，OpenAI 看中的是 Git 在智能体时代作为代码协作底层协议的价值：传统托管平台围绕人类低频提交设计限流、权限与审查流程，而一个开发者可同时调度多个 Agent 并行建分支、改代码，原有架构成为瓶颈。OpenAI 本周还公布自研 Git 后端 Pando，生产环境代码推送中位延迟降低近 80%，被视为向微软 GitHub 腹地进军。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这条新闻提示了一个容易被忽视的竞争维度：AI 编程的护城河正从模型能力下移到代码协作基础设施与协议层。当 Agent 成为代码的主要生产者，Git 托管、权限、审查与并发调度将是新的"操作系统级"入口，OpenAI 通过收购、自研后端与挖角三管齐下，意图明确。对我国而言，代码托管平台与国产编程智能体目前多各自为战，若不在这一层提前布局，未来国内开发者生态可能再次面临底层工具被境外标准锁定的局面。建议把"面向 Agent 高并发的代码基础设施"纳入开源与信创支持方向，推动国产模型、IDE 与代码托管平台的协议协同；同时也应看到机会——国内开源模型与工程化能力强，若能形成统一的智能体代码协作开放标准，反而可借开源生态向"全球南方"输出，绕开单一平台垄断。</p>
+      </div>
+    </article>
+    <article class="news-item" id="news-10">
+      <h2 class="news-title">CrowdStrike 近 5 亿美元连购 Fiddler AI 与 Dreadnode，卡位 AI 智能体安全</h2>
+      <div class="news-meta">发布时间：2026-11-05 11:42（北京时间）　|　来源：智通财经　|　<a href="https://www.163.com/dy/article/LAVH717505198UNI.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">网络安全厂商 CrowdStrike 宣布合计出资约 4.95 亿美元收购两家 AI 安全初创公司：以约 4 亿美元收购总部位于加州帕洛阿尔托的 Fiddler AI，该公司成立于 2018 年，研发监控与解释智能体行为的软件；以约 9500 万美元收购成立于 2023 年的 Dreadnode，其自动化安全测试平台可在模型上线前探测漏洞，两笔交易大部分以现金支付，其余为限制性股票。摩根士丹利在研报中指出，收购将拓展 Falcon 平台在 AI 安全生命周期的覆盖：Fiddler 提供智能体可观测性与可解释性，可在部署前评估准确性与策略合规、在生产环境追踪决策与工具调用、检测幻觉与行为漂移；Dreadnode 则增加覆盖模型、应用、智能体与 MCP 服务器的自动化测试能力，以百余种攻击策略识别越狱与提示词注入。该举动与本周 Palo Alto Networks 洽购 Clutch Security、Sentra 完成 1.5 亿美元 C 轮融资形成同一趋势：企业部署 Agent 的门槛正从"能调用"转向"可控调用"。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>AI 智能体安全正在被海外安全巨头快速整合成独立品类，这对我国是明确的赛道信号。国内已发布《智能体发展自律公约》并推进生成内容标识、安全治理框架，但产业侧缺少能把"可观测、可审计、可回溯、权限收敛"产品化的平台型厂商；当金融、政务、能源等关键行业规模化部署 Agent 时，能力缺口会从合规文件变成实际风险。建议把智能体身份与凭证管理、工具调用全链路留痕、行为漂移检测、上线前红队测试列为重点支持方向，并与国产大模型、MCP 服务生态做原生适配，避免照搬海外产品时的数据出境与适配问题。另一层意义在于标准话语权：谁先定义智能体安全的评测基准与审计格式，谁就可能在国际治理中占据主动，我国应推动自主基准与开源工具同步输出。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 政策风向 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">政 策 风 向</div>
+    <article class="news-item" id="news-11">
+      <h2 class="news-title">中国告知软银将否决其 54 亿美元收购 ABB 机器人部门</h2>
+      <div class="news-meta">发布时间：2026-11-05 23:30（北京时间，折算）　|　来源：Financial Times　|　<a href="https://www.techmeme.com/261104/p65#a261104p65" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据《金融时报》报道，中国已告知日本软银集团，不会批准其以 54 亿美元收购 ABB 机器人业务部门的交易。中国是该部门最大的单一市场，该业务在上海浦东运营着一座大型工厂，交易因此落入我国外商投资安全审查与经营者集中的审查视野。ABB 机器人是全球工业机器人"四大家族"之一，其中国产能与客户网络覆盖汽车、电子、金属加工等制造环节；软银近年持续加码物理 AI 与机器人资产，试图把机器人本体、运动控制与 AI 模型打通。报道未披露中方提出的具体关切与正式决定文书，交易是否还有其他司法辖区障碍亦不明确。此事与近期多起跨境技术并购受阻形成呼应：一方面各国对机器人、半导体、AI 等战略资产的审查趋严，另一方面我国也在通过出口管制目录修订、技术出口临时登记等工具，把关键技术流转纳入可追踪框架。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这条消息的价值在于，它显示我国在"机器人 + AI"这一战略交汇领域具备实质性的审查筹码与市场杠杆。机器人本体与运动控制是物理 AI 落地的数据入口和硬件底座，若核心资产连同上海产能被单一境外资本整合，可能压缩国产机器人厂商的供应链空间与客户选择。对国内产业而言，审查留出的时间窗应被用于补齐高端减速器、伺服与控制器、以及具身智能模型与本体协同的短板，并加快培育本土可替代的整合者。同时也需保持平衡：安全审查的边界清晰、可预期，才不会削弱我国"开放合作"的叙事与外资信心——本期乌镇峰会发布全球开放 AI 行动倡议即是同一套逻辑的两面。建议后续把审查标准、时限与救济路径进一步制度化，让"管得住"与"放得开"同时成立。</p>
+      </div>
+    </article>
+    <article class="news-item" id="news-12">
+      <h2 class="news-title">广电总局定调微短剧：扶持真人剧、规范 AI 剧，落实"凡播必审、全量人审"</h2>
+      <div class="news-meta">发布时间：2026-11-05 19:00（北京时间）　|　来源：新华社　|　<a href="https://app.xinhuanet.com/news/article.html?articleId=202611059ae9611192e34a5182de8d907eb74c20" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">国家广播电视总局相关负责人 11 月 5 日在 2026 中国广播电视精品创作大会微短剧论坛上重申，对真人微短剧与 AI 微短剧的态度是"扶持真人剧，规范 AI 剧"。负责人表示，AI 带来的不只是创作环节的降本增效，更是从剧本、拍摄、分发到出海运营的生产方式与产业形态的系统性变革，全行业应善用技术；但深度伪造、侵权搬运、以假乱真会损害行业信誉，必须统筹发展与安全，"决不能让劣币驱逐良币"。具体要求包括：在资金、算法、评优上给予真人剧实实在在的支持；对 AI 剧稳量提质，守住版权与伦理底线；各平台压实主体责任，坚决落实"凡播必审、全量人审"，把好上线关口，优化算法、纠治诱导沉迷；对 AI 洗稿、盗版翻拍、未经授权使用肖像声音等侵权行为持续加大打击力度。该口径延续了 9 月 17 日国新办发布会上的表态。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这是我国在生成式内容治理上"分类施策、以人为主"思路的一次具体落地，对全球都有参考价值：既不否定技术效率，也不把真人创作与 AI 生成等量齐观，而是通过资金、算法、评优等可操作杠杆调节产业结构。对国内平台而言，"全量人审"意味着 AI 内容的成本优势会被合规成本部分抵消，短期或抑制产量，长期则有利于版权清晰、可追溯的优质内容形成溢价，也利好有审核与标识技术能力的服务商。需关注的是，该要求与已实施的生成合成内容显式/隐式双层标识办法如何衔接、AI 微短剧分类分层标准如何细化，仍待可执行细则；若标准过于笼统，容易出现平台尺度不一。此外，微短剧是我国内容出海的重要品类，治理规则若能与出海合规要求打通，将有助于把"可信内容"转化为国际竞争优势。</p>
+      </div>
+    </article>
+    <article class="news-item" id="news-13">
+      <h2 class="news-title">乌镇峰会发布《携手构建全球开放人工智能行动倡议》，"开源"首次升格为大会主题</h2>
+      <div class="news-meta">发布时间：2026-11-05 17:00（北京时间）　|　来源：数字中国建设峰会 / 央视　|　<a href="https://www.szzg.gov.cn/2026/xwzx/szkx/202611/t20261105_5389902.htm" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">2026 年世界互联网大会乌镇峰会 11 月 5 日收官，"开源开放 共建共享"首次由分论坛议题升格为整场峰会主题。峰会发布《携手构建全球开放人工智能行动倡议》，提出强化技术可追溯，推动模型参数、训练数据来源与训练过程更加透明，让开源模型"来路清楚、去向可查"；同时推动算力与数据共建共享、搭建全球开发者培训网络，并倡导国际标准互认、避免碎片化监管，促进评估基准、许可协议与资源披露的跨国互认以降低企业合规成本。全球人工智能国际治理协会主席约翰·希金斯认为，该倡议的价值在于把分散的监管倡议整合为协同一致的治理方案。峰会同期数据显示，我国人工智能开源大模型全球累计下载量已突破 100 亿次，国家级开源社区汇聚用户 1100 余万；阿里千问系列已开源超 470 款模型、全球下载超 40 亿次、衍生模型超 33 万个。全国首个开源主题生态体验馆在乌镇开馆。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这份倡议最值得关注的，是我国正把"开源规模优势"转化为"治理规则话语权"。下载量破百亿、衍生模型数十万，说明国产开源底座已具备事实上的生态影响力；此时提出可追溯、标准互认、降低合规成本，实质是在为国产模型的全球化铺路，也与《人工智能安全治理框架 3.0》强调的敏捷治理一脉相承。对企业而言，"来路清楚、去向可查"既是约束也是通行证——把训练数据来源、许可协议、评测基准做规范，能显著降低进入欧盟等高监管市场的摩擦。需要清醒的是，标准互认涉及各国主权与产业利益，推进难度不小；且开源权重一旦流出，下游滥用难以追踪，倡议本身也承认需"用 AI 对抗 AI"。建议国内厂商在出海时同步输出合规工具链与多语种文档，把技术普惠叙事落到可验证的工程能力上。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 国防应用 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">国 防 应 用</div>
+    <article class="news-item" id="news-14">
+      <h2 class="news-title">Shield AI 以 53 亿美元收购反无人机雷达厂商 Echodyne，估值升至 288 亿美元</h2>
+      <div class="news-meta">发布时间：2026-11-06 02:00（北京时间，折算）　|　来源：Defense War Room / Bloomberg　|　<a href="https://defensewarroom.com/2026/11/05/shield-echodyne-acquisition-counter-drone-radar" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">美国防务科技公司 Shield AI 与 Echodyne 于 11 月 5 日宣布签署最终协议，Shield 将以 53 亿美元收购这家位于华盛顿州柯克兰的超材料雷达厂商，其中 48 亿美元在交割时支付，另有最高 5 亿美元取决于业绩目标，预计 2027 年初完成交割。为筹资，Shield 同步安排 25 亿美元融资：10 亿美元 H 轮股权、贝莱德管理的基金 10 亿美元结构化股权投资、摩根大通独家安排的 5 亿美元债务融资，投后估值达 288 亿美元，较今年 3 月 G 轮的 127 亿美元翻倍有余。Echodyne 的 MESA（超材料电子扫描阵列）雷达以电子方式控制波束、无机械部件，成本与体积功耗接近商用电子产品，其 EchoGuard/EchoShield 系列已在全球 40 余国使用；该公司 9 月刚在美军联合机构特遣队 401 的 Domestic Shield 项目中获得 2.5 亿美元上限订单。收购后 Echodyne 将并入 Shield 新设的"任务系统"事业部，与 Hivemind 自主软件、V-BAT/X-BAT 无人机形成三条业务线。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这笔交易标志着美国"自主软件 + 无人机平台 + 传感器"的一体化整合加速，单一厂商开始同时掌握探测、决策与打击环节，闭环能力比单点装备更值得警惕。对我国防务观察有三点：一是反无人机雷达正成为与无人机本体同等重要的高价值节点，MESA 这类低成本固态相控阵路线会快速压低 C-UAS 部署门槛，推动"廉价蜂群 vs 廉价探测"的消耗比竞争；二是 Shield 估值半年翻倍、国防 AI 资产被资本高价重估，说明美军采购导向已从平台数量转向自主能力与规模化量产，与我周边方向可能的分布式部署直接相关；三是其融资结构中贝莱德、摩根大通等主流资本深度介入，防务科技与华尔街的绑定更紧。我国需持续跟踪 AUTOWARCOM 组建进度与印太方向的部署外溢，同时在低成本反无人机探测、抗干扰数据链与集群对抗上保持自主迭代节奏。</p>
+      </div>
+    </article>
+    <article class="news-item" id="news-15">
+      <h2 class="news-title">五角大楼披露 7.82 亿美元投入：年内向中央司令部交付逾 2.5 万套无人与反无人系统</h2>
+      <div class="news-meta">发布时间：2026-11-06 01:00（北京时间，折算）　|　来源：美国国防部 / Yeni Safak　|　<a href="https://en.yenisafak.com/world/pentagon-delivers-massive-surge-of-drones-to-us-middle-east-forces-3725211" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">美国国防部 11 月 5 日宣布，在约 7.82 亿美元投入后，2026 年内已向美中央司令部（CENTCOM）交付超过 2.5 万套无人系统与反无人机能力，包括 1300 余架单向攻击无人机、100 余艘水面与水下无人艇，以及 2.4 万余套反无人机系统。交付由无人系统直接报告项目组合经理（DRPM-UxS）执行，反无人机作战的战术支援由联合机构特遣队 401（JIATF-401）提供。项目 Agincourt 与 DRPM-UxS 负责人 Owen West 称，此举是"以现代作战的速度，为部队配备决定性的、可负担的规模"，标志美军采购政策从依赖昂贵传统平台转向低成本无人系统的大规模量产。该计划与拟于 2027 年 10 月 1 日投入运行的自主作战司令部（AUTOWARCOM）相衔接；国防部表示将继续向 CENTCOM 交付，并把无人与自主系统的部署扩展至印太、欧洲及整个联合部队。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>对我周边安全环境而言，最关键的不是中东方向的交付数字，而是文中明确的"向印太扩展"与 2027 年成军的自主作战司令部。2.4 万余套反无人机系统的占比说明，美军正在为高强度消耗战做双向准备——既大量投放单向攻击无人机，也大规模补上被无人机打怕了的防护短板；这种"可负担的规模"思路一旦复制到印太，将显著改变近海方向的兵力密度与成本交换比。同时，DRPM-UxS 与 JIATF-401 这类绕过传统军种采购链的直接交付机制，压缩了从研发到列装的周期，值得我装备体系研究借鉴。需要理性看待的是，低成本平台在强电磁对抗环境下的生存性与自主可靠性仍未经大规模实战检验，不宜被宣传数字误导；我应坚持在低成本反制、抗干扰通信与体系化防空上同步推进，避免陷入单纯的数量竞赛。</p>
+      </div>
+    </article>
+    <article class="news-item" id="news-16">
+      <h2 class="news-title">德国陆军组建无人机作战团，2029 年全谱系无人机拟由 600 余架扩至 8000 架以上</h2>
+      <div class="news-meta">发布时间：2026-11-05 10:00（北京时间）　|　来源：人民网军事　|　<a href="https://military.people.com.cn/n1/2026/1105/c1011-40828271.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据人民网军事 11 月 5 日报道，德国陆军正加快无人力量建设，组建专业化、成建制的无人机作战团，整合侦察、打击、反无人机与电子战力量，隶属第 10 装甲师。按今年 4 月发布的《军事防御总体构想》，德国提出将联邦国防军打造为欧洲最强大的常规军事力量，分"三步走"推进，自动化与人工智能被列为第三阶段建设重点；各军种将组建反无人机快速反应分队，到 2029 年把全谱系无人机数量从 600 余架扩充至 8000 架以上，并在 2030 年前投入 160 亿欧元发展反无人机能力。德军已与莱茵金属、赫尔辛、斯塔克等防务企业签署数十亿欧元无人机采购订单，采取多厂商并行、快速迭代模式。报道分析，此举既受俄乌冲突中无人作战深度融入战场的倒逼，也与美国在欧洲部署反复、欧洲需承担更多北约东翼防御责任有关；新部队 500 公里作战半径可覆盖白俄罗斯、俄西部边境及加里宁格勒方向。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>欧洲主要陆军力量把 AI 与无人系统写进第三阶段建军重点，意味着无人化已从"战场应急"转为北约体系内的制度化编制与长期预算，全球主要军队的智能化转型进入同步加速期。对我国观察有三层意义：其一，160 亿欧元反无人机投入与 8000 架规模目标，将带动欧洲本土无人机与反制产业链成型，改变全球供给格局，也压缩我国民用无人机在欧洲市场的政策空间，需预判"安全化"带来的合规壁垒；其二，俄乌经验被直接转化为编制与采购标准，说明实战数据已成为 AI 军事化最稀缺的资源，我应重视体系化复盘与数据积累；其三，美国战略重心摇摆促使欧洲追求自主可控，客观上有利于多极化，我国可在军控与 AI 伦理讨论中呼应"防止自主武器失控"的共同关切，争取规则塑造空间。</p>
+      </div>
+    </article>
+  </div>
+
+  <nav class="issue-nav">
+      <a class="nav-item nav-prev" href="2026-11-05.html"><svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M9.5 3L4.5 7.5L9.5 12M4.8 7.5H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>上一期 · 11月5日</span></a>
+      <a class="nav-item nav-index" href="../archive/2026.html">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M2.5 3.5h10M2.5 7.5h10M2.5 11.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>2026 年归档</span>
+      </a>
+      <span class="nav-item nav-disabled">下一期 · 尚未发布</span>
+      <a class="nav-item nav-rss" href="../feed.xml">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><circle cx="3.2" cy="11.8" r="1.4" fill="currentColor"/><path d="M2.4 7.6a5 5 0 015 5M2.4 4a8.6 8.6 0 018.6 8.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+        <span>RSS</span>
+      </a>
+    </nav>
+
+  <footer class="footer">
+    本速报由 AI 自动检索公开信源并生成，仅供研究参考。原始新闻版权归原媒体所有，点击标题下方链接可阅读原文。<br>
+    采集窗口：2026-11-05 09:00 — 2026-11-06 09:00（北京时间）；外媒条目按原文发布日折算北京时间，具体时刻为近似值。<br>
+    智武防务人工智能每日速报 · GLOBAL AI DAILY · 聚焦中国视角
+  </footer>
+
+</div>
+</body>
+</html>
