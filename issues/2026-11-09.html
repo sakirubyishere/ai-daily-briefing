@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智武防务人工智能每日速报 — 2026年11月9日</title>
+<meta name="headline" content="特斯拉更新AI加速器路线图，全面更名“超级智能”并瞄准太空部署">
+<meta name="idx-title" content="特斯拉更新AI加速器路线图，全面更名“超级智能”并瞄准太空部署">
+<style>
+  :root{
+    --paper:#f3ead3;
+    --paper-edge:#e2d4b0;
+    --ink:#262019;
+    --ink-soft:#564b3c;
+    --red:#7c1f1f;
+    --rule:#262019;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:#cdbf9e;
+    background-image:radial-gradient(circle at 50% 0%, #d8caa6 0%, #c2b389 100%);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,"Times New Roman",serif;
+    color:var(--ink);
+    padding:40px 14px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .paper{
+    max-width:860px; margin:0 auto;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(120,90,40,.018) 0 2px, transparent 2px 4px);
+    padding:50px 54px 60px;
+    box-shadow:0 14px 48px rgba(40,25,10,.45);
+    border:1px solid var(--paper-edge);
+    position:relative;
+  }
+  .paper::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 60px rgba(90,60,20,.18);
+  }
+
+  /* ===== 板头 ===== */
+  .masthead{ text-align:center; border-bottom:3px double var(--rule); padding-bottom:14px; }
+  .masthead .kicker{
+    font-size:12px; letter-spacing:8px; color:var(--ink-soft);
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .masthead .title{
+    font-size:44px; font-weight:900; letter-spacing:7px; margin:0;
+    line-height:1.12; color:var(--ink);
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
+  }
+  .masthead .sub{
+    font-size:13px; letter-spacing:5px; color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; letter-spacing:2px; color:var(--ink-soft);
+    border-bottom:1px solid var(--rule); padding:7px 2px; margin-top:10px;
+  }
+  .dateline .edition{ color:var(--red); font-weight:700; letter-spacing:3px; }
+
+  /* ===== 今日新闻速览 ===== */
+  .overview{
+    border:1.5px solid var(--rule); padding:16px 20px; margin:22px 0 8px;
+    background:rgba(124,31,31,.045);
+  }
+  .overview h3{
+    margin:0 0 10px; font-size:16px; letter-spacing:6px; text-align:center;
+    color:var(--red);
+  }
+  .overview p{ margin:0; font-size:14.5px; line-height:1.95; text-align:justify; }
+  .window-note{
+    margin:10px 0 0; padding-top:9px; border-top:1px dashed var(--ink-soft);
+    font-size:12px; color:var(--ink-soft); line-height:1.8; text-align:justify;
+  }
+
+  /* ===== 类别分栏 ===== */
+  .cat-section{ margin-top:6px; }
+  .cat-head{
+    text-align:center; margin:30px 0 6px; font-size:18px; font-weight:800;
+    letter-spacing:6px; color:var(--ink);
+  }
+  .cat-head::before, .cat-head::after{
+    content:"◆"; color:var(--red); font-size:11px; margin:0 12px; vertical-align:middle;
+  }
+
+  /* ===== 新闻模块 ===== */
+  .news-item{ border-top:1px solid var(--rule); padding:16px 0 18px; }
+  .news-item:first-of-type{ border-top:none; }
+  .news-title{ font-size:21px; font-weight:800; margin:2px 0 7px; line-height:1.38; }
+  .news-meta{
+    font-size:12px; color:var(--ink-soft); font-style:italic;
+    margin-bottom:11px; letter-spacing:.4px;
+  }
+  .news-meta a{ color:var(--red); text-decoration:underline; }
+  .news-brief{ font-size:14.5px; line-height:1.98; text-align:justify; margin:0 0 13px; }
+  .news-value{
+    border-left:3px solid var(--red); padding:7px 0 7px 15px;
+    background:rgba(124,31,31,.05);
+  }
+  .news-value .vlabel{
+    font-weight:800; color:var(--red); font-size:14px; letter-spacing:1px;
+  }
+  .news-value p{ margin:7px 0 0; font-size:13.5px; line-height:1.95; text-align:justify; }
+
+  .empty{ font-size:13.5px; color:var(--ink-soft); font-style:italic; text-align:center; padding:14px 0; }
+
+  /* ===== 页脚 ===== */
+  .footer{
+    border-top:3px double var(--rule); margin-top:34px; padding-top:12px;
+    text-align:center; font-size:11px; color:var(--ink-soft); letter-spacing:1px; line-height:1.8;
+  }
+  @media (max-width:600px){
+    .paper{ padding:32px 22px 40px; }
+    .masthead .title{ font-size:32px; letter-spacing:3px; }
+  }
+</style>
+
+<style id="issue-nav-style">
+.issue-nav{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin:34px 0 4px;padding:20px 0;border-top:1px solid #262019;border-bottom:1px solid #262019;
+  font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+}
+.issue-nav .nav-item{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 18px;border:1px solid #C9B78E;background:#EDE2C6;
+  color:#7C1F1F;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:1px;
+  white-space:nowrap;transition:background .15s,color .15s;
+}
+.issue-nav .nav-item:hover{background:#262019;color:#F3EAD3;}
+.issue-nav .nav-index{background:#262019;border-color:#262019;color:#F3EAD3;letter-spacing:2px;}
+.issue-nav .nav-index:hover{background:#7C1F1F;border-color:#7C1F1F;color:#F3EAD3;}
+.issue-nav .nav-rss{background:transparent;border-color:#D8CBAA;color:#8A7B63;letter-spacing:1px;}
+.issue-nav .nav-rss:hover{background:#EDE2C6;border-color:#C9B78E;color:#7C1F1F;}
+.issue-nav .nav-disabled{color:#8A7B63;background:transparent;border-color:#D8CBAA;cursor:default;}
+.issue-nav .nav-disabled:hover{background:transparent;color:#8A7B63;}
+@media (max-width:600px){
+  .issue-nav{flex-wrap:wrap;gap:10px;}
+  .issue-nav .nav-item{font-size:12px;padding:10px 14px;}
+}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <!-- ============ 板头 ============ -->
+  <header class="masthead">
+    <div class="kicker">Global Artificial Intelligence Daily</div>
+    <h1 class="title">智武防务人工智能每日速报</h1>
+    <div class="sub">全 球 人 工 智 能 动 态 综 述</div>
+  </header>
+  <div class="dateline">
+    <span>2026年11月9日　星期一</span>
+    <span class="edition">周 一 补 刊 · 覆 盖 11/06—11/09</span>
+  </div>
+
+  <!-- ============ 今日新闻速览 ============ -->
+  <section class="overview">
+    <h3>今 日 新 闻 速 览</h3>
+    <p>本刊覆盖 11 月 6 日（周五）至 9 日四个日历日，已与线上归档站最近五期逐条去重，剔除周五单发过的十五条。周末主线是算力竞争从「买卡」转向自研与交付：特斯拉把 SI6 定在 HW4 的 80 倍、Dojo D3 改走芯粒加堆叠 HBM；路透调查显示先进封装资本开支逼近 280 亿美元并首超传统封装，长鑫第六代 DRAM 完成工程样片。模型端国产开源密集上新，阿里 Qwen3.8 全系、蚂蚁 Ling-3.2-flash、苹果基于千问的 HALO 机器人控制系统接连落地。资本侧英伟达 1700 亿美元客户融资敞口引发循环融资质疑，微软因硬件代差退出甲骨文算力租赁。治理与防务同步收紧：工信部把智能体终端纳入进网监管，美国民主党拟推「超级人工智能」禁令，欧洲 16 国抗议数据中心扩张；美空军 X-62A 完成首次 AI 自主拦截，CCA 自主空战提速。整体看，算力瓶颈下移到封装与电力，开源权重东升，监管与自主作战双线加速。</p>
+    <p class="window-note">编刊说明：本周一首发，常规「前 24 小时」窗口扩展至 11/06—11/09；因归档站 11 月 6 日已作为独立一期上线，两者存在日期重叠，本期已按标题相似度口径完成跨期去重，不重复收录周五已发条目。</p>
+  </section>
+
+  <!-- ============ 算力硬件 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">算 力 硬 件</div>
+
+    <article class="news-item" id="news-1">
+      <h2 class="news-title">特斯拉更新 AI 加速器路线图：SI6 算力目标达 HW4 的 80 倍，Dojo D3 转向芯粒与堆叠 HBM 并瞄准太空部署</h2>
+      <div class="news-meta">发布时间：2026-11-08 11:42（北京时间）　|　来源：IT之家 / Tom's Hardware　|　<a href="https://www.163.com/dy/article/LB78C0SB0511B8LM.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">特斯拉 11 月 8 日公布更新后的 AI 加速器路线图，把芯片序列整体更名为「超级智能」（Super Intelligence，SI）系列，原 AI4／AI5／AI6 对应 SI4／SI5／SI6，马斯克同时确认 SpaceXAI 将更名 SpaceXSI。按披露规划，接近量产的 SI5 采用台积电 3nm 与三星 2nm 双源、多芯片模块设计，目标算力约为现役 HW4 的 40 倍、内存 96GB；计划 2029—2030 年落地的 SI6 目标 80 倍、算力约 17.28—46.08 POPS、内存 144GB，由三星代工且合作已签至 2033 年。更值得关注的是训练芯片 Dojo 回归：曾被取消的第三代 D3 放弃前两代以晶圆级 SRAM 为核心的架构，改用芯粒加 2.5D／3D 先进封装与堆叠式 HBM（高带宽内存），路线图把其定位写为面向太空数据中心部署。需强调这些均为厂商路线图目标而非实测性能，同期英伟达 Rubin 已量产出货。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>两点值得我国产业界留意。其一，特斯拉把训练芯片从「片上 SRAM 自给」改回「外购 HBM 加先进封装」，等于承认单芯片堆 SRAM 在良率与容量上走不通——这恰好印证 HBM 与 CoWoS 仍是全球 AI 算力的真正卡口，也说明我国在 HBM 国产化、面板级封装与 2.5D／3D 集成上的投入方向是对的，应加速把国产存储产能与封装产线打通。其二，「面向太空部署」把算力竞赛引向天基平台，涉及抗辐射芯片、星上推理与星地链路，我国需在星载智能计算与低轨星座算力调度上提前布局，避免在下一代算力形态上再次被标准与供应链锁定。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-2">
+      <h2 class="news-title">先进封装 2026 年资本开支逼近 280 亿美元首次超越传统封装，CoWoS 紧张催生面板级替代路线</h2>
+      <div class="news-meta">发布时间：2026-11-08（北京时间；路透社产业调查 11-06）　|　来源：路透社 / 搜狐财经　|　<a href="https://q.stock.sohu.com/cn/news.html?textId=1076796954&amp;tab=200&amp;type=120&amp;code=cn_000021&amp;date=2026/1108" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">路透社 11 月 6 日发布全球先进封装产业深度调查，采访十余位行业高管与分析师，国内媒体 11 月 8 日集中转载。Yole Group 预测，2026 年全球先进封装收入将首次超过传统封装，相关资本支出接近 280 亿美元。AI 芯片越做越大、GPU 与 HBM 之间数据交换越来越密集，Chiplet、多芯片集成与 2.5D／3D 封装成为提升性能的关键路径，封装已从后道工序升格为算力交付的主瓶颈。报道提到，台积电 CoWoS 产能持续紧张，正推动英伟达、AMD、博通寻找扩产与替代工艺；力成科技与 AMD、博通合作开发面板级封装，并计划与博通在新加坡设立约 4 亿美元合资项目，目标 2028 年投产；台积电自身也在推进 CoPoS 面板封装路线。此外 The Information 称台积电应英伟达要求评估 3D DRAM 制造路径，台积电已公开否认，强调专注逻辑代工。需注意 280 亿美元为行业预测、4 亿美元为计划投资，均非已签合同或量产收入。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这条把「制程卡脖子」的叙事往前推了一步：即使晶圆产能解决，封装、互连与良率同样决定 AI 加速器能交付多少。对我国而言既是风险也是窗口——先进封装设备、载板、键合材料仍高度依赖海外，若台积电 CoWoS 与面板封装产能被头部客户以预付资金、优先供货权锁定，国产 GPU 即便流片成功也可能拿不到足够封装产能。建议把封装产能纳入算力自主可控的评估口径，重点扶持面板级封装、国产玻璃载板与 HBM 堆叠的产线验证；同时持续跟踪「客户是否预付、是否获得优先供货权、是否承担最低采购义务」三项合同证据，判断产能锁定是否形成新的产业壁垒。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-3">
+      <h2 class="news-title">长鑫存储前三季研发投入 110.71 亿元同比增 73%，第六代 DRAM 完成工程样片验证、LPDDR6 已量产</h2>
+      <div class="news-meta">发布时间：2026-11-08（北京时间）　|　来源：AI 半导体行业简讯 / 芯榜　|　<a href="http://mp.weixin.qq.com/s?__biz=MzYzOTQ0NDU1Nw==&amp;mid=2247485323&amp;idx=1&amp;sn=11bca0e65edc3365c541f998ad15aa2b&amp;chksm=f1d24a5fcc5c3570ee0e2927d70de256ae5c5ac41637c6650d4ee728ebd841c2ce5ee6eafc2e" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11 月 8 日多份半导体行业简讯汇总了国产存储的最新进展：长鑫存储前三季度研发投入达 110.71 亿元，同比增长约 73%，第六代 DRAM 已完成工程样片验证，LPDDR6 实现量产。业内解读认为，国产存储正从「制程微缩」阶段切入「架构验证」阶段，研发强度的大幅提升指向下一代 DRAM 与高带宽存储的自主迭代。同期信息还包括：华虹第三季度业绩超预期，2027 年新增 12 英寸产能基本订空，Fab 9B 设备搬入，成熟制程开始承接 AI 电源、驱动与边缘推理配套芯片；安世中国用 330 天建成 12 英寸产线、国产化率接近 100%，年出货约 1100 亿颗。另一条相关背景是 HBM 长约将在 11—12 月集中到期，市场预期重议价涨幅 60%—70%，TrendForce 上修第四季度 DRAM 合约价至环比约 20%，存储涨价正由 HBM 外溢到全品类。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>在 HBM 长约集中重议价、合约价全品类上涨的当口，长鑫第六代 DRAM 完成工程样片与 LPDDR6 量产，意义不只是产品迭代，而是我国在存储涨价周期里多了一张自主供给牌。当前 AI 服务器物料成本中 HBM 占比持续攀升，若国产 DRAM 能在架构验证后切入 HBM 堆叠与服务器内存，将直接缓解国内 AI 集群的采购成本与断供风险。需要冷静的是，工程样片验证到量产良率、再到通过头部 GPU 平台认证仍有距离，且 HBM 依赖先进封装与堆叠工艺协同。建议把「存储—封装—算力平台」作为一条链评估国产化进度，避免只看单颗芯片参数而误判整体可用性。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-4">
+      <h2 class="news-title">首片 200mm 单晶金刚石问世，瞄准 AI 芯片散热衬底</h2>
+      <div class="news-meta">发布时间：2026-11-07（北京时间）　|　来源：Diamond Foundry 官网 / AI 产业早报　|　<a href="http://mp.weixin.qq.com/s?__biz=MzA5MjE2MDgzMg==&amp;mid=2648607279&amp;idx=1&amp;sn=939f90c826d5507818793ad278075e99&amp;chksm=89e16aaa947e0c37e879c4c3b8cc85be04f3e8b88433c6e9e604194c712b3f8b8994385e4b8e" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">Diamond Foundry 在官网宣布制成首片 200mm 单晶金刚石晶圆（D200mm），由公司 CEO 在宁波 CarbonSemi 2026 大会上发布。单晶金刚石导热效率据称至少为铜的五倍且电绝缘，目标用作 AI 芯片散热衬底，缓解高功耗加速器的局部热点问题。公司正通过位于西班牙、投资 27.7 亿美元并纳入欧盟芯片法案的工厂建设量产能力。目前该晶圆尚未抛光，良率、缺陷密度与半导体工艺兼容性均未披露，距离规模商用仍有明显距离。这条消息与近期 AI 数据中心能耗、散热和电力约束的讨论相互呼应：当单卡功耗与机柜功率密度持续上行，热管理正从配套工程变成影响算力密度与交付节奏的材料问题。需要提醒的是，厂商自述的导热数据尚无第三方验证，金刚石衬底与现有封装、键合工艺的兼容性仍是待解难题。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>值得注意的是发布场地选在宁波，说明中国已被视为金刚石散热材料的潜在量产与应用市场。我国在高温高压与 MPCVD 人造金刚石领域具备产能基础，若能把大尺寸单晶衬底与国产 AI 芯片的封装热设计结合，有望在「不依赖更先进制程」的前提下提升算力密度，这对受制于先进制程与 HBM 供给的国产加速器是一条现实路径。同时也需警惕：欧盟已把该材料纳入芯片法案支持，若后续形成专利、设备与衬底标准壁垒，我国可能在新一轮热管理材料上再遇卡口。建议国内尽早启动 200mm 级衬底的良率、缺陷密度与工艺兼容性验证，并同步布局相关标准。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 技术进展 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">技 术 进 展</div>
+
+    <article class="news-item" id="news-5">
+      <h2 class="news-title">阿里通义千问开源 Qwen3.8 全系：旗舰 2.4 万亿参数，Qwen3.8-Max 登顶 CodeArena</h2>
+      <div class="news-meta">发布时间：2026-11-09（北京时间）　|　来源：阿里通义千问 / CSDN AI 资讯日报　|　<a href="http://mp.weixin.qq.com/s?__biz=MzcwOTM2Njc5OQ==&amp;mid=2247485384&amp;idx=2&amp;sn=89c7ff2bc8e7d448dcdc7683069bdda3&amp;chksm=f4a230b36ac42c2f22f8ca24394291a586cbcf6b6a910e5a7d98b6d14623cd8de804b311b8aa" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">阿里通义千问在周末开源 Qwen3.8 全系模型，旗舰版参数规模达 2.4 万亿，同时推出 27B 多模态主力版本与 Flash 轻量版本，形成「旗舰＋主力＋轻量」的完整梯度。据 CSDN AI 资讯日报，Qwen3.8-Max 在 Text Arena 位列全球第五、CodeArena 登顶。这是本周末国产开源密集上新的一部分：蚂蚁百灵 Ling-3.2-flash、Nous Research Arete-27B、Ricursive Ripple-65B Preview 接踵发布，开源阵营在编码智能体与事实性微调两个方向同时发力。与之呼应的是市场份额变化——Menlo Ventures 与 Dealroom 的报告均估算，全球或美国企业用于开源 AI 模型的支出中，中国模型占比已达 89%，Kimi、DeepSeek、GLM 位列前三，Kimi 单家约 61%。全系开源把国产模型的能力上限与可商用性同步推高，为政企私有化部署和低成本推理提供了更多选择。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>89% 这个数字虽来自第三方机构估算、统计口径需审慎对待，但方向很清楚：国产开源权重已成为全球企业选型的默认底座之一，这是我国在模型层少有的、能反向影响海外生态的筹码。对我国而言，机会在于把「开源权重优势」转化为标准与工具链优势——推动国产模型在推理框架、智能体协议、评测基准中的默认适配，形成事实上的生态黏性；风险则在于开源许可与地缘合规，百度 ERNIE-5.5-Flash-Base 已加入地域与营收门槛条款，说明国内厂商开始用许可证保护商业利益。建议扩大开源的同时，加快建立自主可控的评测体系与权重分发基础设施，避免底座在国内、标准在海外。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-6">
+      <h2 class="news-title">蚂蚁百灵发布 Ling-3.2-flash：5600 亿参数原生多模态，可读取渲染结果自检修正代码</h2>
+      <div class="news-meta">发布时间：2026-11-08（北京时间）　|　来源：蚂蚁百灵 / CSDN　|　<a href="http://mp.weixin.qq.com/s?__biz=MzU0MTE4OTA1OQ==&amp;mid=2247488778&amp;idx=1&amp;sn=4bfe25d3e44bdd45da475625bd61e03d&amp;chksm=fa814721a9a3fcab12d0d32c6c91253ea8b62eb92d1cd287d223b3c56443431248570ba25d2d" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">蚂蚁集团百灵团队发布原生多模态大模型 Ling-3.2-flash：总参数 5600 亿、每次推理激活约 250 亿，上下文窗口 100 万 Token，支持文本、图像、视频三种输入。最具增量的一项是「视觉反馈自检」——模型生成网页或三维场景后，可读取渲染结果并据此修正代码，把「生成—验证—修正」闭环收进模型内部，而非依赖外部工具反复调用。分发上，API 已上架蚂蚁百炼平台，兼容 OpenAI 与 Anthropic 两种接口协议，输入每百万 Token 0.30 美元、输出 0.90 美元，上线前两周免费；官方称权重将在近期开放，同时坦言长程规划与 3D 资产细节仍有短板。另有报道称该模型在图文理解、视觉推理、文档解析三项基准上得分超越 Claude Opus 5，并针对金融、政务等垂直场景做专项优化；该排名出自厂商口径，仍需第三方同条件复测。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>「读渲染结果改代码」是国产模型从「生成内容」走向「验证结果」的一步，对工业软件、前端工程与三维内容生产等场景的落地价值高于单纯的榜单分数。兼容 OpenAI／Anthropic 接口并以低价切入，实质是在争夺智能体时代的调用入口与开发者习惯——一旦国内政企工作流建立在这些接口上，模型替换成本会显著上升，对我国构建自主工具链是利好。但两点需清醒：一是权重仍停留在「近期开放」的承诺阶段，与腾讯 Hy4 正式版情况类似，开源可信度要靠交付兑现；二是厂商自测排名不宜作为采购依据，金融、政务场景应尽快建立跨厂商同条件复测，并把工具调用、失败重试与耗时计入长任务成本口径。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-7">
+      <h2 class="news-title">苹果开源人形机器人控制系统 HALO：宇树 G1 上 360 次实测单项成功率 91%，编排层默认调用千问 Qwen3.6-35B-A3B</h2>
+      <div class="news-meta">发布时间：2026-11-07（北京时间）　|　来源：澎湃新闻 / arXiv　|　<a href="http://mp.weixin.qq.com/s?__biz=MzA5MjE2MDgzMg==&amp;mid=2648607279&amp;idx=1&amp;sn=939f90c826d5507818793ad278075e99&amp;chksm=89e16aaa947e0c37e879c4c3b8cc85be04f3e8b88433c6e9e604194c712b3f8b8994385e4b8e" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">苹果研究团队在 arXiv 发表论文并开源人形机器人控制系统 HALO。系统部署于宇树科技 G1 机器人，任务编排层默认采用阿里千问 Qwen3.6-35B-A3B，并在机载 Mac mini 上本地运行；在 6 个未预先建图的真实环境中完成 360 次单项任务测试，平均成功率 91%，三种组合任务平均成功率 70%。团队承认，新增物理任务仍需人工编写提示词与动作关键帧，缺乏触觉感知是主要短板。这是消费电子巨头以「论文＋开源代码」方式切入具身智能，验证了从仿真数据训练到真实机器人迁移的技术路线。同期国内数据也显示，工信部副部长熊继军在第九届虹桥国际经济论坛透露，我国人形机器人上半年整机产量已超 4 万台，全年有望突破 10 万台，整机产品正从「能跑会跳」向「能想会干」升级。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这条最值得注意的不是苹果入场，而是它选了「中国机器人本体＋中国大模型＋苹果编排层」这一组合：宇树 G1 与千问被默认为国际大厂具身智能研究的底座，说明我国在机器人本体制造与开源模型上的比较优势已形成外溢影响力。对产业界而言，这提示一条务实路径——把本体成本、量产能力与开源模型生态打包成「具身智能开发平台」，而不只是卖整机。同时要保持压力：苹果把高价值的任务编排、仿真迁移与系统层留在自己手里，国内 10 万台级产量仍集中在硬件，触觉感知、长程任务规划与真实环境泛化尚未突破。若编排层与评测标准被海外定义，我国有沦为硬件代工的风险，需加快自主具身智能框架与真实场景评测集建设。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 商业动态 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">商 业 动 态</div>
+
+    <article class="news-item" id="news-8">
+      <h2 class="news-title">英伟达变身客户融资方：相关敞口约 1700 亿美元，GPU 销售日益依赖卖方信贷</h2>
+      <div class="news-meta">发布时间：2026-11-08（北京时间）　|　来源：钛媒体 / The Information　|　<a href="http://mp.weixin.qq.com/s?__biz=MzA5MjE2MDgzMg==&amp;mid=2648607279&amp;idx=1&amp;sn=939f90c826d5507818793ad278075e99&amp;chksm=89e16aaa947e0c37e879c4c3b8cc85be04f3e8b88433c6e9e604194c712b3f8b8994385e4b8e" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">钛媒体 11 月 8 日梳理指出，英伟达正通过延长账期、提供担保、直接入股以及洽商残值保险等方式，为 neocloud（新型云算力厂商）客户购买自家芯片提供融资。据 The Information 统计，相关敞口约 1700 亿美元，其中最高约 1645 亿为担保与承诺，另持有约 990 亿美元客户股权。对冲基金经理已将其比作思科在 2000 年的循环融资，黄仁勋否认这一风险类比。核心逻辑是：GPU 销售越来越依赖卖方信用，客户能否持续付租、租金能否覆盖折旧，成为整条链条能否延续的关键。这与本周另两条消息形成呼应——OpenAI 新一轮融资估值下修、AI 板块二级市场回调，以及伯恩斯坦估算 OpenAI 到 2030 年算力基础设施支出或达 6140 亿美元。资本仍在流入 AI，但条件明显变严，市场关注点从「算力规划规模」转向「应收款、担保规模与真实付费能力」。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>对我国判断全球 AI 算力景气度，这组数据比任何产品发布都重要：如果头部 GPU 厂商的销售有相当部分由自身信用支撑，那么「供不应求」的表象里可能包含循环融资泡沫，一旦 neocloud 租金收入不及预期，风险会沿担保与股权回流至芯片厂报表，进而触发算力资产价格重估。对国内而言有双重含义：一是采购与投资决策不宜简单按海外订单量外推真实需求，应盯住应收账款、担保规模与客户付费能力；二是若海外算力资产估值回调，反而可能为国内厂商提供设备、人才与客户的窗口。同时也提醒我国智算中心建设警惕类似的「补贴—租赁—采购」闭环，避免用金融杠杆堆出虚高的算力利用率。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-9">
+      <h2 class="news-title">微软逐步终止向甲骨文租用 AI 算力，重估超 800 亿美元云合作，硬件代差成直接原因</h2>
+      <div class="news-meta">发布时间：2026-11-08（北京时间）　|　来源：AI 产业新闻联播 / 知情人士　|　<a href="http://mp.weixin.qq.com/s?__biz=MzU0MTE4OTA1OQ==&amp;mid=2247488778&amp;idx=1&amp;sn=4bfe25d3e44bdd45da475625bd61e03d&amp;chksm=fa814721a9a3fcab12d0d32c6c91253ea8b62eb92d1cd287d223b3c56443431248570ba25d2d" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11 月 8 日多份产业简讯披露，微软已决定不再续签向甲骨文租用 AI 算力的合同，并在近几个月分批关停此前承租的计算资源。这是微软对多项云服务合作展开全面重估的一部分，涉及规模超过 800 亿美元。知情人士给出的直接原因是硬件代差：甲骨文提供的算力搭载的是较旧一代英伟达芯片，经过长时间运行迭代后已不符合微软当前技术规格要求，价值相应下降。此前另有报道称，微软因不满「新云」供应商的高成本与交付延误，正加强对外采购算力的审查。需要与上周五已报道的另一条区分开：甲骨文取消向腾讯出租至多 10 万张 AI 芯片的 70 亿美元合同，主因是政策合规压力；微软这次撤退则是资产折旧——租来的算力还没用满合同期就已落后一代。两件事指向同一条供应链，但含义不同。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>「算力还没用满合同期就落后一代」是对我国智算中心与算力租赁业务最直接的风险提示：GPU 迭代周期已短于典型的 3—5 年合约，按旧代芯片测算的折旧模型会系统性高估资产价值，长约、预付与融资租赁都可能变成沉没成本。国内不少地方智算中心以 5 年期合同锁定算力，若不对代际贬值和设备残值做压力测试，容易出现「建成即落后、出租即亏损」。建议在算力采购合同中引入代际升级条款、按实际利用率而非规划容量结算，并把旧代算力导向推理、微调等对代差容忍度更高的场景。另一面看，海外云巨头重新审视外部算力采购，也为国产算力服务出海提供了替代供给的谈判空间。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-10">
+      <h2 class="news-title">杰创智能签 49.15 亿元算力技术服务合同，五年期按月结算</h2>
+      <div class="news-meta">发布时间：2026-11-06 晚（北京时间）　|　来源：公司公告 / AI 产业新闻联播　|　<a href="http://mp.weixin.qq.com/s?__biz=MzU0MTE4OTA1OQ==&amp;mid=2247488778&amp;idx=1&amp;sn=4bfe25d3e44bdd45da475625bd61e03d&amp;chksm=fa814721a9a3fcab12d0d32c6c91253ea8b62eb92d1cd287d223b3c56443431248570ba25d2d" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">杰创智能（301248.SZ）11 月 6 日晚公告，与代号 H1 的客户签署《算力技术服务合同》，由公司提供算力服务，按暂定价估算合同含税总金额 49.15 亿元（491,520.00 万元），合同期限 60 个月。交付与结算安排为分批向甲方交付算力服务，以每自然月度为结算周期收取服务费。按 60 个月折算，对应年均约 9.8 亿元收入。49.15 亿元显著超过公司最近一个会计年度经审计营业收入，属重大日常经营合同。需要特别留意「暂定价」这一限定——最终结算金额会随实际交付批次的执行价格浮动，与固定总价合同不是一回事；此外客户身份仅以「H1 公司」代称披露，履约能力与最终用途均未公开。这类大额算力服务订单近期在国内密集出现，同期广州政务外网智算资源租赁（预算 3213 万元）、中央民族大学智算集群采购（预算 3712 万元）等项目也在放量。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>国内算力服务正从「自建机房」走向「按月结算的服务化供给」，这是产业成熟的信号，也有利于国产芯片通过服务而非硬件销售进入政企场景。但 49.15 亿元对一家上市公司营收量级而言过于悬殊，叠加「暂定价＋客户匿名＋60 个月」三个特征，需要警惕把意向性框架当成确定收入：若上游 GPU 供给受限、代际贬值或客户融资出现问题，长周期合同的执行弹性会明显放大。结合本期微软因硬件代差退出甲骨文算力租赁一案，建议监管与投资者对国内算力大单统一要求披露客户资质、算力来源、设备代际、结算与代际升级条款，把「合同金额」折算成「可验证交付量」，避免用纸面规模放大国产算力景气度。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 政策风向 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">政 策 风 向</div>
+
+    <article class="news-item" id="news-11">
+      <h2 class="news-title">美国民主党拟推「超级人工智能」永久禁令：设 10 的 25 次方算力阈值、新建联邦「人工智能部」</h2>
+      <div class="news-meta">发布时间：2026-11-07（北京时间）　|　来源：中评社 / 香港文汇报　|　<a href="https://bj.crntt.com/crn-webapp/touch/detail.jsp?docid=107252729" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据香港文汇报 11 月 7 日报道，美国民主党在中期选举夺得参众两院控制权后，拟推动永久禁止开发及部署「超级人工智能」的法案，违规企业决策人员或独立行事者最高可判囚 20 年。法案由无党籍参议员桑德斯及民主党众议员卡萨尔提出，把「超级人工智能」定义为在多数领域认知表现超越人类、或有能力策划并执行剥夺人类主导权的系统；禁令亦涵盖能规避关机指令、自行改进功能、未授权进入受保护网络，或协助提升核生化武器设计能力的系统，开发、部署、持有或资助均在禁止之列。法案建议成立联邦「人工智能部」，全天候监控前沿模型；生效后训练算力达 10 的 25 次方量级的先进系统须暂停训练与微调，直至新部门配齐人手并订立安全规则。法案还要求美方寻求国际协议防止超级人工智能在他国开发，并将 AI 计算设备出口管制列为可能措施。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这条对我国是典型的「以安全之名行管制之实」信号，需重点提示：其一，算力阈值一旦成为立法基准，等于把前沿模型训练纳入可量化的行政准入，未来很可能被用作对华算力出口管制与芯片禁售的国内法依据；其二，「寻求国际协议防止在他国开发」与「AI 计算设备出口管制」直接指向跨境算力封锁，我国头部实验室的海外训练、跨境云算力与高端芯片采购都可能受影响。应对上，一方面应加快国产训练集群与全国产算力链条的可用性验证，把算力可得性从商业问题升格为战略问题；另一方面可在国际治理场合强调发展权与普惠原则，反对以单边阈值固化技术代差。需说明该法案尚处提案阶段，能否通过仍待观察。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-12">
+      <h2 class="news-title">欧洲 16 国爆发联合抗议要求暂停大型数据中心建设，AI 基建的「社会许可」成为新约束</h2>
+      <div class="news-meta">发布时间：2026-11-07（北京时间；行动自 11-06 起）　|　来源：中国日报网 / 财联社　|　<a href="http://mp.weixin.qq.com/s?__biz=MzA5MjE2MDgzMg==&amp;mid=2648607279&amp;idx=1&amp;sn=939f90c826d5507818793ad278075e99&amp;chksm=89e16aaa947e0c37e879c4c3b8cc85be04f3e8b88433c6e9e604194c712b3f8b8994385e4b8e" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11 月 6 日，上百名抗议者闯入阿姆斯特丹一座微软数据中心在建工地并攀上塔吊，「停止肮脏数据中心」联盟宣布在 16 个欧洲国家发起为期两天的联合行动，都柏林游行、华沙议会大厦外示威与丹麦微软数据中心抗议同步展开，要求在政府建立清晰规则前暂停大型数据中心建设。欧盟技术事务专员维尔库宁回应称，欧洲需要更多数据中心支撑 AI 发展，但必须审慎推进。仅荷兰一国就有约 200 座数据中心在规划、建设或运营中，爱尔兰数据中心用电已占全国相当比例。争议焦点集中在能耗、水耗与本地收益分配。这轮抗议与此前美国多个社区就暂停或禁止数据中心建设的表决相互呼应，也与路透社 11 月 7 日关于环保组织已广泛使用 AI、却担忧数据中心电力与碳排放成本的调查形成对照；IEA 预测 2030 年全球数据中心年用电量可能达约 945TWh。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>海外 AI 基建正在被「社会许可」重新定价：选址、并网、用水与社区沟通从工程附带条件变成项目能否开工的前置变量，审批周期拉长会直接抬高欧美算力扩容成本。对我国有两点启示：一是国内智算中心建设应提前把能效（PUE）、水耗（WUE）、绿电协同与余热利用做实，避免重演「先建设后争议」；二是欧美算力扩张受限，客观上为我国算力服务出海、承接对能耗敏感的国际 AI 工作负载打开窗口，但前提是电力成本、绿电比例与数据跨境合规能形成可验证竞争力。同时也要看到，若欧洲借「规则清晰化」出台高门槛能耗与用水标准，可能演变为新的绿色贸易壁垒，我国设备与服务商需提前做合规准备。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-13">
+      <h2 class="news-title">工信部印发《关于加强智能体终端设备进网管理的通知》：AI 手机、平板、可穿戴纳入全链条监管</h2>
+      <div class="news-meta">发布时间：2026-11-06（北京时间；11-09 集中解读）　|　来源：央广网 / 工业和信息化部　|　<a href="http://mp.weixin.qq.com/s?__biz=MzA3MzE0NDAyOQ==&amp;mid=2451509386&amp;idx=1&amp;sn=27d11d4878b055793926edd9c6bd4223&amp;chksm=8917ebcb463c08f05e317037e232b0d529487a6786797d83f481eb0fe9b7e42a520b129a50b5" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">工业和信息化部 11 月 6 日印发《关于加强智能体终端设备进网管理的通知》，首次把预置智能体的手机、平板、可穿戴设备纳入进网监管，覆盖适配验证、进网检测、OTA 升级报备与分发管理四大环节，要求智能体配备唯一身份码并落实反诈前置评测；11 月 9 日多家资讯日报将其列为当日头条并作集中解读。配套动作还包括：工信部装备工业一司 11 月 5 日就《机器人产品标识码管理暂行办法（征求意见稿）》公开征求意见，拟为境内生产的工业、服务、特种机器人建立「一机一码」、终身不变且不可篡改的标识，赋码后 20 个工作日内备案；北京已于 11 月 4 日召开动员部署会启动赋码工作。此外，北京同期发布《加快智能体引领发展的若干措施》，从技术、应用、产业、生态四方面提出十条措施，并披露豆包月活已破 3.82 亿、上半年全市 AI 融资超 950 亿元。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这标志我国 AI 治理从「内容与模型层」正式下沉到「设备身份与终端进网」：给智能体和机器人发「身份证」，本质是为规模部署后的可追溯、可问责、可熔断建立底座，比事后内容治理更接近工程化监管。对产业是利好与约束并存——统一的身份码与进网规范有助于政企采购、反诈与事故追责，也能形成可被国际借鉴的标准先发优势；但适配验证、OTA 报备与反诈前置评测会抬高中小厂商合规成本，可能加速终端智能体市场向头部集中。建议关注两点落地细节：身份码与智能体互联协议是否开放、是否兼容国产开源模型；以及监管能否区分本地推理与云端调用，避免把端侧创新一刀切纳入许可流程。</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ 国防应用 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">国 防 应 用</div>
+
+    <article class="news-item" id="news-14">
+      <h2 class="news-title">X-62A 实现首次 AI「自主」拦截，美空军加紧研发自主空战系统、目标 2030 年前 CCA 实战列装</h2>
+      <div class="news-meta">发布时间：2026-11-09（北京时间）　|　来源：中国航空新闻网　|　<a href="https://www.cannews.com.cn/fangwu/2026/11-09/PDEGRzW1.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">中国航空新闻网 11 月 9 日报道，美国空军 X-62A（由 F-16 改装的自主飞行验证机）在「热行动」相关测试中完成首次 AI「自主」拦截，标志 AI 自主空战能力从模拟与伴随飞行迈入实战化拦截验证。并行的「假日行动」（Have Holidays）重点是在 X-62A 开放式任务系统架构计算机上集成多款模块化软件：引入非主承包商研发的第三方自主智能体、测试防止自主飞行器突破操作员设定作战边界的增强型安全规则、推进芯片集成以强化先进传感器信息处理。美空军今年夏天另启动 6 架改装 F-16 的 VENOM 项目试飞，并用 MQ-20 等有人／无人平台开展自主技术测试；组织上与海军陆战队、海军签署协议，为 CCA（协同作战飞机）通用指挥系统构建联合管理架构，未来还计划吸纳北约盟友。目标是 2030 年前列装具备实战能力的 CCA。目前人类操作员仍需掌控控制回路并负责致命打击授权。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这是本期对我周边空中安全态势影响最直接的一条。三层含义值得跟踪：一是自主拦截把「发现—决策—拦截」链条中的人环节进一步压缩，若 CCA 前出并依托无源红外搜索跟踪充当传感器节点，我方隐身平台与防空体系的生存压力会上升；二是「第三方自主智能体＋开放式任务系统」意味着美军在构建可快速迭代的软件生态，未来优势不只在单机性能，而在算法更新速度，这对我方反制手段的迭代节奏提出更高要求；三是联合管理架构并计划吸纳北约盟友，指向自主空战标准与互操作规则的联盟化输出。建议重点研判其授权阶梯的演变节点（人类是否仍在回路）、CCA 与有人平台的协同样式，以及无源传感器组网对我低可探测目标的探测边界；同步加快我方有人—无人协同、智能指控与反自主集群能力的体系化验证。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-15">
+      <h2 class="news-title">印度空军列出本土无人机四项关键技术优先方向：自主蜂群、抗干扰数据链、任务载荷与动力续航</h2>
+      <div class="news-meta">发布时间：2026-11-08（北京时间）　|　来源：idrw.org / 腾讯新闻　|　<a href="https://news.qq.com/rain/a/20261108A03VVM00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">2026 年 11 月 8 日，据 idrw.org 报道，印度空军为本土无人机研发列出四项关键技术优先方向：其一为自主飞行与多机协同，要求无人机能自主规划航线、避障、识别目标并多架配合执行任务，蜂群考验算法、通信与任务分配；其二为通信、数据链与抗干扰，强调在复杂电磁环境下保持链路连通，防止被截获、欺骗与接管；其三为传感器与任务载荷，涵盖光电、雷达与信号侦察，追求更轻、更准、更省电；其四为动力、续航与生存能力，面向高原、海上或边境长期使用，兼顾燃油效率与低可探测性。文章指出，这不是采购订单，而是给国内企业与研发机构明确投钱与攻关方向的「考试大纲」，意在把研发从演示拉回作战需求。同时提示，发动机、电池、传感器与芯片若依赖进口，本土化仍会卡脖子；认证测试设施、频谱许可与数据链标准统一也是成败关键。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>印度把「自主蜂群＋抗干扰数据链」列为国家级攻关方向，说明周边国家正把无人机智能化从采购转向体系化自研，且明确点名高原与边境使用场景，我边境方向的空中态势复杂度会进一步上升。对我国而言需关注两点：一是其技术路线高度依赖进口芯片、传感器与动力部件，这既是我方产业链的优势，也意味着美国及盟友可能借技术合作把标准与数据链协议嵌入印度体系，形成联盟化的无人作战互操作网络；二是「抗欺骗、防接管」被单列，反映各国已把 AI 自主系统的对抗重点从硬杀伤转向链路与算法层。建议持续跟踪其国产化率、蜂群规模试验与有人—无人协同进展，并把我方边境反无人机体系在电磁对抗、诱骗与链路拒止方向的能力评估做实。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-16">
+      <h2 class="news-title">美军在夏威夷丛林测试垂直起降侦察无人机，为岛链作战演练 JPMRC 27-01</h2>
+      <div class="news-meta">发布时间：2026-11-07（北京时间；国防部影像发布于 11-05）　|　来源：Army Recognition / 美国国防部 / 腾讯网　|　<a href="https://new.qq.com/rain/a/20261107A07G2300" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11 月 7 日多家国内媒体综合 Army Recognition、美国国防部发布影像、Defence Blog 与 Inside Defense 报道：美国陆军第 25 步兵师在夏威夷丛林地带操作一架垂直起降侦察无人机，无跑道、无弹射架即可就地起降，属 JPMRC 27-01 演习的一部分。JPMRC 是美陆军面向印太最重要的丛林与岛屿作战训练轮次，科目正是「没有完善机场与固定跑道时如何作战」。型号未获官方确认，外界据外形与部署节奏判断大概率是 AeroVironment 的 P550；陆军 2026 年 7 月刚授予该公司 1.17 亿美元首次全速生产合同，交付自年底开始，首批接收单位即太平洋方向旅级战斗队。P550 为纯电动垂直起降平台，载荷约 1.5 公斤、续航 1.5 小时，可挂光电红外与信号情报模块；其数字架构设计上接入陆军 JADC2 指挥控制体系，传感器数据自动共享上级与相邻单位。陆军同期还在推进连级 VAPOR CLE、旅级 P550 与更高层 Group 4 的三层垂直起降侦察体系。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这条把「印太岛链」与「分布式智能感知」直接连在一起，对我周边安全环境的指向性很强。垂直起降把「需要硬化跑道」这一前提删除，林间空地、礁石平台、小艇甲板都能成为起降点，意味着侦察节点可以更分散、更隐蔽、更高频次出动；更关键的是 P550 原生接入 JADC2，传感器数据自动汇入指挥网，不需要操作员人工转述——实质是在构建面向岛链的低空 ISR（情报、监视与侦察）感知网，压缩我方前沿活动的隐蔽窗口。建议重点跟踪三层垂直起降体系的列装节奏、JADC2 数据链在低带宽与强干扰环境下的实际表现，以及 P550 与 V-BAT 等舰载平台在太平洋方向的部署密度；我方需相应强化低空慢小目标探测、电磁拒止与分布式反侦察能力。</p>
+      </div>
+    </article>
+  </div>
+
+  <nav class="issue-nav">
+      <a class="nav-item nav-prev" href="2026-11-06.html"><svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M9.5 3L4.5 7.5L9.5 12M4.8 7.5H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>上一期 · 11月6日</span></a>
+      <a class="nav-item nav-index" href="../archive/2026.html">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M2.5 3.5h10M2.5 7.5h10M2.5 11.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>2026 年归档</span>
+      </a>
+      <span class="nav-item nav-disabled">下一期 · 尚未发布</span>
+      <a class="nav-item nav-rss" href="../feed.xml">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><circle cx="3.2" cy="11.8" r="1.4" fill="currentColor"/><path d="M2.4 7.6a5 5 0 015 5M2.4 4a8.6 8.6 0 018.6 8.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+        <span>RSS</span>
+      </a>
+    </nav>
+
+  <footer class="footer">
+    本速报由 AI 自动检索公开信源并生成，仅供研究参考。原始新闻版权归原媒体所有，点击标题下方链接可阅读原文。<br>
+    智武防务人工智能每日速报 · GLOBAL AI DAILY · 聚焦中国视角
+  </footer>
+
+</div>
+</body>
+</html>
