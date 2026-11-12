@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智武防务人工智能每日速报 — 2026年11月12日</title>
+<meta name="headline" content="谷歌发布首款决策模型，单次推理完成千项结构化判断">
+<meta name="idx-title" content="谷歌发布首款决策模型，单次推理完成千项结构化判断">
+<style>
+  :root{
+    --paper:#f3ead3;
+    --paper-edge:#e2d4b0;
+    --ink:#262019;
+    --ink-soft:#564b3c;
+    --red:#7c1f1f;
+    --rule:#262019;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:#cdbf9e;
+    background-image:radial-gradient(circle at 50% 0%, #d8caa6 0%, #c2b389 100%);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,"Times New Roman",serif;
+    color:var(--ink);
+    padding:40px 14px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .paper{
+    max-width:860px; margin:0 auto;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(120,90,40,.018) 0 2px, transparent 2px 4px);
+    padding:50px 54px 60px;
+    box-shadow:0 14px 48px rgba(40,25,10,.45);
+    border:1px solid var(--paper-edge);
+    position:relative;
+  }
+  .paper::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 60px rgba(90,60,20,.18);
+  }
+
+  /* ===== 板头 ===== */
+  .masthead{ text-align:center; border-bottom:3px double var(--rule); padding-bottom:14px; }
+  .masthead .kicker{
+    font-size:12px; letter-spacing:8px; color:var(--ink-soft);
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .masthead .title{
+    font-size:44px; font-weight:900; letter-spacing:7px; margin:0;
+    line-height:1.12; color:var(--ink);
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
+  }
+  .masthead .sub{
+    font-size:13px; letter-spacing:5px; color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; letter-spacing:2px; color:var(--ink-soft);
+    border-bottom:1px solid var(--rule); padding:7px 2px; margin-top:10px;
+  }
+  .dateline .edition{ color:var(--red); font-weight:700; letter-spacing:3px; }
+
+  /* ===== 今日新闻速览 ===== */
+  .overview{
+    border:1.5px solid var(--rule); padding:16px 20px; margin:22px 0 8px;
+    background:rgba(124,31,31,.045);
+  }
+  .overview h3{
+    margin:0 0 10px; font-size:16px; letter-spacing:6px; text-align:center;
+    color:var(--red);
+  }
+  .overview p{ margin:0; font-size:14.5px; line-height:1.95; text-align:justify; }
+
+  /* ===== 类别分栏 ===== */
+  .cat-section{ margin-top:6px; }
+  .cat-head{
+    text-align:center; margin:30px 0 6px; font-size:18px; font-weight:800;
+    letter-spacing:6px; color:var(--ink);
+  }
+  .cat-head::before, .cat-head::after{
+    content:"◆"; color:var(--red); font-size:11px; margin:0 12px; vertical-align:middle;
+  }
+
+  /* ===== 新闻模块 ===== */
+  .news-item{ border-top:1px solid var(--rule); padding:16px 0 18px; }
+  .news-item:first-of-type{ border-top:none; }
+  .news-title{ font-size:21px; font-weight:800; margin:2px 0 7px; line-height:1.38; }
+  .news-meta{
+    font-size:12px; color:var(--ink-soft); font-style:italic;
+    margin-bottom:11px; letter-spacing:.4px;
+  }
+  .news-meta a{ color:var(--red); text-decoration:underline; }
+  .news-brief{ font-size:14.5px; line-height:1.98; text-align:justify; margin:0 0 13px; }
+  .news-value{
+    border-left:3px solid var(--red); padding:7px 0 7px 15px;
+    background:rgba(124,31,31,.05);
+  }
+  .news-value .vlabel{
+    font-weight:800; color:var(--red); font-size:14px; letter-spacing:1px;
+  }
+  .news-value p{ margin:7px 0 0; font-size:13.5px; line-height:1.95; text-align:justify; }
+
+  .empty{ font-size:13.5px; color:var(--ink-soft); font-style:italic; text-align:center; padding:14px 0; }
+
+  /* ===== 页脚 ===== */
+  .footer{
+    border-top:3px double var(--rule); margin-top:34px; padding-top:12px;
+    text-align:center; font-size:11px; color:var(--ink-soft); letter-spacing:1px; line-height:1.8;
+  }
+  @media (max-width:600px){
+    .paper{ padding:32px 22px 40px; }
+    .masthead .title{ font-size:32px; letter-spacing:3px; }
+  }
+</style>
+
+<style id="issue-nav-style">
+.issue-nav{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin:34px 0 4px;padding:20px 0;border-top:1px solid #262019;border-bottom:1px solid #262019;
+  font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+}
+.issue-nav .nav-item{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 18px;border:1px solid #C9B78E;background:#EDE2C6;
+  color:#7C1F1F;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:1px;
+  white-space:nowrap;transition:background .15s,color .15s;
+}
+.issue-nav .nav-item:hover{background:#262019;color:#F3EAD3;}
+.issue-nav .nav-index{background:#262019;border-color:#262019;color:#F3EAD3;letter-spacing:2px;}
+.issue-nav .nav-index:hover{background:#7C1F1F;border-color:#7C1F1F;color:#F3EAD3;}
+.issue-nav .nav-rss{background:transparent;border-color:#D8CBAA;color:#8A7B63;letter-spacing:1px;}
+.issue-nav .nav-rss:hover{background:#EDE2C6;border-color:#C9B78E;color:#7C1F1F;}
+.issue-nav .nav-disabled{color:#8A7B63;background:transparent;border-color:#D8CBAA;cursor:default;}
+.issue-nav .nav-disabled:hover{background:transparent;color:#8A7B63;}
+@media (max-width:600px){
+  .issue-nav{flex-wrap:wrap;gap:10px;}
+  .issue-nav .nav-item{font-size:12px;padding:10px 14px;}
+}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <!-- ============ 板头 ============ -->
+  <header class="masthead">
+    <div class="kicker">Global Artificial Intelligence Daily</div>
+    <h1 class="title">智武防务人工智能每日速报</h1>
+    <div class="sub">全 球 人 工 智 能 动 态 综 述</div>
+  </header>
+  <div class="dateline">
+    <span>2026年11月12日　星期四</span>
+    <span class="edition">每 日 一 刊 · 手 动 生 成</span>
+  </div>
+
+  <!-- ============ 今日新闻速览 ============ -->
+  <section class="overview">
+    <h3>今 日 新 闻 速 览</h3>
+    <p>2026年11月12日，AI产业迎来多重震荡与突破。商业端，英伟达因CEO黄仁勋遭美国议员逼宫辞职传闻盘后重挫逾7%，Anthropic史上最大IPO路演火热推进、估值剑指1.5万亿美元，OpenAI单季营收首破百亿美元、OpenRouter以75亿美元并入Stripe；技术端，谷歌发布首款决策模型Gemini Decision 1、DeepMind推出AlphaGenome 2基因变异预测模型，DeepSeek实测验证KV Cache跨版本复用可降本数倍；算力端，华为昇腾960超节点、苏服云百台国产服务器量产下线；国防端，人民空军无人智能新质战力加速攀升，德国Helsing发布"去美国化"AI作战平台。整体呈"资本狂热、技术分化、自主可控提速"基调。</p>
+  </section>
+
+  <!-- ============ 算力硬件 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">算 力 硬 件</div>
+
+    <article class="news-item" id="news-1">
+      <h2 class="news-title">华为发布全球首款NPO技术昇腾960超节点，算力达8 EFLOPS FP8</h2>
+      <div class="news-meta">发布时间：2026-11-12 06:41（北京时间）　|　来源：虎扑 / 华为全联接大会2026　|　<a href="https://voice.hupu.com/bbs/642463803" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">华为在上海举办的全联接大会2026上发布全球首个采用近封装光学（NPO, Near-Packaged Optics）技术的超节点昇腾960，搭载全球首款内置光源的NPO光引擎Hi-ONE。该超节点使用5500个Hi-ONE光互联产品，单引擎传输容量达7.2T，可扩展至4096卡规模，算力达8 EFLOPS（FP8），替代原有4.8万颗800G光模块，降低超550千瓦功耗，系统可用度提升至99.8%。华为同步披露昇腾迭代进度超出预期，960DT、960PR分别提前至2027年一、三季度就绪，后续维持一年一代节奏，2028、2029年推出昇腾970、980；并向光互联标准组织OIF提出NPO标准立项建议。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>昇腾960以NPO光互联突破"电互联功耗墙"，是国产算力在大集群Scale-up方向上的关键一跃。对我国的价值在于：其一，光引擎Hi-ONE内置光源、系统级降耗，直接缓解国内数据中心电力与散热瓶颈，为国产万卡、十万卡集群落地扫清互联短板；其二，主导OIF的NPO标准立项，意味着我国有机会从"跟随PCIe/以太网"转向参与底层光互联规则制定，提升产业链话语权；其三，一年一代的稳定节奏叠加国产芯片底层适配，将进一步压缩对英伟达NVLink生态的依赖，强化算力自主可控。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-2">
+      <h2 class="news-title">百台苏服云智算服务器在南京量产交付，补上江苏算力整机短板</h2>
+      <div class="news-meta">发布时间：2026-11-11（北京时间，新华日报）　|　来源：新华日报　|　<a href="https://xh.xhby.net/pad/con/202611/12/content_1605562.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月11日，江苏省自主品牌服务器百台下线暨苏服云品牌发布会在南京举行。百台GN666X6智算服务器量产交付，单台可搭载8张高性能GPU加速卡，支持5种GPU拓扑架构按需切换，集大模型训练、推理与视频处理于一体。苏服云由此成为全国广电网络体系内首家具备自主品牌服务器制造能力的企业，标志着江苏自主算力装备完成从研发到量产交付的关键一跃。苏服云由省文投等5家省属国企联合沪杭两家算力企业成立，已联合华为、海光完成国产芯片底层适配。现场长三角算力生态联盟同步启幕，并与江苏交控、南钢等8家单位签约。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>苏服云量产交付，意味着省级算力"整机"制造环节短板被补齐，对我国的信号是：算力自主正从"建集群、买设备"走向"造整机、定标准"。其价值点有三：一是8卡GPU拓扑可切换+国产芯片适配，为政务、广电、制造等垂直行业提供可控算力底座；二是"自主品牌整机+自有云平台"一体化路径，降低对进口服务器与云生态的依赖；三是长三角算力生态联盟把处理器、加速卡、整机、云、安全串成链，有利于区域协同与供应链韧性，这是"人工智能+"落地从口号转向产能的实证。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-3">
+      <h2 class="news-title">AMD推出Instinct Coder 355本地编程平台，单机逼近前沿模型98%性能</h2>
+      <div class="news-meta">发布时间：2026-11-12（北京时间）　|　来源：AIbase / 博客园　|　<a href="https://www.cnblogs.com/itech/p/23635922" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">AMD与Spectro Cloud发布企业级AI辅助编程平台Instinct Coder 355：8张Instinct MI355X加速器、2颗64核EPYC 9575F、3TB DDR5-6400内存与63.36TB固态存储，在本地跑GLM-5.3推理，据称逼近前沿模型98%性能。单节点最多服务85名开发者、50人可同时在线编码，戴尔与Supermicro提供不同规格整机。配套PaletteAI Inference Launchpad默认调用本地算力而非云API，敏感代码与数据不必外送。在成本与合规双重压力下，把推理搬回自有机房正成为大厂新选择，这也是AMD从英伟达与云厂商手中争夺企业开发者的一步。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>该平台把"本地化、不出域"推到企业开发一线，对我国的启示是双重的。一方面，它印证了"国产模型+国产算力+本地部署"路线的可行性——GLM-5.3在AMD卡上逼近前沿性能，说明我国大模型与加速器协同优化空间巨大；另一方面，数据不出域、合规优先正成为企业AI的硬约束，国内华为昇腾、海光等完全可以在政企市场提供同类"本地推理一体机"。对产业安全的价值在于：关键代码与研发数据留在本土硬件，降低对海外云API的单点依赖与合规风险。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 技术进展 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">技 术 进 展</div>
+
+    <article class="news-item" id="news-4">
+      <h2 class="news-title">DeepMind发布AlphaGenome 2：按细胞类型预测DNA变异效应，因果变异召回近翻倍</h2>
+      <div class="news-meta">发布时间：2026-11-11 23:00（北京时间，15:00 UTC）　|　来源：AGI Pulse / DeepMind　|　<a href="https://agipulse.org/e/1113?lang=zh" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">Google DeepMind于2026-11-11发布下一代DNA序列模型AlphaGenome 2（AG2）并放出论文。AG2在约100万碱基的DNA序列之外，再输入组织、细胞类型或细胞状态，预测该条件下基因表达、染色质可及性等读数，以及变异如何改变这些读数，也可用于未见过的细胞状态。模型在人类和小鼠超1.07亿个细胞图谱上训练。关键数字：在TenK10K（28种原代免疫细胞）上，相对经单细胞微调的AG1，因果变异召回接近翻倍（16%→30%），表达方向判断23%→43%。AG2新增DNA甲基化预测，提供约700万个常见变异、覆盖640种原代人类条件的增强子-基因连接与效应分数。非商业研究即日起可通过AlphaGenome API使用。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>生命科学与AI的交叉正进入"按条件可查询"阶段，对我国的战略价值凸显。其一，AG2把单细胞图谱变成变异效应引擎，将加速精准医学与新药靶点发现，我国生物医药若不在AI×基因组方向加速，差距可能被进一步拉大；其二，模型权重暂未开源、仅API可用，再次提醒"关键基础模型受制于人"的风险，我国需加快Carbon-X、Omnii等自主基因组模型的工程化与生态建设；其三，单细胞数据壁垒高，国内在队列规模与多组学数据上的积累是换道超车的关键资源，应尽早布局自主可控的基因组基础模型。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-5">
+      <h2 class="news-title">谷歌发布首款决策模型Gemini Decision 1，单次推理完成千项结构化判断</h2>
+      <div class="news-meta">发布时间：2026-11-12 03:55（北京时间）　|　来源：网易 / AI前线　|　<a href="https://www.163.com/dy/article/LBGN88CA05566ZHB.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">谷歌正式发布Gemini Decision 1，并推出由该模型驱动的Gemini Decisions API。与传统逐Token生成文本的生成式大模型不同，这款模型专用于快速决策：通过单次前向传播，对预先设定的候选答案评分，支持是/否判断、最多255个选项的多项选择及基于评分标准的打分。每百万输入Token价格仅0.10美元、输出Token费用为零，成本约为Flash-Lite的五分之一。在多项基准评测中处于领先且校准误差最低。Pichai称，开发者提供输入、问题与候选选项，模型直接返回判断结果、概率与置信度，省去逐字解码环节，适合垃圾邮件判别、Agent任务分发等封闭选项决策场景。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"决策模型"把生成式AI从"写答案"推向"做选择"，对我国有两点启发。一是工程性价比：单Token零输出、低价推理，对国内海量分类、审核、风控、调度类任务极具降本参考价值，阿里通义、百度文心等可借鉴"生成+决策"分层架构；二是Agent落地：多Agent协作中"由谁执行哪一子任务"本质是决策问题，专用决策模型能显著降低编排开销。我国大模型竞争应从"拼参数、拼生成"转向"拼任务闭环"，在垂直决策场景建立差异化优势。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-6">
+      <h2 class="news-title">DeepSeek实测：KV Cache跨版本直接复用，首Token提速2.1–5.1倍</h2>
+      <div class="news-meta">发布时间：2026-11-12（北京时间）　|　来源：稀土掘金 / arXiv 2611.14051　|　<a href="https://juejin.cn/post/7706810135423287347" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">一项以DeepSeek-V4-Flash为对象的实测研究，把"模型升级后KV Cache（键值缓存）要不要清"从玄学变成可测量决策：同家族新模型直接复用旧缓存，检索强的模型近乎无损还能获得2.10×–5.08×的首Token加速，检索弱的（如Qwen）则从55%崩到13%。论文标题《Can KV Cache Be Reused Across Model Updates? A DeepSeek-V4-Flash Case Study》（arXiv 2611.14051）专挑"同底座、后训练迭代"的典型发布节奏，指出现行推理框架（如SGLang）版本一变即全量失效、长上下文场景全额重算的浪费，并给出可量化的复用判定方法。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这是推理服务降本的"小切口、大收益"范式，对我国AI基建极具实操价值。国内大模型普遍三个月一代、同底座滚动更新，长前缀缓存（系统提示、RAG文档、高频模板）是推理成本大头；该研究证明"同家族复用"可白捡数倍加速，直接缓解国产算力紧张下的token经济压力。对华为昇腾、海光等国产硬件上的推理框架（如SGLang-MUSA、CANN）而言，把"跨版本缓存复用"纳入调度策略，是低成本提升吞吐的现实路径，建议国内推理引擎团队跟进验证。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 商业动态 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">商 业 动 态</div>
+
+    <article class="news-item" id="news-7">
+      <h2 class="news-title">英伟达陷CEO去留危机：议员逼宫黄仁勋辞职，盘后股价一度跌逾10%</h2>
+      <div class="news-meta">发布时间：2026-11-12（北京时间）　|　来源：中国基金报 / 每日经济新闻　|　<a href="https://www.chnfund.com/article/ARf2cb9be1-9775-c21c-6136-3a24df24f1e6" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">当地时间11月11日，美国参议院银行委员会成员Kevin Cramer等多位议员呼吁要求黄仁勋辞职；众议院外交事务委员会主席Brian Mast、中国问题特别委员会主席Moolenaar等此前已联名要求黄仁勋接受国会质询。受此及国安调查传闻影响，英伟达盘后跳水，跌幅一度超10%，截至发稿收窄至约7.3%。与此同时，Anthropic史上最大规模IPO获数倍超额认购，谷歌、英伟达、AMD、台积电等七家科技巨头合计260亿美元战投入局。英伟达作为AI算力核心，其治理与合规风险正成为市场新的波动源。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>对我国的信号复杂而关键。短期看，英伟达治理动荡放大全球AI股波动，或阶段性缓和算力"一家独大"的供需格局，给国产GPU（昇腾、摩尔线程、海光）争取窗口；但长期看，美国以"国安调查"施压科技巨头CEO，预示对华出口管制与供应链审查只会更严，国产算力必须抛弃"等英伟达降规版"的幻想，坚定走全栈自主。同时，七巨头260亿美元绑定Anthropic，意味着美国正用资本把模型—芯片—云拧成铁索，我国亟需以国家力量统筹算力、模型与应用的协同突围。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-8">
+      <h2 class="news-title">OpenAI单季营收首破百亿美元，但亏损超预期、2028年目标1900–2000亿</h2>
+      <div class="news-meta">发布时间：2026-11-12（北京时间）　|　来源：界面新闻 / 华尔街见闻　|　<a href="https://www.jiemian.com/article/15322512.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">在Anthropic启动IPO路演的同一周，OpenAI向投资者披露的三季度数据显示，单季销售额已接近170亿美元、营收同比增长近50%首次突破100亿美元，但亏损规模明显高于预期。公司内部预测2028年营收将达到1900亿至2000亿美元。两家前沿模型公司同期披露财务，让投资者首次可在同一窗口比较其收入体量与烧钱速度。与此同时，Anthropic七名联合创始人拟在IPO中合计套现17.5亿美元，承销商考虑将其估值推高至1.5万亿美元以上。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>OpenAI"增收不增利"与Anthropic天价IPO并置，揭示前沿大模型"营收狂奔、亏损更猛"的共性困局，对我国有警示与机遇双重含义。警示在于：单纯堆算力、拼规模的商业模式尚未跑通，国内大模型公司须警惕"为融资而融资"的烧钱陷阱，重视单位经济模型；机遇在于：美国双雄把资本与注意力锁在通用基座上，我国可在"人工智能+"行业落地、推理降本、端侧与专有场景上错位竞争，用更务实的商业化路径换取时间与空间。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-9">
+      <h2 class="news-title">AI聚合平台OpenRouter正式并入Stripe，75亿美元交易重塑Token计费</h2>
+      <div class="news-meta">发布时间：2026-11-12 07:32（北京时间）　|　来源：网易 / DoNews　|　<a href="https://www.163.com/dy/article/LBH3LSBJ0511D2LM.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">Stripe于11月11日宣布，全球最大AI模型API聚合平台OpenRouter已正式并入旗下，共同推动企业探索新商业模式并优化Token路由与用量。据《纽约时报》8月报道，Stripe收购OpenRouter价格约75亿美元，彭博社口径为"超70亿美元"。OpenRouter于2026年5月完成1.13亿美元B轮、估值约13亿美元，投资方含a16z与Lux Capital。平台2026年10月处理约790万亿Token，环比增37%创单月新高，其中约76%来自智能体（Agent）相关API调用。OpenRouter由OpenSea联合创始人Alex Atallah于2023年创立，总部旧金山。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"支付巨头+AI聚合路由"的合并，标志着AI商业基础设施向"计量、计费、分发"层收敛，对我国的启发直接。其一，Token成为可计量、可路由、可结算的新商品，国内需加快建立自主的模型API计量与清算标准，避免在AI服务贸易中再度依赖海外支付与分发枢纽；其二，76%流量来自Agent调用，印证智能体已成AI消费主形态，我国应在Agent编排、模型路由、成本控制工具链上提前卡位；其三，Stripe借此次收购把AI收入装进自身生态，提醒我国支付与云厂商须主动拥抱AI原生计费，否则价值链上游将被海外平台吃干。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 政策风向 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">政 策 风 向</div>
+
+    <article class="news-item" id="news-10">
+      <h2 class="news-title">苏州发布支持AI创新发展"政策包"，首部地级市AI法规12月施行</h2>
+      <div class="news-meta">发布时间：2026-11-11（北京时间）　|　来源：苏州市人民政府　|　<a href="https://www.suzhou.gov.cn/szsrmzf/szyw/202611/f79bae793bd74925b3631c412f1cbdf4.shtml" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月11日，在2026江苏人工智能创新发展大会暨第二届人工智能OPC大会上，苏州市支持AI创新发展"政策包"发布。核心为将于12月1日施行的《苏州市人工智能产业发展和应用促进条例》——首部地级市人工智能地方性法规，共七章六十一条，系统纳入要素支撑、产业发展、应用推广、保障措施与安全治理。政策包汇总既有举措：对国家重点项目最高支持1亿元，龙头企业每家最高6000万元；省、市两级安排5000万元词元券（最高补贴50%）、4000万元算力券；3500万元支持数据集与语料库；单个模型备案奖50万元；布局OPC机会清单421项、金融产品34款，覆盖近200个载体与400多个场景。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>苏州以"法规+政策包+清单"组合拳把AI治理与扶持同时落细，对全国的示范价值突出。其一，首部地级市AI法规把"安全治理"与"要素供给"并列写入，为我国地方AI立法提供可复制样本，平衡创新容错与风险可控；其二，词元券、算力券"免申即享、交易即抵"，直击中小企业用不起算力与模型的痛点，是用财政杠杆撬动"人工智能+"落地的务实打法；其三，421项OPC（一人公司）机会清单把真实需求与创业供给对接，有利于培育AI原生小微主体，值得其他制造业强市借鉴。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-11">
+      <h2 class="news-title">自然资源部、发改委联合印发意见，推动"人工智能+自然资源"深度融合</h2>
+      <div class="news-meta">发布时间：2026-11-12（北京时间）　|　来源：自然资源部　|　<a href="http://app.m.mnr.gov.cn/dt/ywbb/202611/t20261112_2942388.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">自然资源部、国家发展改革委近日联合印发《关于"人工智能+自然资源"的实施意见》，推动人工智能在自然资源领域规模化、产业化创新应用，服务国土空间规划"一张图"智能化升级。提出到2028年实现示范应用，形成一批可复制成果，"一张图"智能化水平全面提升；到2030年AI深度融入管理全链条，关键核心技术与智能装备安全可控。平台方面统筹布局5个AI中试平台（时空地理信息、国土空间规划与治理、海洋、地质矿产、林业草原）；场景方面部署8项重点应用，含"天空地海网"一体化监测监管、灾害治理、海洋资源开发等。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>国家部委级"AI+行业"实施意见落地，标志我国"人工智能+"从顶层倡导进入分行业施工图阶段，对产业与安全均有深意。其一，5个中试平台把算力、模型、数据、场景验证一体化，为自然资源领域大模型与智能体提供共性底座，利好国产遥感、GIS与行业大模型企业；其二，强调"关键核心技术安全可控"，在地理空间等敏感数据场景明确自主要求，呼应数据出境与供应链安全关切；其三，8项重点应用打开国土空间、海洋、地矿、林草等垂直市场，为AI企业指明可规模化的政府侧需求入口。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 国防应用 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">国 防 应 用</div>
+
+    <article class="news-item" id="news-12">
+      <h2 class="news-title">人民空军新质作战能力加速攀升：无人智能、隐身突防、数智赋能</h2>
+      <div class="news-meta">发布时间：2026-11-12（北京时间，空军成立77周年）　|　来源：中国网　|　<a href="https://news.china.com.cn/2026-11/12/content_118771146.shtml" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月11日人民空军成立77周年纪念日，多个演训场持续组织多兵种体系训练，无人智能、隐身突防、体系组网、数智赋能等新质作战能力加速攀升。演训中，多型战机编队与"虚兵""数兵"两类虚拟兵力一体编组展开体系对抗："虚兵"由异地飞行员在模拟座舱操控，"数兵"以空战、电子对抗等海量实战数据为基底，通过训练智能博弈模型自主迭代战法、生成多变对抗策略。南海一线无人机常态化赴黄岩岛执行侦察监视、态势研判、目标识别等课目。空军无人作战力量已初步构建多域覆盖、梯次搭配体系，自主感知、协同、分布式打击能力稳步提升。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>我军正把"智能博弈模型+虚实兵力+无人体系"嵌入实战化演训，对国防AI自主可控提出更高要求，也凸显机遇。其一，"数兵"依赖海量实战数据与国产智能博弈模型，必须建立在自主可控的训练数据链与算法底座上，警惕对境外框架的依赖；其二，无人作战力量从单平台过硬走向体系化制胜，呼唤国产自主的无人指控、协同与抗干扰通信；其三，在复杂电磁与海空态势下的常态化训练，为国产AI感知、决策装备提供了真实试验场，应抓住窗口加速"人工智能+国防"的成果转化与装备迭代。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-13">
+      <h2 class="news-title">攻击-11完成首次实弹攻击首发命中，"玄龙"隐身无人机体系化列装</h2>
+      <div class="news-meta">发布时间：2026-11-11（北京时间，中国之声披露）　|　来源：央视 / 网易　|　<a href="https://www.163.com/dy/article/LBGM806F0556BYRT_pdya11y.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">央视新闻披露，攻击-11已完成首次实弹攻击任务并首发命中目标；11月11日中国之声进一步披露其代号"玄龙"。画面显示其采用无尾飞翼布局、机背进气、扁平化尾段与内置弹舱，围绕隐身突防与武器内置设计。10月下旬，攻击-21在076型两栖攻击舰四川舰完成首次起降。从2019年阅兵亮相、2021年珠海模型的公开展示，到2025年入列、2026年实弹运用，发展路径清晰：公开展示→装备入列→实际任务。官方称任务中目标受云层遮挡，机组调整状态后完成攻击，显示其在复杂条件下发现与打击能力。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>攻击-11实弹命中，标志我国在隐身无人打击方向走通了美国当年半途放弃的路线，对国防自主意义重大。其一，有人/无人协同体系新增高价值节点：隐身无人机前出侦察、压制防空、打击雷达与指挥节点，降低有人机进入高威胁区风险；其二，从单机到多机协同组网的演进，要求国产自主的协同算法、数据链与任务规划系统全程可控，绝不能依赖境外技术；其三，076舰载起降打开海军远洋无人作战空间，建议同步加快舰载无人指控、抗干扰通信与AI目标识别的自主攻关，把"体系优势"真正固化在国产装备上。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-14">
+      <h2 class="news-title">欧洲版Palantir来了？德国Helsing发布AI作战情报平台Clarity，瞄准"去美国化"</h2>
+      <div class="news-meta">发布时间：2026-11-12（北京时间）　|　来源：腾讯新闻 / 智通财经　|　<a href="https://news.qq.com/rain/a/20261112A035US00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">德国无人机制造商Helsing GmbH发布利用AI帮助军事单位更快处理战场数据的平台Clarity，成为美国Palantir在欧洲的新挑战者。Helsing声明称，该软件能处理传感器信号流等大量数据、探测潜在军事目标并提供适用武器信息，且"在欧洲开发、在欧洲建造、处于欧洲控制之下"，服务那些不安于关键功能依赖美国工具的欧洲政府。法国正将国内情报机构从Palantir产品迁移至本土工具。Clarity基于军事数据与AI生成数据训练，运行在客户自有基础设施上，并设机制确保由人类操作员审阅证据、选定目标并授权使用武器。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>欧洲力推"去美国化"的军用AI平台，折射出AI军事能力的地缘分化，对我国有三点启示。其一，连美国盟友都在防务AI上寻求自主，更印证我国坚持军用AI全栈自主的必要性——绝不能在指挥决策、情报处理等核心环节依赖任何境外平台；其二，Helsing以"欧洲开发/建造/控制"为卖点，其人机闭环（人类授权开火）的合规设计值得我国在自主武器伦理与军控讨论中参考；其三，这为我国军工AI与"一带一路"伙伴的安全合作提供窗口：以自主可控、主权在握的方案参与全球防务AI治理与装备供给，提升话语权。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <nav class="issue-nav">
+      <a class="nav-item nav-prev" href="2026-11-11.html"><svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M9.5 3L4.5 7.5L9.5 12M4.8 7.5H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>上一期 · 11月11日</span></a>
+      <a class="nav-item nav-index" href="../archive/2026.html">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M2.5 3.5h10M2.5 7.5h10M2.5 11.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>2026 年归档</span>
+      </a>
+      <span class="nav-item nav-disabled">下一期 · 尚未发布</span>
+      <a class="nav-item nav-rss" href="../feed.xml">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><circle cx="3.2" cy="11.8" r="1.4" fill="currentColor"/><path d="M2.4 7.6a5 5 0 015 5M2.4 4a8.6 8.6 0 018.6 8.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+        <span>RSS</span>
+      </a>
+    </nav>
+
+  <footer class="footer">
+    本速报由 AI 自动检索公开信源并生成，仅供研究参考。原始新闻版权归原媒体所有，点击标题下方链接可阅读原文。<br>
+    智武防务人工智能每日速报 · GLOBAL AI DAILY · 聚焦中国视角
+  </footer>
+
+</div>
+</body>
+</html>
