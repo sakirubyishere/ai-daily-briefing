@@ -220,7 +220,22 @@
       },
       "total": 16,
       "url": "issues/2026-11-13.html"
+    },
+    "2026-11-16": {
+      "date": "2026-11-16",
+      "weekday": "星期一",
+      "headline": "ChatGPT Wallet 上线，智能体可代用户付款",
+      "idx_title": "ChatGPT Wallet 上线，智能体可代用户付款",
+      "counts": {
+        "算力硬件": 3,
+        "技术进展": 3,
+        "商业动态": 4,
+        "政策风向": 3,
+        "国防应用": 3
+      },
+      "total": 16,
+      "url": "issues/2026-11-16.html"
     }
   },
-  "updated": "2026-11-13"
+  "updated": "2026-11-16"
 }
