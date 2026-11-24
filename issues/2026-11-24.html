@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智武防务人工智能每日速报 — 2026年11月24日</title>
+<meta name="headline" content="英伟达董事会一致表决恢复黄仁勋总裁、CEO及董事职务，股价盘中暴涨逾30%带动美股反弹">
+<meta name="idx-title" content="英伟达表决恢复黄仁勋CEO职务，股价暴涨逾30%">
+<style>
+  :root{
+    --paper:#f3ead3;
+    --paper-edge:#e2d4b0;
+    --ink:#262019;
+    --ink-soft:#564b3c;
+    --red:#7c1f1f;
+    --rule:#262019;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:#cdbf9e;
+    background-image:radial-gradient(circle at 50% 0%, #d8caa6 0%, #c2b389 100%);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,"Times New Roman",serif;
+    color:var(--ink);
+    padding:40px 14px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .paper{
+    max-width:860px; margin:0 auto;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(120,90,40,.018) 0 2px, transparent 2px 4px);
+    padding:50px 54px 60px;
+    box-shadow:0 14px 48px rgba(40,25,10,.45);
+    border:1px solid var(--paper-edge);
+    position:relative;
+  }
+  .paper::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 60px rgba(90,60,20,.18);
+  }
+
+  /* ===== 板头 ===== */
+  .masthead{ text-align:center; border-bottom:3px double var(--rule); padding-bottom:14px; }
+  .masthead .kicker{
+    font-size:12px; letter-spacing:8px; color:var(--ink-soft);
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .masthead .title{
+    font-size:44px; font-weight:900; letter-spacing:7px; margin:0;
+    line-height:1.12; color:var(--ink);
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
+  }
+  .masthead .sub{
+    font-size:13px; letter-spacing:5px; color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; letter-spacing:2px; color:var(--ink-soft);
+    border-bottom:1px solid var(--rule); padding:7px 2px; margin-top:10px;
+  }
+  .dateline .edition{ color:var(--red); font-weight:700; letter-spacing:3px; }
+
+  /* ===== 今日新闻速览 ===== */
+  .overview{
+    border:1.5px solid var(--rule); padding:16px 20px; margin:22px 0 8px;
+    background:rgba(124,31,31,.045);
+  }
+  .overview h3{
+    margin:0 0 10px; font-size:16px; letter-spacing:6px; text-align:center;
+    color:var(--red);
+  }
+  .overview p{ margin:0; font-size:14.5px; line-height:1.95; text-align:justify; }
+
+  /* ===== 类别分栏 ===== */
+  .cat-section{ margin-top:6px; }
+  .cat-head{
+    text-align:center; margin:30px 0 6px; font-size:18px; font-weight:800;
+    letter-spacing:6px; color:var(--ink);
+  }
+  .cat-head::before, .cat-head::after{
+    content:"◆"; color:var(--red); font-size:11px; margin:0 12px; vertical-align:middle;
+  }
+
+  /* ===== 新闻模块 ===== */
+  .news-item{ border-top:1px solid var(--rule); padding:16px 0 18px; }
+  .news-item:first-of-type{ border-top:none; }
+  .news-title{ font-size:21px; font-weight:800; margin:2px 0 7px; line-height:1.38; }
+  .news-meta{
+    font-size:12px; color:var(--ink-soft); font-style:italic;
+    margin-bottom:11px; letter-spacing:.4px;
+  }
+  .news-meta a{ color:var(--red); text-decoration:underline; }
+  .news-brief{ font-size:14.5px; line-height:1.98; text-align:justify; margin:0 0 13px; }
+  .news-value{
+    border-left:3px solid var(--red); padding:7px 0 7px 15px;
+    background:rgba(124,31,31,.05);
+  }
+  .news-value .vlabel{
+    font-weight:800; color:var(--red); font-size:14px; letter-spacing:1px;
+  }
+  .news-value p{ margin:7px 0 0; font-size:13.5px; line-height:1.95; text-align:justify; }
+
+  .empty{ font-size:13.5px; color:var(--ink-soft); font-style:italic; text-align:center; padding:14px 0; }
+
+  /* ===== 页脚 ===== */
+  .footer{
+    border-top:3px double var(--rule); margin-top:34px; padding-top:12px;
+    text-align:center; font-size:11px; color:var(--ink-soft); letter-spacing:1px; line-height:1.8;
+  }
+  @media (max-width:600px){
+    .paper{ padding:32px 22px 40px; }
+    .masthead .title{ font-size:32px; letter-spacing:3px; }
+  }
+</style>
+
+<style id="issue-nav-style">
+.issue-nav{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin:34px 0 4px;padding:20px 0;border-top:1px solid #262019;border-bottom:1px solid #262019;
+  font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+}
+.issue-nav .nav-item{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 18px;border:1px solid #C9B78E;background:#EDE2C6;
+  color:#7C1F1F;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:1px;
+  white-space:nowrap;transition:background .15s,color .15s;
+}
+.issue-nav .nav-item:hover{background:#262019;color:#F3EAD3;}
+.issue-nav .nav-index{background:#262019;border-color:#262019;color:#F3EAD3;letter-spacing:2px;}
+.issue-nav .nav-index:hover{background:#7C1F1F;border-color:#7C1F1F;color:#F3EAD3;}
+.issue-nav .nav-rss{background:transparent;border-color:#D8CBAA;color:#8A7B63;letter-spacing:1px;}
+.issue-nav .nav-rss:hover{background:#EDE2C6;border-color:#C9B78E;color:#7C1F1F;}
+.issue-nav .nav-disabled{color:#8A7B63;background:transparent;border-color:#D8CBAA;cursor:default;}
+.issue-nav .nav-disabled:hover{background:transparent;color:#8A7B63;}
+@media (max-width:600px){
+  .issue-nav{flex-wrap:wrap;gap:10px;}
+  .issue-nav .nav-item{font-size:12px;padding:10px 14px;}
+}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <!-- ============ 板头 ============ -->
+  <header class="masthead">
+    <div class="kicker">Global Artificial Intelligence Daily</div>
+    <h1 class="title">智武防务人工智能每日速报</h1>
+    <div class="sub">全 球 人 工 智 能 动 态 综 述</div>
+  </header>
+  <div class="dateline">
+    <span>2026年11月24日　星期二</span>
+    <span class="edition">每 日 一 刊 · 手 动 生 成</span>
+  </div>
+
+  <!-- ============ 今日新闻速览 ============ -->
+  <section class="overview">
+    <h3>今 日 新 闻 速 览</h3>
+    <p>11月23日，AI世界的主线是"架构创新换算力"与"成本账单同时摊开"。技术侧，智谱以750B基座落地Loop Transformer逼近十万亿级模型性能，蚂蚁医疗大模型、记忆张量记忆原生模型与自变量具身模型同日开源，国产模型密集走"架构创新+垂直深耕"路线；算力侧，SC26把竞争焦点从堆算力转向光子内存、CPO互连与数据共享，HBM涨价三倍却遭英伟达砍单卡用量，供需错位信号显现。商业侧，英伟达董事会一致表决恢复黄仁勋总裁、CEO及董事职务，股价盘中暴涨逾30%并带动美股强劲反弹，成为当日最重磅消息；Anthropic约9009亿美元算力采购承诺与股价逼近发行价，把"成本刚性"问题摆上台面。政策侧，外交部回应特朗普"只售旧芯片"论，美国国会拟将多项管制法案纳入NDAA。国防侧，加拿大Draganfly联手乌克兰团队推进机载自主，安杜里尔"走鹃"与国产"鸿栅"系统加速无人智能落地。整体基调：架构突围、成本承压、管制趋严、无人化提速。</p>
+  </section>
+
+  <!-- ============ 算力硬件 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">算 力 硬 件</div>
+
+    <article class="news-item" id="news-1">
+      <h2 class="news-title">HBM价格涨至黄金三倍，英伟达却首次在旗舰Rubin Ultra上砍单卡内存用量</h2>
+      <div class="news-meta">发布时间：2026-11-23 15:57（北京时间）　|　来源：星海情报局·网易　|　<a href="https://www.163.com/dy/article/LCEAUMCV0535ORBB.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">最新一代高端存储芯片HBM单价已达约560美元/颗，比同等重量黄金更贵。三星HBM4明年报价约每GB 32—40美元，为上一代三倍；SK海力士据财报测算日均盈利超4亿美元，美光CEO称"看不到供需平衡点"。然而据半导体研究机构SemiAnalysis披露，英伟达明年旗舰Rubin Ultra每颗GPU仅配192GB HBM，比B300及标准版Rubin少约三分之一，为其首次在旗舰产品上"减配"。分析指出，机柜越做越大使HBM采购总量仍上升，缩水的只是单卡容量；症结在于HBM数据进出的"门"（带宽接口）数量在制造时焊死，存储厂按"房间数"（容量）收费，买方最看重的却是带宽，形成买卖双方的结构性错位。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>HBM是当前制约我国AI算力上限的关键瓶颈之一，价格与供货被海外三大存储巨头高度垄断，涨价直接推高国内智算中心建设成本。英伟达主动削减单卡容量，说明"堆带宽"的边际收益正在下降，也为我国走存算一体、近存计算、以系统级互连换单卡带宽的差异化路线提供了窗口期。需紧盯长鑫、长存等国产HBM的良率与量产节奏，并在机柜级网络、液冷和内存池化上提前布局，避免在下一轮算力竞赛中继续被单点卡住。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-2">
+      <h2 class="news-title">SC26超算大会焦点从"堆算力"转向数据搬运：光子内存池、CPO交换机与AMD Lux超算登场</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：芝能智芯·腾讯网　|　<a href="https://new.qq.com/rain/a/20261123A07HNT00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月15日至20日在芝加哥举行的2026超级计算大会（SC26）显示，科学计算与AI基础设施正围绕同一套系统优化。Penguin Solutions联合Marvell展示MemoryAI光子内存设备，用硅光互连把HBM与DDR5变成跨服务器共享的内存池；Lambda在超过1万颗GPU的GB300 NVL72集群中部署英伟达CPO（共封装光学）交换机；AMD与橡树岭国家实验室宣布采用EPYC与MI355X的Lux超级计算机向科学用户开放，在11月TOP500榜单列第14位。芯片算力持续上堆的同时，数据如何送入、内存如何共享、跨机架网络如何支撑，成为新的竞争焦点。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>超算与AI融合已成定局，竞争重心从峰值算力转向"数据供给效率"，光子互连、CPO交换和内存池化正是海外下一阶段发力的方向。我国超算曾在Top500上占据优势，若在硅光互连、CPO和共享内存等"数据搬运"环节掉队，硬件堆料优势会被系统瓶颈抵消。建议把光互连与内存池化纳入国产智算中心的重点攻关清单，推动国产光模块、交换芯片与HBM在统一架构下协同验证，形成"计算—存储—网络"一体化能力。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-3">
+      <h2 class="news-title">2026世界计算大会国产芯片新品集中亮相，机构预计中国高端AI芯片年出货达500万片</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：东方财富网　|　<a href="https://finance.eastmoney.com/a/202611233937174318.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">2026世界计算大会集中展示多款国产芯片新品，覆盖GPU、存储芯片与AI加速卡，带动科创芯片设计主题ETF盘中涨超2%。TrendForce预计2026年中国高端AI芯片出货量将达500万片、同比增长83%，其中约90%即450万片来自本土厂商，留给海外厂商的空间仅约50万片。摩根大通近日走访多家国产AI芯片与半导体设备企业后发现，存储晶圆厂扩产和设备国产化正带动北方华创、中微公司在手订单增长，预计2027年存储领域将分别占两家公司业务的40%和60%，长存、长鑫、晋华增建晶圆厂带来持续设备需求。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>在美国持续收紧先进算力出口的背景下，国产高端AI芯片出货占比冲到约九成，说明"替代窗口"正在转化为实实在在的产能与订单，这是我国算力自主最直接的进展。但需清醒看到，"出货量"不等于"可用算力"，训练侧的生态适配、软件栈成熟度与先进制程良率仍是短板。政策与资本应继续向设备、材料和EDA等上游倾斜，把晶圆厂扩产带来的订单转化为长期工艺能力，同时避免低端产能重复建设。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 技术进展 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">技 术 进 展</div>
+
+    <article class="news-item" id="news-4">
+      <h2 class="news-title">智谱发布GLM-5.4：750B基座落地Loop Transformer，以架构创新逼近十万亿级模型性能</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：AI产品动态晚报·今日头条　|　<a href="https://www.toutiao.com/a7711326743172301348" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">智谱发布GLM-5.4，采用约750B（7500亿）参数的轻量级基座，是国内首款落地Loop Transformer架构的模型——从750B基座中取出28层循环执行两轮，以架构创新换取接近十万亿级模型的性能。该模型原生多模态、支持100万上下文，已向Coding Plan全量用户开放；私有评测得33.2分，与GPT-6.2 Astra基本持平，距Opus 5.5差距在5%以内。特点是推理极为细致，但"过度思考"导致任务耗时偏长。约3万亿参数的GLM-5.5计划12月发布。同日还有多款记忆原生、具身基础模型开源。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>在高端算力受限的约束下，用架构创新"以小搏大"是我国大模型突围的关键路径，Loop Transformer把参数循环复用，有望显著降低训练与推理成本，对国产芯片部署也更友好。这标志国产模型竞争从"堆参数"转向"拼架构效率"，是值得肯定的方向。短板在于循环架构可能放大推理时延，Agent场景对耗时敏感。建议国内团队围绕循环架构的推理加速、KV Cache管理和芯片算子适配协同攻关，把架构优势真正转化为可用、可商用的一流模型。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-5">
+      <h2 class="news-title">蚂蚁开源百灵医疗大模型家族LingSante，可预测150余项疾病未来六年风险</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：AI产品动态晚报·今日头条　|　<a href="https://www.toutiao.com/a7711326743172301348" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">蚂蚁发布百灵医疗健康大模型家族LingSante，覆盖医疗推理、多模态理解、疾病风险预测与安全防护，其中疾病风险预测可预测150余项疾病未来六年风险。核心模型LingSante-3.1-air-VL（124B总参、5.5B激活）与LingSante-3.1-flash（560B）当天同步开源，前者在医疗影像报告、皮肤病识别等细分基准获全球第一，并支持笔记本本地部署。配套"阿福"App新增AI视频"望闻问切"功能，可联动真人医生，形成从筛查到就诊的服务闭环。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>医疗是数据敏感、推理要求高的垂直场景，国产医疗大模型以开源方式发布并支持本地部署，既有利于保护患者隐私，也有助于快速建立行业生态与评测标准。相比通用模型的同质化竞争，垂直深耕是我国AI形成全球竞争力的现实抓手。建议加速推动此类模型在基层医疗、慢病管理和医保控费等场景的合规落地，同时把医疗数据安全、模型可解释性与责任认定纳入监管框架，确保"AI+医疗"走得稳、走得远。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-6">
+      <h2 class="news-title">记忆张量联合英伟达开源记忆原生模型MemT-1.0-Pro，5540亿参数刷新11项记忆评测</h2>
+      <div class="news-meta">发布时间：2026-11-23 17:19（北京时间）　|　来源：澎湃新闻·网易　|　<a href="https://www.163.com/dy/article/LCEFJMKC0514R9P4.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月23日，基座模型公司记忆张量发布并开源与英伟达联合研发的记忆原生模型MemT-1.0-Pro。该模型基于NVIDIA Nemotron 3 Ultra，总参数5540亿、激活参数590亿，把历史信息编码进内部记忆，使记忆的写入与读取成为可通过训练优化的能力，回答时无需在查询上下文中保留历史原文。在线交互时模型主干与超记忆权重保持固定，交互结束后更新动态记忆状态，无需每轮重训。技术报告显示，Pro在BEAM-1M、MemoryAgentBench分别得41.80分与23.87分，较Flash版提升4.76分与6.51分，并以53.08分取得11项记忆评测最高平均分。此前MemT 1.0登陆Hugging Face、GitHub后日均下载超1万次。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>记忆原生是长时程智能体的重要方向，可显著降低长对话的上下文成本，对智能客服、个人助理等应用价值突出，我国初创企业能与英伟达联合研发并开源，显示本土团队在该细分方向已具竞争力。但底座依赖Nvidia Nemotron，也提醒我们在"应用创新"之外仍需夯实自主基座。建议把握开源窗口，快速在国产算力上完成迁移与二次创新，并把长程记忆能力纳入国产模型的评测体系，避免在下一代智能体竞争中出现新的能力代差。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-7">
+      <h2 class="news-title">自变量发布具身基础模型WALL-OSS-1.0，真机零样本成功率55.1%超微调竞品</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：AI产品动态晚报·今日头条　|　<a href="https://www.toutiao.com/a7711326743172301348" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">自变量发布具身基础模型WALL-OSS-1.0，把预训练本身作为智能来源，可在全新场景零样本执行任务。在RoboDojo仿真赛道中，该模型以单一模型位列第一；真机零样本成功率达55.1%，无需微调的分数比π0.5微调后还高70.8%。同日，米哈游崩坏AI团队公开VLA（视觉—语言—动作）模型Gamer，以80亿参数Qwen3-VL-8B为基座，仅凭屏幕画面与任务指令、不读游戏接口，在约50小时《崩坏：星穹铁道》中自主运行占比超95%，40个未训练小游戏任务成功率从基座的3.2%提升至49.7%，远超同期最强通用模型的17.1%。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>具身智能正从"需要大量微调"走向"预训练即智能"，零样本泛化能力是机器人走向真实场景的关键门槛，我国团队在这一方向取得对标国际的成绩，并借助游戏场景积累独特的交互数据。VLA模型在游戏与仿真中的快速验证，可为工业、服务机器人提供低成本训练场。建议加大对真机数据、仿真平台和跨本体泛化的投入，推动"仿真预训练—真机迁移"的技术路线成熟，抢占具身智能规模化落地的先机。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 商业动态 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">商 业 动 态</div>
+
+    <article class="news-item" id="news-8">
+      <h2 class="news-title">英伟达董事会一致表决恢复黄仁勋总裁、CEO及董事职务，股价盘中暴涨逾30%带动美股反弹</h2>
+      <div class="news-meta">发布时间：2026-11-24 凌晨（北京时间；美东时间11-23）　|　来源：英伟达投资者关系官网／中国新闻网　|　<a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Board-Reinstates-Jensen-Huang-as-President-CEO-and-Board-Director/default.aspx" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">英伟达11月23日发布公告，宣布即日起恢复黄仁勋公司总裁、首席执行官及董事职务，董事会经一系列磋商与会谈后一致表决通过，称对黄仁勋的坦诚及其领导能力感到满意。董事会在决策过程中听取了美国政府高层意见，并据此确信复职"不会构成国家安全风险"。董事会主席哈维·琼斯表示，复职符合股东、员工、合作伙伴与客户的最大利益；黄仁勋称"很荣幸在新一轮工业革命伊始领导这家全球最重要的科技企业之一"。他11月12日因婚外情报道辞职，此前执掌英伟达逾30年。消息公布后英伟达股价盘中一度涨超35%，纳指开盘涨7.3%，带动美股从前一周的抛售中强劲反弹。特朗普称董事会决定"正确且负责任"，承认曾直接或间接与董事会沟通。独立董事会委员会对"遭外国情报渗透"指控的调查仍将继续，公司另设国家安全与出口管制委员会并首设首席合规官；黄仁勋仍需接受众议院闭门问询，就出口管制合规作出说明。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>黄仁勋复职与股价暴涨，凸显美方在AI算力博弈关键节点对英伟达的深度倚重——此前借"个人风波"和"中国渗透"叙事发酵的闹剧，最终让位于产业与资本的现实利益。但更值得警惕的是，复职同时公司新设国家安全与出口管制委员会、首设首席合规官，众议院闭门问询亦未取消，说明对华算力管制正从个案审查走向制度化、常态化，不会因人事回归而放松。"不会构成国家安全风险"的表述，本质上是为继续对华售芯片保留政策弹性。我国应保持战略清醒：一方面不以美方人事变动判断管制松动，继续加快国产算力与软件生态替代；另一方面警惕"中国间谍"叙事被反复用作政治工具，在科技博弈中做好舆论与法务双重预案。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-9">
+      <h2 class="news-title">Anthropic约9009亿美元算力采购承诺待验证，股价逼近发行价，"成本刚性"成IPO后考题</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：Edge AI Daily·钛媒体／华尔街见闻　|　<a href="https://www.tmtpost.com/8214195.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据钛媒体11月23日早报，Anthropic完成IPO后，招股文件披露截至2026年9月30日其采购承诺与租赁协议合计约9009亿美元，绝大部分投向算力与基础设施，其中约4516亿美元预计2030年底前发生、约707亿美元在未来12个月内到期。市场分析指出，核心命题是成本刚性对收入弹性的期限错配，9009亿美元并非即时债务而是多年经营空间的部分合同化；战略投资者同时是供应商，资本与采购绑定使需求独立性受关注。同期Anthropic股价周五盘中一度跌至83.05美元、逼近83美元发行价，最终收跌8.5%，散户净买入仅6000万美元，远逊2.5亿美元预期。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>Anthropic的巨额算力账单与股价逼近破发，共同揭示前沿模型公司的商业悖论：能力竞赛需要天量算力，但收入增长难以匹配成本曲线，资本市场耐心正在被消耗。这为我国AI企业提供了重要镜鉴——不能简单以融资规模和算力储备论英雄，须把算力成本占收入比、合同利用率、客户多元化作为核心健康指标。建议国内头部企业在扩张中保持投入节奏与现金流的平衡，避免"循环融资"式的虚假繁荣，把有限的算力资源投向有真实付费需求的场景。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-10">
+      <h2 class="news-title">"住在短信里"的智能体成新赛道，Instinct融资后估值达100亿美元</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：AI日报·今日头条（据TechCrunch）　|　<a href="https://www.toutiao.com/a7711142298679951881" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据TechCrunch盘点，一批"住在短信里"的智能体正在兴起：用户无需安装独立应用，智能体即可在短信会话中记忆上下文、调用已有应用完成预约、行程安排与邮件处理。其中Instinct在近期融资后估值达100亿美元。这类产品把智能体嵌入最高频的通信入口，降低了使用门槛，也绕开了独立App的获客成本，被视为大模型应用落地的新形态。同期另有报道显示，印度开发者用Claude Code约90分钟即改装小米电视、去掉广告并重做界面，"用提示词改硬件"的玩法正在形成新市场。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>智能体入口之争正从"独立App"转向"寄生在高频场景"，短信、社交与办公会话可能成为下一代AI的分发入口，这对掌握超级App与通信入口的中国厂商是重要机遇。我国拥有微信、短信等世界级用户入口，若能结合本土智能体能力，完全有机会跑出差异化的应用生态。建议关注此类"轻应用"形态对应用分发格局的重构，鼓励在合规前提下开放接口、沉淀上下文记忆能力，同时提前研究跨应用调用带来的隐私与权限风险。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-11">
+      <h2 class="news-title">AI比人贵：OpenAI内部智能体开销已达研究员薪酬两倍，重度用户单日耗资2.3万美元</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：华尔街见闻·腾讯新闻　|　<a href="https://news.qq.com/rain/a/20261123A03L4500" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据11月23日报道，OpenAI研究员人均每天调用的智能体（Agent），按API标价折算约值2400美元，已达到研究员薪酬的两倍；使用强度最高的10%研究员，单日使用量甚至可达2.3万美元（约合人民币16万元）。这一数据直观展示了智能体在研发内部的深度渗透，也暴露出高强度Agent使用带来的惊人推理成本。它从侧面解释了为何头部模型公司一方面疯狂锁定算力资源，另一方面持续强调推理效率、模型压缩与成本控制——在智能体大规模铺开后，推理开销正成为压过人力成本的新支出项。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"AI比人贵"揭示了一个关键趋势：智能体越强大，推理成本的权重越高，算力效率将直接决定企业的商业竞争力。这对我国既是挑战也是机会——挑战在于高强度使用下的推理开支可能拖垮应用经济性；机会在于倒逼国产推理芯片、模型量化与高效推理框架的加速成熟。建议国内企业把推理成本纳入智能体产品的核心KPI，在模型训练之外加大对推理侧优化和低成本算力方案的投入，形成"用得起、用得好"的智能体应用能力。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 政策风向 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">政 策 风 向</div>
+
+    <article class="news-item" id="news-12">
+      <h2 class="news-title">外交部回应特朗普"只想对华出售较旧芯片"：反对泛化国家安全与长臂管辖</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：外交部例行记者会·澳门日报／环球时报　|　<a href="https://www.macaodaily.com/content/202611/24/c518738.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月23日，外交部发言人郭嘉昆主持例行记者会。针对美国总统特朗普称美国只想向中国出售较旧芯片、并称正就此与中方讨论，以及宣称已同中方就AI"护栏"达成一致、不允许美国企业在国外建设数据中心等言论，郭嘉昆表示，中方在美国出口管制措施上的立场已十分明确：美方泛化国家安全概念、滥用出口管制，干涉中国与其他国家的贸易科技合作、打压中国高科技产业，是"经济胁迫"和"长臂管辖"，违背两国共识，损害中国企业正当权益、扰乱全球供应链。中方将坚定维护自身合法权益。新加坡总理黄循财日前亦表示，新加坡无法追踪芯片在第三国的使用情况，也难以确保他国遵守美国出口限制。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>美方"只卖旧芯片"的表态，实质是试图把中国长期锁定在算力代差的追赶位置，同时借"护栏"之名干预我国AI治理自主权，需高度警惕。新加坡的公开表态说明美国的第三国管制在执行层面面临现实阻力，盟友与中转国并不愿意承担无限追溯的合规成本。我国应对策略应双线并行：一方面用国际规则和外交渠道反对长臂管辖、争取中间国家理解；另一方面把外部压力转化为自主创新的动力，加快国产算力替代，并就用"BIS新规"+第三国转运形成的管制闭环做好企业级合规预案。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-13">
+      <h2 class="news-title">美国国会拟将AI监督、芯片安全等多项管制法案纳入年度国防授权法案</h2>
+      <div class="news-meta">发布时间：2026-11-24（北京时间）　|　来源：台北时报（Taipei Times）　|　<a href="https://www.taipeitimes.com/News/lang/archives/2026/11/24/2003868249" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据11月24日报道，美国国会内部正就多项对华芯片管制提案形成共识，部分议员希望将其纳入年度《国防授权法案》（NDAA）。参议院版本已纳入《AI监督法案》（AI Overwatch Act，赋予国会更大权力审查出口管制规则变更）、《芯片安全法案》（Chip Security Act，要求芯片制造商追踪先进AI处理器流向并在怀疑转运至禁用户时通报）以及《硬件技术多边协调管制法案》（MATCH Act，施压荷兰、日本等盟友限制对华销售与维修先进芯片制造设备）。另有一月已获众议院通过、待参议院审议的《远程存取安全法案》，授权商务部监管中国企业租用海外算力的行为，被认为对英伟达影响最直接。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>若上述法案随NDAA落地，美国对华AI管制将从行政规则层面上升到国会立法层面，稳定性与约束力显著增强，中国的合规与反制难度随之上升。特别是MATCH Act试图胁迫荷兰、日本限制半导体设备的销售与维修，直接指向我国先进制程能力的"设备命门"，是最需警惕的一环。建议密切跟踪NDAA审议进展，提前评估关键设备的维修、备件与升级断供风险，加速设备国产化与多源供应布局，并通过外交与经贸渠道分化美方同盟阵线，争取技术合作的外部空间。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-14">
+      <h2 class="news-title">六部门公布第二批34家领航级智能工厂，工业智能体超1000个、日均词元调用超3亿</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：工业和信息化部／今日头条　|　<a href="https://www.miit.gov.cn/jgsj/zbys/znzz/art/2026/art_fbff51edb1c346f8a560f56b03b009e9.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">工信部等六部门公布2026年度第二批领航级智能工厂培育名单，共34家入选。据11月23日报道，入选工厂AI场景应用比例超过70%、开发工业智能体超过1000个、日均词元（Token）调用量超过3亿；联想合肥基地28个工业智能体已投用，AI视觉可在0.2秒内识别锁螺丝孔位。全国已累计培育49家领航级工厂，带动近4000家企业协同升级。工信部通知要求支持智能工厂建设、强化服务，指导构建高质量数据集、开发工业智能体、探索先进制造模式、打造智慧供应链，推动制造业智能化、绿色化、融合化发展。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>在模型能力竞赛之外，工业场景的规模化落地是我国AI形成真实生产力的关键，六部门以"领航级工厂"树标杆，配合超千个工业智能体与日均3亿词元的调用规模，标志"AI+制造"正从试点走向体系化推广。这与美国偏向通用模型和算力竞赛的路线形成差异化优势。建议进一步沉淀工业数据集、智能体接口和评测标准，降低中小企业的改造门槛，把领航工厂的经验可复制地推广到4000家协同企业，真正形成制造业智能化升级的整体跃升。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 国防应用 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">国 防 应 用</div>
+
+    <article class="news-item" id="news-15">
+      <h2 class="news-title">Draganfly联手爱沙尼亚—乌克兰团队签署MOU，推进AI机载自主系统集成无人装备</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：美国证券交易委员会（SEC）6-K文件　|　<a href="https://www.sec.gov/Archives/edgar/data/1786286/000149315226053713/ex99-1.htm" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月23日，加拿大无人机与无人系统开发商Draganfly（NASDAQ: DPRO）与爱沙尼亚—乌克兰机载自主技术开发商DOD Solution联合宣布签署谅解备忘录（MOU），推进将DOD Solution的AURA AI机载自主平台集成到Draganfly部分无人系统中。双方称，该合作结合DOD Solution的机载自主技术与加拿大工程能力，用于为无人系统提供集成、测试与先进开发的参考依据。此类合作把在冲突地区快速迭代的实战化自主算法，与西方成熟的无人平台制造能力结合，是近年来西方无人系统"算法+平台"加速融合的典型模式。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>把乌克兰战场高频实战验证的AI自主算法，嵌入西方制式无人平台，正在形成一种"战场数据反哺算法—算法快速装平台"的高迭代闭环，对我军无人化对抗构成现实压力。机载自主（不依赖外部指令的识别、避障与决策）是蜂群与察打一体装备的核心，也是反制"数据链切断即失效"的关键。建议紧盯AURA类自主栈的能力演进，加快国产机载自主芯片与算法的自主可控，并在强电磁干扰、链路中断条件下开展针对性对抗训练，确保无人系统在复杂战场环境中的可靠自主。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-16">
+      <h2 class="news-title">安杜里尔"走鹃"（Roadrunner）自主拦截无人机：机载传感器自主计算拦截路径，适配分布式防空</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：光明网科技频道　|　<a href="https://tech.gmw.cn/2026-11/23/content_39115493.htm" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据光明网11月23日报道，安杜里尔（Anduril）"走鹃"（Roadrunner）无人机选择自建涡轮喷气发动机以控制长期成本。其发射系统是独立盒式机库，可与指挥控制网络、传感器等非车载系统联网，机库可装载于地面车辆、舰船等移动平台，能承受恶劣环境、一次保持数月免维护运行并远程激活，支持高度分布式部署。"走鹃"可在危险迹象出现时第一时间起飞、跟踪并拦截远处目标；作战中机载处理传感器自主发现目标、计算最佳拦截路径并实施拦截，还可接入其他防空网络获取更多信息。据公布数据，其最大速度接近0.9马赫，标准续航45分钟，作战半径100公里，实用升限15000米，最大任务载荷20公斤。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"走鹃"体现的"低成本、可分布式、机载自主拦截"思路，正是应对巡航导弹与无人机"低慢小"饱和攻击的新解法，其数月免维护、远程激活的机库设计大幅降低了前沿部署与后勤压力，值得高度重视。这类装备一旦与蜂群、分布式传感器联网，将显著压缩"发现—拦截"的时间链。我国在同吨位高速拦截、矢量控制和自主末制导方面有基础，建议发展低成本自主拦截装备与蜂群反制体系，推动探测、决策、拦截一体化，同时加强反无人机电子战与定向能手段的协同配套。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-17">
+      <h2 class="news-title">航天飞鸿将携新一代"鸿栅"自主任务管理系统亮相珠海航展，演绎2600公里跨区攻防</h2>
+      <div class="news-meta">发布时间：2026-11-23（北京时间）　|　来源：网易·航天飞鸿　|　<a href="https://www.163.com/dy/article/LCE2QBH90556QGLT_pdya11y.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">航天飞鸿公司宣布，将携迭代升级的新一代"鸿栅"自主任务管理系统亮相2026年12月在珠海举办的第十六届中国国际航空航天博览会。该系统历经8年攻关，基于开放的多智能体协同管理架构，可随遇接入无人机、无人车、无人船等异构平台，实现侦察感知、多源情报融合、数字平行战场仿真推演、智能生成最优打击方案与作战效能评估的全链路闭环，具备"看得清、想得快、控得住、可追溯"能力。航展期间将搭建指控大厅，依托卫星通信与无人机数据链，把珠海金湾机场的指令直达2600公里外内蒙古达茂旗基地，演示多型异构无人装备自主编组、态势互通与临机协同。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"鸿栅"代表我国在无人集群"体系大脑"方向上的自主进展：以多智能体协同架构把侦察、融合、推演、决策、评估打通，并宣称在国际同类系统中并跑乃至部分领跑，是构建智能化作战体系的重要一环。跨2600公里的远程指控演示，检验的正是卫星通信与数据链支撑下的分布式协同能力。建议持续投入异构无人平台的标准化接口与多智能体协同算法，重视"可追溯"带来的作战可信与可控，并在强对抗电磁环境下验证系统鲁棒性，把技术优势转化为可实战的体系能力。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <nav class="issue-nav">
+      <a class="nav-item nav-prev" href="2026-11-23.html"><svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M9.5 3L4.5 7.5L9.5 12M4.8 7.5H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>上一期 · 11月23日</span></a>
+      <a class="nav-item nav-index" href="../archive/2026.html">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M2.5 3.5h10M2.5 7.5h10M2.5 11.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>2026 年归档</span>
+      </a>
+      <span class="nav-item nav-disabled">下一期 · 尚未发布</span>
+      <a class="nav-item nav-rss" href="../feed.xml">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><circle cx="3.2" cy="11.8" r="1.4" fill="currentColor"/><path d="M2.4 7.6a5 5 0 015 5M2.4 4a8.6 8.6 0 018.6 8.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+        <span>RSS</span>
+      </a>
+    </nav>
+
+  <footer class="footer">
+    本速报由 AI 自动检索公开信源并生成，仅供研究参考。原始新闻版权归原媒体所有，点击标题下方链接可阅读原文。<br>
+    智武防务人工智能每日速报 · GLOBAL AI DAILY · 聚焦中国视角
+  </footer>
+
+</div>
+</body>
+</html>
