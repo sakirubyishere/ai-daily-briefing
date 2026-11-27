@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="headline" content="华为自研HBM亮相，昇腾950已搭载，将在ISSCC 2027与三星、SK海力士同台">
+<meta name="idx-title" content="00后休学造虚拟细胞，华源智因完成超亿元天使轮融资">
+<title>智武防务人工智能每日速报 — 2026年11月27日</title>
+<style>
+  :root{
+    --paper:#f3ead3;
+    --paper-edge:#e2d4b0;
+    --ink:#262019;
+    --ink-soft:#564b3c;
+    --red:#7c1f1f;
+    --rule:#262019;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:#cdbf9e;
+    background-image:radial-gradient(circle at 50% 0%, #d8caa6 0%, #c2b389 100%);
+    font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,"Times New Roman",serif;
+    color:var(--ink);
+    padding:40px 14px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .paper{
+    max-width:860px; margin:0 auto;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(120,90,40,.018) 0 2px, transparent 2px 4px);
+    padding:50px 54px 60px;
+    box-shadow:0 14px 48px rgba(40,25,10,.45);
+    border:1px solid var(--paper-edge);
+    position:relative;
+  }
+  .paper::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    box-shadow:inset 0 0 60px rgba(90,60,20,.18);
+  }
+
+  /* ===== 板头 ===== */
+  .masthead{ text-align:center; border-bottom:3px double var(--rule); padding-bottom:14px; }
+  .masthead .kicker{
+    font-size:12px; letter-spacing:8px; color:var(--ink-soft);
+    text-transform:uppercase; margin-bottom:10px;
+  }
+  .masthead .title{
+    font-size:44px; font-weight:900; letter-spacing:7px; margin:0;
+    line-height:1.12; color:var(--ink);
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
+  }
+  .masthead .sub{
+    font-size:13px; letter-spacing:5px; color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; letter-spacing:2px; color:var(--ink-soft);
+    border-bottom:1px solid var(--rule); padding:7px 2px; margin-top:10px;
+  }
+  .dateline .edition{ color:var(--red); font-weight:700; letter-spacing:3px; }
+
+  /* ===== 今日新闻速览 ===== */
+  .overview{
+    border:1.5px solid var(--rule); padding:16px 20px; margin:22px 0 8px;
+    background:rgba(124,31,31,.045);
+  }
+  .overview h3{
+    margin:0 0 10px; font-size:16px; letter-spacing:6px; text-align:center;
+    color:var(--red);
+  }
+  .overview p{ margin:0; font-size:14.5px; line-height:1.95; text-align:justify; }
+
+  /* ===== 类别分栏 ===== */
+  .cat-section{ margin-top:6px; }
+  .cat-head{
+    text-align:center; margin:30px 0 6px; font-size:18px; font-weight:800;
+    letter-spacing:6px; color:var(--ink);
+  }
+  .cat-head::before, .cat-head::after{
+    content:"◆"; color:var(--red); font-size:11px; margin:0 12px; vertical-align:middle;
+  }
+
+  /* ===== 新闻模块 ===== */
+  .news-item{ border-top:1px solid var(--rule); padding:16px 0 18px; }
+  .news-item:first-of-type{ border-top:none; }
+  .news-title{ font-size:21px; font-weight:800; margin:2px 0 7px; line-height:1.38; }
+  .news-meta{
+    font-size:12px; color:var(--ink-soft); font-style:italic;
+    margin-bottom:11px; letter-spacing:.4px;
+  }
+  .news-meta a{ color:var(--red); text-decoration:underline; }
+  .news-brief{ font-size:14.5px; line-height:1.98; text-align:justify; margin:0 0 13px; }
+  .news-value{
+    border-left:3px solid var(--red); padding:7px 0 7px 15px;
+    background:rgba(124,31,31,.05);
+  }
+  .news-value .vlabel{
+    font-weight:800; color:var(--red); font-size:14px; letter-spacing:1px;
+  }
+  .news-value p{ margin:7px 0 0; font-size:13.5px; line-height:1.95; text-align:justify; }
+
+  .empty{ font-size:13.5px; color:var(--ink-soft); font-style:italic; text-align:center; padding:14px 0; }
+
+  /* ===== 页脚 ===== */
+  .footer{
+    border-top:3px double var(--rule); margin-top:34px; padding-top:12px;
+    text-align:center; font-size:11px; color:var(--ink-soft); letter-spacing:1px; line-height:1.8;
+  }
+  @media (max-width:600px){
+    .paper{ padding:32px 22px 40px; }
+    .masthead .title{ font-size:32px; letter-spacing:3px; }
+  }
+</style>
+
+<style id="issue-nav-style">
+.issue-nav{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  margin:34px 0 4px;padding:20px 0;border-top:1px solid #262019;border-bottom:1px solid #262019;
+  font-family:"Noto Serif SC","Songti SC",STSong,SimSun,Georgia,serif;
+}
+.issue-nav .nav-item{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 18px;border:1px solid #C9B78E;background:#EDE2C6;
+  color:#7C1F1F;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:1px;
+  white-space:nowrap;transition:background .15s,color .15s;
+}
+.issue-nav .nav-item:hover{background:#262019;color:#F3EAD3;}
+.issue-nav .nav-index{background:#262019;border-color:#262019;color:#F3EAD3;letter-spacing:2px;}
+.issue-nav .nav-index:hover{background:#7C1F1F;border-color:#7C1F1F;color:#F3EAD3;}
+.issue-nav .nav-rss{background:transparent;border-color:#D8CBAA;color:#8A7B63;letter-spacing:1px;}
+.issue-nav .nav-rss:hover{background:#EDE2C6;border-color:#C9B78E;color:#7C1F1F;}
+.issue-nav .nav-disabled{color:#8A7B63;background:transparent;border-color:#D8CBAA;cursor:default;}
+.issue-nav .nav-disabled:hover{background:transparent;color:#8A7B63;}
+@media (max-width:600px){
+  .issue-nav{flex-wrap:wrap;gap:10px;}
+  .issue-nav .nav-item{font-size:12px;padding:10px 14px;}
+}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <!-- ============ 板头 ============ -->
+  <header class="masthead">
+    <div class="kicker">Global Artificial Intelligence Daily</div>
+    <h1 class="title">智武防务人工智能每日速报</h1>
+    <div class="sub">全 球 人 工 智 能 动 态 综 述</div>
+  </header>
+  <div class="dateline">
+    <span>2026年11月27日　星期五</span>
+    <span class="edition">每 日 一 刊 · 手 动 生 成</span>
+  </div>
+
+  <!-- ============ 今日新闻速览 ============ -->
+  <section class="overview">
+    <h3>今 日 新 闻 速 览</h3>
+    <p>本期覆盖北京时间11月26日全天。算力端，英伟达暂停向马来西亚、新加坡、泰国、印尼发运搭载其芯片的服务器，管制外溢至区域算力交付；华为自研HBM首度亮相，昇腾950已搭载，将在ISSCC 2027与三星、SK海力士同台，国产存储由"配套使用"迈向"架构定义"。技术端，蚂蚁百灵、上海AI Lab相继开源Ling-3.2-air与Sage-Interaction，斯坦福RCI与MIT SLIC则揭示多智能体自我改进、小模型领域超越的新范式。商业端，ElevenLabs以330亿美元估值启动融资，语音入口价值重估。政策端，国家数据局就AI数据规则征求意见、五部门部署技工教育、八部门推动AI服务出海，中国从数据、人才、市场三端夯实制度供给。国防端，日本接收Terra-B1 AI拦截无人机、韩国在北约展示无GPS集群打击、美GAO披露十大军事AI项目，自主作战加速逼近实战。</p>
+  </section>
+
+  <!-- ============ 算力硬件 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">算 力 硬 件</div>
+
+    <article class="news-item" id="news-1">
+      <h2 class="news-title">英伟达暂停向马来西亚、新加坡、泰国和印尼发运搭载其芯片的服务器</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：每日经济新闻　|　<a href="https://news.qq.com/rain/a/20261127A04NKA00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">据媒体11月26日报道，英伟达已通知合作伙伴，暂停向马来西亚、新加坡、泰国和印度尼西亚发运搭载其芯片的服务器。据知情人士透露，负责将英伟达芯片组装成服务器的戴尔和超微电脑已告知当地买家，相关订单目前无法发货，何时恢复发运尚不明确。同日，铠侠宣布与英伟达合作，利用英伟达SCADA软件发挥固态硬盘（SSD）性能，探索将有效GPU可访问存储容量扩展至PB级（1PB为1024TB）的潜力。东南亚是全球数据中心建设的重要增长市场，此次暂停发货可能影响当地AI算力项目交付节奏。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>此举标志着美国先进芯片管制正从"直接对华出口"外溢至第三国算力交付。东南亚承接了大量中国企业海外算力与转口需求，一旦服务器发运受阻，相关项目的部署时点与成本都将承压。结合此前远程访问新规、第三方数据中心许可审查，一条针对"算力绕道"的合规链条正在收紧。我国需加快国产算力替代与境内智算调度，同时提醒出海企业在采购、部署方案中前置评估转口与租用的合规风险，避免关键算力被政治因素"断供"。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-2">
+      <h2 class="news-title">华为自研HBM亮相，昇腾950已搭载，将在ISSCC 2027与三星、SK海力士同台</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：IT之家/每日芯闻　|　<a href="http://mp.weixin.qq.com/s?__biz=MzcwODI0NDQwMQ==&amp;mid=2247484289&amp;idx=1&amp;sn=0aa4e17f2439cb9109566b75211c133b" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日，据IT之家报道，华为共有4篇论文进入ISSCC 2027议程，其中定制高带宽存储（HBM）方案采用64通道、4096bit位宽（为HBM4标准的两倍），并采用5层晶圆对晶圆（W2W）混合键合工艺。昇腾950系列已率先搭载自研HBM：950PR容量128GB、带宽1.6TB/s，950DT容量144GB、带宽4TB/s。在ISSCC存储专题分会场，华为、长鑫存储将与三星、SK海力士同台，标志着国产芯片设计在HBM这一AI存储核心环节，从"配套使用"走向"架构定义"。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>HBM长期是国产AI算力的关键短板，也是美国出口管制的重点环节。华为以自研HBM配套昇腾950，意味着国产算力在"芯片+存储+封装"链条上向自主闭环迈出实质一步；4096bit位宽等自定义架构，更显示我国开始参与下一代存储规则的制定。若能量产并通过可靠性验证，将显著缓解高端算力受制于人的局面。后续应重点跟踪良率、产能与生态适配进展。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-3">
+      <h2 class="news-title">OpenAI用AI改写AMD旗舰GPU电路，PPA最高提升14%并已送厂流片</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：雷峰网/每日芯闻　|　<a href="http://mp.weixin.qq.com/s?__biz=MzcwODI0NDQwMQ==&amp;mid=2247484289&amp;idx=1&amp;sn=0aa4e17f2439cb9109566b75211c133b" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日，多家技术媒体报道确认，OpenAI大模型深度参与AMD旗舰GPU的电路设计，由模型直接修改SystemVerilog寄存器传输级（RTL）代码，在AMD已多年人工优化的核心IP上实现功耗、性能、面积（PPA）最高14%的提升，部分改动已纳入送厂制造的设计文件；下一代旗舰CPU关键模块也验证了个位数百分比的PPA改善。OpenAI称不到5个月完成了约1年的工程进展。其自研推理芯片Jalapeño的优化验证中，乘法器面积减少约15%，计算延迟缩短至一个周期。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这是AI从"辅助分析"跨入可流片RTL级重写的重要信号，芯片设计的人力密集环节面临效率重估。对我国而言既是机遇也是压力：国产EDA工具与芯片设计企业可借"大模型+仿真反馈"路径，在架构优化、IP复用上实现弯道追赶；但若美国头部实验室借此形成"AI设计AI芯片"的快速迭代闭环，代差可能被进一步拉大。建议加快建设国产芯片设计语料与验证环境，推动AI辅助设计工具链自主可控。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 技术进展 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">技 术 进 展</div>
+
+    <article class="news-item" id="news-4">
+      <h2 class="news-title">蚂蚁百灵开源Ling-3.2-air：1240亿总参数、55亿激活，主打复杂工作流</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：AIbase/腾讯新闻　|　<a href="https://news.qq.com/rain/a/20261126A0C2Z100" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日，蚂蚁百灵开源Ling-3.2-air模型，采用1240亿总参数、55亿激活参数的混合专家（MoE）架构，原生支持文本、图像、视频混合输入。在代码仓库与自动化工作流基准上，SWE-bench Pro得分58.28、自动化基准达61%，官方称能力较上一代翻倍。该模型以"低激活、高性价比"直击多模态智能体落地时的成本瓶颈，被定位为开源社区中面向工程化落地的性价比模型，延续了百灵系列在稀疏激活路线上的持续迭代。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>国产开源模型正从"堆参数冲榜"转向"低激活、可落地"的工程化竞争，55亿激活参数意味着更低的推理门槛，对中小企业部署和国产算力适配更加友好。蚂蚁持续开源有助于扩大我国在全球开发者生态中的份额，契合"国产算力+国产模型"协同的政策方向。需注意相关基准多为厂商自测，实际工作流中的稳定性与多模态对齐质量仍待第三方验证，选型应以真实业务回归测试为准。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-5">
+      <h2 class="news-title">上海AI Lab开源Sage-Interaction：1.29秒极致时延，重塑全双工交互</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：AIbase/腾讯新闻　|　<a href="https://news.qq.com/rain/a/20261126A0C2Z100" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日，上海人工智能实验室开源Sage-Interaction全双工交互模型，以1.29秒极低时延与随时打断能力，补齐大模型在真实协作场景中的交互短板。该模型支持语音随时打断、平滑切换话题，复刻自然对话节奏，官方称其响应时延居开闭源双工模型首位，流式视频理解达到开源前沿水平，可支撑多模态实时协作场景。这标志着AI从工具型问答向"沉浸式数字伙伴"跨越，为人机实时交互提供高可用基座。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>全双工、低延迟交互是智能座舱、AI陪伴、人形机器人等场景的关键底座，上海AI Lab将其开源，等于把一层重要的交互能力免费提供给国内产业界，有利于加速应用落地并沉淀标准话语权。实时视听交互亦是军事人机协同、无人平台语音指挥的潜在技术储备，具备军民两用价值。需关注1.29秒为实验室口径，在复杂噪声与高并发条件下的稳定性仍待验证。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-6">
+      <h2 class="news-title">斯坦福提出"递归集体智能"RCI：多智能体群体可逐代自我改进</h2>
+      <div class="news-meta">发布时间：2026-11-26 13:09（北京时间）　|　来源：学术头条/网易　|　<a href="https://www.163.com/dy/article/LCLOH1GV0531E3NX.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日，斯坦福大学团队及合作者提出"递归集体智能"（Recursive Collective Intelligence，RCI）框架，用等预算阶梯重新考核多智能体系统：团队须在同等词元（token）预算下逐级超越单个智能体、多数投票与pass@n。实验显示，把拆分到不同成员手中的事实逐字转发，可让270亿参数模型群体超出等预算pass@n约31个百分点；4个相同智能体组成的群体无需教师与外部标签，在PlanBench上把准确率从0.613逐代提升到0.950。研究指出信息结构、错误相关性与协调成本是决定"组队是否更聪明"的关键。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>RCI给多智能体"堆数量"的流行做法提供了公平预算的评估标尺——很多所谓"群体增益"其实只是多数投票的假象。这对国内正在铺开的智能体平台有直接启示：评估须做等算力对照，否则会高估能力、浪费算力。而"无需外部标签逐代自我改进"的结论，与递归自我改进（RSI）这一前沿方向直接相关，既是能力跃迁的潜在路径，也带来安全治理的新课题，值得国内研究机构跟进。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-7">
+      <h2 class="news-title">MIT提出SLIC：40亿参数小模型在模拟电路优化上超越7630亿参数大模型</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：腾讯新闻　|　<a href="https://news.qq.com/rain/a/20261126A0BZ1D00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日消息，麻省理工学院（MIT）团队提出SLIC框架，通过强化微调小型语言模型实现模拟电路多轮闭环优化。实验显示，仅用公开的65纳米CMOS预测技术模型（PTM）训练后，SLIC-RANDOM在八轮优化内实现87.1%的四项规格同时达标率（Pass@1），比7630亿参数的DeepSeek-V4.1-Flash THINK高出48.5个百分点；在未见过的电路拓扑上达72.6%，迁移至台积电65纳米PDK仍有49.9%。该框架以本地推理部署，无需把专有工艺数据传给外部大模型服务，成果已作为预印本发布于arXiv。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这是"小模型+可验证环境"击败超大通用模型的典型样本，关键在于用仿真器构建闭环训练数据，绕开模拟电路数据稀缺瓶颈。对我国半导体尤其有借鉴意义：模拟与混合信号芯片长期依赖工程师经验，若能用国产小模型叠加本地电子设计自动化（EDA）仿真实现自动优化，既能提升设计效率，又能保证工艺数据不出内网，契合自主可控与安全需求。此类范式比盲目追通用大模型更适合国内芯片设计企业落地。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 商业动态 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">商 业 动 态</div>
+
+    <article class="news-item" id="news-8">
+      <h2 class="news-title">英国AI语音公司ElevenLabs寻求以330亿美元估值融资</h2>
+      <div class="news-meta">发布时间：2026-11-26 16:24（北京时间）　|　来源：彭博社/智东西　|　<a href="https://www.163.com/dy/article/LCM3LHR9051180F7.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日，据彭博社援引知情人士报道，英国AI语音初创公司ElevenLabs正就新一轮融资展开早期磋商，目标估值330亿美元（约合人民币2199亿元），较今年9月员工要约收购时的220亿美元估值高出50%，延续其估值以"11的倍数"定价的惯例。公司计划2027年第一季度正式启动融资，部分潜在投资方希望提前推进。其年化经常性收入（ARR）已从9月的6亿美元增至7亿美元。ElevenLabs提供文本转语音、声音克隆、AI配音等工具，CEO称目标2028年完成上市准备。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>估值跃升反映资本正把语音合成视为下一代人机交互的"入口层"，与国内智能体从"会聊"转向"能代办"的趋势一致。对我国厂商而言，语音克隆与实时对话是智能客服、车载交互、内容出海的关键能力；但语料版权、声音标识与深度伪造治理是商业化的硬约束。国内语音企业应提前布局合规水印与授权语料库，在模型能力之外补齐出海合规能力，避免踩上版权与内容安全红线。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-9">
+      <h2 class="news-title">AI云初创公司Marlowe获2.77亿美元种子轮，定位"多元芯片AI工厂"</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：腾讯新闻　|　<a href="https://news.qq.com/rain/a/20261126A0806V00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日消息，AI云计算初创公司Marlowe结束隐身状态，宣布获得2.77亿美元种子轮融资，由Accel、Bessemer、Altimeter、Eclipse等机构领投。公司由微软前副总裁丹·刘易斯和库塔·斯里尼瓦桑创立，将自身定位为"多元芯片AI工厂"，针对每种工作负载协同设计计算，以提升每瓦特词元产出。目前Marlowe已与AMD和Etched签署算力合作协议，并签下两个项目合同——首个预计未来几个月上线，第二个有望2027年上半年投运，成立之初还签下三家推理客户共同承购算力。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>"多元芯片+全系统协同设计"的路线，本质是在英伟达通用GPU之外寻找推理成本的最优解，反映算力市场正从单一芯片竞争转向系统级效率竞争。这对我国有双重启示：一方面，国产AI芯片种类多、生态分散，恰恰需要这类跨芯片调度与协同设计能力来提升整体利用率；另一方面，超大种子轮融资说明资本仍愿为"算力效率"下注。国内应加快异构算力统一调度、推理框架适配等中间层能力建设，把分散的国产芯片聚合成可用算力。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-10">
+      <h2 class="news-title">00后休学造"虚拟细胞"，华源智因完成超亿元天使轮融资</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：新浪财经　|　<a href="https://finance.sina.cn/2026-11-26/detail-inkaaifa8151115.d.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日，AI虚拟细胞企业华源智因宣布完成超亿元天使轮融资，由华盖资本领投，华方资本、华映资本、梅花创投、讯飞创投、启赋资本等跟投，向阳资本任独家财务顾问。这是其继7月数千万元种子轮后的第二轮融资，间隔仅四个多月。资金将用于大规模人源扰动数据生产、联合实验室建设及商业化交付。公司成立于2025年，创始人兼CEO杜润诗出生于2004年，自研Wise-Perturb扰动模型与UniOme单细胞多模态测序平台，已与国内十余家三甲医院合作，并将虚拟细胞模型引入药企临床Ⅱ期研发管线。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>资本对AI制药的评估逻辑正从"团队背景+概念"转向"商业化路径+数据壁垒"，该公司聚焦人源化扰动数据与单细胞多模态，切中虚拟细胞赛道的核心壁垒。对我国而言，AI for Science是相对不受算力管制约束的突围方向，虚拟细胞有望缩短新药研发周期、降低湿实验成本。新一代研究者回国创业并快速拿到融资，显示我国AI生物的人才与资本环境正在成熟；关键在于临床级数据积累与药企验证闭环，需持续跟踪其管线命中率。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 政策风向 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">政 策 风 向</div>
+
+    <article class="news-item" id="news-11">
+      <h2 class="news-title">国家数据局就《关于完善数据规则 赋能人工智能创新发展的若干意见》征求意见</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：新华社/新华网　|　<a href="https://www.xinhuanet.com/20261126/5b846aa390674a86825f08cbac6c1d30/c.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日，国家数据局发布《关于完善数据规则 赋能人工智能创新发展的若干意见》（公开征求意见稿），向社会公开征求意见至12月6日。意见稿围绕AI发展的数据要素需求，从三大方面提出十二项举措，明确推动数据产权制度在人工智能用数领域运用，支持合法采集、协议取得、衍生加工的数据用于AI训练和推理；协调数据处理者与受托方关系，支持和鼓励为数据付费；建立人工智能企业输出的风险防控机制，完善数据流通责任认定和安全治理机制。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>这是我国针对AI训练数据合规痛点的系统性制度供给，把数据产权制度引入AI用数场景，为企业使用合法来源数据训练模型提供了明确规则预期，有助于释放行业数据价值、降低侵权风险。同时"建立输出风险防控机制"把治理从数据来源端延伸到生成结果端，意味着模型厂商需把内容过滤、风险监测与投诉处置嵌入产品全生命周期。我国正以"数据产权+责任认定+安全治理"的组合，构建区别于欧盟严格许可模式的制度路径。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-12">
+      <h2 class="news-title">五部门首次联合发文支持技工教育：推进人工智能赋能，开设AI通识课程</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：经济参考报/新华社　|　<a href="https://www.jjckb.cn/20261126/261f5c5da72542338ab6a309f3700557/c.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日消息，人力资源社会保障部、国家发展改革委、教育部、财政部、国务院国资委联合印发《关于推进技工教育高质量特色发展的意见》，这是首次由5部门联合出台支持技工教育发展的综合性政策文件。《意见》明确"十五五"时期累计培养培训高技能人才200万人以上、毕业生去向落实率97%以上；提出推进人工智能赋能技工教育，开设人工智能通识课程，推动AI与专业教学深度融合，探索"技师+工程师"联合培养模式。截至2025年底，全国技工院校2410所、在校生419万人。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>在全球围绕AI人才展开竞争的背景下，我国把AI素养纳入技工教育体系，是从"精英研发人才"之外补齐"产业技能人才"的关键一环。人工智能与制造、装备的深度融合，最终需要大量既懂工艺又能操作智能系统的高技能劳动者，200万人的培养目标直指新质生产力的人才底座。这对缓解结构性就业矛盾、支撑制造业智能化升级具有长远意义，也为国产算力与工业软件的规模化应用储备了人力基础。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-13">
+      <h2 class="news-title">商务部等八部门：稳妥有序推动云计算、大模型等AI服务出海</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：商务部/腾讯新闻　|　<a href="https://news.qq.com/rain/a/20261126A04YEE0002" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日消息，商务部等八部门印发《服务贸易发展"十五五"规划》，明确提出"稳妥有序推动云计算、大模型等人工智能相关服务出海"，鼓励AI企业整合硬件制造商、算力提供商、IT基础设施运营商，形成"技术+产品+服务"一体化解决方案，拓展海外市场布局；深化与共建"一带一路"国家在医疗、教育、金融等场景的AI合作，培育AI服务贸易新业态，配套算力、数据要素协同支撑体系。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>在硬件出口受限的背景下，推动大模型与云服务出海，是我国AI产业"换道突围"的重要抓手：以模型能力和行业解决方案输出，替代单纯依赖芯片的路径。这与国产开源模型在全球调用量领先的态势形成呼应。"稳妥有序"的表述也提示合规底线——数据跨境、目标国监管（如欧盟AI法案）与内容安全都需前置布局。企业出海应同步建设数据本地化与合规能力，把"技术+产品+服务"真正做成可复制的商业模式。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ============ 国防应用 ============ -->
+  <div class="cat-section">
+    <div class="cat-head">国 防 应 用</div>
+
+    <article class="news-item" id="news-14">
+      <h2 class="news-title">日本接收首批Terra-B1人工智能拦截无人机，对标"沙赫德"自杀式无人机</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：Defence Blog/腾讯新闻　|　<a href="https://news.qq.com/rain/a/20261126A0G62X00" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日，据Defence Blog防务网站报道，日本已接收首批Terra-B1人工智能拦截无人机，从签订量产合同到交付仅用三个月。该系统依靠AI完成目标识别与自主拦截，专门对抗类似"沙赫德"的远程自杀无人机，是日本通过快速采购计划落地的首款国产AI反无人机装备。交付包含电池、充电机、控制软件、地面站及通信天线的完整作战套件。项目源自拦截无人机早期采购计划，38家企业提交方案、4家进入实机测试，海上自卫队在陆地和舰上完成对比测试后Terra-B1全部过关。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>用低成本拦截无人机对抗廉价巡飞弹，正成为反无人机防空的新范式；日本借乌克兰实战经验与快速采办机制，三个月即形成交付能力，反映"实战经验—快速迭代—装备落地"闭环已被军事强国制度化。对我国周边环境而言，日本加速部署AI反无人机装备、并引进乌克兰同类系统，将提升其应对无人机蜂群的能力，对我相关作战平台的突防构成新挑战。需同步发展低成本拦截、AI目标识别与抗干扰集群技术，形成"以低成本制低成本"的体系应对。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-15">
+      <h2 class="news-title">韩国DDE在北约采购机构展示无GPS环境下集群AI无人机末端打击</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：每日经济新闻（mk.co.kr）　|　<a href="https://www.mk.co.kr/cn/it/12219718" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日消息，韩国AI企业数据设计工程（DDE）表示，其于当地时间24日在卢森堡举行的北约支援与采购局（NSPA）"自主与AI峰会2026"上，展示了在GPS信号无法接收环境下，基于群体AI的集群无人机自主指挥与末端打击技术。在设置安全网的室内，负责侦察指挥的无人机发出打击命令后，攻击型"Soldier"无人机飞向目标。该系统可在无线电干扰与卫星欺骗等电子战情形下执行任务，DDE计划继卢森堡国防AI项目后进一步拓展欧洲国防市场。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>无GPS环境下的集群自主打击，直接针对电子战中的干扰压制与卫星欺骗场景，是蜂群作战走向实战的关键能力。韩国中型AI企业在北约核心采购机构完成演示，说明集群AI无人机的技术与市场门槛正在下降，中小国家也能凭导航自主技术切入高价值防务市场。对我而言，一方面要加快抗干扰自主导航（视觉里程计、惯导融合、群体协同定位）的技术储备；另一方面要警惕北约围绕无人集群形成新的技术标准与采购联盟，避免被排除在生态之外。</p>
+      </div>
+    </article>
+
+    <article class="news-item" id="news-16">
+      <h2 class="news-title">美审计署报告：五角大楼拟将AI引入装甲装备、海上无人艇等十类作战系统</h2>
+      <div class="news-meta">发布时间：2026-11-26（北京时间）　|　来源：俄罗斯卫星通讯社　|　<a href="https://sputniknews.cn/20261126/1074355099.html" target="_blank" rel="noopener">阅读原文 ↗</a></div>
+      <p class="news-brief">11月26日，据俄罗斯卫星通讯社查阅的美国审计署（GAO）报告，五角大楼计划将人工智能引入装甲装备、海上无人艇和其他作战系统。报告审议了美军与情报机构十个AI应用项目：陆军拟为XM30步兵战车配备AI传感器，用于探测和跟踪敌方无人机；海军为无人海上平台研发自动目标识别系统；特种作战司令部开发CHAOS软件，协调无人系统自主工作与目标识别；海军陆战队利用AI在无上级命令条件下做出战术决策；太空军用算法识别轨道威胁，包括跟踪可能伪装成太空垃圾的物体。部分系统仍处于研发阶段。</p>
+      <div class="news-value">
+        <span class="vlabel">▍价值点分析</span>
+        <p>GAO报告显示美军AI应用已从情报分析下沉到平台级战术决策，"在无上级命令条件下做出战术决策"尤其值得警惕，标志着自主系统正从辅助工具向作战链路关键节点渗透。对我国而言，需在装甲平台AI感知、无人艇目标识别、轨道态势感知等对应方向同步布局，并加快自主武器的使用规范与伦理准则研究。同时，报告坦承"部分系统仍在研发"也提示，美军AI装备化并非一路顺畅，跟踪其项目进度与预算执行有助于客观评估真实威胁水平。</p>
+      </div>
+    </article>
+
+  </div>
+
+  <nav class="issue-nav">
+      <a class="nav-item nav-prev" href="2026-11-26.html"><svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M9.5 3L4.5 7.5L9.5 12M4.8 7.5H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>上一期 · 11月26日</span></a>
+      <a class="nav-item nav-index" href="../archive/2026.html">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><path d="M2.5 3.5h10M2.5 7.5h10M2.5 11.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>2026 年归档</span>
+      </a>
+      <span class="nav-item nav-disabled">下一期 · 尚未发布</span>
+      <a class="nav-item nav-rss" href="../feed.xml">
+        <svg viewBox="0 0 15 15" width="15" height="15" aria-hidden="true"><circle cx="3.2" cy="11.8" r="1.4" fill="currentColor"/><path d="M2.4 7.6a5 5 0 015 5M2.4 4a8.6 8.6 0 018.6 8.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+        <span>RSS</span>
+      </a>
+    </nav>
+
+  <footer class="footer">
+    本速报由 AI 自动检索公开信源并生成，仅供研究参考。原始新闻版权归原媒体所有，点击标题下方链接可阅读原文。<br>
+    智武防务人工智能每日速报 · GLOBAL AI DAILY · 聚焦中国视角
+  </footer>
+
+</div>
+</body>
+</html>
